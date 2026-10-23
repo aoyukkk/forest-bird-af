@@ -93,6 +93,12 @@ python src/nab/nab_tool.py verify <default.nab>
 - 数据集元数据：CC BY 4.0；图片本体各自沿用原数据集许可
 - 第三方材料见 [NOTICE.md](NOTICE.md)
 
+## 致谢
+
+本项目的固件解包能力来自 [fwtool.py](https://github.com/ma1co/fwtool.py) 及其 [PR #52](https://github.com/ma1co/fwtool.py/pull/52)（ma1co、DavidBuchanan314，MIT）；格式交叉验证参考了 [VeriSilicon TIM-VX](https://github.com/VeriSilicon/TIM-VX)（MIT）；首轮数据来自 [CUB-200-2011](https://www.vision.caltech.edu/datasets/cub_200_2011/)。
+
+完整的上游项目、数据集原始摄影者与工具链致谢见 [ACKNOWLEDGMENTS.md](ACKNOWLEDGMENTS.md)。
+
 ## 引用
 
 Wah, C.; Branson, S.; Welinder, P.; Perona, P.; Belongie, S. *The Caltech-UCSD Birds-200-2011 Dataset*. California Institute of Technology, CNS-TR-2011-001, 2011.
