@@ -1,0 +1,17 @@
+{
+  "run_id": "run_001",
+  "status": "PILOT_ARTIFACTS_READY_COMPARISON_GATE_NOT_PASSED",
+  "G0_inputs_and_Z8_CPU_runtime": "PASS",
+  "G1_annotations": "DRAFT_READY_HUMAN_REVIEW_PENDING",
+  "G2_sony_execution_and_class_semantics": "NOT_PASSED",
+  "G3_200_matched_comparison": "NOT_STARTED_DEPENDS_ON_G2",
+  "training": "NOT_STARTED_NOT_AUTHORIZED_IN_THIS_STAGE",
+  "gpu_used": false,
+  "server_used": false,
+  "next_required_work": [
+    "Recover Sony graph connectivity, payload tensor layout and operator execution.",
+    "Recover and validate preprocessing and native output decoding/class consumers.",
+    "Review independent pilot labels and confirm numerical output semantics.",
+    "Only then run the fixed 200-image paired comparison."
+  ]
+}

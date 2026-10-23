@@ -1,0 +1,8 @@
+{
+  "reference_control": "The unmodified official reference NBG now passes import, graph verification, two forward calls, finite output checks and output copies using its exact CID BA hardware profile.",
+  "own_control_status": "Moving export before verify fixed NBG export and direct numeric execution. Reimporting the own generated control still crashes in StateParser::executeNN; this is retained separately and is not evidence that original Sony assets fail.",
+  "next_probe": "Run exact Sony 08 and 15 model bytes on synthetic quantized-zero input with the matching CID D4 profile; save all outputs and repeated-run hashes. This tests numerical execution, not image semantics, accuracy, or agreement with physical camera hardware.",
+  "backend_unchanged": true,
+  "training": false,
+  "gpu": false
+}

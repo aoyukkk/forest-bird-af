@@ -1,0 +1,9 @@
+{
+  "parent_attempt": "quant_conv_build_and_numeric.stdout.txt",
+  "finding": "Both own export controls called vxVerifyGraph before vxGenerateNBG. Official TIM-VX GraphImpl::CompileToBinary calls Setup then GenerateNBG, whereas Compile calls Setup then VerifyGraph. The own wrapper used the execution compile path before the binary compile path.",
+  "fix": "Create quant_conv_control_v2.cpp preserving the original source, move binary generation before explicit graph verification, then verify numerical execution and reimport the generated control.",
+  "backend_unchanged": true,
+  "model_bytes_unchanged": true,
+  "training": false,
+  "gpu": false
+}

@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "images": 200,
+  "decoded_images": 200,
+  "unique_sha256": 200,
+  "unique_source_image_ids": 200,
+  "source_split_counts": {
+    "train": 200
+  },
+  "species_classes": 92,
+  "screening_group_counts": {
+    "clear_or_pose_control": 40,
+    "vegetation_occlusion_candidate": 100,
+    "natural_scene_control": 60
+  },
+  "screening_groups_are_AF_ground_truth": false,
+  "new_annotations_created": false,
+  "model_inference_performed": false,
+  "training_performed": false,
+  "gpu_used": false,
+  "source_byte_identity_pass": true,
+  "archive_member_hashes_pass": true,
+  "zip_crc_pass": true,
+  "width_range": [
+    320,
+    500
+  ],
+  "height_range": [
+    241,
+    500
+  ],
+  "long_edge_range": [
+    320,
+    500
+  ],
+  "long_edge_median": 500.0,
+  "total_image_bytes": 22966975,
+  "dhash64_threshold": 7,
+  "dhash64_pairs_at_or_below_threshold": [],
+  "dhash_scope": "selected 200 images only; does not establish independent acquisition sequences or unseen pretraining data",
+  "handoff_zip_bytes": 22752213,
+  "handoff_zip_sha256": "5ab0406034c2f990b4eb0fd0385716e3d21f69d0a8a45a67e5f8643b849885d3",
+  "public_keyword_search_photos_selected": 0,
+  "published_to_remote_service": false
+}

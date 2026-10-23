@@ -1,0 +1,7 @@
+{
+  "finding": "The official README requires VSIMULATOR_CONFIG to select hardware and DISABLE_IDE_DEBUG=1 for gdb. Prior probes set neither. SDK libEmulator.so contains the exact Sony CID profile VIP9000NANODI_PID0XD4 and reference CID profile VIP9000ULSI_PID0XBA.",
+  "action": "Select each unmodified model's matching documented simulator hardware profile and repeat kernel import. This is explicit runtime configuration repair using the same SDK, not a model patch or alternate backend.",
+  "sequence": ["Reference import at CID BA", "If successful, Sony 08 and 15 imports at CID D4", "Build a quantized convolution control to test NBG generation and numerical import execution"],
+  "gpu": false,
+  "training": false
+}

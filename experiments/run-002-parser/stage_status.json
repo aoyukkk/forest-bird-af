@@ -1,0 +1,15 @@
+{
+  "parent_run": "run_001",
+  "z8_images": 20,
+  "sony_image_inferences": 0,
+  "matched_200_comparison": "NOT_STARTED",
+  "annotation_status": "DRAFT_NEEDS_HUMAN_REVIEW",
+  "sony_metadata_successes": 5,
+  "sony_metadata_version_rejections": 2,
+  "control_add_numeric": "PASS_16_VALUES",
+  "control_nbg_export": "SIGSEGV",
+  "sony_runtime_gate": "NOT_PASSED",
+  "gpu_used": false,
+  "training": false,
+  "server_used": true
+}

@@ -1,0 +1,8 @@
+{
+  "evidence": "Read-only Patch32 tracing shows Sony legacy templates retain SRAM end offsets in bytes (e.g. 0x127800 within the declared 2 MiB SRAM) while the stock old-format relocation first expands these by 64, producing out-of-range addresses. New-format relocation uses explicit byte offsets from orig_base. This is separate from the already validated NBG debug-mode shim.",
+  "candidate_fix": "For explicitly enabled legacy compatibility only, normalize byte-address fields marked RIGHT_SHIFT_6 in the SDK's mutable state copy before delegating to the stock relocation helper. Preserve high flag bits, require 64-byte alignment and zero orig_base, exclude command-source entries, pin the SDK and original model hashes. Original model files and vendor libraries remain unchanged.",
+  "status": "Hypothesis to test; no Sony accuracy or numerical equivalence claim yet",
+  "required_validation": ["Stock new-format reference unchanged", "Independent numerical controls", "Synthetic legacy-format fixture with preserved weights and topology", "Sony repeated execution and input sensitivity"],
+  "training": false,
+  "gpu": false
+}

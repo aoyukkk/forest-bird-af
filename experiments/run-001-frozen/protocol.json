@@ -1,0 +1,27 @@
+{
+  "run_id": "run_001",
+  "scope": "pilot offline bird-part diagnostic; no training",
+  "inference_device": "CPU",
+  "gpu_allowed": false,
+  "training_allowed": false,
+  "z8_model": 744,
+  "z8_backend": "compiled",
+  "z8_arithmetic": "fp16-storage",
+  "input_normalization": "unit",
+  "channel_order": "rgb",
+  "roi": "full original image",
+  "z8_preprocess": "existing reconstructed Pillow bilinear adapter; hardware equivalence unverified",
+  "z8_postprocess": "original IPU instructions via bounded BA2 interpreter",
+  "raw_numeric_classes_to_be_preserved": true,
+  "semantic_classes_confirmed": false,
+  "threshold_tuning_allowed": false,
+  "independent_final_test": false,
+  "timing_scope": "host software CPU diagnostic, not camera AF frequency or lens acquisition latency",
+  "gates": [
+    "G0 input identity and CPU runtime",
+    "G1 independent provisional pilot annotations",
+    "G2 Sony executable graph, preprocessing and postprocessing plus class semantics",
+    "G3 matched 200-image comparison only after G2",
+    "G4 training proposal only, no training in this run"
+  ]
+}

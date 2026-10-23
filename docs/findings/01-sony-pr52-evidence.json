@@ -1,0 +1,54 @@
+{
+  "checked_date": "2026-10-23",
+  "url": "https://github.com/ma1co/fwtool.py/pull/52",
+  "state": "open",
+  "merged": false,
+  "head_repo": "DavidBuchanan314/fwtool.py",
+  "head_sha": "3955d7890fc38daf942bb52827599bfe35de4a14",
+  "scope": "Container extraction support; bird-model assets and executable runtime not verified",
+  "findings": [
+    {
+      "model": "ILCE-1M2",
+      "status": "Author-reported extraction success",
+      "source": "https://github.com/ma1co/fwtool.py/pull/52#issuecomment-5625960817"
+    },
+    {
+      "model": "ILCE-1M2",
+      "version": "4.00",
+      "status": "Community comment lists a decryption configuration",
+      "source": "https://github.com/ma1co/fwtool.py/pull/52#issuecomment-6344060460"
+    },
+    {
+      "model": "ILCE-7M5",
+      "status": "Community reports existing methods failing; no working extraction verified in this review",
+      "source": "https://github.com/ma1co/fwtool.py/pull/52#issuecomment-5681134208"
+    },
+    {
+      "model": "ILCE-7RM6",
+      "version": "1.02",
+      "status": "Community comment records unresolved decryption key",
+      "source": "https://github.com/ma1co/fwtool.py/pull/52#issuecomment-6344060460"
+    }
+  ],
+  "official_firmware_pages": [
+    {
+      "model": "ILCE-7RM6",
+      "version": "1.02",
+      "url": "https://www.sony.com/electronics/support/e-mount-body-ilce-7-series/ilce-7rm6/software/00413269"
+    },
+    {
+      "model": "ILCE-7M5",
+      "version": "2.00",
+      "url": "https://www.sony.com/electronics/support/e-mount-body-ilce-7-series/ilce-7m5/software/00377087"
+    },
+    {
+      "model": "ILCE-1M2",
+      "version": "4.00",
+      "url": "https://www.sony.com/electronics/support/e-mount-body-ilce-1-series/ilce-1m2/software/00349486"
+    }
+  ],
+  "local_firmware_downloaded": false,
+  "sony_models_extracted": false,
+  "sony_inference_run": false,
+  "training_started": false
+}

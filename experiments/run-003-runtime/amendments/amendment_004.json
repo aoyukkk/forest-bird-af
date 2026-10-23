@@ -1,0 +1,8 @@
+{
+  "finding": "The repeatable fault dereferences missing debug/profiling metadata when the exported _VXState::m_nbg flag remains false. The same emulator has a native NBG branch which skips these accesses; disassembly shows automatic activation depends on metadata which the old/generated NBG controls lack. File import and binary-debug environment flag did not fix it.",
+  "proposed_compatibility_fix": "In a separate explicitly named harness, activate the emulator's exported NBG-mode boolean in the current process before running an imported NBG. Use dlsym, fail if missing, pin the exact SDK hash in the launcher, retain stock baseline failures. Do not change model bytes or on-disk vendor libraries.",
+  "validation_required": ["Generated convolution NBG: quantized zero, ones and spatially varying input against independent CPU convolution", "Original reference model: compatibility mode outputs exactly equal stock outputs", "Sony synthetic output copies and repeated-run equality"],
+  "limitation": "Internal SDK ABI compatibility shim, not an officially documented application API; not proof of physical camera equivalence or image-level semantics.",
+  "training": false,
+  "gpu": false
+}

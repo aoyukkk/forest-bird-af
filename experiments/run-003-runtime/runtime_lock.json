@@ -1,0 +1,49 @@
+{
+  "sdk_commit": "702715d714277376d7ff466b7b72833ff57564c1",
+  "sdk_libraries": [
+    {
+      "name": "libArchModelSw.so",
+      "sha256": "c4766ef80043ba38dfd5d8bf1ed06590395a995c8d489a093e7a68265f342f97"
+    },
+    {
+      "name": "libCLC.so",
+      "sha256": "102d040c1a4bd83595bf99705494603a35d447f5efdaa0a4672ef0793406ecba"
+    },
+    {
+      "name": "libEmulator.so",
+      "sha256": "56e34c51ca5476e0ca54155d4e78679d96281552ddad7674f5ce4fe2fe5f7de6"
+    },
+    {
+      "name": "libGAL.1.7.4.so",
+      "sha256": "013718031b134ad0f8af859179e32615b9de939a7873ccf539d30ff172a61e9c"
+    },
+    {
+      "name": "libGAL.so",
+      "sha256": "013718031b134ad0f8af859179e32615b9de939a7873ccf539d30ff172a61e9c"
+    },
+    {
+      "name": "libNNArchPerf.so",
+      "sha256": "e5f58113287a803663f897784f97ed983a32e07c2755e23bd25b63fec3aff70d"
+    },
+    {
+      "name": "libOpenVX.so.1.3.0",
+      "sha256": "423514a8f50c8d3c15d7b257b2027a1cd9434051a74ed0b2936b2df38badeb38"
+    },
+    {
+      "name": "libOpenVXC.so",
+      "sha256": "23b2240d046cd5413f3459883aec701fb2b3aa598084b130b2394ab02496fce6"
+    },
+    {
+      "name": "libOpenVXU.so",
+      "sha256": "070779b74fe2753ff0ff5b96663d485ff1bd9a26e1ec2de238bb6a175d2896b3"
+    },
+    {
+      "name": "libVSC.so",
+      "sha256": "2081c87900446cb3561046d5652b695280eff7760c5de204cf45d658634aed33"
+    },
+    {
+      "name": "libvdtproxy.so",
+      "sha256": "64934faba48ffb143bb7b52519f99ced40d69a2ecc6f56d0fe5bb23a866edf9f"
+    }
+  ]
+}

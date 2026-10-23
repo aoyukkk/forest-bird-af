@@ -1,0 +1,74 @@
+# ===== 厂商固件与模型资产：绝不入库 =====
+# Sony 固件容器与解包产物
+BODYDATA.DAT
+*.fdat
+firmware.tar
+updater.img
+# Nikon 固件
+Z_8_*.bin
+Z_9_*.bin
+# 神经网络资产（厂商知识产权）
+*.nab
+*.vvpm
+*.nbg
+*.nb
+models_all/
+nflasha*
+# 解包输出
+extract/
+
+# ===== 第三方代码：引用不复制 =====
+tools/fwtool/
+z8-qemu/
+NikonFirmwarePatch/
+toolchains/
+
+# ===== 原始照片与数据集实体 =====
+# 原则：公开仓库只放元数据、清单、哈希，不放图片本体
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.tiff
+*.nef
+*.arw
+*.CR2
+*.CR3
+*.RAF
+*.ORF
+# 例外：文档插图
+!docs/**/figure-*.png
+!docs/**/figure-*.jpg
+
+# ===== 大体积产物 =====
+*.zip
+*.tar.gz
+*.7z
+*.pt
+*.pth
+*.onnx
+*.weights
+*.engine
+*.safetensors
+
+# ===== 本地环境 =====
+.venv/
+venv/
+__pycache__/
+*.pyc
+node_modules/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ===== 私密与临时 =====
+.env
+*.secret
+*.key
+*.pem
+tmp/
+work/
+*.log
+Thumbs.db
+desktop.ini
+.DS_Store
