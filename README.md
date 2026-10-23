@@ -32,32 +32,44 @@
 ## 目录
 
 ```
+docs/format/        固件解包流程 + .nab 容器格式规范
 docs/plan/          方案（当前版本与已归档版本）
 docs/findings/      调研与可行性评估
 docs/reports/       解包报告、各轮试跑报告
 docs/collect/       公开征集文案
 data/calibration-200/  200 张标注集的元数据与规范
+data/schema/        标注格式定义
 experiments/        冻结的实验记录，逐轮可追溯
-src/nab/            Sony NAB 容器解析器
+src/nab/            .nab 容器解析器
 src/z8/             Z8 侧模型执行
 src/eval/           对照与统计
 ```
 
-## 数据从哪里来
+## 开源边界
 
-首轮 200 张来自 [CUB-200-2011](https://www.vision.caltech.edu/datasets/cub_200_2011/) 官方 train 划分，按遮挡类型分层抽样。CUB 是北美鸟种，后续需补亚洲林鸟实拍。
+**本仓库公开方法与格式，不公开资产本体。**
 
-**本仓库不托管图片本体**，只放清单、编号映射与 SHA-256。图片按各自原始许可使用。
+| 公开 | 不公开 |
+|---|---|
+| 固件解包流程与版本锁定 | 厂商固件 `.DAT` / `.bin` |
+| `.nab` 容器的字段级格式规范 | 厂商模型权重 `.nab` / `.vvpm` |
+| 网络拓扑：形状、层数、算子统计 | 权重数值与任何可重建模型的文件 |
+| 量化参数 `scale` / `fixed_pos` | 原始照片、用户投稿 |
+| 解析器代码与校验方法 | 第三方仓库副本 |
+| 字节偏移与 SHA-256（供比对） | |
 
-正在征集真实用户投稿的失败样本，见 [征集文案](docs/collect/call-for-photos.txt)。投稿原图同样不入库。
+即：任何人可以**按本仓库的文档从官方固件自行提取并校验**，本仓库提供的是这条路，不是提取结果。
+
+详见 [NOTICE.md](NOTICE.md)。
 
 ## 复现
 
 ```bash
-python src/nab/nab_tool.py <path-to.nab>
+# 解包流程见 docs/format/UNPACK-GUIDE.md
+python src/nab/nab_tool.py verify <default.nab>
 ```
 
-环境：Python 3.10+。固件解包依赖 [fwtool.py PR #52](https://github.com/ma1co/fwtool.py/pull/52) 的作者分支提交 `3955d7890fc38daf942bb52827599bfe35de4a14`，请自行克隆，不在本仓库内复制。
+环境：Python 3.10+，解析器仅用标准库。固件解包依赖 [fwtool.py PR #52](https://github.com/ma1co/fwtool.py/pull/52) 的作者分支提交 `3955d7890fc38daf942bb52827599bfe35de4a14`，请自行克隆。
 
 ## 不做的事
 
@@ -65,6 +77,14 @@ python src/nab/nab_tool.py <path-to.nab>
 - 不把"容器可解包"说成"模型可运行"
 - 不把模型漏检当成负样本真值
 - 不隐瞒失败的实验轮次
+
+## 数据从哪里来
+
+首轮 200 张来自 [CUB-200-2011](https://www.vision.caltech.edu/datasets/cub_200_2011/) 官方 train 划分，按遮挡类型分层抽样。CUB 是北美鸟种，后续需补亚洲林鸟实拍。
+
+**本仓库不托管图片本体**，只放清单、编号映射与 SHA-256。
+
+正在征集真实用户投稿的失败样本，见 [征集文案](docs/collect/call-for-photos.txt)。投稿原图同样不入库。
 
 ## 许可
 
