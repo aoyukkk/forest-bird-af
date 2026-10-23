@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "assets": [
+    {
+      "file": "community-images-20261024-part01-of04.zip",
+      "bytes": 1243385689,
+      "sha256_matches": true
+    },
+    {
+      "file": "community-images-20261024-part02-of04.zip",
+      "bytes": 1257439807,
+      "sha256_matches": true
+    },
+    {
+      "file": "community-images-20261024-part03-of04.zip",
+      "bytes": 1284590646,
+      "sha256_matches": true
+    },
+    {
+      "file": "community-images-20261024-part04-of04.zip",
+      "bytes": 309764214,
+      "sha256_matches": true
+    },
+    {
+      "file": "z8-prelabels-review-20261024.zip",
+      "bytes": 835790988,
+      "sha256_matches": true
+    },
+    {
+      "file": "review.html",
+      "bytes": 44248,
+      "sha256_matches": true
+    },
+    {
+      "file": "manifest.csv",
+      "bytes": 100602,
+      "sha256_matches": true
+    },
+    {
+      "file": "SHA256SUMS.txt",
+      "bytes": 436,
+      "sha256_matches": true
+    }
+  ],
+  "total_bytes": 4931116630,
+  "release_id": 422133006
+}

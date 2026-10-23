@@ -1,52 +1,31 @@
-# 数据集总览
+# Datasets
 
-当前数据管理以 [AGENTS.md](../AGENTS.md) 和[归类、编号、标注方案 v1](../docs/data/DATASET-SPEC-v1.md)为准。2026-10-24 只读快照为 296 个文件；下表 292 是 DS 已登记的历史批次，不代表接收目录当前总量。新增 4 个文件尚未登记，本轮不整理原片。
+**English** | [简体中文](README.zh-CN.md)
 
-本仓库**不托管图像本体**，只提供清单、映射与校验值。所有图片按各自原始许可使用。
+| Dataset | Files | Use |
+|---|---:|---|
+| [Community snapshot, 2026-10-24](community-2026-10-24/README.md) | 296 | Current photo collection and Z8 prelabels |
+| [First contribution register](contributions-2026-10-23/) | 292 | Original IDs retained in the current snapshot |
+| [CUB calibration set](calibration-200/) | 200 | Earlier calibration material; obtain images from CUB |
 
-## 当前数据集
+Community images and the review bundle are distributed through [Releases](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v1). Manifests and proposals live in Git.
 
-| 名称 | 数量 | 来源 | 状态 |
-|---|---|---|---|
-| [`calibration-200`](calibration-200/) | 200 | CUB-200-2011 官方 train 划分 | 图片已备，人工标注待完成 |
-| [`contributions-2026-10-23`](contributions-2026-10-23/) | 292 | 首次公开征集的用户投稿 | 清单已建，部位标注未开始 |
+## Organization
 
-## 规划中的数据集
+Keep incoming files unchanged. Assign stable IDs and record source, capture sequence, occlusion, image quality, annotation status, and permission separately. One image can have several tags.
 
-| 名称 | 目标数量 | 来源 | 状态 |
-|---|---|---|---|
-| 真实林鸟失败样本 | 600 | 用户投稿 + 自有拍摄 | 首批 292 张已收，待扩充 |
-| 正常场景对照 | 360 | 用户投稿 + 自有拍摄 | 首批已含部分 |
-| 应放弃样本 | 240 | 用户投稿 + 自有拍摄 | 待采集 |
-| 清晰底图 | 1,000 | CUB 原始图 | 未开始 |
-| 遮挡派生图 | 4,000 | 由清晰底图合成 | 未开始 |
+The current register contains `fb_0001` through `fb_0296`. Future imports must use the latest [manifest](community-2026-10-24/manifest.csv), matching `original_sha256` before assigning another ID.
 
-## 分组原则
+## Annotation
 
-接收时允许混放，后续通过标签区分场景，不要求投稿者按 A/B/C 重整目录。同图可有多个状态不同的鸟，以实例标注为准。
+Annotate every identifiable bird, its visible head, and each locatable eye. Record uncertainty and the eye/head/bird fallback target. Original-image visibility and model-input usability are separate fields.
 
-| 组 | 内容 | 用途 |
-|---|---|---|
-| A 遮挡失败 | 有鸟但没对上、被遮挡 | 主要优化目标 |
-| B 正常对照 | 对得准的、清晰无遮挡 | 防止退化的护栏 |
-| C 应放弃 | 遮挡过重、人眼亦难辨 | 回退逻辑判据 |
-| D 无鸟难负例 | 经人工确认只有背景或伪鸟纹理 | 检查背景误锁；与“疑似鸟”分开 |
+Current prelabels contain native numeric class slots and await review. A missing detection is not a negative label. The older 292-row blank template also represents unannotated images, despite its empty instance arrays.
 
-采样应同时覆盖遮挡、正常对照、应放弃与无鸟场景，避免评测偏差。粗筛组别不是训练标签；不能将 C 组或模型漏检自动转成无鸟负例。
+Keep bursts, matching RAW/JPEG captures, crops, and re-encoded versions in the same data split. Splits have not been assigned yet.
 
-## 硬规则
+See the [prelabeling workflow](../docs/run-prelabel.md) and [dataset protocol v1, Chinese](../docs/data/DATASET-SPEC-v1.md).
 
-1. **同一拍摄序列不跨数据划分。** 同一只鸟、同一地点的连拍必须落在同一 split。
-2. **原图不得清晰化后送模型再当原图结果。**
-3. **模型漏检不等于负样本。** 两边都漏的图保留为待人工复核，不标成无鸟。
-4. **原图标注与模型输入可用性分开。** 几何和可见性绑定冻结的审核图；只有预处理固定后才另记各输入上的可用性，不能仅按 384×256 等尺寸自行拉伸后覆盖原图真值。
+## Rights
 
-## 标注字段
-
-当前采用[方案 v1 的记录定义](../docs/data/DATASET-SPEC-v1.md)；[annotation-schema.md](schema/annotation-schema.md)保留为历史 xywh 格式。DS 空模板中的 instances=[] 表示未标，不能当成无鸟；迁移时显式补 pending 状态。
-
-## 许可
-
-- 元数据与清单：CC BY 4.0
-- CUB 图片：原始摄影者版权，非商业研究与教育用途
-- 用户投稿：投稿者保留版权，仅授权本项目本地训练与评测使用
+Photographers retain their image copyrights. Dataset documentation and original metadata use CC BY 4.0; this does not grant a blanket license to the photographs. CUB images follow their source terms.

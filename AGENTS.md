@@ -4,7 +4,13 @@
 
 本文件约束后续代理、脚本和维护工作。详细的数据设计、目录、字段和验收方法见 [DATASET-SPEC-v1.md](docs/data/DATASET-SPEC-v1.md)。用户在当前会话的明确指示优先；已授权事项不重复询问。
 
+## Documentation language
+
+User-facing repository pages default to English and link to a paired Simplified Chinese page (`*.zh-CN.md`). Keep counts, release status, commands, and links consistent across both languages. Use short factual prose; put detailed validation scope and licensing in their dedicated documents instead of repeating caveats on the landing page. GitHub descriptions, release titles, and commit messages default to English. Existing Chinese research notes may remain archived and should be identified as Chinese when linked from English navigation.
+
 ## 1. 目标和当前阶段
+
+**最新授权（2026-10-24）**：上传征集目录现有全部图片；对比 `WonderLantern/e7-bird-network` 后开始 Z8 预标注，尽量使用本地 GPU。本段覆盖下文原有“本轮仅规范、不推理/GPU”的阶段限制。允许增量登记、公开副本制作、发布和预标注；不训练/蒸馏、不运行 Sony。预标注保留原始数字类号，未确认的部位语义不得伪造。
 
 - 优化真实枝叶遮挡下的鸟类对焦：可用眼优先，其次头，再其次整鸟；都不可辨时放弃。
 - 先人工标注与复核，再与冻结的原模型比较。不是鸟种分类项目。
@@ -19,7 +25,7 @@
 
 历史 `data/schema/annotation-schema.md`、CUB 空模板和 DS 的首批投稿空模板存在字段差异。不得直接合并后作为训练标签。按新规范显式迁移，保留原文件和迁移记录。
 
-`data/contributions-2026-10-23/manifest.csv` 是既有 292 个 ID 与 SHA-256 的注册依据。它不证明照片授权、已标注或来源身份已核实。历史目录名是弱线索，不是语义真值。
+`data/contributions-2026-10-23/manifest.csv` 保存最初 292 个 ID。此后以 `data/community-2026-10-24/manifest.csv` 的 `image_id + original_sha256` 锁定已扩充的 296 个 ID；下一次登记必须使用最新完整注册清单，不能退回旧 292 条后重新分配新增 ID。清单不证明已标注或来源身份已核实。历史目录名是弱线索，不是语义真值。
 
 ## 3. 原片与工作目录
 

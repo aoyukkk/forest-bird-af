@@ -1,0 +1,7 @@
+{
+  "images_compared": 296,
+  "equal_records": 296,
+  "different_records": [],
+  "postprocessor_used_for_prelabels": "original local Z8 BA2",
+  "scope": "Finite corpus comparison of two decoders on the same new-profile head buffers; not AF or hardware equivalence."
+}

@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-24",
+  "upstream_repository": "WonderLantern/e7-bird-network",
+  "upstream_commit": "8ced43b19edb845baef39a80c45d40be0b49efba",
+  "model_body_sha256": "e8d371e77efc3035d0c633c8c90aa4851f1675e5abcf7999edb23adc6439722b",
+  "scripts": {
+    "scripts/e7_backend.py": "a3df00e8b38991e6ca964adb82b39a61aeaee5fbe83951cbe0123f3e7ab3e203",
+    "scripts/prelabel_community.py": "523ce0d31428aeddef92f5a173511b312e7fbcaadd8833f96ba845c8bdc54616",
+    "scripts/validate_e7_backend.py": "60194bf16104caa43a438e9b0d5959505138681b2c871fe7e4d55d460cc250b8",
+    "scripts/validate_e7_batch.py": "4a2699d787e5e4106f3fe1148bf2fa20ec053b66bd3c17c4556f1dc91a97c07e",
+    "scripts/build_review_page.py": "31ef116a39247eddc0286deea7c306946ff8fd29e68abff4a0c3b0e9a81aecf9",
+    "scripts/package_prelabels.py": "27bd2dc0284752db14bb036bec7d1b0db12f8bda455ddc826af7de54a409f8c6"
+  },
+  "ui_revision": "en-zh-v1",
+  "note": "Presentation files were updated after inference without rerunning or editing model predictions."
+}

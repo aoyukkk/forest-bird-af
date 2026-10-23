@@ -1,0 +1,15 @@
+{
+  "file": "z8-prelabels-review-20261024.zip",
+  "images": 296,
+  "bytes": 835790988,
+  "sha256": "49d406c5d26f94b9eb562bbbfcbaed5b0bf43512048ebcc95cc8f11d88ef46ab",
+  "human_review_complete": false,
+  "review_ui_file": "review.html",
+  "review_ui_bytes": 44248,
+  "review_ui_sha256": "d9404dd5521916d877d301caa3ce94e5036ba8a363069e78abb49a0447a676dd",
+  "default_language": "en",
+  "languages": [
+    "en",
+    "zh-CN"
+  ]
+}

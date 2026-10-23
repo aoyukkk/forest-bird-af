@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "upstream_commit": "8ced43b19edb845baef39a80c45d40be0b49efba",
+  "torch": "2.7.0.dev20250117+cu126",
+  "numpy": "1.26.4",
+  "gpu": "NVIDIA GeForce RTX 4080 Laptop GPU",
+  "cases": [
+    {
+      "case": "stripe",
+      "differences": {
+        "fine": 0,
+        "coarse": 0,
+        "workspace": 0
+      },
+      "decoder_equal": true,
+      "seconds": 18.50270349998027
+    },
+    {
+      "case": "random",
+      "differences": {
+        "fine": 0,
+        "coarse": 0,
+        "workspace": 0
+      },
+      "decoder_equal": true,
+      "seconds": 20.468206899997313
+    }
+  ],
+  "class_semantics_confirmed": false,
+  "body_byte_identical": true,
+  "body_sha256": "e8d371e77efc3035d0c633c8c90aa4851f1675e5abcf7999edb23adc6439722b",
+  "real_image_gpu_seconds": 20.481284399982542,
+  "real_image_cpu_seconds": 30.41021180001553,
+  "real_image_cpu_gpu_differences": {
+    "fine": 0,
+    "coarse": 0
+  },
+  "gpu_repeat_differences": {
+    "fine": 0,
+    "coarse": 0
+  },
+  "real_image_input_sha256": "da6745f6af52754aa3b3583c91cca79d573c4fca76968825e54574ea4ebfc33f",
+  "real_image_records": []
+}

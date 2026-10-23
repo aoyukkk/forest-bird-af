@@ -1,0 +1,26 @@
+[
+  {
+    "file": "community-images-20261024-part01-of04.zip",
+    "bytes": 1243385689,
+    "sha256": "9060aa37950cc80ac4c087a045f230ab1c225eb15f3969f318e7b2f326716787",
+    "images": 177
+  },
+  {
+    "file": "community-images-20261024-part02-of04.zip",
+    "bytes": 1257439807,
+    "sha256": "13ee1437b45618db0ce1b7cfe95a3bfa5acc124e8a03f7a968965bf98fd191b6",
+    "images": 25
+  },
+  {
+    "file": "community-images-20261024-part03-of04.zip",
+    "bytes": 1284590646,
+    "sha256": "eac9b65e3bfbc2da6068f7ee8591488b019ee30535710a86f7919f3a4e287a77",
+    "images": 74
+  },
+  {
+    "file": "community-images-20261024-part04-of04.zip",
+    "bytes": 309764214,
+    "sha256": "4c373cbb425b8844b62dda9825f7ce04f2775f6206cfec066390340026e94528",
+    "images": 20
+  }
+]

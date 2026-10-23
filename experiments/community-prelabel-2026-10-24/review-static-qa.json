@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "images": 296,
+  "zeroCandidateFilter": 89,
+  "checks": [
+    "JavaScript parse",
+    "all cards",
+    "zero-candidate filter",
+    "decision serialization",
+    "error filter",
+    "original/overlay switch",
+    "export trigger",
+    "all image links exist"
+  ],
+  "scope": "Pure JavaScript logic with an in-memory DOM stub; no browser automation or layout verification."
+}
