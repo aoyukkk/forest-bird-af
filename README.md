@@ -12,6 +12,7 @@ Updated: 2026-10-24.
 |---|---|
 | Community images | 296 files: 259 JPG, 7 PNG, 30 NEF |
 | Image checks | All 296 originals preserved; public-copy pixel and RAW-sample checks passed |
+| Simulation input dataset | 296 lossless RGB PNGs at 384 × 256, with the exact saved CHW input buffers |
 | Z8 prelabeling | 296/296 completed on a local RTX 4080 Laptop GPU; 0 execution errors |
 | Candidates | 660 boxes across 207 images; 89 images have no candidates |
 | Human review | Ready to begin |
@@ -19,6 +20,8 @@ Updated: 2026-10-24.
 | Sony experiments | Paused |
 
 The image and review bundles are available in [Releases](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v1). [Dataset details](data/community-2026-10-24/README.md).
+
+For reproducible model comparisons, download `z8-inputs-384x256-20261024.zip` from the same release. Its PNG pixels reproduce all 296 saved simulation inputs exactly. Original-resolution images remain in the four community image archives. [Input format and conversion code](data/community-2026-10-24/README.md#simulation-input-dataset).
 
 ## Download and review
 

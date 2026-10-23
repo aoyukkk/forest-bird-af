@@ -62,6 +62,21 @@
           "bytes": 436,
           "sha256": "f23c2d1aeeb45653991689b3c6245d9ef09193af954e70712798b22f23d9a011",
           "url": "https://github.com/aoyukkk/forest-bird-af/releases/download/community-images-2026-10-24-v1/SHA256SUMS.txt"
+        },
+        {
+          "file": "z8-inputs-384x256-20261024.zip",
+          "bytes": 111906720,
+          "sha256": "7079969cde4acee2eb99bf21e1861480ad28e5b7809f05c7db145f51f839abd7",
+          "images": 296,
+          "url": "https://github.com/aoyukkk/forest-bird-af/releases/download/community-images-2026-10-24-v1/z8-inputs-384x256-20261024.zip",
+          "width": 384,
+          "height": 256
+        },
+        {
+          "file": "Z8-INPUT-SHA256SUMS.txt",
+          "bytes": 98,
+          "sha256": "67c14a7a2527c94ae0e25ec7a32ff50c32bc3e287c2d2d1bb6db122a3f7a4d6a",
+          "url": "https://github.com/aoyukkk/forest-bird-af/releases/download/community-images-2026-10-24-v1/Z8-INPUT-SHA256SUMS.txt"
         }
       ]
     }

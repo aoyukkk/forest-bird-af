@@ -25,7 +25,28 @@ All JPEG/PNG decoded pixels and all 30 NEF sensor arrays match their originals. 
 
 NEF review JPEGs use rawpy 0.25.1, AHD, camera white balance, sRGB 8-bit, no auto-brightening, and JPEG quality 98 with no chroma subsampling. The review bundle includes these full-resolution renders; image archives retain the NEF files.
 
-## Prelabels
+## Simulation input dataset
+
+Download `z8-inputs-384x256-20261024.zip` from the same release. It contains:
+
+- `input-png/`: 296 lossless RGB PNGs, each **384 × 256 pixels** (98,304 pixels).
+- `input-chw-u8/`: the 296 preserved input buffers, each 294,912 bytes, in CHW order `[3, 256, 384]`.
+- `input-manifest.jsonl`: stable IDs, dimensions, and hashes linking inputs to original, public, and review images.
+- `input-validation.json`: all saved input hashes and PNG pixel round-trips passed.
+
+The PNGs were reconstructed from the saved buffers, without another inference run or image resize. Rearranging their decoded RGB pixels to CHW reproduces the recorded `input_sha256` for every image. PNG file hashes differ from input-buffer hashes.
+
+The network receives `float32(u8) / 256`. These are the exact inputs used by this simulation run; the complete in-camera sensor-to-network preprocessing has not been established. Keep original-resolution images for detailed eye/head annotation and use these fixed inputs for model comparisons. Labels remain pending human review.
+
+The conversion is implemented in [z8_input.py](../../scripts/z8_input.py): apply EXIF orientation, convert to RGB, stretch to 384 × 256 using Pillow bilinear interpolation, then store R, G, B planes. NEF first uses the fixed review JPEG described above. To reproduce one input from its review image:
+
+```powershell
+python scripts/z8_input.py path/to/review-image.jpg --output input-check --expected-sha256 INPUT_SHA256
+```
+
+Use the `input_chw_u8_sha256` from [input-manifest.jsonl](input-manifest.jsonl). Exact reproduction depends on the review image and the Pillow version recorded in [input-validation.json](input-validation.json). The publisher is [package_z8_inputs.py](../../scripts/package_z8_inputs.py).
+
+## Prelabel results
 
 All 296 files completed inference: **207 images with candidates, 89 without, 660 candidate boxes**. Proposals retain native class slots 0–5. Human review and data splitting are pending.
 

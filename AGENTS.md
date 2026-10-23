@@ -6,6 +6,8 @@
 
 ## Documentation language
 
+Reports and progress updates to the user default to English, unless the user requests another language.
+
 User-facing repository pages default to English and link to a paired Simplified Chinese page (`*.zh-CN.md`). Keep counts, release status, commands, and links consistent across both languages. Use short factual prose; put detailed validation scope and licensing in their dedicated documents instead of repeating caveats on the landing page. GitHub descriptions, release titles, and commit messages default to English. Existing Chinese research notes may remain archived and should be identified as Chinese when linked from English navigation.
 
 ## 1. 目标和当前阶段

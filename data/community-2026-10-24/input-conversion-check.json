@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "image_id": "fb_0001",
+      "source_format": "jpg",
+      "input_sha256": "da6745f6af52754aa3b3583c91cca79d573c4fca76968825e54574ea4ebfc33f",
+      "passed": true
+    },
+    {
+      "image_id": "fb_0135",
+      "source_format": "png",
+      "input_sha256": "b9b557c0a7cfcaba8043e4bc6c54a634b9e2687ab425fe8590ef07e6dd8bde0d",
+      "passed": true
+    },
+    {
+      "image_id": "fb_0175",
+      "source_format": "nef",
+      "input_sha256": "cf32015a8bec7d198140e859dd20950951e24d4dd83548fbcdd07c8edf385127",
+      "passed": true
+    }
+  ],
+  "scope": "One review image per source format; every packaged PNG separately passed byte-for-byte round-trip against its frozen buffer."
+}

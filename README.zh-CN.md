@@ -12,6 +12,7 @@
 |---|---|
 | 社区照片 | 296 个文件：259 JPG、7 PNG、30 NEF |
 | 图像校验 | 296 份原片保持不变；公开副本的像素及 RAW 采样校验通过 |
+| 模拟输入数据集 | 296 张 384 × 256 无损 RGB PNG，附实际留存的 CHW 输入字节 |
 | Z8 预标注 | 本地 RTX 4080 Laptop GPU 完成 296/296 张，执行错误 0 |
 | 候选结果 | 207 张有框，共 660 个候选；89 张无候选 |
 | 人工复核 | 已准备就绪 |
@@ -19,6 +20,8 @@
 | Sony 实验 | 暂停 |
 
 图片包与复核包已在 [Releases](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v1) 提供下载。[数据集说明](data/community-2026-10-24/README.zh-CN.md)。
+
+复现实验可下载同一 Release 中的 `z8-inputs-384x256-20261024.zip`。296 张 PNG 的像素均与留存的模拟输入逐字节一致；全分辨率图片继续由四个社区图片包提供。[输入格式与转换代码](data/community-2026-10-24/README.zh-CN.md#模拟输入数据集)。
 
 ## 下载与复核
 
