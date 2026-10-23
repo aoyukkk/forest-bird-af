@@ -1,0 +1,150 @@
+{
+ "created": "2026-10-24T00:52:45",
+ "total_images": 292,
+ "with_exif": 279,
+ "without_exif": 13,
+ "cameras": {
+  "NIKON Z 8": 279
+ },
+ "lenses": {
+  "AF-S NIKKOR 500mm f/5.6E PF ED VR": 167,
+  "NIKKOR Z 600mm f/6.3 VR S": 22,
+  "NIKKOR Z 180-600mm f/5.6-6.3 VR": 86,
+  "VR 600mm f/4E": 4
+ },
+ "formats": {
+  "MPO": 248,
+  "PNG": 7,
+  "JPEG": 7,
+  "NEF": 30
+ },
+ "date_range": {
+  "earliest": "2025:01:18 14:07:52",
+  "latest": "2026:10:20 15:07:15"
+ },
+ "groups": [
+  {
+   "group": "261023224715",
+   "count": 134,
+   "subgroups": {},
+   "dates": [
+    "2026:10:20"
+   ],
+   "size_mb": 728.0
+  },
+  {
+   "group": "root_mixed",
+   "count": 36,
+   "subgroups": {},
+   "dates": [
+    "2026:06:30",
+    "2026:09:27",
+    "2026:10:02",
+    "2026:10:03",
+    "2026:10:11"
+   ],
+   "size_mb": 244.4
+  },
+  {
+   "group": "北红",
+   "count": 2,
+   "subgroups": {},
+   "dates": [
+    "2026:02:02"
+   ],
+   "size_mb": 34.4
+  },
+  {
+   "group": "少量对焦素材",
+   "count": 36,
+   "subgroups": {
+    "单点": 8,
+    "虚的": 28
+   },
+   "dates": [
+    "2025:01:18",
+    "2025:04:24",
+    "2025:07:06",
+    "2025:08:24",
+    "2025:09:02",
+    "2025:09:14",
+    "2025:10:19",
+    "2025:10:24"
+   ],
+   "size_mb": 1638.1
+  },
+  {
+   "group": "山椒鸟（连拍虚实）",
+   "count": 9,
+   "subgroups": {},
+   "dates": [
+    "2026:06:30"
+   ],
+   "size_mb": 113.4
+  },
+  {
+   "group": "某种鹡鸰",
+   "count": 23,
+   "subgroups": {},
+   "dates": [
+    "2026:06:30"
+   ],
+   "size_mb": 266.6
+  },
+  {
+   "group": "灰头鹀",
+   "count": 16,
+   "subgroups": {},
+   "dates": [
+    "2026:02:02"
+   ],
+   "size_mb": 283.6
+  },
+  {
+   "group": "灰背燕尾",
+   "count": 2,
+   "subgroups": {},
+   "dates": [
+    "2026:06:30"
+   ],
+   "size_mb": 22.3
+  },
+  {
+   "group": "白头鹎（连拍虚实）",
+   "count": 11,
+   "subgroups": {},
+   "dates": [
+    "2026:06:30"
+   ],
+   "size_mb": 124.0
+  },
+  {
+   "group": "红尾水鸲",
+   "count": 13,
+   "subgroups": {},
+   "dates": [
+    "2026:06:30",
+    "2026:07:15"
+   ],
+   "size_mb": 325.8
+  },
+  {
+   "group": "红耳鹎",
+   "count": 2,
+   "subgroups": {},
+   "dates": [
+    "2026:06:30"
+   ],
+   "size_mb": 22.7
+  },
+  {
+   "group": "高山短翅蝗莺",
+   "count": 8,
+   "subgroups": {},
+   "dates": [
+    "2026:07:05"
+   ],
+   "size_mb": 112.2
+  }
+ ]
+}
