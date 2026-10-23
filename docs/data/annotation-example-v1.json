@@ -1,0 +1,46 @@
+{
+  "example_only": true,
+  "schema_version": "forest-bird-manual-v1",
+  "image_id": "EXAMPLE_NOT_A_REGISTERED_IMAGE",
+  "review_image": {
+    "render_id": "example-render-v1",
+    "sha256": null,
+    "width": 1000,
+    "height": 800,
+    "orientation_applied": true
+  },
+  "annotation_status": "annotated",
+  "presence": "present",
+  "instances": [
+    {
+      "instance_id": "b1",
+      "bird_bbox_xyxy": [200, 150, 600, 650],
+      "head_bbox_xyxy": [300, 170, 420, 290],
+      "eyes": [],
+      "part_visibility": {
+        "bird": "partial",
+        "head": "partial",
+        "eye": "hidden"
+      },
+      "invisibility_reasons": ["occlusion"],
+      "occluder_types": ["branch"],
+      "occluded_parts": ["eye"],
+      "af_reference_target_original": "head",
+      "af_anchor_original_xy": [340, 220],
+      "needs_review": true,
+      "notes": "虚构示例：眼被枝挡住、头可辨。不表示任何实际照片的答案。"
+    }
+  ],
+  "uncertain_regions": [],
+  "input_assessments": [],
+  "provenance": {
+    "annotator_id": "EXAMPLE",
+    "reviewer_id": null,
+    "annotated_at_utc": null,
+    "reviewed_at_utc": null,
+    "protocol_version": "manual-v1",
+    "revision": 1,
+    "parent_revision": null
+  },
+  "split": null
+}
