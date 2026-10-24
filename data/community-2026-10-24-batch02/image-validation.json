@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checked": 227,
+  "errors": [],
+  "jpeg_png_decoded_pixels_unchanged": true,
+  "nef_sensor_samples_unchanged": true,
+  "rawpy": "0.25.1",
+  "raw_render": {
+    "camera_wb": true,
+    "output_bps": 8,
+    "no_auto_bright": true,
+    "color": "sRGB",
+    "demosaic": "AHD",
+    "jpeg_quality": 98,
+    "subsampling": 0
+  }
+}

@@ -10,39 +10,41 @@
 
 | 工作 | 状态 |
 |---|---|
-| 社区照片 | 296 个文件：259 JPG、7 PNG、30 NEF |
-| 图像校验 | 296 份原片保持不变；公开副本的像素及 RAW 采样校验通过 |
-| 模拟输入数据集 | 296 张 384 × 256 无损 RGB PNG，附实际留存的 CHW 输入字节 |
-| Z8 预标注 | 本地 RTX 4080 Laptop GPU 完成 296/296 张，执行错误 0 |
-| 候选结果 | 207 张有框，共 660 个候选；89 张无候选 |
+| 社区照片 | 523 个文件：486 JPG、7 PNG、30 NEF |
+| 图像校验 | 523 份已登记原片保持不变；公开副本的像素及 RAW 采样校验通过 |
+| 模拟输入数据集 | 两批合计 523 张 384 × 256 无损 RGB PNG，附留存的 CHW 输入 |
+| Z8 预标注 | 本地 RTX 4080 Laptop GPU 两批完成 523/523 张，执行错误 0 |
+| 候选结果 | 387 张有框，共 1262 个候选；136 张无候选 |
 | 人工复核 | 已准备就绪 |
 | 定向微调 | 尚未开始 |
 | Sony 实验 | 暂停 |
 
-图片包与复核包已在 [Releases](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v1) 提供下载。[数据集说明](data/community-2026-10-24/README.zh-CN.md)。
-
-复现实验可下载同一 Release 中的 `z8-inputs-384x256-20261024.zip`。296 张 PNG 的像素均与留存的模拟输入逐字节一致；全分辨率图片继续由四个社区图片包提供。[输入格式与转换代码](data/community-2026-10-24/README.zh-CN.md#模拟输入数据集)。
+[最新发布](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v2)新增 **227 张 JPG**，编号 fb_0297–fb_0523。GPU 预标注得到 602 个原始候选，180 张有候选、47 张无候选。首批 296 张的发布保持不变。[本批说明](data/community-2026-10-24-batch02/README.zh-CN.md)。
 
 ## 下载与复核
 
-1. 在 Release 下载四个 `community-images-20261024-partXX-of04.zip` 和 `SHA256SUMS.txt`，解压到同一目录，合并 `images/`。
-2. 将 `z8-prelabels-review-20261024.zip` 解压到同一目录，再把 Release 单独提供的 `review.html` 复制进去，替换包内页面。页面默认英文，可切换简体中文。
-3. 检查整张照片，优先查看 89 张无候选图。将结果记为正确、需要修改或不确定。
-4. 导出复核决定 JSON。正确图保留作对照，错误图进入精标队列。
+| 批次 | 图数 | 下载 |
+|---|---:|---|
+| 首批快照 | 296 | [v0.1](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v1) |
+| 第二批 | 227 | [v0.2](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v2) |
 
-复核页支持原图与带框图切换、筛选、备注和决定导出。决定先保存在浏览器中，结束前请导出。眼和头的精标使用完整分辨率图片。
+每批提供全分辨率公开副本、固定 384 × 256 模拟输入和复核包。完整 523 张需要下载两批；新包只含新增 227 张。ZIP 使用各批校验文件核对。
 
-当前框保留模型原始类号 0–5，眼、头、整鸟的语义对应仍待确认。
+第二批将图片包和复核包解压到同一目录，打开 `review.html` 即可。页面默认英文，可切换简体中文。首批 v0.1 还需用该 Release 独立提供的 `review.html` 替换包内页面。
+
+检查整张图片，优先看无候选图，结束后导出决定 JSON。正确图保留作对照，错误图进入精标。眼、头精标使用全分辨率图片，原始类号 0–5 的语义仍待确认。
+
+累计编号使用 [data/registry.csv](data/registry.csv)。[输入格式与转换代码](data/community-2026-10-24/README.zh-CN.md#模拟输入数据集)。
 
 ## 模型与验证
 
 本地 Z8 resource744 的模型主体与 [WonderLantern/e7-bird-network](https://github.com/WonderLantern/e7-bird-network) 逐字节相同。本轮采用其数值配置和通过验证的 CUDA 适配，后处理保留本地 Z8 原厂路径。
 
 - 公开实机参考样例、真实图 CPU/GPU 对照均通过逐位检查。
-- 两种解码器在本批 296 张图上的候选记录全部一致。
-- 五个 GPU 网络批次累计 185.95 秒，不包含图片读写、后处理和人工复核。
+- 两批共 523 张图片的 E7 主机解码与留存 Z8 原厂候选记录全部一致。
+- 首批 296 张的 GPU 网络累计 185.95 秒；新增 227 张为 143.13 秒，均不包含图片读写、后处理和人工复核。
 
-详见[对比验证报告](docs/reports/05-e7-comparison-and-cuda.zh-CN.md)和[执行记录](experiments/community-prelabel-2026-10-24/)。
+详见[对比验证报告](docs/reports/05-e7-comparison-and-cuda.zh-CN.md)和[最新执行记录](experiments/community-prelabel-2026-10-24-batch02/)。
 
 ## 下一步
 
@@ -54,7 +56,7 @@
 
 | 内容 | 入口 |
 |---|---|
-| 图片、清单和校验值 | [社区数据集](data/community-2026-10-24/README.zh-CN.md) |
+| 图片、清单和校验值 | [社区数据集](data/README.zh-CN.md) |
 | 推理与人工复核 | [预标注流程](docs/run-prelabel.zh-CN.md) |
 | 模型身份与 GPU 检查 | [验证报告](docs/reports/05-e7-comparison-and-cuda.zh-CN.md) |
 | 数据归类与标注规则 | [规范 v1](docs/data/DATASET-SPEC-v1.md) |

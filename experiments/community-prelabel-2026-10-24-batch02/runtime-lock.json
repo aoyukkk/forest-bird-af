@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-24",
+  "upstream_commit": "8ced43b19edb845baef39a80c45d40be0b49efba",
+  "model_body_sha256": "e8d371e77efc3035d0c633c8c90aa4851f1675e5abcf7999edb23adc6439722b",
+  "scripts": {
+    "scripts/e7_backend.py": "a3df00e8b38991e6ca964adb82b39a61aeaee5fbe83951cbe0123f3e7ab3e203",
+    "scripts/prelabel_community.py": "523ce0d31428aeddef92f5a173511b312e7fbcaadd8833f96ba845c8bdc54616",
+    "scripts/validate_e7_batch.py": "4a2699d787e5e4106f3fe1148bf2fa20ec053b66bd3c17c4556f1dc91a97c07e",
+    "scripts/build_review_page.py": "bd3eb5edddd33b5013b7cbb41b373b951e77ed8945c15d1bf41e8985f6f798e6",
+    "scripts/package_prelabels.py": "b3afe4e80b12bf9c26d594c6df2f2936a48c17a24844d546022b1287a99703ec",
+    "scripts/package_z8_inputs.py": "c5738bed11d78979bb8009b73f09536eeee8fdca596261648ff5a16461a69da2",
+    "scripts/sanitize_jpeg.py": "5a1dfa902b609a3b332cb7983c06d547692e939b265b00a647e53929490fc9c8",
+    "scripts/prepare_community_release.py": "faa3ddd1609f84665994c4b6a0fe30af7738ed4154751b0aae04c57ff3a167df",
+    "scripts/finalize_community_release.py": "39f8c5ebae7080140aefc041afcb4c94d551f06ab40f3a97acbd193ab3e1f7a0",
+    "scripts/extract_verified_zip.py": "e0d2696bbd84f8f381a681e5ba73399e522560f0fe67371d42c1a11a44b7e41a",
+    "scripts/compare_saved_decoders.py": "2d3954e991ac4a787eea0c42cdad9066e24249c12681248c6d1fb8ca40f35bff",
+    "scripts/z8_input.py": "4c17f8d10c6feacf1998dd07a10de4287ca9d73c3052ae85aa9bbda3c4622e22",
+    "scripts/verify_review_page.mjs": "da1976c50f2d1d331499fc1b4890e29547d3d9790ef87d3505ba99008d820626"
+  },
+  "inference_scripts_matched_first_batch_lock": true,
+  "reference_validation": "../community-prelabel-2026-10-24/single-image-validation.json",
+  "fresh_batch_size": 64,
+  "training_started": false
+}

@@ -1,0 +1,44 @@
+{
+  "complete": true,
+  "images_expected": 227,
+  "images_completed": 227,
+  "failed": [],
+  "backend": "CUDA E7 numerical profile with original local Z8 BA2 postprocessor",
+  "upstream_commit": "8ced43b19edb845baef39a80c45d40be0b49efba",
+  "body_sha256": "e8d371e77efc3035d0c633c8c90aa4851f1675e5abcf7999edb23adc6439722b",
+  "gpu": "NVIDIA GeForce RTX 4080 Laptop GPU",
+  "torch": "2.7.0.dev20250117+cu126",
+  "batch_size": 64,
+  "class_semantics_confirmed": false,
+  "human_review_complete": false,
+  "training_started": false,
+  "batches": [
+    {
+      "images": 64,
+      "network_seconds": 39.108612699987134
+    },
+    {
+      "images": 64,
+      "network_seconds": 39.7390757999965
+    },
+    {
+      "images": 64,
+      "network_seconds": 39.2476398999861
+    },
+    {
+      "images": 35,
+      "network_seconds": 25.039545300009195
+    }
+  ],
+  "total_candidates": 602,
+  "images_with_candidates": 180,
+  "images_without_candidates": 47,
+  "raw_class_counts": {
+    "1": 199,
+    "5": 200,
+    "0": 179,
+    "3": 12,
+    "2": 11,
+    "4": 1
+  }
+}

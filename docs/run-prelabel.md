@@ -2,9 +2,9 @@
 
 **English** | [简体中文](run-prelabel.zh-CN.md)
 
-## Review this batch
+## Review a batch
 
-Download the image archives, review bundle, and separate `review.html` from the [release](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v1). Extract the archives into one directory, then copy the separate page there to replace the bundled version. The page defaults to English and includes a Simplified Chinese selector.
+Choose a batch in [Releases](https://github.com/aoyukkk/forest-bird-af/releases). Download its image archive(s) and review bundle, then extract them into one directory. Batch 02 already includes the bilingual page. For the first 296-image release, also copy its separate `review.html` there to replace the bundled version. The page defaults to English and includes a Simplified Chinese selector.
 
 Start with images without candidates. Inspect the whole image, mark correct boxes, errors, or uncertain cases, and add notes. Export the decisions JSON before closing the browser. Use full-resolution images for detailed annotation.
 
@@ -21,6 +21,8 @@ Obtain the pinned [E7 checkout](https://github.com/WonderLantern/e7-bird-network
 | Script | Purpose |
 |---|---|
 | `prepare_community_release.py` | Import assets with stable IDs and a private source map |
+| `extract_verified_zip.py` | Extract a new ZIP directory and verify every file before deleting the source archive |
+| `sanitize_jpeg.py` | Remove JPEG metadata segments while preserving compressed samples, color markers, and orientation |
 | `finalize_community_release.py` | Check image integrity, render NEF review images, and package public copies |
 | `validate_e7_backend.py` | Check model identity, physical fixtures, and CPU/GPU agreement |
 | `validate_e7_batch.py` | Check the chosen CUDA batch size |
@@ -28,7 +30,7 @@ Obtain the pinned [E7 checkout](https://github.com/WonderLantern/e7-bird-network
 | `package_prelabels.py` | Package images, proposals, and the review page |
 | `build_review_page.py` | Update the English/Simplified Chinese page without rerunning inference |
 
-Use the latest complete manifest for `--legacy`. Future imports should use the 296-row register, not the earlier 292-row snapshot. Apply metadata cleaning to copies before finalization.
+Use [data/registry.csv](../data/registry.csv) for `--legacy`. Add `--new-only` to process only new hashes, and explicitly list non-image extensions to leave local with `--ignore-extension`. Audit metadata cleaning on copies before finalization. `--archive-prefix` / `--archive-name` give each batch distinct download names.
 
 ```powershell
 conda run --no-capture-output -n machine python scripts/prelabel_community.py `

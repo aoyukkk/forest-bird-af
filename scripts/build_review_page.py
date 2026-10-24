@@ -21,24 +21,31 @@ document.getElementById('grid').innerHTML=visible().map(r=>`<article class="card
 document.getElementById('filter').onchange=render;document.getElementById('toggle').onclick=()=>{overlay=!overlay;render()};document.getElementById('language').onchange=()=>{language=document.getElementById('language').value;localStorage.setItem(key+'-language',language);render()};document.getElementById('export').onclick=()=>{const payload={schema:'prediction-assisted-review-v1',created_at:new Date().toISOString(),review_with_predictions:true,class_semantics_confirmed:false,decisions};const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}));a.download='z8-review-decisions.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)};render();</script>'''
 
 
-def build_html(records):
+def build_html(records, review_id=None):
     rows = [{'id': r['image_id'], 'count': len(r['candidates']),
              'overlay': 'overlays/' + r['image_id'] + '.jpg',
              'image': r['review_relative_path'],
              'full': r.get('full_review_relative_path', r['review_relative_path'])} for r in records]
-    return TEMPLATE.replace('__DATA__', json.dumps(rows).replace('</', '<\\/'))
+    page = TEMPLATE.replace('__DATA__', json.dumps(rows).replace('</', '<\\/'))
+    if review_id is not None:
+        import re
+        if not re.fullmatch(r'[A-Za-z0-9_-]+', review_id):
+            raise ValueError('Review ID must contain only letters, digits, underscore or hyphen')
+        page = page.replace('forest-bird-z8-prelabel-20261024-v1', 'forest-bird-z8-prelabel-' + review_id)
+    return page
 
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--predictions', required=True, type=Path)
     p.add_argument('--output', required=True, type=Path)
+    p.add_argument('--review-id', help='Separate browser storage namespace for a new batch')
     a = p.parse_args()
     if a.output.exists():
         raise RuntimeError('Choose a new output file')
     records = [json.loads(line) for line in a.predictions.read_text(encoding='utf-8').splitlines()]
     a.output.parent.mkdir(parents=True, exist_ok=True)
-    a.output.write_text(build_html(records), encoding='utf-8')
+    a.output.write_text(build_html(records, a.review_id), encoding='utf-8')
     print(json.dumps({'images': len(records), 'default_language': 'en', 'languages': ['en', 'zh-CN']}))
 
 

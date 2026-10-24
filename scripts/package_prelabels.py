@@ -17,6 +17,8 @@ def main():
     p.add_argument('--run', type=Path, required=True)
     p.add_argument('--snapshot', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
+    p.add_argument('--archive-name', default='z8-prelabels-review-20261024.zip')
+    p.add_argument('--review-id', help='Separate browser storage namespace for this batch')
     a = p.parse_args()
     summary = json.loads((a.run / 'summary.json').read_text())
     if not summary['complete'] or summary['failed']:
@@ -52,12 +54,12 @@ def main():
         writer.writeheader()
         writer.writerows(links)
     page = a.output / 'review.html'
-    page.write_text(build_html(rows), encoding='utf-8')
+    page.write_text(build_html(rows, a.review_id), encoding='utf-8')
     (a.output / 'README.md').write_text('''# Z8 review bundle
 
 **English** | [简体中文](README.zh-CN.md)
 
-Extract all four community image archives here to merge images/. Open review.html, which defaults to English and includes Simplified Chinese. Review the whole image, add decisions and notes, then export the JSON file.
+Extract this batch's community image archive(s) here to merge images/. Open review.html, which defaults to English and includes Simplified Chinese. Review the whole image, add decisions and notes, then export the JSON file.
 
 Full-resolution NEF review JPEGs are in raw-review/. The image paths and review hashes are listed in full-resolution-links.csv. Use full-resolution images for detailed annotation.
 
@@ -68,12 +70,12 @@ Native slots 0-5 still need semantic labels. Proposals await human review. Photo
 [English](README.md) | **简体中文**
 
 1. 解压后打开 review.html，查看带框预览、切换原图预览、筛选无候选图，并导出人工复核决定。
-2. 为检查微小眼部，请把四个 community-images 图片包解压到本目录，合并 images/。完整图路径见 full-resolution-links.csv；NEF 的固定全尺寸审核 JPEG 已包含于 raw-review/。
+2. 为检查微小眼部，请把本批 community-images 图片包解压到本目录，合并 images/。完整图路径见 full-resolution-links.csv；若本批含 NEF，其固定全尺寸审核 JPEG 包含于 raw-review/。
 3. 预览不能代替完整图精标。slot 0–5 的眼/头/鸟语义尚未确认；所有结果都是待审核建议，不是人工真值。没有候选不等于没有鸟。
 4. 人工决定保存在当前浏览器 localStorage，结束时必须导出 JSON。原模型输出不随人工决定覆盖。
 5. 本包不含权重、固件、SDK、神经网络输出张量、私人原路径或联系方式。图片版权仍归摄影者，不默认授予统一 CC 许可。
 ''', encoding='utf-8')
-    target = a.output.parent / 'z8-prelabels-review-20261024.zip'
+    target = a.output.parent / a.archive_name
     if target.exists():
         raise RuntimeError('Do not overwrite an earlier bundle')
     with zipfile.ZipFile(target, 'w', zipfile.ZIP_DEFLATED, compresslevel=1, allowZip64=True) as archive:

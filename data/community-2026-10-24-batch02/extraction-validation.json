@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "archive_files_verified": 228,
+  "images_imported": 227,
+  "handoff_notes_kept_local": 1,
+  "archive_deleted": true,
+  "archive_sha256": "985e8023acdf5d19f27e4977a3564d1b5fb558beab5f96de471bb5c3d885813f",
+  "extracted_originals_checked": 227,
+  "original_hash_mismatches": 0,
+  "filename_decoding": "ZIP legacy names decoded as GBK; UTF-8 names retained"
+}

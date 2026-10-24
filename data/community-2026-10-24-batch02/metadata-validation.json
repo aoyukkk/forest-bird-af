@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "images": 227,
+  "nonempty_identifying_tags": 0,
+  "method": "Remove all JPEG APP metadata and COM segments except JFIF, ICC and Adobe color markers; write minimal EXIF orientation. No image recompression.",
+  "failed_first_pass_preserved_locally": true
+}

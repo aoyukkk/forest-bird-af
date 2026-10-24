@@ -26,6 +26,7 @@ def rgb(path):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--snapshot', type=Path, required=True)
+    p.add_argument('--archive-prefix', default='community-images-20261024')
     a = p.parse_args()
     root = a.snapshot
     source_rows = json.loads((root / 'private-source-map.json').read_text(encoding='utf-8'))
@@ -99,7 +100,7 @@ def main():
         chunks.append(current)
     packages = []
     for index, paths in enumerate(chunks, 1):
-        target = root / 'packages' / f'community-images-20261024-part{index:02d}-of{len(chunks):02d}.zip'
+        target = root / 'packages' / f'{a.archive_prefix}-part{index:02d}-of{len(chunks):02d}.zip'
         with zipfile.ZipFile(target, 'w', zipfile.ZIP_STORED, allowZip64=True) as archive:
             for path in paths:
                 archive.write(path, 'images/' + path.name)

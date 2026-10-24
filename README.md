@@ -10,39 +10,41 @@ Updated: 2026-10-24.
 
 | Work | Status |
 |---|---|
-| Community images | 296 files: 259 JPG, 7 PNG, 30 NEF |
-| Image checks | All 296 originals preserved; public-copy pixel and RAW-sample checks passed |
-| Simulation input dataset | 296 lossless RGB PNGs at 384 × 256, with the exact saved CHW input buffers |
-| Z8 prelabeling | 296/296 completed on a local RTX 4080 Laptop GPU; 0 execution errors |
-| Candidates | 660 boxes across 207 images; 89 images have no candidates |
+| Community images | 523 files: 486 JPG, 7 PNG, 30 NEF |
+| Image checks | All 523 registered originals preserved; public-copy pixel and RAW-sample checks passed |
+| Simulation input dataset | 523 lossless RGB PNGs at 384 × 256 across two releases, with saved CHW input buffers |
+| Z8 prelabeling | 523/523 completed across two batches on a local RTX 4080 Laptop GPU; 0 execution errors |
+| Candidates | 1262 boxes across 387 images; 136 images have no candidates |
 | Human review | Ready to begin |
 | Fine-tuning | Not started |
 | Sony experiments | Paused |
 
-The image and review bundles are available in [Releases](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v1). [Dataset details](data/community-2026-10-24/README.md).
-
-For reproducible model comparisons, download `z8-inputs-384x256-20261024.zip` from the same release. Its PNG pixels reproduce all 296 saved simulation inputs exactly. Original-resolution images remain in the four community image archives. [Input format and conversion code](data/community-2026-10-24/README.md#simulation-input-dataset).
+The [latest release](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v2) adds **227 JPGs**, IDs fb_0297–fb_0523. GPU prelabeling found 602 raw candidates across 180 images; 47 images have no candidates. The first 296-image release remains unchanged. [Latest batch details](data/community-2026-10-24-batch02/README.md).
 
 ## Download and review
 
-1. Download the four `community-images-20261024-partXX-of04.zip` files and `SHA256SUMS.txt` from the release. Extract them into one directory to merge `images/`.
-2. Extract `z8-prelabels-review-20261024.zip` there, then copy the release's separate `review.html` into that directory, replacing the bundled page. It opens in English and includes a 简体中文 selector.
-3. Review the whole image, starting with the 89 images without candidates. Mark boxes as correct, needing correction, or uncertain.
-4. Export the review decisions as JSON. Keep correct examples as controls and send errors for detailed annotation.
+| Batch | Images | Download |
+|---|---:|---|
+| First snapshot | 296 | [v0.1](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v1) |
+| Batch 02 | 227 | [v0.2](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v2) |
 
-The review page supports image/overlay switching, filters, notes, and decision export. Decisions are stored in the browser until exported. Use the full-resolution images for eye and head annotation.
+Each release includes original-resolution public copies, fixed 384 × 256 simulation inputs, and a review bundle. Download both batches for all 523 images; new downloads contain only the additional 227. Check ZIPs against each release's checksum file.
 
-Current boxes retain the model's native slots 0-5. Mapping those slots to eye, head, and bird remains part of the annotation work.
+For batch 02, extract its image and review ZIPs into one directory and open `review.html`. The page defaults to English with a Simplified Chinese selector. For v0.1, also replace the bundled page with that release's separate `review.html`.
+
+Review the whole image, starting with images without candidates. Export decisions as JSON, keep correct examples as controls, and send errors for detailed annotation. Use full-resolution images for eye and head annotation. Native slots 0–5 still need semantic labels.
+
+Use [data/registry.csv](data/registry.csv) for the complete stable-ID register. [Input format and conversion code](data/community-2026-10-24/README.md#simulation-input-dataset).
 
 ## Model and validation
 
 The Z8 resource744 model body is byte-identical to [WonderLantern/e7-bird-network](https://github.com/WonderLantern/e7-bird-network). We use its numerical profile with a validated CUDA adapter and retain the local Z8 factory postprocessor.
 
 - Public physical-reference fixtures and a real-image CPU/GPU comparison passed bitwise checks.
-- Both decoders produced identical candidate records on this batch of 296 images.
-- The five GPU network batches took 185.95 seconds in total. This excludes image I/O, postprocessing, and review.
+- E7 host decoding matched the saved original-Z8 candidate records on all 523 images across both batches.
+- GPU network time was 185.95 seconds for the first 296 images and 143.13 seconds for the new 227. This excludes image I/O, postprocessing, and review.
 
-See the [comparison and validation report](docs/reports/05-e7-comparison-and-cuda.md) and [execution records](experiments/community-prelabel-2026-10-24/).
+See the [comparison and validation report](docs/reports/05-e7-comparison-and-cuda.md) and [latest execution records](experiments/community-prelabel-2026-10-24-batch02/).
 
 ## Next steps
 
@@ -54,7 +56,7 @@ See the [comparison and validation report](docs/reports/05-e7-comparison-and-cud
 
 | Topic | Link |
 |---|---|
-| Images, manifests, and checksums | [Community dataset](data/community-2026-10-24/README.md) |
+| Images, manifests, and checksums | [Community datasets](data/README.md) |
 | Run inference and review results | [Prelabeling workflow](docs/run-prelabel.md) |
 | Model identity and GPU checks | [Validation report](docs/reports/05-e7-comparison-and-cuda.md) |
 | Dataset organization and annotation protocol | [Protocol v1, Chinese](docs/data/DATASET-SPEC-v1.md) |

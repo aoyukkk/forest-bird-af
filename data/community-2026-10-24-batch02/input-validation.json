@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "images": 227,
+  "width": 384,
+  "height": 256,
+  "saved_input_hash_mismatches": 0,
+  "png_roundtrip_mismatches": 0,
+  "input_bytes_per_image": 294912,
+  "dtype": "uint8",
+  "layout": "CHW",
+  "network_normalization": "float32(u8) / 256",
+  "preprocess_id": "review-EXIF-RGB-bilinear-stretch-384x256-u8-div256-v1",
+  "pillow": "11.0.0",
+  "inference_rerun": false,
+  "human_review_complete": false,
+  "input_manifest_sha256": "2dca524f6f7887fe17d4a6db40ad4623c750b8daaa057b570240ff083ba5cbeb"
+}

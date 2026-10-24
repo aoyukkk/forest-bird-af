@@ -19,6 +19,7 @@ def main():
     parser.add_argument('--run', type=Path, required=True)
     parser.add_argument('--manifest', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--archive-name', default='z8-inputs-384x256-20261024.zip')
     args = parser.parse_args()
     summary = json.loads((args.run / 'summary.json').read_text(encoding='utf-8'))
     if not summary['complete'] or summary['failed']:
@@ -74,9 +75,9 @@ def main():
                   'inference_rerun': False, 'human_review_complete': False,
                   'input_manifest_sha256': sha256(manifest_raw)}
     (args.output / 'input-validation.json').write_text(json.dumps(validation, indent=2) + '\n', encoding='utf-8')
-    (args.output / 'README.md').write_text('''# Z8 simulation input dataset
+    (args.output / 'README.md').write_text(f'''# Z8 simulation input dataset
 
-296 lossless RGB PNGs at 384 x 256 and their preserved CHW uint8 buffers.
+{len(rows)} lossless RGB PNGs at 384 x 256 and their preserved CHW uint8 buffers.
 Each PNG decodes to exactly the bytes used for the published prelabel run after
 HWC-to-CHW rearrangement. PNG file hashes and input-buffer hashes are separate.
 
@@ -94,7 +95,7 @@ https://github.com/aoyukkk/forest-bird-af
 
 Labels are pending human review. Photographs retain contributor copyrights.
 ''', encoding='utf-8')
-    archive_path = args.output.parent / 'z8-inputs-384x256-20261024.zip'
+    archive_path = args.output.parent / args.archive_name
     with archive_path.open('xb') as stream:
         with zipfile.ZipFile(stream, 'w', zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
             for path in sorted(args.output.rglob('*')):

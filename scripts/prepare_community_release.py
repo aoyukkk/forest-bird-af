@@ -24,6 +24,8 @@ def main():
     parser.add_argument('--source', required=True, type=Path)
     parser.add_argument('--legacy', required=True, type=Path)
     parser.add_argument('--output', required=True, type=Path)
+    parser.add_argument('--new-only', action='store_true', help='Copy only assets absent from the prior register')
+    parser.add_argument('--ignore-extension', action='append', default=[], help='Explicit non-image extensions to leave local')
     args = parser.parse_args()
     out = args.output.resolve()
     source = args.source.resolve()
@@ -38,11 +40,16 @@ def main():
     known = {source_hash(row): row['image_id'] for row in legacy}
     assert len(known) == len(legacy), 'Legacy duplicate hash requires explicit alias migration'
     next_id = max(int(row['image_id'].split('_')[1]) for row in legacy) + 1
+    legacy_hashes = set(known)
     rows, errors = [], []
+    ignored = []
     seen = set()
     candidates = sorted(p for p in source.rglob('*') if p.is_file() and not p.is_symlink())
     for path in candidates:
         if path.suffix.lower() not in {'.jpg', '.jpeg', '.png', '.nef', '.arw', '.tif', '.tiff', '.dng'}:
+            if path.suffix.lower() in args.ignore_extension:
+                ignored.append({'source': str(path), 'reason': 'explicit_non_image_extension'})
+                continue
             errors.append({'source': str(path), 'error': 'unhandled_file_type'})
             continue
         before = path.stat()
@@ -52,6 +59,9 @@ def main():
             errors.append({'source': str(path), 'error': 'changed_during_read'})
             continue
         image_id = known.get(sha)
+        if args.new_only and sha in legacy_hashes:
+            seen.add(sha)
+            continue
         if image_id is None:
             image_id = f'fb_{next_id:04d}'
             next_id += 1
@@ -73,6 +83,8 @@ def main():
               'new_assets': len(seen - {source_hash(r) for r in legacy}),
               'original_bytes': sum(r['original_bytes'] for r in rows),
               'missing_legacy_ids': missing, 'errors': errors,
+              'snapshot_assets': len({row['image_id'] for row in rows}),
+              'new_only': args.new_only, 'ignored_non_images': ignored,
               'originals_modified': False, 'public_metadata_cleaned': False}
     (out / 'private-source-map.json').write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding='utf-8')
     (out / 'snapshot.json').write_text(json.dumps(report, indent=2), encoding='utf-8')

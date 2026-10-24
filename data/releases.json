@@ -79,6 +79,55 @@
           "url": "https://github.com/aoyukkk/forest-bird-af/releases/download/community-images-2026-10-24-v1/Z8-INPUT-SHA256SUMS.txt"
         }
       ]
+    },
+    {
+      "tag": "community-images-2026-10-24-v2",
+      "url": "https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v2",
+      "files": 227,
+      "cumulative_files": 523,
+      "incremental": true,
+      "inference_complete": true,
+      "human_review_complete": false,
+      "assets": [
+        {
+          "file": "community-images-20261024-batch02-part01-of01.zip",
+          "bytes": 817439110,
+          "sha256": "c1625bb00dd4be54f240713f7dead65479f4fb5964cf9bbee7db92ac96549c03",
+          "url": "https://github.com/aoyukkk/forest-bird-af/releases/download/community-images-2026-10-24-v2/community-images-20261024-batch02-part01-of01.zip"
+        },
+        {
+          "file": "z8-inputs-384x256-20261024-batch02.zip",
+          "bytes": 94750640,
+          "sha256": "d0664f3bfb7c1df5e471ba903e86aa8c3347df27ad2936a84f352a160a5b0f2b",
+          "url": "https://github.com/aoyukkk/forest-bird-af/releases/download/community-images-2026-10-24-v2/z8-inputs-384x256-20261024-batch02.zip"
+        },
+        {
+          "file": "z8-prelabels-review-20261024-batch02.zip",
+          "bytes": 200648297,
+          "sha256": "d061d710b762e881a7343df08f258820ecb914c80a7384884a845283eb6e557b",
+          "url": "https://github.com/aoyukkk/forest-bird-af/releases/download/community-images-2026-10-24-v2/z8-prelabels-review-20261024-batch02.zip"
+        },
+        {
+          "file": "manifest.csv",
+          "bytes": 76872,
+          "sha256": "f043ced71b0baa865633798b9a30d7b879d8b062d5e4980856854440f4b17af5",
+          "url": "https://github.com/aoyukkk/forest-bird-af/releases/download/community-images-2026-10-24-v2/manifest.csv"
+        },
+        {
+          "file": "registry.csv",
+          "bytes": 193553,
+          "sha256": "0828add8d81f09794a096d6b4ae19163e4997672aeb4a585b6cb484e5d27afae",
+          "url": "https://github.com/aoyukkk/forest-bird-af/releases/download/community-images-2026-10-24-v2/registry.csv"
+        },
+        {
+          "file": "SHA256SUMS.txt",
+          "bytes": 331,
+          "sha256": "06dcb428b8a0ecf71046b7b1be2452f9d09784793355cad83e602822ab159357",
+          "url": "https://github.com/aoyukkk/forest-bird-af/releases/download/community-images-2026-10-24-v2/SHA256SUMS.txt"
+        }
+      ]
     }
-  ]
+  ],
+  "total_unique_assets": 523,
+  "registry": "registry.csv"
 }
