@@ -1,0 +1,126 @@
+{
+  "passed": false,
+  "checked": 20,
+  "errors": [
+    {
+      "image_id": "fb_0524",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0525",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0526",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0527",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0528",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0529",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0530",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0531",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0532",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0533",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0534",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0536",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0537",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0538",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0539",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0540",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0541",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0542",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0543",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0544",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0545",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0546",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0547",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0548",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0549",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0566",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    },
+    {
+      "image_id": "fb_0567",
+      "error": "LibRawDataError('Data error or unsupported file format')"
+    }
+  ],
+  "jpeg_png_decoded_pixels_unchanged": false,
+  "nef_sensor_samples_unchanged": false,
+  "rawpy": "0.25.1",
+  "raw_render": {
+    "camera_wb": true,
+    "output_bps": 8,
+    "no_auto_bright": true,
+    "color": "sRGB",
+    "demosaic": "AHD",
+    "jpeg_quality": 98,
+    "subsampling": 0
+  }
+}

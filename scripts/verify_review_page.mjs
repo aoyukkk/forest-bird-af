@@ -53,7 +53,7 @@ node('filter').value = 'all'; node('filter').onchange();
 selects[0].value = 'error'; selects[0].onchange();
 assert.equal(JSON.parse(store.get(storageKey))[predictions[0].image_id].decision, 'error');
 node('filter').value = 'error'; node('filter').onchange(); assert.equal(count(), 1);
-node('toggle').onclick(); assert.ok(node('grid').innerHTML.includes('public-images'));
+node('toggle').onclick(); assert.ok(node('grid').innerHTML.includes(predictions[0].review_relative_path));
 node('export').onclick(); assert.equal(clicks[0].download, 'z8-review-decisions.json');
 const rows = html.match(/const rows=([\s\S]*?);let overlay/)[1];
 for (const row of JSON.parse(rows)) {

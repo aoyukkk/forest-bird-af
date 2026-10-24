@@ -1,0 +1,9 @@
+{
+  "parent_snapshot": "snapshot",
+  "parent_gate": "image-validation.json",
+  "parent_failed": true,
+  "rawpy_errors": 27,
+  "amendment": "Use NEF JpgFromRaw camera-embedded JPEG consistently for all 47 assets; compressed TIFF image segments must match; no decoded sensor-sample claim",
+  "explicit_mode": "embedded-jpeg",
+  "originals_modified": false
+}

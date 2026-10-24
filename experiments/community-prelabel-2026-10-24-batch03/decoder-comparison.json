@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "images_compared": 47,
+  "equal_records": 47,
+  "different_records": [],
+  "postprocessor_used_for_prelabels": "original local Z8 BA2",
+  "scope": "Finite corpus comparison of E7 host decoding and saved original-Z8 proposals on the same head buffers."
+}

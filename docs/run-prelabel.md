@@ -24,6 +24,7 @@ Obtain the pinned [E7 checkout](https://github.com/WonderLantern/e7-bird-network
 | `extract_verified_zip.py` | Extract a new ZIP directory and verify every file before deleting the source archive |
 | `sanitize_jpeg.py` | Remove JPEG metadata segments while preserving compressed samples, color markers, and orientation |
 | `finalize_community_release.py` | Check image integrity, render NEF review images, and package public copies |
+| `nef_review.py` | Verify compressed TIFF image payloads and extract a camera-embedded JPEG |
 | `validate_e7_backend.py` | Check model identity, physical fixtures, and CPU/GPU agreement |
 | `validate_e7_batch.py` | Check the chosen CUDA batch size |
 | `prelabel_community.py` | Run the network with the original local Z8 postprocessor |
@@ -31,6 +32,15 @@ Obtain the pinned [E7 checkout](https://github.com/WonderLantern/e7-bird-network
 | `build_review_page.py` | Update the English/Simplified Chinese page without rerunning inference |
 
 Use [data/registry.csv](../data/registry.csv) for `--legacy`. Add `--new-only` to process only new hashes, and explicitly list non-image extensions to leave local with `--ignore-extension`. Audit metadata cleaning on copies before finalization. `--archive-prefix` / `--archive-name` give each batch distinct download names.
+
+NEF preparation defaults to the fixed rawpy render. If a batch needs camera-embedded
+JPEGs, explicitly select `--nef-review-mode embedded-jpeg --exiftool <exiftool.exe>`
+when finalizing a new snapshot. This mode verifies every populated TIFF image
+segment against the original, extracts `JpgFromRaw`, and checks decoded JPEG pixel
+equality after metadata cleaning. The manifest and validation record the selected
+representation. It does not claim decoded RAW sensor-sample validation. Batch 03
+uses this mode for all 47 NEFs after the rawpy path failed on 28 files; its failed
+validation remains recorded.
 
 ```powershell
 conda run --no-capture-output -n machine python scripts/prelabel_community.py `

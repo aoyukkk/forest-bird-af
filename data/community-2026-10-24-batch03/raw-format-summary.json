@@ -1,0 +1,14 @@
+{
+  "files": 47,
+  "formats": {
+    "nef": 47
+  },
+  "compression": {
+    "High Efficiency*": 27,
+    "Lossless": 20
+  },
+  "rawpy_failed": 28,
+  "review_origin": "NEF JpgFromRaw camera-embedded JPEG for every image",
+  "rawpy_sensor_render_used": false,
+  "compressed_image_segments_unchanged": true
+}

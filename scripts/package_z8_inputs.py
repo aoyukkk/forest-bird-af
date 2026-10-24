@@ -86,8 +86,9 @@ IDs match the original-resolution image archives. input-manifest.jsonl links
 each image to its original asset, public copy, review image, and input hashes.
 
 The simulation converts EXIF-oriented review images to RGB, then stretches them
-to 384 x 256 with Pillow bilinear interpolation. NEF uses the fixed rawpy review
-JPEG described in the repository. This freezes the simulation inputs; the full
+to 384 x 256 with Pillow bilinear interpolation. NEF uses the fixed review JPEG
+recorded by the batch manifest and image-validation.json: either the specified
+rawpy render or an explicitly selected camera-embedded JPEG. This freezes the simulation inputs; the full
 camera sensor-to-network preprocessing has not been established.
 
 For regeneration, see scripts/z8_input.py and the dataset README in:

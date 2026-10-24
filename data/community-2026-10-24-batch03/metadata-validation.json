@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "checked": 47,
+  "identifying_fields_remaining": [],
+  "nikon_serial_anonymous_placeholder": 0,
+  "public_copies_only": true,
+  "originals_modified": false,
+  "method": "ExifTool targeted removal of requested identifying metadata; the Nikon serial field is set to constant 0 in every public NEF copy. Compressed image payloads are checked separately."
+}

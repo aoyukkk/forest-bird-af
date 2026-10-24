@@ -2,7 +2,7 @@
 
 **English** | [简体中文](README.zh-CN.md)
 
-Bird autofocus in foliage, with a focus on missed birds and boxes that drift onto branches. The target behavior is to use a visible eye, fall back to the head, then the bird, and release the target when none is usable.
+Bird autofocus in foliage, focused on missed birds and boxes that drift onto branches. The target is a visible eye, then the head, then the bird; release the target when none is usable.
 
 ## Progress
 
@@ -10,16 +10,16 @@ Updated: 2026-10-24.
 
 | Work | Status |
 |---|---|
-| Community images | 523 files: 486 JPG, 7 PNG, 30 NEF |
-| Image checks | All 523 registered originals preserved; public-copy pixel and RAW-sample checks passed |
-| Simulation input dataset | 523 lossless RGB PNGs at 384 × 256 across two releases, with saved CHW input buffers |
-| Z8 prelabeling | 523/523 completed across two batches on a local RTX 4080 Laptop GPU; 0 execution errors |
-| Candidates | 1262 boxes across 387 images; 136 images have no candidates |
-| Human review | Ready to begin |
+| Community images | 570 files: 486 JPG, 7 PNG, 77 NEF |
+| Image checks | Source hashes preserved; public-copy image checks passed with the representation recorded per batch |
+| Simulation inputs | 570 lossless 384 × 256 RGB PNGs and exact saved CHW buffers |
+| Z8 prelabeling | 570/570 completed on a local RTX 4080 Laptop GPU; 0 execution errors |
+| Candidates | 1345 boxes across 415 images; 155 images have no candidates |
+| Human review | Pending |
 | Fine-tuning | Not started |
 | Sony experiments | Paused |
 
-The [latest release](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v2) adds **227 JPGs**, IDs fb_0297–fb_0523. GPU prelabeling found 602 raw candidates across 180 images; 47 images have no candidates. The first 296-image release remains unchanged. [Latest batch details](data/community-2026-10-24-batch02/README.md).
+The [latest release](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v3) adds **47 NEFs**, IDs **fb_0524–fb_0570**: 28 images with candidates, 19 without, 83 raw boxes. [Batch 03 details](data/community-2026-10-24-batch03/README.md).
 
 ## Download and review
 
@@ -27,24 +27,27 @@ The [latest release](https://github.com/aoyukkk/forest-bird-af/releases/tag/comm
 |---|---:|---|
 | First snapshot | 296 | [v0.1](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v1) |
 | Batch 02 | 227 | [v0.2](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v2) |
+| Batch 03 | 47 | [v0.3](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v3) |
 
-Each release includes original-resolution public copies, fixed 384 × 256 simulation inputs, and a review bundle. Download both batches for all 523 images; new downloads contain only the additional 227. Check ZIPs against each release's checksum file.
+Download all three batches for all 570 assets. Each release provides original-resolution public copies, fixed simulation inputs, and a review bundle. Verify downloads with `SHA256SUMS.txt`.
 
-For batch 02, extract its image and review ZIPs into one directory and open `review.html`. The page defaults to English with a Simplified Chinese selector. For v0.1, also replace the bundled page with that release's separate `review.html`.
+Extract a batch's image and review ZIPs into one directory and open `review.html`. The page defaults to English with a Simplified Chinese selector. For the first release, replace the bundled page with its separate `review.html`.
 
-Review the whole image, starting with images without candidates. Export decisions as JSON, keep correct examples as controls, and send errors for detailed annotation. Use full-resolution images for eye and head annotation. Native slots 0–5 still need semantic labels.
+Batch 03 uses the NEFs' **camera-embedded JPEGs** for review and prediction. The rawpy path failed on 28 files; all 47 instead use the same explicit JPEG representation. Compressed image payloads in the public NEFs match their originals. These JPEGs are distinct from RAW sensor renders.
 
-Use [data/registry.csv](data/registry.csv) for the complete stable-ID register. [Input format and conversion code](data/community-2026-10-24/README.md#simulation-input-dataset).
+Review the whole image, starting with images without candidates. Export decisions as JSON; keep correct examples as controls and annotate errors in detail. Native slots 0–5 await semantic labels.
+
+Use [data/registry.csv](data/registry.csv) for stable IDs. [Input conversion code](scripts/z8_input.py) and [workflow](docs/run-prelabel.md).
 
 ## Model and validation
 
-The Z8 resource744 model body is byte-identical to [WonderLantern/e7-bird-network](https://github.com/WonderLantern/e7-bird-network). We use its numerical profile with a validated CUDA adapter and retain the local Z8 factory postprocessor.
+The local Z8 resource744 body is byte-identical to [WonderLantern/e7-bird-network](https://github.com/WonderLantern/e7-bird-network). The validated CUDA adapter retains the original local Z8 postprocessor.
 
-- Public physical-reference fixtures and a real-image CPU/GPU comparison passed bitwise checks.
-- E7 host decoding matched the saved original-Z8 candidate records on all 523 images across both batches.
-- GPU network time was 185.95 seconds for the first 296 images and 143.13 seconds for the new 227. This excludes image I/O, postprocessing, and review.
+- Physical-reference fixtures and real-image CPU/GPU comparisons passed bitwise checks.
+- E7 host decoding matched all 570 saved Z8 candidate records across three batches.
+- Batch 03 passed fresh CUDA batch validation. Its GPU network time was 30.40 seconds, excluding image I/O, postprocessing, and review.
 
-See the [comparison and validation report](docs/reports/05-e7-comparison-and-cuda.md) and [latest execution records](experiments/community-prelabel-2026-10-24-batch02/).
+See the [validation report](docs/reports/05-e7-comparison-and-cuda.md) and [latest execution records](experiments/community-prelabel-2026-10-24-batch03/).
 
 ## Next steps
 

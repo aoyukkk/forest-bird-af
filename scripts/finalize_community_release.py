@@ -27,12 +27,16 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--snapshot', type=Path, required=True)
     p.add_argument('--archive-prefix', default='community-images-20261024')
+    p.add_argument('--nef-review-mode', choices=['rawpy', 'embedded-jpeg'], default='rawpy')
+    p.add_argument('--exiftool', type=Path)
     a = p.parse_args()
+    if a.nef_review_mode == 'embedded-jpeg' and not a.exiftool:
+        p.error('--embedded-jpeg mode requires --exiftool')
     root = a.snapshot
     source_rows = json.loads((root / 'private-source-map.json').read_text(encoding='utf-8'))
     (root / 'review-images').mkdir(exist_ok=False)
     (root / 'packages').mkdir(exist_ok=False)
-    public, private_review, errors = [], [], []
+    public, private_review, errors, nef_checks = [], [], [], []
     for index, row in enumerate(source_rows):
         if row['duplicate_occurrence']:
             continue
@@ -40,12 +44,23 @@ def main():
             source = Path(row['source_path'])
             path = root / 'public-images' / row['public_name']
             if path.suffix.lower() == '.nef':
-                with rawpy.imread(str(source)) as original, rawpy.imread(str(path)) as cleaned:
-                    if not np.array_equal(original.raw_image, cleaned.raw_image):
-                        raise RuntimeError('NEF sensor samples changed')
-                review = root / 'review-images' / (row['image_id'] + '.render-v1.jpg')
-                rgb(path).save(review, quality=98, subsampling=0)
-                canonical = rgb(review)
+                if a.nef_review_mode == 'embedded-jpeg':
+                    from nef_review import image_segments, embedded_review
+                    segments = image_segments(source)
+                    if segments != image_segments(path):
+                        raise RuntimeError('NEF compressed image segments changed')
+                    review = root / 'review-images' / (row['image_id'] + '.embedded-jpeg-v1.jpg')
+                    canonical, check = embedded_review(source, review, a.exiftool)
+                    check.update(image_id=row['image_id'], compressed_image_segments_unchanged=True,
+                                 image_segment_groups=len(segments))
+                    nef_checks.append(check)
+                else:
+                    with rawpy.imread(str(source)) as original, rawpy.imread(str(path)) as cleaned:
+                        if not np.array_equal(original.raw_image, cleaned.raw_image):
+                            raise RuntimeError('NEF sensor samples changed')
+                    review = root / 'review-images' / (row['image_id'] + '.render-v1.jpg')
+                    rgb(path).save(review, quality=98, subsampling=0)
+                    canonical = rgb(review)
             else:
                 canonical = rgb(path)
                 source_rgb = rgb(source)
@@ -69,9 +84,13 @@ def main():
     (root / 'private-review-map.json').write_text(json.dumps(private_review, indent=2), encoding='utf-8')
     (root / 'image-validation.json').write_text(json.dumps({'passed': not errors, 'checked': len(public),
         'errors': errors, 'jpeg_png_decoded_pixels_unchanged': not errors,
-        'nef_sensor_samples_unchanged': not errors, 'rawpy': rawpy.__version__,
-        'raw_render': {'camera_wb': True, 'output_bps': 8, 'no_auto_bright': True,
-                       'color': 'sRGB', 'demosaic': 'AHD', 'jpeg_quality': 98, 'subsampling': 0}}, indent=2), encoding='utf-8')
+        'nef_sensor_samples_unchanged': (not errors if a.nef_review_mode == 'rawpy' else None),
+        'nef_review_mode': a.nef_review_mode, 'nef_checks': nef_checks,
+        'nef_compressed_image_segments_unchanged': (not errors if a.nef_review_mode == 'embedded-jpeg' else None),
+        'rawpy': rawpy.__version__,
+        'raw_render': ({'camera_wb': True, 'output_bps': 8, 'no_auto_bright': True,
+                       'color': 'sRGB', 'demosaic': 'AHD', 'jpeg_quality': 98, 'subsampling': 0}
+                       if a.nef_review_mode == 'rawpy' else None)}, indent=2), encoding='utf-8')
     if errors:
         raise RuntimeError('Image validation failed; do not publish: ' + str(errors))
     public.sort(key=lambda row: int(row['image_id'].split('_')[1]))
@@ -84,9 +103,13 @@ def main():
               'metadata_cleaned': True, 'human_annotation_complete': False,
               'license': 'Contributor copyrights retained; no blanket image license is granted.',
               'scope': 'All images in the current community collection snapshot; excludes CUB and vendor assets.'}
+    integrity_note = ('NEF compressed image segments match the originals. Review JPEGs are '
+                      'the camera-embedded JpgFromRaw images, with unchanged decoded pixels. '
+                      'These are not rawpy sensor renders.' if a.nef_review_mode == 'embedded-jpeg'
+                      else 'JPEG/PNG pixels and NEF sensor samples were checked against originals.')
     (root / 'RELEASE.md').write_text('# Community image snapshot 2026-10-24\n\n'
         + json.dumps(report, indent=2) + '\n\nPublic copies have identifying EXIF fields removed. '
-        'JPEG/PNG pixels and NEF sensor samples were checked against originals. '
+        + integrity_note + ' '
         'Original files remain local and unchanged. No training or reviewed ground truth is included.\n', encoding='utf-8')
     chunks, current, size = [], [], 0
     for row in public:

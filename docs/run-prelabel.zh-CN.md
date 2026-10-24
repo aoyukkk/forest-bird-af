@@ -24,6 +24,7 @@
 | `extract_verified_zip.py` | 解压到新目录并逐文件校验，完成后再删除源 ZIP |
 | `sanitize_jpeg.py` | 移除 JPEG 元数据段，保留压缩采样、颜色标记和方向 |
 | `finalize_community_release.py` | 图片完整性校验、NEF 审核图和公开副本打包 |
+| `nef_review.py` | 校验 TIFF 压缩图像数据并提取机内 JPEG |
 | `validate_e7_backend.py` | 模型身份、实机样例及 CPU/GPU 一致性检查 |
 | `validate_e7_batch.py` | 验证实际采用的 CUDA batch size |
 | `prelabel_community.py` | 网络推理与本地 Z8 原厂后处理 |
@@ -31,6 +32,13 @@
 | `build_review_page.py` | 更新英中双语页面，无须重新推理 |
 
 `--legacy` 使用累计注册表 [data/registry.csv](../data/registry.csv)。`--new-only` 只处理新哈希，`--ignore-extension` 显式指定保留在本地的非图片类型。公开副本先通过元数据审计，再打包；`--archive-prefix` / `--archive-name` 用于区分批次文件名。
+
+NEF 默认使用固定 rawpy 渲染。需要使用机内 JPEG 时，在新快照上显式指定
+`--nef-review-mode embedded-jpeg --exiftool <exiftool.exe>`。此模式逐段校验
+TIFF 中所有非空图像数据与原片一致，提取 `JpgFromRaw`，并核对去除元数据
+前后的 JPEG 解码像素。清单和验证记录会写明所用表示，不声称完成 RAW
+传感器采样解码校验。第三批在 rawpy 路径失败 28 张后，统一为全部 47 张
+NEF 选择此模式；失败记录保留。
 
 ```powershell
 conda run --no-capture-output -n machine python scripts/prelabel_community.py `

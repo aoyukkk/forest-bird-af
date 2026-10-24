@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "assets_checked": 6,
+  "image_archive_hashes_checked": 47,
+  "registry_assets": 570,
+  "review_links_checked": 141,
+  "metadata_and_representation_records_checked": 47,
+  "review_default_language": "en",
+  "review_languages": [
+    "en",
+    "zh-CN"
+  ]
+}
