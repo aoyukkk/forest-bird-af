@@ -33,6 +33,10 @@
 
 `--legacy` 使用累计注册表 [data/registry.csv](../data/registry.csv)。`--new-only` 只处理新哈希，`--ignore-extension` 显式指定保留在本地的非图片类型。公开副本先通过元数据审计，再打包；`--archive-prefix` / `--archive-name` 用于区分批次文件名。
 
+收到 macOS 资源叉时，使用 `--ignore-appledouble`。导入器同时检查 `._`
+文件名前缀和 AppleDouble 文件头，确认后记入私人辅助文件清单并保留原文件。
+不能仅凭 `.NEF` 或 `.JPG` 扩展名认定为照片。
+
 NEF 默认使用固定 rawpy 渲染。需要使用机内 JPEG 时，在新快照上显式指定
 `--nef-review-mode embedded-jpeg --exiftool <exiftool.exe>`。此模式逐段校验
 TIFF 中所有非空图像数据与原片一致，提取 `JpgFromRaw`，并核对去除元数据

@@ -10,16 +10,16 @@
 
 | 工作 | 状态 |
 |---|---|
-| 社区照片 | 570 个文件：486 JPG、7 PNG、77 NEF |
+| 社区照片 | 634 个文件：508 JPG、7 PNG、119 NEF |
 | 图像校验 | 原资产哈希保持不变；公开副本校验通过，各批写明所用图像表示 |
-| 模拟输入 | 570 张 384 × 256 无损 RGB PNG，附实际留存的 CHW 输入 |
-| Z8 预标注 | 本地 RTX 4080 Laptop GPU 完成 570/570 张，执行错误 0 |
-| 候选结果 | 415 张有框，共 1345 个候选；155 张无候选 |
+| 模拟输入 | 634 张 384 × 256 无损 RGB PNG，附实际留存的 CHW 输入 |
+| Z8 预标注 | 本地 RTX 4080 Laptop GPU 完成 634/634 张，执行错误 0 |
+| 候选结果 | 447 张有框，共 1450 个候选；187 张无候选 |
 | 人工复核 | 待进行 |
 | 定向微调 | 尚未开始 |
 | Sony 实验 | 暂停 |
 
-[最新发布](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v3)新增 **47 张 NEF**，编号 **fb_0524–fb_0570**：28 张有候选、19 张无候选，共 83 个原始框。[第三批说明](data/community-2026-10-24-batch03/README.zh-CN.md)。
+[最新发布](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v4)新增 **64 张照片（42 NEF、22 JPG）**，编号 **fb_0571–fb_0634**：32 张有候选、32 张无候选，共 105 个原始框。[第四批说明](data/community-2026-10-24-batch04/README.zh-CN.md)。
 
 ## 下载与复核
 
@@ -28,8 +28,9 @@
 | 首批快照 | 296 | [v0.1](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v1) |
 | 第二批 | 227 | [v0.2](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v2) |
 | 第三批 | 47 | [v0.3](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v3) |
+| 第四批 | 64 | [v0.4](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v4) |
 
-完整 570 个资产需要下载三批。每批提供原分辨率公开副本、固定模拟输入和复核包，下载后用 `SHA256SUMS.txt` 核对。
+完整 634 个资产需要下载四批。每批提供原分辨率公开副本、固定模拟输入和复核包，下载后用 `SHA256SUMS.txt` 核对。
 
 图片包与复核包解压到同一目录，打开 `review.html`；默认英文，可切换简体中文。首批发布需用其独立 `review.html` 替换包内页面。
 
@@ -44,10 +45,12 @@
 本地 Z8 resource744 模型主体与 [WonderLantern/e7-bird-network](https://github.com/WonderLantern/e7-bird-network) 逐字节一致，使用已验证的 CUDA 适配与本地 Z8 原厂后处理。
 
 - 实机参考样例、真实图 CPU/GPU 对照通过逐位检查。
-- 三批共 570 张图的 E7 主机解码与留存 Z8 候选记录全部一致。
+- 四批共 634 张图的 E7 主机解码与留存 Z8 候选记录全部一致。
 - 第三批重新通过 CUDA 批量验证，GPU 网络耗时 30.40 秒，不含图片读写、后处理及复核。
 
-详见[验证报告](docs/reports/05-e7-comparison-and-cuda.zh-CN.md)和[最新执行记录](experiments/community-prelabel-2026-10-24-batch03/)。
+第四批 GPU 网络耗时 42.59 秒，采用同一已验证批量配置；42 张 NEF 使用内嵌 JPEG，22 张 JPG 保持原始解码像素。
+
+详见[验证报告](docs/reports/05-e7-comparison-and-cuda.zh-CN.md)和[最新执行记录](experiments/community-prelabel-2026-10-24-batch04/)。
 
 ## 下一步
 

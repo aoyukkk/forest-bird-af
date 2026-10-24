@@ -1,0 +1,349 @@
+{
+  "passed": true,
+  "checked": 64,
+  "errors": [],
+  "jpeg_png_decoded_pixels_unchanged": true,
+  "nef_sensor_samples_unchanged": null,
+  "nef_review_mode": "embedded-jpeg",
+  "nef_checks": [
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "4c7f1d9d24e3f4d13e51a04ff5ddf425be8c82abba619554cc64fc7ca2348eea",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0593",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "5cd55bfdd2f0c1c4040d175bf2dbbbe2dd7484dbb3486cc68ab9b667d347bb38",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0594",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "54643676537561c18ea187ed60c7830eb250b0a8e2d319c6f590c04de8ca59ed",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0595",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 5
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "6e4fc45f0c21fac2b2f01194156aa46a9c3146ee02733e030fc01449fa5dbe0f",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0596",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 5
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "c7ac3f95e031d6a93dda8385d318951b35a15090c4c721f63d2db56ee1f31987",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0597",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "5e31864a5be503f0de3273d2ca06716cb7922ac8c540a4a6f351fcc121abe783",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0598",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "3d1934bf42c0a8b769c0403e26d9aef5f37ff6a1d54b6e3c4806c03970bf4a02",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0599",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "f4fbb5847936352b218c2d0908d8973722bfad6f0d4e96021493d6148d565920",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0600",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "92da8ecf6b4463bbd6a144488773a4131b6c114ca2ef9a4a0199221396e4d439",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0601",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "f9e398b8767f97937b5fb6914898384506cddbbce812b64ce791a108abaf93af",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0602",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "36c12b4d620db037f1fd363043df147eaec990b5ec3941200ba1f31de0816cd1",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0603",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "28c99032d6df94680b982e62e499fbb88376c9a2d144e800727b21523086db54",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0604",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "f6dcf02611f5ca17d01371857074331619452d2a27d7843c321e06d36022847c",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0605",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "ecabe60c1ba688af097579b9ebf0ef4c0d7166d34731904ad8c7e70b7250c11c",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0606",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 5
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "7566739eedace9591b61df78e8870bf0bfc64ac155c1a6db84e6428817675431",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0607",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "edfe552b86a0117af6669cb63284213de417a4fbc5a88f25fdce67d6194214fa",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0608",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "689d1c53e0d537577892528e930a08782a6e73cd7ccef2f9c6200b669a31e386",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0609",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "d6d3a388478436571bacaa34e7c1feb48e8d3c790d13d938dfb61998418d2487",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0610",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "e83800fef6f3e6a45feb0eafb3f48caf40abcad239d444ae019306f198d48a70",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0611",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "e911fff189ca64c816be47e039f400a6e041c896bd68c8bf9c0a938b91382821",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0612",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "c30c646a385dc2d6a447df743c7599e38fddad1533445a79443fc16f751a51ff",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0613",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "d6e61f18537481829ee50f794544a337ca3accc9eef74676f0a17e6b97500359",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0614",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "3f22b37cb72e8aca536cfd833611a6b976762815a88a424738044bf9419558fb",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0615",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "ea08fc0777e33519f7bbf01306475c753d2944d672489406398f624ea3257c98",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0616",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "40f1bd972da0d47f5b9a27b2b7ef6b8768753384fdc59bda0afe86f27a665900",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0617",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "0841e7aff706ff53061d6825e3179c01b4d319842384e64b3b8e10e57bf9575e",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0618",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "4cc1a8975f0017eb7be78e88ad6802ec80cc0898302575b1347699f87f8b9103",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0619",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "ca0204eba386651b93e5574ec40bec5ef1e564a7a734bb115a4fe6d23574ccf0",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0620",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "ee3dab66711e5d5941063801626d310d4eb40b4694710a811b8b8dc18374ba89",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0621",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "123a2d21338513b2977d64f3e20322ed65dfefc820d835adb31e831d9134c9db",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0622",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "c22c07b9d880027dedee7afdf489d40b17eeaa33d64f61978c242904ad613c65",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0623",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 6
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "8b82fbd86fa123a4ca64c978571351562761398b92bb049cd249f17c10f66e8e",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0624",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 5
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "1dec70eb50a827b1cf7d0ffcf55f22487b9cf2e390ff844b32e138b96978032d",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0625",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 5
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "d823fd615f6fd12d01da077fd2d996f3e7ca92fffe93c62c53f74189e3b4ad83",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0626",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 5
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "a63ccd6ee8dedde27aab73086ab2eec29e7fa2be4d5468c54f7516cc9c7c4f4e",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0627",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 5
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "dbe4a01b486ac62c9297fea1e0afab6b286781fe43574a3ec107508348fb2af7",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0628",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 5
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "49381b017133777af4380fb4d4091de8147cf187cbaeeaf6b54d56dd9d76c45e",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0629",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 5
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "f7ae2c25d8a64900177b4eac2907d5ad7d0290065ebb8ed00c6b506205abe776",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0630",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 5
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "54877050d390507e55e80b7965872a4fd742200fc678020688681985cc8bf92b",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0631",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 5
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "c338fd22702109bcf939b587585894eab1f0c9226fc8eb1f05d842ee7e919913",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0632",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 5
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "cba2c795b972c454b77f381ff549bdb4048ac773d5a07383171c27a275fd75d5",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0633",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 5
+    },
+    {
+      "review_origin": "NEF JpgFromRaw camera-embedded JPEG",
+      "embedded_jpeg_sha256": "42de5787d7df72d02e5b531206032b4bc3614940eff87f050856a1f04a34a041",
+      "embedded_jpeg_decoded_pixels_unchanged": true,
+      "image_id": "fb_0634",
+      "compressed_image_segments_unchanged": true,
+      "image_segment_groups": 5
+    }
+  ],
+  "nef_compressed_image_segments_unchanged": true,
+  "rawpy": "0.25.1",
+  "raw_render": null
+}

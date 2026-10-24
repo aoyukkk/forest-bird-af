@@ -26,6 +26,7 @@ def main():
     parser.add_argument('--output', required=True, type=Path)
     parser.add_argument('--new-only', action='store_true', help='Copy only assets absent from the prior register')
     parser.add_argument('--ignore-extension', action='append', default=[], help='Explicit non-image extensions to leave local')
+    parser.add_argument('--ignore-appledouble', action='store_true', help='Leave verified macOS AppleDouble resource forks local, regardless of suffix')
     args = parser.parse_args()
     out = args.output.resolve()
     source = args.source.resolve()
@@ -46,6 +47,12 @@ def main():
     seen = set()
     candidates = sorted(p for p in source.rglob('*') if p.is_file() and not p.is_symlink())
     for path in candidates:
+        if args.ignore_appledouble and path.name.startswith('._'):
+            with path.open('rb') as stream:
+                appledouble = stream.read(4) == b'\x00\x05\x16\x07'
+            if appledouble:
+                ignored.append({'source': str(path), 'reason': 'appledouble_resource_fork'})
+                continue
         if path.suffix.lower() not in {'.jpg', '.jpeg', '.png', '.nef', '.arw', '.tif', '.tiff', '.dng'}:
             if path.suffix.lower() in args.ignore_extension:
                 ignored.append({'source': str(path), 'reason': 'explicit_non_image_extension'})

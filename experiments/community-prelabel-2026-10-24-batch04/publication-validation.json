@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "assets_checked": 7,
+  "image_archive_hashes_checked": 64,
+  "registry_assets": 634,
+  "new_nefs": 42,
+  "new_jpegs": 22,
+  "auxiliary_files_excluded": 3,
+  "review_records_checked": 64,
+  "private_path_scan": "passed"
+}

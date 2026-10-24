@@ -1,0 +1,15 @@
+{
+  "files": 64,
+  "formats": {
+    "nef": 42,
+    "jpg": 22
+  },
+  "nef_compression": {
+    "Lossless": 28,
+    "High Efficiency*": 14
+  },
+  "nef_review_origin": "NEF JpgFromRaw camera-embedded JPEG for all 42 NEFs",
+  "jpeg_review_origin": "EXIF-oriented decoded original JPEG",
+  "rawpy_attempted_this_batch": false,
+  "representation_basis": "Explicit embedded-JPEG mode after batch 03 compatibility findings"
+}

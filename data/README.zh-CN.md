@@ -4,20 +4,21 @@
 
 | 数据集 | 文件数 | 用途 |
 |---|---:|---|
-| [累计注册表](registry.csv) | 570 | 后续导入使用的权威编号与原资产哈希 |
+| [累计注册表](registry.csv) | 634 | 后续导入使用的权威编号与原资产哈希 |
+| [社区第四批](community-2026-10-24-batch04/README.zh-CN.md) | 64 | 新增 42 NEF、22 JPG 与 Z8 预测，编号 fb_0571–fb_0634 |
 | [社区第三批](community-2026-10-24-batch03/README.zh-CN.md) | 47 | 新增 NEF、内嵌 JPEG 审核图与 Z8 预标注，编号 fb_0524–fb_0570 |
 | [社区第二批](community-2026-10-24-batch02/README.zh-CN.md) | 227 | 新增图片与 Z8 预标注，编号 fb_0297–fb_0523 |
 | [社区首批快照](community-2026-10-24/README.zh-CN.md) | 296 | 冻结的首批发布与 Z8 预标注 |
 | [首批投稿登记](contributions-2026-10-23/) | 292 | 已继承到当前快照的原始编号 |
 | [CUB 校准集](calibration-200/) | 200 | 早期校准材料，原图从 CUB 获取 |
 
-社区图片、固定模拟输入与复核包通过 [Releases](https://github.com/aoyukkk/forest-bird-af/releases) 分发，Git 保存清单和候选。三批图片互不重复，完整 570 张需要下载三批。
+社区图片、固定模拟输入与复核包通过 [Releases](https://github.com/aoyukkk/forest-bird-af/releases) 分发，Git 保存清单和候选。四批图片互不重复，完整 634 张需要下载四批。
 
 ## 管理方式
 
 接收原片保持不变，编号长期稳定。来源、拍摄序列、遮挡、图像质量、标注和授权分别记录，一张图可以有多个标签。
 
-当前注册编号为 `fb_0001` 至 `fb_0570`。后续导入以 [registry.csv](registry.csv) 为准，先匹配 `original_sha256`，再给新资产追加编号。各批清单保留为冻结的历史子集。
+当前注册编号为 `fb_0001` 至 `fb_0634`。后续导入以 [registry.csv](registry.csv) 为准，先匹配 `original_sha256`，再给新资产追加编号。各批清单保留为冻结的历史子集。
 
 ## 标注方式
 

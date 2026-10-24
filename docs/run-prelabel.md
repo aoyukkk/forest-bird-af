@@ -33,6 +33,11 @@ Obtain the pinned [E7 checkout](https://github.com/WonderLantern/e7-bird-network
 
 Use [data/registry.csv](../data/registry.csv) for `--legacy`. Add `--new-only` to process only new hashes, and explicitly list non-image extensions to leave local with `--ignore-extension`. Audit metadata cleaning on copies before finalization. `--archive-prefix` / `--archive-name` give each batch distinct download names.
 
+Use `--ignore-appledouble` when the input contains macOS resource forks. The importer
+checks both the `._` filename prefix and AppleDouble magic before excluding a file,
+records it in the private import ledger, and leaves the received file unchanged.
+A `.NEF` or `.JPG` suffix alone does not establish that a file is a photograph.
+
 NEF preparation defaults to the fixed rawpy render. If a batch needs camera-embedded
 JPEGs, explicitly select `--nef-review-mode embedded-jpeg --exiftool <exiftool.exe>`
 when finalizing a new snapshot. This mode verifies every populated TIFF image

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "archive_files_verified": 67,
+  "images_imported": 64,
+  "auxiliary_files_kept_local": 3,
+  "appledouble_file_with_nef_suffix_excluded": 1,
+  "archive_deleted": true,
+  "archive_sha256": "4453f58526044351802f4eb9fc501969dfbf69f366e2efca42176105b98ee613",
+  "extracted_originals_checked": 64,
+  "original_hash_mismatches": 0,
+  "filename_decoding": "Legacy ZIP names decoded as GBK; UTF-8 flagged names retained"
+}

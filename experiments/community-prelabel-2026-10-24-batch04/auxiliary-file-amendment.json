@@ -1,0 +1,11 @@
+{
+  "parent_snapshot": "snapshot",
+  "parent_stage": "metadata cleaning",
+  "reason": "One .NEF member has AppleDouble magic 0x00051607, not a photograph",
+  "amendment": "Exclude verified AppleDouble resource forks before assigning IDs; preserve all received bytes and failed private snapshot",
+  "registered_ids_changed": false,
+  "previous_ids_in_failed_snapshot_were_uncommitted": true,
+  "real_images": 64,
+  "auxiliary_files_kept_local": 3,
+  "expected_cumulative_assets": 634
+}

@@ -10,16 +10,16 @@ Updated: 2026-10-24.
 
 | Work | Status |
 |---|---|
-| Community images | 570 files: 486 JPG, 7 PNG, 77 NEF |
+| Community images | 634 files: 508 JPG, 7 PNG, 119 NEF |
 | Image checks | Source hashes preserved; public-copy image checks passed with the representation recorded per batch |
-| Simulation inputs | 570 lossless 384 × 256 RGB PNGs and exact saved CHW buffers |
-| Z8 prelabeling | 570/570 completed on a local RTX 4080 Laptop GPU; 0 execution errors |
-| Candidates | 1345 boxes across 415 images; 155 images have no candidates |
+| Simulation inputs | 634 lossless 384 × 256 RGB PNGs and exact saved CHW buffers |
+| Z8 prelabeling | 634/634 completed on a local RTX 4080 Laptop GPU; 0 execution errors |
+| Candidates | 1450 boxes across 447 images; 187 images have no candidates |
 | Human review | Pending |
 | Fine-tuning | Not started |
 | Sony experiments | Paused |
 
-The [latest release](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v3) adds **47 NEFs**, IDs **fb_0524–fb_0570**: 28 images with candidates, 19 without, 83 raw boxes. [Batch 03 details](data/community-2026-10-24-batch03/README.md).
+The [latest release](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v4) adds **64 photos: 42 NEFs and 22 JPGs**, IDs **fb_0571–fb_0634**: 32 with candidates, 32 without, 105 raw boxes. [Batch 04 details](data/community-2026-10-24-batch04/README.md).
 
 ## Download and review
 
@@ -28,8 +28,9 @@ The [latest release](https://github.com/aoyukkk/forest-bird-af/releases/tag/comm
 | First snapshot | 296 | [v0.1](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v1) |
 | Batch 02 | 227 | [v0.2](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v2) |
 | Batch 03 | 47 | [v0.3](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v3) |
+| Batch 04 | 64 | [v0.4](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v4) |
 
-Download all three batches for all 570 assets. Each release provides original-resolution public copies, fixed simulation inputs, and a review bundle. Verify downloads with `SHA256SUMS.txt`.
+Download all four batches for all 634 assets. Each release provides original-resolution public copies, fixed simulation inputs, and a review bundle. Verify downloads with `SHA256SUMS.txt`.
 
 Extract a batch's image and review ZIPs into one directory and open `review.html`. The page defaults to English with a Simplified Chinese selector. For the first release, replace the bundled page with its separate `review.html`.
 
@@ -44,10 +45,12 @@ Use [data/registry.csv](data/registry.csv) for stable IDs. [Input conversion cod
 The local Z8 resource744 body is byte-identical to [WonderLantern/e7-bird-network](https://github.com/WonderLantern/e7-bird-network). The validated CUDA adapter retains the original local Z8 postprocessor.
 
 - Physical-reference fixtures and real-image CPU/GPU comparisons passed bitwise checks.
-- E7 host decoding matched all 570 saved Z8 candidate records across three batches.
+- E7 host decoding matched all 634 saved Z8 candidate records across four batches.
 - Batch 03 passed fresh CUDA batch validation. Its GPU network time was 30.40 seconds, excluding image I/O, postprocessing, and review.
 
-See the [validation report](docs/reports/05-e7-comparison-and-cuda.md) and [latest execution records](experiments/community-prelabel-2026-10-24-batch03/).
+Batch 04 used the same validated batch configuration: 42.59 seconds of GPU network time. Its 42 NEFs use embedded JPEGs; its 22 JPGs retain the source decoded pixels.
+
+See the [validation report](docs/reports/05-e7-comparison-and-cuda.md) and [latest execution records](experiments/community-prelabel-2026-10-24-batch04/).
 
 ## Next steps
 

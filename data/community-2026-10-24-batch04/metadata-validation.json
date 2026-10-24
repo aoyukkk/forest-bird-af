@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "checked": 64,
+  "identifying_fields_remaining": [],
+  "nikon_serial_anonymous_placeholder": 0,
+  "public_copies_only": true,
+  "originals_modified": false,
+  "method": "JPEG metadata segment removal; targeted NEF metadata removal and constant-0 Nikon serial. Pixel and compressed-payload checks are separate."
+}
