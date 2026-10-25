@@ -64,4 +64,4 @@ batch=64 样例验证耗时 39.87 秒，张量分配峰值约 4.65 GB。照片�
 
 处理后再次检查 296 份原片哈希，全部未变。复核页的筛选、切图、决定序列化、导出触发和图片路径通过 JavaScript 逻辑检查，示例叠图已目视检查。内置浏览器限制本地 file URL，因此未进行实际浏览器布局和点击验收。
 
-[执行记录](../../experiments/community-prelabel-2026-10-24/) · [复核流程](../run-prelabel.zh-CN.md)
+[执行记录](../../experiments/community-prelabel-2026-10-24/) · [复核流程](../workflow/run-prelabel.zh-CN.md)

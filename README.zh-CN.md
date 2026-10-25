@@ -16,8 +16,8 @@
 | Z8 预标注 | 本地 RTX 4080 Laptop GPU 完成 694/694 张，执行错误 0 |
 | 候选结果 | 469 张有框，共 1495 个候选；225 张无候选 |
 | 人工复核 | 547 张确认、146 张草稿、1 张待裁决 |
-| 标注工具 | 本地浏览器编辑器与人／AI 共用接口；[使用说明](docs/annotator.zh-CN.md) |
-| 已标注结果 | 694 条逐图记录与冻结评估划分已公开；[数据集](data/annotations-2026-10-25/README.zh-CN.md) |
+| 标注工具 | 本地浏览器编辑器与人／AI 共用接口；[使用说明](docs/tools/annotator.zh-CN.md) |
+| 已标注结果 | 694 条逐图记录与冻结评估划分已公开；[数据集](data/annotations-2026-10-25/docs/README.zh-CN.md) |
 | 检测头微调 | 仅实验候选：留出宏 F1 43.89% → 46.92%，眼精确率下降；[结果](docs/training/z8-native-head-finetune.zh-CN.md) |
 | Sony 实验 | 暂停 |
 
@@ -25,7 +25,7 @@
 
 ## 下载与复核
 
-使用 [Z8 辅助人工复核工具](docs/z8-review.zh-CN.md)检查全部冻结的 384×256 输入，默认显示 Z8 框。明确确认后记录原厂正确或纠错结果，保留逐框差异和修订历史。旧 LLM 标签留在历史精标入口。
+使用 [Z8 辅助人工复核工具](docs/tools/z8-review.zh-CN.md)检查全部冻结的 384×256 输入，默认显示 Z8 框。明确确认后记录原厂正确或纠错结果，保留逐框差异和修订历史。旧 LLM 标签留在历史精标入口。
 
 | 批次 | 图数 | 下载 |
 |---|---:|---|
@@ -43,7 +43,20 @@
 
 检查整张照片，优先复核无候选图，导出决定 JSON。正确图保留作对照，错误图进入精标。原始类号 0–5 的语义仍待确认。
 
-编号以 [data/registry.csv](data/registry.csv) 为准。[输入转换代码](scripts/z8_input.py)、[预标注流程](docs/run-prelabel.zh-CN.md)。
+编号以 [data/registry.csv](data/registry.csv) 为准。[输入转换代码](scripts/pipeline/z8_input.py)、[预标注流程](docs/workflow/run-prelabel.zh-CN.md)。
+
+## 仓库结构
+
+| 目录 | 内容 | 索引 |
+|---|---|---|
+| `data/` | 注册表、五批清单、**已标注结果** | [data](data/README.zh-CN.md) |
+| `docs/` | 全部文档，按 9 个主题分组 | [文档索引](docs/INDEX.zh-CN.md) |
+| `scripts/` | pipeline / annotator / training / publish / tools | [脚本](scripts/README.zh-CN.md) |
+| `src/forest_bird_annotator/` | 标注服务与前端 | [源码](src/forest_bird_annotator/README.zh-CN.md) |
+| `tests/` | 69 项单元与契约测试 | [测试](tests/README.zh-CN.md) |
+| `experiments/` | 各批预标注运行的校验记录 | [记录](experiments/README.zh-CN.md) |
+
+照片不在仓库里，按 `image_id` 查 [registry.csv](data/registry.csv) 后从对应 Release 下载。
 
 ## 已公开结果
 
@@ -53,16 +66,16 @@
 |---|---|
 | [人工校准标注](data/annotations-2026-10-25/confirmed/README.zh-CN.md) | **547 张确认图的完整标签**，JSONL / CSV / COCO / YOLO 四种格式 |
 | [已标注结果](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl) | 694 条逐图记录：含确认项、冻结原厂候选计数、逐框差异 |
-| [评估划分](data/annotations-2026-10-25/evaluation-split-v1.json) | 375/80/80 训练-验证-测试划分与关联组，训练前冻结 |
-| [去重队列](data/annotations-2026-10-25/dedupe-queue-v1.json) | 536 张在队列、158 张折叠、42 组相似帧 |
-| [较好图片清单](data/annotations-2026-10-25/best-images-v1.json) | 120 张优先复核顺序，只是建议，不是标签集 |
-| [标注工具链](data/annotations-2026-10-25/TOOLCHAIN.zh-CN.md) | 标注服务、导入器、去重、导出格式与 COCO/YOLO 转换 |
+| [评估划分](data/annotations-2026-10-25/splits/evaluation-split-v1.json) | 375/80/80 训练-验证-测试划分与关联组，训练前冻结 |
+| [去重队列](data/annotations-2026-10-25/curation/dedupe-queue-v1.json) | 536 张在队列、158 张折叠、42 组相似帧 |
+| [较好图片清单](data/annotations-2026-10-25/curation/best-images-v1.json) | 120 张优先复核顺序，只是建议，不是标签集 |
+| [标注工具链](data/annotations-2026-10-25/docs/TOOLCHAIN.zh-CN.md) | 标注服务、导入器、去重、导出格式与 COCO/YOLO 转换 |
 | [训练结果](docs/training/z8-native-head-finetune.zh-CN.md) | 原生检测头微调：方法、留出指标、算力与发布边界 |
 
 ```bash
-python scripts/verify_annotations.py                 # 标签、坐标、划分泄漏、队列与清单、敏感字段
+python scripts/tools/verify_annotations.py                 # 标签、坐标、划分泄漏、队列与清单、敏感字段
 python -m unittest tests.test_published_exports tests.test_curation_exports -v
-python scripts/verify_repo.py                        # 仓库内无厂商资产与照片
+python scripts/tools/verify_repo.py                        # 仓库内无厂商资产与照片
 ```
 
 候选权重本身**不公开**：它绝大部分字节仍是厂商权重。公开的是 SHA-256、变化字节范围
@@ -94,15 +107,15 @@ python scripts/verify_repo.py                        # 仓库内无厂商资产�
 | 内容 | 入口 |
 |---|---|
 | 图片、清单和校验值 | [社区数据集](data/README.zh-CN.md) |
-| 已标注结果与评估划分 | [已标注结果](data/annotations-2026-10-25/README.zh-CN.md) |
-| 标注工具链与导出格式 | [工具链](data/annotations-2026-10-25/TOOLCHAIN.zh-CN.md) |
-| 较好图片与去重队列 | [清单说明](data/annotations-2026-10-25/CURATION.zh-CN.md) |
+| 已标注结果与评估划分 | [已标注结果](data/annotations-2026-10-25/docs/README.zh-CN.md) |
+| 标注工具链与导出格式 | [工具链](data/annotations-2026-10-25/docs/TOOLCHAIN.zh-CN.md) |
+| 较好图片与去重队列 | [清单说明](data/annotations-2026-10-25/docs/CURATION.zh-CN.md) |
 | 检测头微调结果 | [原生检测头微调](docs/training/z8-native-head-finetune.zh-CN.md) |
 | 发布边界 | [未发布内容](docs/releases/not-published.zh-CN.md) |
-| 推理与人工复核 | [预标注流程](docs/run-prelabel.zh-CN.md) |
+| 推理与人工复核 | [预标注流程](docs/workflow/run-prelabel.zh-CN.md) |
 | 模型身份与 GPU 检查 | [验证报告](docs/reports/05-e7-comparison-and-cuda.zh-CN.md) |
-| 数据归类与标注规则 | [规范 v1](docs/data/DATASET-SPEC-v1.md) |
-| 固件解包与模型容器格式 | [解包说明](docs/format/UNPACK-GUIDE.md) |
+| 数据归类与标注规则 | [规范 v1](docs/protocol/DATASET-SPEC-v1.md) |
+| 固件解包与模型容器格式 | [解包说明](docs/reference/UNPACK-GUIDE.md) |
 | 项目执行与发布规则 | [AGENTS.md](AGENTS.md)、[NOTICE.md](NOTICE.md) |
 
 历史方案、CUB 校准集和失败运行记录保留在仓库中供查阅。

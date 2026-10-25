@@ -26,7 +26,7 @@
       "test": {"images": 80, "groups": 5, "bird": 83, "head": 59, "eye": 22}
     },
     "split_policy": "Frozen before training; groups never cross splits; test opened once after validation-only selection.",
-    "split_manifest": "data/annotations-2026-10-25/evaluation-split-v1.json",
+    "split_manifest": "data/annotations-2026-10-25/splits/evaluation-split-v1.json",
     "labels": "data/annotations-2026-10-25/labels/community-corrections-v1.jsonl",
     "grouping_limit": "58 of the 80 test images share one conservative group, so the test set is not 80 independent scenes.",
     "annotation_limit": "Z8-assisted human review bound to the frozen 384 x 256 input; not blind ground truth, not original-image visibility."
@@ -120,7 +120,7 @@
       "docs/training/z8-native-head-finetune.zh-CN.md",
       "docs/training/z8-native-head-finetune.md",
       "docs/training/z8-native-head-finetune.json",
-      "data/annotations-2026-10-25/evaluation-split-v1.json"
+      "data/annotations-2026-10-25/splits/evaluation-split-v1.json"
     ],
     "local_only": [
       "candidate weight (resource744.finetuned.body.bin, vendor-derived parameters)",

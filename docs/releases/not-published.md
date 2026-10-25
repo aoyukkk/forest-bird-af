@@ -15,7 +15,7 @@ claims can be checked from the repository alone and which can only be reproduced
 
 What the repository does publish is the analysis and the hashes, for example
 [model and validation](../../README.md#model-and-validation),
-[unpack guide](../format/UNPACK-GUIDE.md) and
+[unpack guide](../reference/UNPACK-GUIDE.md) and
 [native head fine-tune](../training/z8-native-head-finetune.md).
 
 ## 2. Candidate fine-tuned weights
@@ -53,7 +53,7 @@ with each photographer and permission is recorded per batch.
 | Photographer and permission records | privacy and permission scope |
 
 The public substitute is the slimmed label file described in
-[reviewed labels](../../data/annotations-2026-10-25/README.md); its `removed_fields` list
+[reviewed labels](../../data/annotations-2026-10-25/docs/README.md); its `removed_fields` list
 states exactly what was dropped.
 
 ## 5. Conclusions that are not made
@@ -68,8 +68,8 @@ appear in no performance claim:
 
 ## How to check this yourself
 
-- Labels and splits: `python scripts/verify_annotations.py` and
+- Labels and splits: `python scripts/tools/verify_annotations.py` and
   `python -m unittest tests.test_published_exports -v`.
 - Training method: follow [reproduce](../training/z8-native-head-finetune.md#reproduce) with
   your own verified vendor package and CUDA.
-- Repository assets: `python scripts/verify_repo.py`.
+- Repository assets: `python scripts/tools/verify_repo.py`.

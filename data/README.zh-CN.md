@@ -5,7 +5,7 @@
 | 数据集 | 文件数 | 用途 |
 |---|---:|---|
 | [累计注册表](registry.csv) | 694 | 后续导入使用的权威编号与原资产哈希 |
-| [已标注结果 2026-10-25](annotations-2026-10-25/README.zh-CN.md) | 694 | 人工确认的鸟身/头/眼标签与冻结训练/验证/测试划分 |
+| [已标注结果 2026-10-25](annotations-2026-10-25/docs/README.zh-CN.md) | 694 | 人工确认的鸟身/头/眼标签与冻结训练/验证/测试划分 |
 | [社区第五批](community-2026-10-25-batch05/README.zh-CN.md) | 60 | 新增 JPEG 与 Z8 预测，编号 fb_0635–fb_0694 |
 | [社区第四批](community-2026-10-24-batch04/README.zh-CN.md) | 64 | 新增 42 NEF、22 JPG 与 Z8 预测，编号 fb_0571–fb_0634 |
 | [社区第三批](community-2026-10-24-batch03/README.zh-CN.md) | 47 | 新增 NEF、内嵌 JPEG 审核图与 Z8 预标注，编号 fb_0524–fb_0570 |
@@ -28,11 +28,11 @@
 
 当前预标注保留原始数字类号，等待人工复核。漏检不能当成无鸟；旧 292 行空模板也全部是未标状态。
 
-人工复核进度与公开标签见[已标注结果 2026-10-25](annotations-2026-10-25/README.zh-CN.md)：547 张已确认、146 张草稿、1 张待裁决。
+人工复核进度与公开标签见[已标注结果 2026-10-25](annotations-2026-10-25/docs/README.zh-CN.md)：547 张已确认、146 张草稿、1 张待裁决。
 
 同一连拍、同曝光 RAW/JPEG、裁切和重编码版本应落在同一数据划分。训练用的划分已按保守关联组冻结并公开在 `annotations-2026-10-25/evaluation-split-v1.json`，分组是工程防泄漏近似，不等于已核实的拍摄事件身份。
 
-详见[预标注流程](../docs/run-prelabel.zh-CN.md)和[数据规范 v1](../docs/data/DATASET-SPEC-v1.md)。
+详见[预标注流程](../docs/workflow/run-prelabel.zh-CN.md)和[数据规范 v1](../docs/protocol/DATASET-SPEC-v1.md)。
 
 ## 使用范围
 

@@ -1,0 +1,18 @@
+# Prelabel run records
+
+**English** | [简体中文](README.zh-CN.md)
+
+Each subdirectory is one prelabel batch and keeps that run's validation evidence:
+batch consistency, decoder comparison, runtime lock, bilingual page checks and a
+summary. These record what happened and are not rewritten later.
+
+| Directory | Content |
+|---|---|
+| `community-prelabel-2026-10-24/` | First batch, 296 images |
+| `community-prelabel-2026-10-24-batch02/` | Batch 02, 227 images |
+| `community-prelabel-2026-10-24-batch03/` | Batch 03, 47 NEFs (camera-embedded JPEG) |
+| `community-prelabel-2026-10-24-batch04/` | Batch 04, 64 images |
+| `community-prelabel-2026-10-25-batch05/` | Batch 05, 60 images |
+| `run-001-frozen/` `run-002-parser/` `run-003-runtime/` | Early protocol, parser and runtime admission |
+
+Images ship through releases; manifests live under `data/`.

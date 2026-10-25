@@ -31,7 +31,7 @@ The validated local CUDA pipeline uses the same Z8 resource744 body and original
 
 All **227/227** images completed with no execution errors: **180 with candidates, 47 without, 602 raw boxes**. GPU network time was **143.13 seconds**, excluding image I/O and postprocessing. E7 host decoding matched every saved Z8 candidate record in this batch.
 
-The 384 × 256 PNGs are reconstructed from saved input buffers and pass byte-for-byte round-trip checks. Network input is `float32(u8) / 256`, CHW `[3, 256, 384]`. The [conversion code](../../scripts/z8_input.py) reproduces the EXIF-oriented RGB → bilinear resize → CHW conversion. The full camera sensor preprocessing is not established.
+The 384 × 256 PNGs are reconstructed from saved input buffers and pass byte-for-byte round-trip checks. Network input is `float32(u8) / 256`, CHW `[3, 256, 384]`. The [conversion code](../../scripts/pipeline/z8_input.py) reproduces the EXIF-oriented RGB → bilinear resize → CHW conversion. The full camera sensor preprocessing is not established.
 
 | Record | Purpose |
 |---|---|

@@ -15,7 +15,7 @@
 | [predictions.jsonl](predictions.jsonl) | 每图原始类号候选，待人工复核 |
 | [review-bundle.json](review-bundle.json) | 复核包大小与校验值 |
 
-Release 同时提供 `SHA256SUMS.txt`、复核包和独立的双语 `review.html`。用独立页面替换包内版本即可默认显示英文，并可切换简体中文，详见[复核流程](../../docs/run-prelabel.zh-CN.md)。
+Release 同时提供 `SHA256SUMS.txt`、复核包和独立的双语 `review.html`。用独立页面替换包内版本即可默认显示英文，并可切换简体中文，详见[复核流程](../../docs/workflow/run-prelabel.zh-CN.md)。
 
 ## 图片处理
 
@@ -38,13 +38,13 @@ PNG 直接由留存输入还原，没有重新推理或缩放。将解码像素�
 
 网络实际接收 `float32(u8) / 256`。这批数据固定了本轮模拟的真实输入，但尚未确认完整机内传感器预处理链路。眼、头精标继续使用全分辨率图片，模型对照使用固定输入；人工标签仍待完成。
 
-[转换代码](../../scripts/z8_input.py)依次应用 EXIF 方向、转 RGB、Pillow 双线性拉伸至 384 × 256，再按 R/G/B 平面存储。NEF 先使用上文规定的审核 JPEG。单图复现：
+[转换代码](../../scripts/pipeline/z8_input.py)依次应用 EXIF 方向、转 RGB、Pillow 双线性拉伸至 384 × 256，再按 R/G/B 平面存储。NEF 先使用上文规定的审核 JPEG。单图复现：
 
 ```powershell
-python scripts/z8_input.py path/to/review-image.jpg --output input-check --expected-sha256 INPUT_SHA256
+python scripts/pipeline/z8_input.py path/to/review-image.jpg --output input-check --expected-sha256 INPUT_SHA256
 ```
 
-预期哈希取自 [input-manifest.jsonl](input-manifest.jsonl) 的 `input_chw_u8_sha256`。复现需使用相同审核图和 [input-validation.json](input-validation.json) 中记录的 Pillow 版本。[打包代码](../../scripts/package_z8_inputs.py)负责校验留档并导出 PNG。
+预期哈希取自 [input-manifest.jsonl](input-manifest.jsonl) 的 `input_chw_u8_sha256`。复现需使用相同审核图和 [input-validation.json](input-validation.json) 中记录的 Pillow 版本。[打包代码](../../scripts/pipeline/package_z8_inputs.py)负责校验留档并导出 PNG。
 
 ## 预标注结果
 

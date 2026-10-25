@@ -77,3 +77,9 @@ desktop.ini
 *.sqlite3-wal
 *.sqlite3-shm
 annotation-workspace/
+
+# ===== 已发布标注包：YOLO 文本以 zip 分发 =====
+# 547 个单行文本会把目录翻乱，仓库里只保留归档；
+# 需要散文件时运行 scripts/publish/export_confirmed_labels.py 重新生成。
+data/annotations-2026-10-25/confirmed/yolo/
+!data/annotations-2026-10-25/confirmed/yolo-labels.zip

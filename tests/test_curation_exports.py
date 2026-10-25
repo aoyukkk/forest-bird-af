@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / 'scripts'))
+sys.path.insert(0, str(ROOT / 'scripts' / 'tools'))
 
 import verify_annotations as published  # noqa: E402
 
@@ -15,8 +15,8 @@ DATA = ROOT / 'data' / 'annotations-2026-10-25'
 
 class CurationExportTests(unittest.TestCase):
     def setUp(self):
-        self.queue = json.loads((DATA / 'dedupe-queue-v1.json').read_text(encoding='utf-8'))
-        self.best = json.loads((DATA / 'best-images-v1.json').read_text(encoding='utf-8'))
+        self.queue = json.loads((DATA / 'curation' / 'dedupe-queue-v1.json').read_text(encoding='utf-8'))
+        self.best = json.loads((DATA / 'curation' / 'best-images-v1.json').read_text(encoding='utf-8'))
         self.labels = {json.loads(line)['image_id']: json.loads(line)
                        for line in (DATA / 'labels' / 'community-corrections-v1.jsonl')
                        .read_text(encoding='utf-8').splitlines() if line.strip()}

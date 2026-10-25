@@ -12,7 +12,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / 'scripts'))
+sys.path.insert(0, str(ROOT / 'scripts' / 'tools'))
 
 import verify_annotations as published  # noqa: E402
 
@@ -21,7 +21,7 @@ class PublishedExportTests(unittest.TestCase):
     def setUp(self):
         self.root = ROOT / 'data' / 'annotations-2026-10-25'
         self.labels = self.root / 'labels' / 'community-corrections-v1.jsonl'
-        self.manifest = self.root / 'evaluation-split-v1.json'
+        self.manifest = self.root / 'splits' / 'evaluation-split-v1.json'
         self.records = [json.loads(line) for line in
                         self.labels.read_text(encoding='utf-8').splitlines() if line.strip()]
 

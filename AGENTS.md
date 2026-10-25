@@ -7,7 +7,7 @@
 
 适用范围：本仓库及其林鸟数据工作流。版本 1.0，2026-10-24。
 
-本文件约束后续代理、脚本和维护工作。详细的数据设计、目录、字段和验收方法见 [DATASET-SPEC-v1.md](docs/data/DATASET-SPEC-v1.md)。用户在当前会话的明确指示优先；已授权事项不重复询问。
+本文件约束后续代理、脚本和维护工作。详细的数据设计、目录、字段和验收方法见 [DATASET-SPEC-v1.md](docs/protocol/DATASET-SPEC-v1.md)。用户在当前会话的明确指示优先；已授权事项不重复询问。
 
 ## Documentation language
 
@@ -18,7 +18,7 @@ User-facing repository pages default to English and link to a paired Simplified 
 ## 1. 目标和当前阶段
 
 
-**人工 Z8 纠错授权（2026-10-25，覆盖此前默认隐藏要求）**：用户要求全部图片重新人工复核，首页默认显示冻结 Z8 框。执行 [Z8 辅助人工纠错](docs/z8-review.zh-CN.md)，采用独立 `forest-bird-z8-correction-v1`；既有 LLM 标签和历史留在 `/annotate`，不作为本轮初始值。未修改并点击确认才记为正确，修改后按逐框差异记录部分有误/有误。翻页和自动保存不等于确认。无框不当无鸟，不确定单列。AI 只可写草稿，不代替用户确认。保存基线、前后值、增删、部位与修订；不删正确样本。原来的盲标/精标规范保留用于独立标注，不能把 Z8 辅助复核冒充独立测试真值。不自动开始 LLM 初标、训练、蒸馏或 Sony。
+**人工 Z8 纠错授权（2026-10-25，覆盖此前默认隐藏要求）**：用户要求全部图片重新人工复核，首页默认显示冻结 Z8 框。执行 [Z8 辅助人工纠错](docs/tools/z8-review.zh-CN.md)，采用独立 `forest-bird-z8-correction-v1`；既有 LLM 标签和历史留在 `/annotate`，不作为本轮初始值。未修改并点击确认才记为正确，修改后按逐框差异记录部分有误/有误。翻页和自动保存不等于确认。无框不当无鸟，不确定单列。AI 只可写草稿，不代替用户确认。保存基线、前后值、增删、部位与修订；不删正确样本。原来的盲标/精标规范保留用于独立标注，不能把 Z8 辅助复核冒充独立测试真值。不自动开始 LLM 初标、训练、蒸馏或 Sony。
 
 
 **标注工具授权（2026-10-24）**：用户明确要求建立人和 AI 都能操作的完整工具，导入全部既有 384×256 素材。允许本地工具开发、部署、导入与独立测试工作区验收。默认隐藏 Z8 候选框，界面默认简体中文并提供英文选项。当前输入标签使用 `forest-bird-input-manual-v1`，坐标与可见性绑定 384×256；原图只作参考，不能把输入标签冒充原图真值。工具代码与文档可写入本仓库；正式标注数据库、图片和服务日志保留仓库外。仍不启动训练、蒸馏或 Sony。
@@ -102,7 +102,7 @@ Latest import authorization (2026-10-24): extract the newly received ZIP into it
 
 ## 7. 复核与状态
 
-- **AI 初标流程 v2（2026-10-24）**：执行 [AI 初标与人工复核流程 v2](docs/ai-annotation-workflow-v2.zh-CN.md)。这是当前 AI 标注操作规范；历史运行脚本不因文档更新自动视为已修复。默认先做 5 张新图校准，保留已有标签并为上一完整批次生成复核清单。每张必须将建议画回当前输入并实际查看最终叠框，再校验、提交及完整读回比较。眼框默认 null，不批量生成固定尺寸眼框。续跑不重置额度、不覆盖已有标签，扩量须先完成人工校准确认。
+- **AI 初标流程 v2（2026-10-24）**：执行 [AI 初标与人工复核流程 v2](docs/overview/ai-annotation-workflow-v2.zh-CN.md)。这是当前 AI 标注操作规范；历史运行脚本不因文档更新自动视为已修复。默认先做 5 张新图校准，保留已有标签并为上一完整批次生成复核清单。每张必须将建议画回当前输入并实际查看最终叠框，再校验、提交及完整读回比较。眼框默认 null，不批量生成固定尺寸眼框。续跑不重置额度、不覆盖已有标签，扩量须先完成人工校准确认。
 - 状态流转：`pending → annotated → reviewed`；存在分歧进入 `needs_adjudication`，裁决后方可 reviewed。
 - 每次编辑保留标注者、复核者、时间、协议版本和修订号，修订不覆盖历史冻结版本。
 - 首批 40 张进行独立双人标注和裁决，校准规则后再扩量。
@@ -134,7 +134,7 @@ Latest import authorization (2026-10-24): extract the newly received ZIP into it
 ## 10. 提交与完成标准
 
 ```bash
-python scripts/verify_repo.py
+python scripts/tools/verify_repo.py
 git diff --check
 ```
 
@@ -154,21 +154,21 @@ Batch 05 (2026-10-25): 60 JPEGs, IDs fb_0635–fb_0694. RAR extraction and sourc
 
 用户本轮明确要求把「未更新的图片、已标注的结果、训练代码」同步到 GitHub 仓库。执行范围与边界：
 
-- 已标注结果：`data/annotations-2026-10-25/labels/community-corrections-v1.jsonl`，由生产标注库只读副本经 `scripts/export_z8_labels.py` 生成。公开字段只含 384×256 输入上的部位几何、复核状态、冻结候选计数与逐框差异；原图绝对路径、原资产哈希、参考图哈希、复核者标识和内部备注一律剔除。
-- 评估划分：`data/annotations-2026-10-25/evaluation-split-v1.json`，由冻结 `split-lock.json` 与 `dataset.json` 经 `scripts/export_split_manifest.py` 生成，只发布划分、关联组和输入哈希。
+- 已标注结果：`data/annotations-2026-10-25/labels/community-corrections-v1.jsonl`，由生产标注库只读副本经 `scripts/publish/export_z8_labels.py` 生成。公开字段只含 384×256 输入上的部位几何、复核状态、冻结候选计数与逐框差异；原图绝对路径、原资产哈希、参考图哈希、复核者标识和内部备注一律剔除。
+- 评估划分：`data/annotations-2026-10-25/splits/evaluation-split-v1.json`，由冻结 `split-lock.json` 与 `dataset.json` 经 `scripts/publish/export_split_manifest.py` 生成，只发布划分、关联组和输入哈希。
 - 训练代码：`scripts/` 下 `prepare_z8_training.py`、`train_z8_heads.py`、`evaluate_z8_training.py` 等按仓库内无绝对路径、无私有数据的形式提交；执行需要本机自备原厂包与 CUDA。
 - 训练结果：`docs/training/z8-native-head-finetune.{md,zh-CN.md,json}`。只报告验证集选型与一次性留出测试结果，并声明 95% 组级区间触及零、眼精确率下降，不写作「模型更好」。
 - **候选权重 `resource744.finetuned.body.bin` 不入库**：其字节绝大部分是厂商权重，公开文件即公开原厂模型。只发布哈希、变化字节范围与复现路径。
 - 原片、公开副本、生产库、去重记录继续留在仓库外；图片仍按 Releases 分发。
-- 提交前必须运行 `python scripts/verify_repo.py`、`python scripts/verify_annotations.py`、`python -m unittest tests.test_published_exports -v` 与 `git diff --check`。
+- 提交前必须运行 `python scripts/tools/verify_repo.py`、`python scripts/tools/verify_annotations.py`、`python -m unittest discover -s tests -p "test_*.py"` 与 `git diff --check`。
 
 ## 12. 去重、较好图片与工具链发布（2026-10-26）
 
 用户确认「去重功能早已做好、标注已完成并开始训练」，要求把**较好图片、标注工具**一并开源。执行范围与边界：
 
 - 去重：`dedupe.py` 的 `restore` 动作与页面「撤销去重」按钮本轮补齐；折叠仍只写 `dedupe/`，不改图片、标注与修订历史。
-- 队列清单：`data/annotations-2026-10-25/dedupe-queue-v1.json`，由工作区 `dedupe/current.json` 只读快照经 `scripts/export_dedupe_queue.py` 生成。只发布分组成员、代表图、划分归属与阈值，不含原图路径与哈希。必须写明折叠图之间是**相似帧而非字节重复**（输入像素哈希零重合），分组不跨划分。
-- 较好图片：`data/annotations-2026-10-25/best-images-v1.json`，由 `scripts/export_best_images.py` 按固定公式排序，只从人工确认且仍在队列的图中选。必须声明该分数代表复核价值与纠错量，**不是识别准确率**。
-- 工具链：`data/annotations-2026-10-25/TOOLCHAIN.{md,zh-CN.md}` 说明标注服务、导入器、去重与导出；`scripts/export_label_formats.py` 提供 COCO/YOLO 转换（眼点无可见边界时按 12×12 补框并标记 `eye_center_boxed`）。
-- 校验：`scripts/verify_annotations.py` 增加队列与清单检查（代表图存在、折叠图不在队列、分组不跨划分、清单只含确认图），并由 `tests/test_curation_exports.py` 覆盖。
+- 队列清单：`data/annotations-2026-10-25/curation/dedupe-queue-v1.json`，由工作区 `dedupe/current.json` 只读快照经 `scripts/publish/export_dedupe_queue.py` 生成。只发布分组成员、代表图、划分归属与阈值，不含原图路径与哈希。必须写明折叠图之间是**相似帧而非字节重复**（输入像素哈希零重合），分组不跨划分。
+- 较好图片：`data/annotations-2026-10-25/curation/best-images-v1.json`，由 `scripts/publish/export_best_images.py` 按固定公式排序，只从人工确认且仍在队列的图中选。必须声明该分数代表复核价值与纠错量，**不是识别准确率**。
+- 工具链：`data/annotations-2026-10-25/TOOLCHAIN.{md,zh-CN.md}` 说明标注服务、导入器、去重与导出；`scripts/publish/export_label_formats.py` 提供 COCO/YOLO 转换（眼点无可见边界时按 12×12 补框并标记 `eye_center_boxed`）。
+- 校验：`scripts/tools/verify_annotations.py` 增加队列与清单检查（代表图存在、折叠图不在队列、分组不跨划分、清单只含确认图），并由 `tests/test_curation_exports.py` 覆盖。
 - 数据库、原片、权重仍不入库；生产标注库仍为唯一真值来源，导出为单向只读快照。

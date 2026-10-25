@@ -4,7 +4,7 @@
 
 Date: 2026-10-25. Machine-readable record:
 [z8-native-head-finetune.json](z8-native-head-finetune.json). The plan and method
-notes are in [native detection-head fine-tuning](../z8-head-training.md).
+notes are in [native detection-head fine-tuning](z8-head-training.md).
 
 **Result: the current experiment candidate raised held-out macro F1 from 43.89%
 to 46.92% and eye hits from 4/22 to 6/22, while eye precision fell from 80.00% to
@@ -31,7 +31,7 @@ adjudication.
 Splits were frozen before training and the test set was opened once after
 validation-only selection. The published splits and labels live in
 `data/annotations-2026-10-25/` and can be checked offline with
-`python scripts/verify_annotations.py`.
+`python scripts/tools/verify_annotations.py`.
 
 Two limits belong together with these numbers. 58 of the 80 test images share a
 single conservative group, so the test set is not 80 independent scenes. Labels
@@ -116,12 +116,12 @@ body SHA-256 is
 ## Reproduce
 
 ```bash
-python scripts/prepare_z8_training.py --help   # freeze splits and cache features (needs the local vendor package)
-python scripts/train_z8_heads.py --help        # train and export the candidate body
-python scripts/evaluate_z8_training.py --help  # single post-selection test run
-python scripts/export_z8_labels.py --help      # production database to publishable labels
-python scripts/export_split_manifest.py --help # frozen splits to a publishable manifest
-python scripts/verify_annotations.py           # offline check of labels and splits
+python scripts/training/prepare_z8_training.py --help   # freeze splits and cache features (needs the local vendor package)
+python scripts/training/train_z8_heads.py --help        # train and export the candidate body
+python scripts/training/evaluate_z8_training.py --help  # single post-selection test run
+python scripts/publish/export_z8_labels.py --help      # production database to publishable labels
+python scripts/publish/export_split_manifest.py --help # frozen splits to a publishable manifest
+python scripts/tools/verify_annotations.py           # offline check of labels and splits
 ```
 
 The first three scripts require the locally verified vendor package and CUDA,

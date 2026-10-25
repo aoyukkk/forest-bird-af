@@ -49,7 +49,7 @@ Nikon Z8 与 Sony a1 II 的固件镜像属于各自厂商的受版权保护资�
 
 **核心边界：公开"格式知识"与"验证方式"，不公开"资产本体"。**
 
-任何人都可以按 [UNPACK-GUIDE.md](docs/format/UNPACK-GUIDE.md) 从官方固件自行提取，并用 [NAB-FORMAT.md](docs/format/NAB-FORMAT.md) 第 8 节的四项校验确认自己提取正确。本仓库提供的是这条路，不是目的地。
+任何人都可以按 [UNPACK-GUIDE.md](docs/reference/UNPACK-GUIDE.md) 从官方固件自行提取，并用 [NAB-FORMAT.md](docs/reference/NAB-FORMAT.md) 第 8 节的四项校验确认自己提取正确。本仓库提供的是这条路，不是目的地。
 
 ### 2.3 图像
 

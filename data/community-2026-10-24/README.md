@@ -15,7 +15,7 @@ Open the [release](https://github.com/aoyukkk/forest-bird-af/releases/tag/commun
 | [predictions.jsonl](predictions.jsonl) | Per-image raw-class proposals, pending review |
 | [review-bundle.json](review-bundle.json) | Review archive size and checksum |
 
-The release also includes `SHA256SUMS.txt`, the review bundle, and a separate bilingual `review.html`. Replace the bundled page with this newer file for English by default and a Simplified Chinese option. See the [review workflow](../../docs/run-prelabel.md).
+The release also includes `SHA256SUMS.txt`, the review bundle, and a separate bilingual `review.html`. Replace the bundled page with this newer file for English by default and a Simplified Chinese option. See the [review workflow](../../docs/workflow/run-prelabel.md).
 
 ## Image preparation
 
@@ -38,13 +38,13 @@ The PNGs were reconstructed from the saved buffers, without another inference ru
 
 The network receives `float32(u8) / 256`. These are the exact inputs used by this simulation run; the complete in-camera sensor-to-network preprocessing has not been established. Keep original-resolution images for detailed eye/head annotation and use these fixed inputs for model comparisons. Labels remain pending human review.
 
-The conversion is implemented in [z8_input.py](../../scripts/z8_input.py): apply EXIF orientation, convert to RGB, stretch to 384 × 256 using Pillow bilinear interpolation, then store R, G, B planes. NEF first uses the fixed review JPEG described above. To reproduce one input from its review image:
+The conversion is implemented in [z8_input.py](../../scripts/pipeline/z8_input.py): apply EXIF orientation, convert to RGB, stretch to 384 × 256 using Pillow bilinear interpolation, then store R, G, B planes. NEF first uses the fixed review JPEG described above. To reproduce one input from its review image:
 
 ```powershell
-python scripts/z8_input.py path/to/review-image.jpg --output input-check --expected-sha256 INPUT_SHA256
+python scripts/pipeline/z8_input.py path/to/review-image.jpg --output input-check --expected-sha256 INPUT_SHA256
 ```
 
-Use the `input_chw_u8_sha256` from [input-manifest.jsonl](input-manifest.jsonl). Exact reproduction depends on the review image and the Pillow version recorded in [input-validation.json](input-validation.json). The publisher is [package_z8_inputs.py](../../scripts/package_z8_inputs.py).
+Use the `input_chw_u8_sha256` from [input-manifest.jsonl](input-manifest.jsonl). Exact reproduction depends on the review image and the Pillow version recorded in [input-validation.json](input-validation.json). The publisher is [package_z8_inputs.py](../../scripts/pipeline/package_z8_inputs.py).
 
 ## Prelabel results
 

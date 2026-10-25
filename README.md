@@ -16,8 +16,8 @@ Updated: 2026-10-25.
 | Z8 prelabeling | 694/694 completed on a local RTX 4080 Laptop GPU; 0 execution errors |
 | Candidates | 1495 boxes across 469 images; 225 images have no candidates |
 | Human review | 547 confirmed, 146 draft, 1 held for adjudication |
-| Annotation tool | Local browser editor and shared human/AI API; [guide](docs/annotator.md) |
-| Reviewed labels | 694 records published with the frozen eval split; [dataset](data/annotations-2026-10-25/README.md) |
+| Annotation tool | Local browser editor and shared human/AI API; [guide](docs/tools/annotator.md) |
+| Reviewed labels | 694 records published with the frozen eval split; [dataset](data/annotations-2026-10-25/docs/README.md) |
 | Head fine-tuning | Experiment candidate only: held-out macro F1 43.89% → 46.92%, eye precision fell; [results](docs/training/z8-native-head-finetune.md) |
 | Sony experiments | Paused |
 
@@ -25,7 +25,7 @@ The [latest release](https://github.com/aoyukkk/forest-bird-af/releases/tag/comm
 
 ## Download and review
 
-Use the [Z8-assisted human review workspace](docs/z8-review.md) to inspect all frozen 384 × 256 inputs. Z8 boxes are visible by default. Explicit confirmation records accepted proposals or corrections, preserving every change and revision. Previous LLM labels remain in the historical precision editor.
+Use the [Z8-assisted human review workspace](docs/tools/z8-review.md) to inspect all frozen 384 × 256 inputs. Z8 boxes are visible by default. Explicit confirmation records accepted proposals or corrections, preserving every change and revision. Previous LLM labels remain in the historical precision editor.
 
 | Batch | Images | Download |
 |---|---:|---|
@@ -43,7 +43,21 @@ Batch 03 uses the NEFs' **camera-embedded JPEGs** for review and prediction. The
 
 Review the whole image, starting with images without candidates. Export decisions as JSON; keep correct examples as controls and annotate errors in detail. Native slots 0–5 await semantic labels.
 
-Use [data/registry.csv](data/registry.csv) for stable IDs. [Input conversion code](scripts/z8_input.py) and [workflow](docs/run-prelabel.md).
+Use [data/registry.csv](data/registry.csv) for stable IDs. [Input conversion code](scripts/pipeline/z8_input.py) and [workflow](docs/workflow/run-prelabel.md).
+
+## Repository layout
+
+| Folder | Content | Index |
+|---|---|---|
+| `data/` | Register, five batch manifests, **published labels** | [data](data/README.md) |
+| `docs/` | All documentation, grouped into 9 topics | [docs index](docs/INDEX.md) |
+| `scripts/` | pipeline / annotator / training / publish / tools | [scripts](scripts/README.md) |
+| `src/forest_bird_annotator/` | Annotation service and front end | [source](src/forest_bird_annotator/README.md) |
+| `tests/` | 69 unit and contract tests | [tests](tests/README.md) |
+| `experiments/` | Validation records per prelabel batch | [records](experiments/README.md) |
+
+Photos are not in the repository; look up `image_id` in
+[registry.csv](data/registry.csv), then download the matching release.
 
 ## Published results
 
@@ -53,16 +67,16 @@ Everything in the repository can be checked offline:
 |---|---|
 | [Human-confirmed labels](data/annotations-2026-10-25/confirmed/README.md) | **All 547 confirmed images** in JSONL, CSV, COCO and YOLO |
 | [Reviewed labels](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl) | 694 per-image records, including drafts, with frozen vendor candidate counts |
-| [Evaluation split](data/annotations-2026-10-25/evaluation-split-v1.json) | 375 / 80 / 80 train-val-test assignment with leakage groups, frozen before training |
-| [Dedupe queue](data/annotations-2026-10-25/dedupe-queue-v1.json) | 536 in queue, 158 folded, 42 similarity groups |
-| [Best images](data/annotations-2026-10-25/best-images-v1.json) | 120-image first-look ordering; a review aid, not the label set |
-| [Toolchain](data/annotations-2026-10-25/TOOLCHAIN.md) | Annotation service, importer, dedupe, COCO/YOLO export |
+| [Evaluation split](data/annotations-2026-10-25/splits/evaluation-split-v1.json) | 375 / 80 / 80 train-val-test assignment with leakage groups, frozen before training |
+| [Dedupe queue](data/annotations-2026-10-25/curation/dedupe-queue-v1.json) | 536 in queue, 158 folded, 42 similarity groups |
+| [Best images](data/annotations-2026-10-25/curation/best-images-v1.json) | 120-image first-look ordering; a review aid, not the label set |
+| [Toolchain](data/annotations-2026-10-25/docs/TOOLCHAIN.md) | Annotation service, importer, dedupe, COCO/YOLO export |
 | [Training results](docs/training/z8-native-head-finetune.md) | Native head fine-tune: method, held-out metrics, compute, publication boundary |
 
 ```bash
-python scripts/verify_annotations.py                 # labels, confirmed export, coordinates, splits, queue
+python scripts/tools/verify_annotations.py                 # labels, confirmed export, coordinates, splits, queue
 python -m unittest tests.test_published_exports tests.test_curation_exports tests.test_confirmed_export -v
-python scripts/verify_repo.py                        # no vendor assets or photos in the tree
+python scripts/tools/verify_repo.py                        # no vendor assets or photos in the tree
 ```
 
 The candidate weight itself is **not** distributed: nearly every byte of it is
@@ -96,15 +110,15 @@ See the [validation report](docs/reports/05-e7-comparison-and-cuda.md) and [late
 | Topic | Link |
 |---|---|
 | Images, manifests, and checksums | [Community datasets](data/README.md) |
-| Reviewed labels and evaluation split | [Annotations 2026-10-25](data/annotations-2026-10-25/README.md) |
-| Annotation toolchain and export formats | [Toolchain](data/annotations-2026-10-25/TOOLCHAIN.md) |
-| Best images and the deduplicated queue | [Curation](data/annotations-2026-10-25/CURATION.md) |
+| Reviewed labels and evaluation split | [Annotations 2026-10-25](data/annotations-2026-10-25/docs/README.md) |
+| Annotation toolchain and export formats | [Toolchain](data/annotations-2026-10-25/docs/TOOLCHAIN.md) |
+| Best images and the deduplicated queue | [Curation](data/annotations-2026-10-25/docs/CURATION.md) |
 | Head fine-tuning results | [Native head fine-tune](docs/training/z8-native-head-finetune.md) |
 | Publication boundary | [Not published](docs/releases/not-published.md) |
-| Run inference and review results | [Prelabeling workflow](docs/run-prelabel.md) |
+| Run inference and review results | [Prelabeling workflow](docs/workflow/run-prelabel.md) |
 | Model identity and GPU checks | [Validation report](docs/reports/05-e7-comparison-and-cuda.md) |
-| Dataset organization and annotation protocol | [Protocol v1, Chinese](docs/data/DATASET-SPEC-v1.md) |
-| Firmware extraction and model-container format | [Extraction guide, Chinese](docs/format/UNPACK-GUIDE.md) |
+| Dataset organization and annotation protocol | [Protocol v1, Chinese](docs/protocol/DATASET-SPEC-v1.md) |
+| Firmware extraction and model-container format | [Extraction guide, Chinese](docs/reference/UNPACK-GUIDE.md) |
 | Contribution and publication rules | [AGENTS.md](AGENTS.md), [NOTICE.md](NOTICE.md) |
 
 Earlier plans, the CUB calibration set, and failed runs remain in the repository for reference.

@@ -23,7 +23,7 @@ The RAW files include 27 `High Efficiency*` and 20 lossless-compressed files. Th
 
 **47/47 completed**, 0 execution errors: **28 with candidates, 19 without, 83 raw boxes**. GPU network time: **30.40 s**, excluding I/O and postprocessing. Fresh CUDA batch validation passed and both decoders matched all 47 saved records. Native slots 0–5 await human review and semantic mapping.
 
-Input: EXIF-oriented review JPEG → RGB → Pillow bilinear stretch to 384 × 256 → CHW uint8 → `float32(u8) / 256`. PNG round trips and all saved input hashes passed. [Conversion](../../scripts/z8_input.py).
+Input: EXIF-oriented review JPEG → RGB → Pillow bilinear stretch to 384 × 256 → CHW uint8 → `float32(u8) / 256`. PNG round trips and all saved input hashes passed. [Conversion](../../scripts/pipeline/z8_input.py).
 
 ## Records
 

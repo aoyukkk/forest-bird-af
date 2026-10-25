@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / 'scripts'))
+sys.path.insert(0, str(ROOT / 'scripts' / 'tools'))
 
 import verify_annotations as published  # noqa: E402
 
@@ -56,8 +56,11 @@ class ConfirmedPackageTests(unittest.TestCase):
         self.assertEqual(len(coco['annotations']), self.summary['objects_in_coco'])
         self.assertEqual(len(coco['annotations']),
                          sum(len(row['items']) for row in self.records))
+        import zipfile
+        archive = zipfile.ZipFile(CONFIRMED / 'yolo-labels.zip')
+        self.assertIn('yolo/classes.txt', archive.namelist())
         for row in self.records:
-            lines = (CONFIRMED / 'yolo' / (row['image_id'] + '.txt')).read_text(encoding='utf-8')
+            lines = archive.read('yolo/' + row['image_id'] + '.txt').decode('utf-8')
             rows = [line for line in lines.splitlines() if line.strip()]
             self.assertEqual(len(rows), len(row['items']), row['image_id'])
             for line in rows:

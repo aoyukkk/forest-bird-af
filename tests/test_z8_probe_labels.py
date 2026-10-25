@@ -4,7 +4,7 @@ from pathlib import Path
 import sys
 import unittest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts' / 'training'))
 from z8_probe_labels import adapt, assign
 
 TABLES = {'anchors': [(7, 7), (60, 60), (80, 80), (160, 140), (200, 200)],

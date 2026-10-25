@@ -2,7 +2,7 @@
 
 ## 投稿照片
 
-见 [公开征集文案](../docs/collect/call-for-photos.txt)。
+见 [公开征集文案](docs/workflow/call-for-photos.txt)。
 
 **要点**：
 
@@ -15,7 +15,7 @@
 
 ## 提交标注
 
-标注格式见 [annotation-schema.md](../data/schema/annotation-schema.md)。
+标注格式见 [annotation-schema.md](data/schema/annotation-schema.md)。
 
 标注前必须理解的三条：
 
@@ -33,7 +33,7 @@
 ## 提交前自检
 
 ```bash
-python scripts/verify_repo.py
+python scripts/tools/verify_repo.py
 ```
 
 必须输出"通过"。若发现禁止入库的资产，先移出再提交。
@@ -46,4 +46,4 @@ python scripts/verify_repo.py
 - 第三方仓库的副本（`fwtool`、`z8-qemu` 等）
 - 任何超过 20 MB 的单文件
 
-`scripts/verify_repo.py` 会拦住以上全部。
+`scripts/tools/verify_repo.py` 会拦住以上全部。

@@ -4,7 +4,7 @@ from pathlib import Path
 
 import torch
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts' / 'training'))
 from z8_training_targets import match_metrics, target_builder, negative_builder, partial_loss, background_eye_masks, protected_eye_regions, local_eye_supervision, head_local_negative_mask
 
 

@@ -13,7 +13,7 @@
 | `z8models` 执行器全部源码 | 本地模型包 | 与权重包绑定的厂商结构描述 |
 
 仓库内外只发布对这些资产的**分析结论和哈希**，例如
-[模型与验证](../../README.zh-CN.md#模型与验证)、[解包说明](../format/UNPACK-GUIDE.md)、
+[模型与验证](../../README.zh-CN.md#模型与验证)、[解包说明](../reference/UNPACK-GUIDE.md)、
 [原生检测头微调](../training/z8-native-head-finetune.zh-CN.md)。
 
 ## 2. 候选微调权重
@@ -47,7 +47,7 @@
 | 任务清单与逐次执行快照 | 含原片路径 |
 | 摄影者与授权凭证 | 隐私与授权范围 |
 
-公开的替代品是[已标注结果](../../data/annotations-2026-10-25/README.zh-CN.md)里的瘦身标签文件，
+公开的替代品是[已标注结果](../../data/annotations-2026-10-25/docs/README.zh-CN.md)里的瘦身标签文件，
 `removed_fields` 明确列出剔除的字段。
 
 ## 5. 未完成的结论
@@ -61,6 +61,6 @@
 
 ## 复核方式
 
-- 标签与划分：`python scripts/verify_annotations.py`，以及 `python -m unittest tests.test_published_exports -v`。
+- 标签与划分：`python scripts/tools/verify_annotations.py`，以及 `python -m unittest tests.test_published_exports -v`。
 - 训练方法：按[复现](../training/z8-native-head-finetune.zh-CN.md#复现)步骤，用自备原厂包和 CUDA 运行。
-- 资产入库：`python scripts/verify_repo.py`。
+- 资产入库：`python scripts/tools/verify_repo.py`。

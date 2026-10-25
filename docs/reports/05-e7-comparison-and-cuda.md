@@ -64,4 +64,4 @@ The bundle contains 296 overlays, 296 unmarked previews, 30 full-resolution NEF 
 
 All 296 original image hashes were checked again after processing and remained unchanged. The review page passed JavaScript logic checks for filtering, switching images, decision serialization, export triggering, and image paths. Example overlays were inspected visually. Browser layout and click testing were not performed because the in-app browser blocks local file URLs.
 
-[Execution records](../../experiments/community-prelabel-2026-10-24/) · [Review workflow](../run-prelabel.md)
+[Execution records](../../experiments/community-prelabel-2026-10-24/) · [Review workflow](../workflow/run-prelabel.md)

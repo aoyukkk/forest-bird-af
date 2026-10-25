@@ -230,7 +230,7 @@ def cmd_split(nab, args):
     with open(os.path.join(args.output, 'manifest.json'), 'w', encoding='utf-8') as f:
         json.dump(meta, f, indent=1, ensure_ascii=False)
     print(f'\n清单已写入 {os.path.join(args.output, "manifest.json")}')
-    print(f'注意：切分结果不得提交到公开仓库（scripts/verify_repo.py 会拦截）')
+    print(f'注意：切分结果不得提交到公开仓库（scripts/tools/verify_repo.py 会拦截）')
 
 
 def cmd_verify(nab, args):

@@ -4,7 +4,7 @@
 
 日期：2026-10-25。机器可读记录：
 [z8-native-head-finetune.json](z8-native-head-finetune.json)。上一轮计划与
-方法说明见 [本地原生检测头微调](../z8-head-training.zh-CN.md)。
+方法说明见 [本地原生检测头微调](z8-head-training.zh-CN.md)。
 
 **结论：上一版实验候选在留出测试集上宏平均 F1 从 43.89% 升到 46.92%，眼命中从
 4/22 升到 6/22，但眼精确率从 80.00% 掉到 66.67%。5,000 次组级 bootstrap 的
@@ -26,7 +26,7 @@
 | 测试 | 80 | 5 | 83 | 59 | 22 |
 
 划分在训练前冻结，测试集在验证集选型完成后才打开一次。发布的划分与标签在
-`data/annotations-2026-10-25/`，可用 `python scripts/verify_annotations.py` 离线校验。
+`data/annotations-2026-10-25/`，可用 `python scripts/tools/verify_annotations.py` 离线校验。
 
 两个必须一起读的限制：测试集 80 张里有 58 张属于同一个保守组，因此不是 80 个
 独立场景；标签来自 Z8 辅助人工复核，不是独立盲标，坐标绑定冻结的 384×256 输入。
@@ -97,12 +97,12 @@
 ## 复现
 
 ```bash
-python scripts/prepare_z8_training.py --help   # 冻结划分与特征缓存（需要本机原厂包）
-python scripts/train_z8_heads.py --help        # 训练与导出候选 body
-python scripts/evaluate_z8_training.py --help  # 打开测试集的单次评估
-python scripts/export_z8_labels.py --help      # 生产库 → 可发布标签
-python scripts/export_split_manifest.py --help # 冻结划分 → 可发布清单
-python scripts/verify_annotations.py           # 离线校验标签与划分
+python scripts/training/prepare_z8_training.py --help   # 冻结划分与特征缓存（需要本机原厂包）
+python scripts/training/train_z8_heads.py --help        # 训练与导出候选 body
+python scripts/training/evaluate_z8_training.py --help  # 打开测试集的单次评估
+python scripts/publish/export_z8_labels.py --help      # 生产库 → 可发布标签
+python scripts/publish/export_split_manifest.py --help # 冻结划分 → 可发布清单
+python scripts/tools/verify_annotations.py           # 离线校验标签与划分
 ```
 
 前三个脚本需要本机已校验的原厂模型包和 CUDA，仓库不含这些依赖；后三个脚本只依赖

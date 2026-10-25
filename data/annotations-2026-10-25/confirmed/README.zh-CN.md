@@ -8,8 +8,7 @@
 | [confirmed.csv](confirmed.csv) | 扁平索引：编号、划分、是否在去重队列、原厂判定、部位数量 |
 | [summary.json](summary.json) | 计数、部位合计、逐划分分布与标签哈希 |
 | [coco/confirmed.coco.json](coco/confirmed.coco.json) | 一个 COCO 文件装下全部 1,201 个目标 |
-| [yolo/\<编号\>.txt](yolo/) | 每图一个 YOLO 文本，`class cx cy w h` 归一化 |
-| [yolo/classes.txt](yolo/classes.txt) | 类别顺序：`bird`、`head`、`eye` |
+| [yolo-labels.zip](yolo-labels.zip) | 每图一个 YOLO 文本，`class cx cy w h` 归一化 |
 
 ## 数量
 
@@ -32,10 +31,10 @@
 ## 怎么用
 
 ```bash
-python scripts/export_confirmed_labels.py \
+python scripts/publish/export_confirmed_labels.py \
   --labels data/annotations-2026-10-25/labels/community-corrections-v1.jsonl \
-  --dedupe data/annotations-2026-10-25/dedupe-queue-v1.json \
-  --split  data/annotations-2026-10-25/evaluation-split-v1.json \
+  --dedupe data/annotations-2026-10-25/curation/dedupe-queue-v1.json \
+  --split  data/annotations-2026-10-25/splits/evaluation-split-v1.json \
   --output data/annotations-2026-10-25/confirmed
 ```
 
@@ -44,7 +43,7 @@ python scripts/export_confirmed_labels.py \
 ## 三个必须一起读的边界
 
 - **坐标绑定 384×256 冻结输入**，不是原图真值，也不是机身合焦结果。图片按 `image_id` 从
-  [Releases](../README.zh-CN.md) 或 [registry.csv](../../registry.csv) 对应批次获取。
+  [Releases](../docs/README.zh-CN.md) 或 [registry.csv](../../registry.csv) 对应批次获取。
 - **这是辅助复核，不是独立盲标**：确认时能看到原厂框，所以这批标签不能当“独立测试真值”的口号卖，
   只能说是人工校准后的训练/评估标签。
 - **眼只有中心点**。没有可见边界的眼在 COCO/YOLO 里补成 12×12 框并标 `eye_center_boxed`，

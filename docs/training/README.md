@@ -10,18 +10,18 @@ package.
 
 | Script | Purpose | Needs |
 |---|---|---|
-| [prepare_z8_training.py](../../scripts/prepare_z8_training.py) | Back up the annotation database read-only, freeze train/val/test by leakage group, cache native backbone features and verify them bit-exactly | vendor package, CUDA, Pillow |
-| [train_z8_heads.py](../../scripts/train_z8_heads.py) | Freeze the backbone, update only allowed head rows, export the candidate body and read it back | as above plus the frozen dataset directory |
-| [evaluate_z8_training.py](../../scripts/evaluate_z8_training.py) | Open the test set once after selection; run both models through the original BA2 post-processing | as above |
-| [probe_z8_finetune.py](../../scripts/probe_z8_finetune.py) | Bounded trainability probe to confirm the gradient path | as above |
-| [probe_z8_multibird.py](../../scripts/probe_z8_multibird.py) | Observe candidate behaviour on multi-bird frames | as above |
-| [benchmark_z8_candidate.py](../../scripts/benchmark_z8_candidate.py) | Batch throughput, original versus candidate | as above |
-| [z8_probe_labels.py](../../scripts/z8_probe_labels.py) | Native table lookup and candidate label adaptation | vendor package |
-| [z8_trainable_heads.py](../../scripts/z8_trainable_heads.py) | Trainable head tensors, gradient masks and body export | torch |
-| [z8_training_targets.py](../../scripts/z8_training_targets.py) | Target assignment, negative construction, metric matching, derived supervision | torch, numpy |
-| [export_z8_labels.py](../../scripts/export_z8_labels.py) | Production database to publishable labels, private fields dropped | standard library |
-| [export_split_manifest.py](../../scripts/export_split_manifest.py) | Frozen split to a publishable manifest | standard library |
-| [verify_annotations.py](../../scripts/verify_annotations.py) | Offline check of published labels and split | standard library |
+| [prepare_z8_training.py](../../scripts/training/prepare_z8_training.py) | Back up the annotation database read-only, freeze train/val/test by leakage group, cache native backbone features and verify them bit-exactly | vendor package, CUDA, Pillow |
+| [train_z8_heads.py](../../scripts/training/train_z8_heads.py) | Freeze the backbone, update only allowed head rows, export the candidate body and read it back | as above plus the frozen dataset directory |
+| [evaluate_z8_training.py](../../scripts/training/evaluate_z8_training.py) | Open the test set once after selection; run both models through the original BA2 post-processing | as above |
+| [probe_z8_finetune.py](../../scripts/training/probe_z8_finetune.py) | Bounded trainability probe to confirm the gradient path | as above |
+| [probe_z8_multibird.py](../../scripts/training/probe_z8_multibird.py) | Observe candidate behaviour on multi-bird frames | as above |
+| [benchmark_z8_candidate.py](../../scripts/training/benchmark_z8_candidate.py) | Batch throughput, original versus candidate | as above |
+| [z8_probe_labels.py](../../scripts/training/z8_probe_labels.py) | Native table lookup and candidate label adaptation | vendor package |
+| [z8_trainable_heads.py](../../scripts/training/z8_trainable_heads.py) | Trainable head tensors, gradient masks and body export | torch |
+| [z8_training_targets.py](../../scripts/training/z8_training_targets.py) | Target assignment, negative construction, metric matching, derived supervision | torch, numpy |
+| [export_z8_labels.py](../../scripts/publish/export_z8_labels.py) | Production database to publishable labels, private fields dropped | standard library |
+| [export_split_manifest.py](../../scripts/publish/export_split_manifest.py) | Frozen split to a publishable manifest | standard library |
+| [verify_annotations.py](../../scripts/tools/verify_annotations.py) | Offline check of published labels and split | standard library |
 
 ## Key arguments
 
@@ -59,9 +59,9 @@ withheld artifacts are in [what is not published](../releases/not-published.md).
 ## Minimal path
 
 ```bash
-python scripts/prepare_z8_training.py --help
-python scripts/train_z8_heads.py --help
-python scripts/evaluate_z8_training.py --help
+python scripts/training/prepare_z8_training.py --help
+python scripts/training/train_z8_heads.py --help
+python scripts/training/evaluate_z8_training.py --help
 ```
 
 `--help` works without the vendor package. A real run needs the locally verified

@@ -9,8 +9,7 @@ quality-filtered selection.
 | [confirmed.csv](confirmed.csv) | Flat index: id, split, queue membership, verdict, part counts |
 | [summary.json](summary.json) | Counts, part totals, per-split breakdown, label hash |
 | [coco/confirmed.coco.json](coco/confirmed.coco.json) | One COCO file with all 1,201 objects |
-| [yolo/\<id\>.txt](yolo/) | One YOLO file per image, `class cx cy w h` normalised |
-| [yolo/classes.txt](yolo/classes.txt) | Class order: `bird`, `head`, `eye` |
+| [yolo-labels.zip](yolo-labels.zip) | One YOLO file per image, `class cx cy w h` normalised |
 
 ## Counts
 
@@ -35,10 +34,10 @@ images were folded out of the annotation queue by the similarity grouping;
 ## Regenerate
 
 ```bash
-python scripts/export_confirmed_labels.py \
+python scripts/publish/export_confirmed_labels.py \
   --labels data/annotations-2026-10-25/labels/community-corrections-v1.jsonl \
-  --dedupe data/annotations-2026-10-25/dedupe-queue-v1.json \
-  --split  data/annotations-2026-10-25/evaluation-split-v1.json \
+  --dedupe data/annotations-2026-10-25/curation/dedupe-queue-v1.json \
+  --split  data/annotations-2026-10-25/splits/evaluation-split-v1.json \
   --output data/annotations-2026-10-25/confirmed
 ```
 

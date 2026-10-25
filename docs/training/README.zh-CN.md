@@ -8,18 +8,18 @@
 
 | 脚本 | 作用 | 依赖 |
 |---|---|---|
-| [prepare_z8_training.py](../../scripts/prepare_z8_training.py) | 只读备份标注库与去重记录，按关联组冻结训练/验证/测试划分，缓存原生骨干特征并逐位校验 | 原厂模型包、CUDA、Pillow |
-| [train_z8_heads.py](../../scripts/train_z8_heads.py) | 冻结骨干、只更新原检测头允许的参数行，导出候选 body 并读回核对 | 同上 + 冻结后的数据目录 |
-| [evaluate_z8_training.py](../../scripts/evaluate_z8_training.py) | 选型锁定后一次性打开测试集，原厂与候选都过原 BA2 后处理 | 同上 |
-| [probe_z8_finetune.py](../../scripts/probe_z8_finetune.py) | 有限步数可训练性试验，确认梯度路径可用 | 同上 |
-| [probe_z8_multibird.py](../../scripts/probe_z8_multibird.py) | 多鸟图片的候选行为观察 | 同上 |
-| [benchmark_z8_candidate.py](../../scripts/benchmark_z8_candidate.py) | 原厂与候选的批量吞吐对比 | 同上 |
-| [z8_probe_labels.py](../../scripts/z8_probe_labels.py) | 原生查表与候选标签适配 | 原厂模型包 |
-| [z8_trainable_heads.py](../../scripts/z8_trainable_heads.py) | 可训练头张量、梯度掩码与 body 导出 | torch |
-| [z8_training_targets.py](../../scripts/z8_training_targets.py) | 目标分配、负样本构建、指标匹配与推导监督 | torch、numpy |
-| [export_z8_labels.py](../../scripts/export_z8_labels.py) | 生产库 → 可发布标签，剔除私有字段 | 标准库 |
-| [export_split_manifest.py](../../scripts/export_split_manifest.py) | 冻结划分 → 可发布清单 | 标准库 |
-| [verify_annotations.py](../../scripts/verify_annotations.py) | 离线校验已发布标签与划分 | 标准库 |
+| [prepare_z8_training.py](../../scripts/training/prepare_z8_training.py) | 只读备份标注库与去重记录，按关联组冻结训练/验证/测试划分，缓存原生骨干特征并逐位校验 | 原厂模型包、CUDA、Pillow |
+| [train_z8_heads.py](../../scripts/training/train_z8_heads.py) | 冻结骨干、只更新原检测头允许的参数行，导出候选 body 并读回核对 | 同上 + 冻结后的数据目录 |
+| [evaluate_z8_training.py](../../scripts/training/evaluate_z8_training.py) | 选型锁定后一次性打开测试集，原厂与候选都过原 BA2 后处理 | 同上 |
+| [probe_z8_finetune.py](../../scripts/training/probe_z8_finetune.py) | 有限步数可训练性试验，确认梯度路径可用 | 同上 |
+| [probe_z8_multibird.py](../../scripts/training/probe_z8_multibird.py) | 多鸟图片的候选行为观察 | 同上 |
+| [benchmark_z8_candidate.py](../../scripts/training/benchmark_z8_candidate.py) | 原厂与候选的批量吞吐对比 | 同上 |
+| [z8_probe_labels.py](../../scripts/training/z8_probe_labels.py) | 原生查表与候选标签适配 | 原厂模型包 |
+| [z8_trainable_heads.py](../../scripts/training/z8_trainable_heads.py) | 可训练头张量、梯度掩码与 body 导出 | torch |
+| [z8_training_targets.py](../../scripts/training/z8_training_targets.py) | 目标分配、负样本构建、指标匹配与推导监督 | torch、numpy |
+| [export_z8_labels.py](../../scripts/publish/export_z8_labels.py) | 生产库 → 可发布标签，剔除私有字段 | 标准库 |
+| [export_split_manifest.py](../../scripts/publish/export_split_manifest.py) | 冻结划分 → 可发布清单 | 标准库 |
+| [verify_annotations.py](../../scripts/tools/verify_annotations.py) | 离线校验已发布标签与划分 | 标准库 |
 
 ## 关键参数
 
@@ -52,9 +52,9 @@
 ## 最小复跑路径
 
 ```bash
-python scripts/prepare_z8_training.py --help
-python scripts/train_z8_heads.py --help
-python scripts/evaluate_z8_training.py --help
+python scripts/training/prepare_z8_training.py --help
+python scripts/training/train_z8_heads.py --help
+python scripts/training/evaluate_z8_training.py --help
 ```
 
 `--help` 不需要原厂包即可查看完整参数；真正执行需要本机已校验的模型包与 CUDA，
