@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>林鸟标注台 · Forest Bird Annotator</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Forest Bird Annotator"
+        ><span class="brandmark">◈</span
+        ><span
+          ><strong data-i18n="brand">林鸟标注台</strong
+          ><small>FOREST BIRD / INPUT WORKSPACE</small></span
+        ></a
+      >
+      <div class="project-progress">
+        <span id="progressText">—</span>
+        <div class="progress-track"><i id="progressFill"></i></div>
+      </div>
+      <span id="connection" class="save-pill" role="status">连接中…</span>
+      <label class="actor-label"
+        ><span data-i18n="actor">标注者</span
+        ><input
+          id="actor"
+          value="reviewer-local"
+          maxlength="80"
+          aria-label="Annotator ID"
+      /></label>
+      <select id="language" aria-label="Language">
+        <option value="zh">简体中文</option>
+        <option value="en">English</option>
+      </select>
+      <button id="helpButton" class="quiet" data-i18n="help">使用帮助</button>
+      <button id="exportButton" class="outline" data-i18n="export">
+        导出 / 备份
+      </button>
+    </header>
+    <main class="app-layout">
+      <aside class="queue-pane">
+        <div class="pane-heading">
+          <h2 data-i18n="queue">素材队列</h2>
+          <span id="queueCount" class="counter">—</span>
+        </div>
+        <input
+          id="search"
+          class="search"
+          placeholder="搜索编号，如 0122"
+          aria-label="Search image ID"
+        />
+        <div class="filter-row">
+          <select
+            id="statusFilter"
+            aria-label="Annotation status filter"
+          ></select
+          ><select
+            id="predictionFilter"
+            aria-label="Prediction filter"
+          ></select>
+        </div>
+        <select id="batchFilter" class="batch-filter" aria-label="Batch filter">
+          <option value="all">所有批次</option>
+        </select>
+        <div
+          id="queue"
+          class="queue-list"
+          role="listbox"
+          aria-label="Image queue"
+        ></div>
+        <button id="moreQueue" class="quiet full" data-i18n="more">
+          显示更多
+        </button>
+        <div class="queue-footer">
+          <span class="dot"></span
+          ><span data-i18n="localOnly">本地保存 · 人与 AI 共用</span>
+        </div>
+      </aside>
+
+      <section class="workspace-pane">
+        <div class="image-heading">
+          <div>
+            <div class="eyebrow" data-i18n="inputDataset">
+              Z8 模拟输入数据集
+            </div>
+            <h1 id="imageTitle">—</h1>
+            <span id="imageMeta" class="muted">384 × 256 · RGB</span>
+          </div>
+          <div class="navigation">
+            <button id="previous" aria-label="Previous image">←</button
+            ><span id="position">—</span
+            ><button id="next" aria-label="Next image">→</button>
+          </div>
+        </div>
+        <div id="notice" class="notice hidden" role="alert"></div>
+        <div class="canvas-card">
+          <div class="canvas-toolbar">
+            <div class="tools" role="toolbar" aria-label="Annotation tools">
+              <button class="tool active" data-tool="select" title="V">
+                <span>↖</span><b data-i18n="select">选择</b><kbd>V</kbd>
+              </button>
+              <button class="tool bird" data-tool="bird" title="B">
+                <span>▣</span><b data-i18n="bird">鸟框</b><kbd>B</kbd>
+              </button>
+              <button class="tool head" data-tool="head" title="H">
+                <span>▣</span><b data-i18n="head">头框</b><kbd>H</kbd>
+              </button>
+              <button class="tool eye" data-tool="eye" title="E">
+                <span>⊙</span><b data-i18n="eye">眼点</b><kbd>E</kbd>
+              </button>
+              <button class="tool anchor" data-tool="anchor" title="P">
+                <span>⌖</span><b data-i18n="anchor">对焦点</b><kbd>P</kbd>
+              </button>
+              <button class="tool uncertain" data-tool="uncertain" title="U">
+                <span>▧</span><b data-i18n="uncertain">疑似</b><kbd>U</kbd>
+              </button>
+            </div>
+            <div class="edit-tools">
+              <button id="undo" title="Ctrl+Z" aria-label="Undo">↶</button
+              ><button id="redo" title="Ctrl+Shift+Z" aria-label="Redo">
+                ↷</button
+              ><button
+                id="deleteShape"
+                title="Delete"
+                aria-label="Delete selected shape"
+              >
+                ⌫
+              </button>
+            </div>
+          </div>
+          <div class="view-toolbar">
+            <label class="toggle"
+              ><input id="showPredictions" type="checkbox" /><span
+                data-i18n="z8Overlay"
+                >Z8 候选框</span
+              ><span id="predCount" class="counter">0</span></label
+            ><label class="toggle"
+              ><input id="showLabels" type="checkbox" checked /><span
+                data-i18n="manualOverlay"
+                >当前标注</span
+              ></label
+            ><label class="toggle"
+              ><input id="pixelated" type="checkbox" checked /><span
+                data-i18n="pixels"
+                >像素显示</span
+              ></label
+            >
+            <div class="zoom-controls">
+              <button id="zoomOut" aria-label="Zoom out">−</button
+              ><span id="zoomValue">100%</span
+              ><button id="zoomIn" aria-label="Zoom in">＋</button
+              ><button id="fit" data-i18n="fit">适应</button>
+            </div>
+          </div>
+          <div id="stage" class="stage">
+            <svg
+              id="canvas"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 256"
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              aria-label="384 by 256 image annotation canvas"
+              tabindex="0"
+            >
+              <image id="canvasImage" x="0" y="0" width="384" height="256" />
+              <g id="predictions"></g>
+              <g id="shapes"></g>
+              <g id="preview"></g>
+            </svg>
+            <div id="emptyState" class="empty-state">正在载入素材…</div>
+          </div>
+          <div class="canvas-footer">
+            <span id="toolHint">—</span
+            ><span id="cursorPosition">x — · y —</span>
+          </div>
+        </div>
+        <div class="below-canvas">
+          <div class="legend">
+            <span
+              ><i class="bird-color"></i
+              ><span data-i18n="bird">鸟框</span></span
+            ><span
+              ><i class="head-color"></i
+              ><span data-i18n="head">头框</span></span
+            ><span
+              ><i class="eye-color"></i><span data-i18n="eye">眼点</span></span
+            ><span
+              ><i class="anchor-color"></i
+              ><span data-i18n="anchor">对焦点</span></span
+            >
+          </div>
+          <button id="referenceButton" class="quiet" data-i18n="reference">
+            查看原图参考 ↗</button
+          ><button id="historyButton" class="quiet" data-i18n="history">
+            修订历史
+          </button>
+        </div>
+        <div class="workflow-tip">
+          <strong data-i18n="ruleTitle">标全可见部位，再决定锁哪里</strong
+          ><span data-i18n="ruleText"
+            >鸟 → 头 → 可见眼全部标注；眼被遮挡时不猜位置。当前坐标与可见性以
+            384×256 输入为准。</span
+          >
+        </div>
+        <div class="bottom-actions">
+          <button id="noBird" class="outline" data-i18n="noBird">
+            已检查：无鸟</button
+          ><button id="discuss" class="quiet" data-i18n="discuss">
+            需要裁决</button
+          ><span class="spacer"></span
+          ><button id="saveButton" class="outline" data-i18n="save">
+            保存草稿</button
+          ><button id="reviewButton" class="outline" data-i18n="review">
+            通过复核</button
+          ><button id="completeButton" class="primary" data-i18n="complete">
+            完成初标并下一张 →
+          </button>
+        </div>
+      </section>
+
+      <aside class="properties-pane">
+        <div class="pane-heading">
+          <h2 data-i18n="properties">标注详情</h2>
+          <span id="revision" class="counter">r0</span>
+        </div>
+        <div id="properties" class="properties-scroll"></div>
+      </aside>
+    </main>
+    <div id="toast" class="toast hidden" role="status"></div>
+    <dialog id="dialog">
+      <div class="dialog-heading">
+        <h2 id="dialogTitle"></h2>
+        <button id="closeDialog" aria-label="Close dialog">×</button>
+      </div>
+      <div id="dialogBody"></div>
+    </dialog>
+    <input id="importFile" type="file" accept=".jsonl,.json" hidden />
+  </body>
+</html>

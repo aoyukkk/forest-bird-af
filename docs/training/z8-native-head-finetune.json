@@ -1,0 +1,137 @@
+{
+  "schema": "forest-bird-af-training-record-v1",
+  "date": "2026-10-25",
+  "status": "experiment_candidate_not_recommended_for_camera",
+  "headline": "A native detection-head fine-tune lifted held-out macro F1 from 43.89% to 46.92% and eye recall from 18.18% to 27.27%, while eye precision fell from 80.00% to 66.67%. The 95% group-bootstrap interval for the macro-F1 gain touches zero, so this is an experiment candidate, not a validated improvement.",
+  "verified_boundaries": [
+    "Offline detection metrics on 384 x 256 frozen inputs; not camera autofocus accuracy.",
+    "Labels are Z8-assisted human corrections, not independent blind annotation.",
+    "No camera deployment, no in-camera verification, no timing measured on camera hardware.",
+    "Weights are not redistributed: they embed vendor-derived numeric parameters."
+  ],
+  "environment": {
+    "python": "existing local conda environment (D:/anacondaenvs/machine/python.exe)",
+    "torch": "2.7.0.dev20250117+cu126",
+    "gpu": "NVIDIA GeForce RTX 4080 Laptop GPU, 12 GiB",
+    "remote_or_sony_jobs": 0
+  },
+  "data": {
+    "production_rows": 694,
+    "reviewed_confirmed": 535,
+    "excluded_images": 159,
+    "exclusion_reason": "158 deduplicate-hidden queue images and 1 image held for adjudication",
+    "splits": {
+      "train": {"images": 375, "groups": 56, "bird": 385, "head": 301, "eye": 174},
+      "val": {"images": 80, "groups": 6, "bird": 79, "head": 50, "eye": 25},
+      "test": {"images": 80, "groups": 5, "bird": 83, "head": 59, "eye": 22}
+    },
+    "split_policy": "Frozen before training; groups never cross splits; test opened once after validation-only selection.",
+    "split_manifest": "data/annotations-2026-10-25/evaluation-split-v1.json",
+    "labels": "data/annotations-2026-10-25/labels/community-corrections-v1.jsonl",
+    "grouping_limit": "58 of the 80 test images share one conservative group, so the test set is not 80 independent scenes.",
+    "annotation_limit": "Z8-assisted human review bound to the frozen 384 x 256 input; not blind ground truth, not original-image visibility."
+  },
+  "method": {
+    "backbone": "frozen exact native resource744",
+    "trainable": "original 8,784 head parameters; update masks restrict which rows may move",
+    "selected_update_scope": "fine anchor 0 coordinates, objectness and known part rows; eye rows of other anchors; all auxiliary rows frozen",
+    "backward": "explicit STE approximation for FP16 storage and integer dot/add; not the true derivative of the integer graph",
+    "forward_parity": "all 535 cached images replayed bit-identical to the frozen FP16 output before training",
+    "postprocessor": "original consumer with unchanged thresholds and tables",
+    "selection": "maximise validation macro F1 at IoU 0.5 and eye distance 4 px, with per-part recall drop <= 0.05 and F1 drop <= 0.03",
+    "amendment": "the F1 guard was added on validation before trial 4 and before the test set was opened"
+  },
+  "trials": [
+    {"id": "001", "method": "all head rows, preservation weight 1", "epochs": 8, "validation_macro_f1": null, "decision": "rejected"},
+    {"id": "002", "method": "all head rows, preservation weight 3", "epochs": 100, "validation_macro_f1": 0.6367, "decision": "rejected, head F1 regressed"},
+    {"id": "003", "method": "positive-class competition at existing candidate positions", "epochs": 87, "validation_macro_f1": 0.6308, "decision": "rejected, head F1 regressed"},
+    {"id": "004", "method": "eye class rows only, 1,098 parameters", "epochs": 24, "validation_macro_f1": null, "decision": "rejected, no gain"},
+    {"id": "005", "method": "small-object eye branch, 2,130 parameters", "epochs": 89, "validation_macro_f1": 0.6585, "decision": "selected at epoch 59"}
+  ],
+  "native_original_validation_macro_f1": 0.5795,
+  "selected_trial": {
+    "id": "005",
+    "epoch": 59,
+    "validation_macro_f1": 0.6585,
+    "validation_eye_hits": "17/25",
+    "validation_eye_false_positives": 5,
+    "training_loop_seconds": 290.9,
+    "peak_cuda_allocated_mb": 382.8,
+    "changed_fp16_parameters": 1350,
+    "allowed_parameter_capacity": 2130,
+    "changed_body_bytes": 2248,
+    "body_bytes": 1543726,
+    "non_head_bytes_identical": true
+  },
+  "held_out_test": {
+    "criteria": {"box_iou": 0.5, "eye_distance_pixels": 4.0,
+                 "precision_scope": "part-labelled images and explicit no-bird frames only; unlabelled parts are not negatives"},
+    "strict": {
+      "original": {"bird": {"precision": 0.6458, "recall": 0.3735, "f1": 0.4733, "labels": 83, "tp": 31, "fp": 17},
+                   "head": {"precision": 0.6170, "recall": 0.4915, "f1": 0.5472, "labels": 59, "tp": 29, "fp": 18},
+                   "eye": {"precision": 0.8000, "recall": 0.1818, "f1": 0.2963, "labels": 22, "tp": 4, "fp": 1},
+                   "macro_f1": 0.4389},
+      "candidate": {"bird": {"precision": 0.6458, "recall": 0.3735, "f1": 0.4733, "labels": 83, "tp": 31, "fp": 17},
+                    "head": {"precision": 0.6170, "recall": 0.4915, "f1": 0.5472, "labels": 59, "tp": 29, "fp": 18},
+                    "eye": {"precision": 0.6667, "recall": 0.2727, "f1": 0.3871, "labels": 22, "tp": 6, "fp": 3},
+                    "macro_f1": 0.4692}
+    },
+    "loose": {
+      "criteria": {"box_iou": 0.3, "eye_distance_pixels": 8.0},
+      "original_macro_f1": 0.4515,
+      "candidate_macro_f1": 0.4818
+    },
+    "macro_f1_delta": 0.0303,
+    "eye_recall_delta": 0.0909,
+    "eye_precision_delta": -0.1333,
+    "eye_unmatched_location_false_positives": {"original": 1, "candidate": 3},
+    "group_bootstrap": {"groups": 5, "resamples": 5000, "delta_macro_f1_percentile_95": [0.0, 0.0490]},
+    "guards": {"recall_guard_passed": true, "quality_guard_passed": true,
+               "non_allowed_fp16_values_changed": 0},
+    "native_parity_images": 80,
+    "camera_AF_verified": false
+  },
+  "compute": {
+    "feature_cache_seconds": 411.8,
+    "all_five_training_loops_seconds": 1131.6,
+    "selected_trial_seconds": 290.9,
+    "final_native_crosscheck_seconds": 61.7,
+    "second_round_refinement_seconds": 643.8,
+    "note": "Local wall-clock on the machine above; excludes engineering, cache rebuilds, full-network reload and desktop load."
+  },
+  "batch_throughput": {
+    "scope": "local CUDA native emulator, 16-image batch, warm-up plus three interleaved rounds; not single-image latency or camera FPS",
+    "original_forward_seconds": 18.968,
+    "candidate_forward_seconds": 19.074,
+    "relative_difference": "0.56%",
+    "original_decoder_seconds": 0.000619,
+    "candidate_decoder_seconds": 0.000588
+  },
+  "second_round": {
+    "kind": "continued refinement from the trial_005 checkpoint",
+    "configurations": 4,
+    "training_loop_seconds": 643.8,
+    "best_validation_macro_f1": 0.6585,
+    "result": "no new checkpoint beat the parent under the precision guard; selected_epoch -1 keeps the parent weights",
+    "isolated": "The 80-image test set was closed for this round; every number is validation."
+  },
+  "artifacts": {
+    "published": [
+      "docs/training/z8-native-head-finetune.zh-CN.md",
+      "docs/training/z8-native-head-finetune.md",
+      "docs/training/z8-native-head-finetune.json",
+      "data/annotations-2026-10-25/evaluation-split-v1.json"
+    ],
+    "local_only": [
+      "candidate weight (resource744.finetuned.body.bin, vendor-derived parameters)",
+      "per-epoch logs, float master, target audits, executed code snapshots",
+      "industrial annotation database and dedupe records"
+    ]
+  },
+  "next_steps": [
+    "Reduce eye false positives at unmatched locations: the five validation misses sit 8.1-11.2 px from the labelled eye and inside the background guard radius.",
+    "Collect more independently reviewed eye negatives; only four restorable deleted eye false positives exist today.",
+    "Grow the number of independent conservative groups before claiming held-out gains.",
+    "Keep phase detection, lens drive and the full AF loop out of any accuracy claim."
+  ]
+}

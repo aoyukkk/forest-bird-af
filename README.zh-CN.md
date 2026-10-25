@@ -15,13 +15,17 @@
 | 模拟输入 | 694 张 384 × 256 无损 RGB PNG，附实际留存的 CHW 输入 |
 | Z8 预标注 | 本地 RTX 4080 Laptop GPU 完成 694/694 张，执行错误 0 |
 | 候选结果 | 469 张有框，共 1495 个候选；225 张无候选 |
-| 人工复核 | 待进行 |
-| 定向微调 | 尚未开始 |
+| 人工复核 | 547 张确认、146 张草稿、1 张待裁决 |
+| 标注工具 | 本地浏览器编辑器与人／AI 共用接口；[使用说明](docs/annotator.zh-CN.md) |
+| 已标注结果 | 694 条逐图记录与冻结评估划分已公开；[数据集](data/annotations-2026-10-25/README.zh-CN.md) |
+| 检测头微调 | 仅实验候选：留出宏 F1 43.89% → 46.92%，眼精确率下降；[结果](docs/training/z8-native-head-finetune.zh-CN.md) |
 | Sony 实验 | 暂停 |
 
 最新发布 [v0.5](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-25-v5) 新增 **60 张 JPEG**，编号 **fb_0635–fb_0694**：22 张有候选，38 张无候选，共 45 个原始框。[第五批详情](data/community-2026-10-25-batch05/README.zh-CN.md)。
 
 ## 下载与复核
+
+使用 [Z8 辅助人工复核工具](docs/z8-review.zh-CN.md)检查全部冻结的 384×256 输入，默认显示 Z8 框。明确确认后记录原厂正确或纠错结果，保留逐框差异和修订历史。旧 LLM 标签留在历史精标入口。
 
 | 批次 | 图数 | 下载 |
 |---|---:|---|
@@ -41,6 +45,25 @@
 
 编号以 [data/registry.csv](data/registry.csv) 为准。[输入转换代码](scripts/z8_input.py)、[预标注流程](docs/run-prelabel.zh-CN.md)。
 
+## 已公开结果
+
+三份产物已入库，都能独立核对：
+
+| 产物 | 内容 |
+|---|---|
+| [已标注结果](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl) | 694 条逐图记录：确认的鸟身/头/眼、冻结原厂候选计数、逐框差异 |
+| [评估划分](data/annotations-2026-10-25/evaluation-split-v1.json) | 375/80/80 训练-验证-测试划分与关联组，训练前冻结 |
+| [训练结果](docs/training/z8-native-head-finetune.zh-CN.md) | 原生检测头微调：方法、留出指标、算力与发布边界 |
+
+```bash
+python scripts/verify_annotations.py                 # 坐标、部位计数、划分泄漏、敏感字段
+python -m unittest tests.test_published_exports -v   # 同样的检查写成测试
+python scripts/verify_repo.py                        # 仓库内无厂商资产与照片
+```
+
+候选权重本身**不公开**：它绝大部分字节仍是厂商权重。公开的是 SHA-256、变化字节范围
+以及用你自己的合法副本重建它的脚本，详见[未发布内容](docs/releases/not-published.zh-CN.md)。
+
 ## 模型与验证
 
 本地 Z8 resource744 模型主体与 [WonderLantern/e7-bird-network](https://github.com/WonderLantern/e7-bird-network) 逐字节一致，使用已验证的 CUDA 适配与本地 Z8 原厂后处理。
@@ -57,15 +80,19 @@
 
 ## 下一步
 
-- 复核漏鸟和误框，补标可见眼、头和整鸟。
-- 将连拍、同曝光 RAW/JPEG 和关联图片分组，再冻结测试集。
-- 用纠正样本和正常场景对照进行定向微调，与冻结的原模型比较。
+- 降低未匹配位置的眼误检：验证误检距人工眼点 8.1–11.2 像素，落在当前背景保护半径内。
+- 确认剩余草稿图并裁决 `fb_0588`，然后刷新已发布标签快照。
+- 先扩大独立泄漏组数量，再把留出收益当作稳定结论。
+- 相位测距、镜头驱动和整机 AF 闭环不计入任何准确率声明。
 
 ## 文档
 
 | 内容 | 入口 |
 |---|---|
 | 图片、清单和校验值 | [社区数据集](data/README.zh-CN.md) |
+| 已标注结果与评估划分 | [已标注结果](data/annotations-2026-10-25/README.zh-CN.md) |
+| 检测头微调结果 | [原生检测头微调](docs/training/z8-native-head-finetune.zh-CN.md) |
+| 发布边界 | [未发布内容](docs/releases/not-published.zh-CN.md) |
 | 推理与人工复核 | [预标注流程](docs/run-prelabel.zh-CN.md) |
 | 模型身份与 GPU 检查 | [验证报告](docs/reports/05-e7-comparison-and-cuda.zh-CN.md) |
 | 数据归类与标注规则 | [规范 v1](docs/data/DATASET-SPEC-v1.md) |

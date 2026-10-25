@@ -5,6 +5,7 @@
 | Dataset | Files | Use |
 |---|---:|---|
 | [Cumulative register](registry.csv) | 694 | Authoritative IDs and source hashes for future imports |
+| [Reviewed labels 2026-10-25](annotations-2026-10-25/README.md) | 694 | Human-confirmed bird/head/eye labels and the frozen train/val/test split |
 | [Community batch 05](community-2026-10-25-batch05/README.md) | 60 | New JPEGs and Z8 predictions; IDs fb_0635–fb_0694 |
 | [Community batch 04](community-2026-10-24-batch04/README.md) | 64 | 42 NEFs, 22 JPGs and Z8 predictions; IDs fb_0571–fb_0634 |
 | [Community batch 03](community-2026-10-24-batch03/README.md) | 47 | New NEFs, embedded-JPEG review images, and Z8 proposals; IDs fb_0524–fb_0570 |
@@ -27,7 +28,9 @@ Annotate every identifiable bird, its visible head, and each locatable eye. Reco
 
 Current prelabels contain native numeric class slots and await review. A missing detection is not a negative label. The older 292-row blank template also represents unannotated images, despite its empty instance arrays.
 
-Keep bursts, matching RAW/JPEG captures, crops, and re-encoded versions in the same data split. Splits have not been assigned yet.
+Keep bursts, matching RAW/JPEG captures, crops, and re-encoded versions in the same data split. The training split is frozen and published in `annotations-2026-10-25/evaluation-split-v1.json`; grouping is an engineering anti-leakage approximation, not verified capture-event identity.
+
+Human review status: 547 confirmed, 146 draft and 1 held for adjudication. See [reviewed labels 2026-10-25](annotations-2026-10-25/README.md).
 
 See the [prelabeling workflow](../docs/run-prelabel.md) and [dataset protocol v1, Chinese](../docs/data/DATASET-SPEC-v1.md).
 

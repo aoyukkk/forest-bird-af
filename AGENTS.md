@@ -1,4 +1,9 @@
-# forest-bird-af 执行规范
+﻿# forest-bird-af 执行规范
+
+**正式本地训练授权（2026-10-25，最新增量）**：用户明确要求“全权由你决策，目的就是训练出更好的模型，直接开始吧”，并要求复用本机 conda 环境。允许本地 Z8 正式训练、冻结数据划分、缓存特征、验证集选型、留出测试评估和独立候选权重导出；这覆盖历史不训练/只做短步数试验的限制。使用现有 `D:/anacondaenvs/machine/python.exe`，保留生产标注数据库、原片、原厂模型及冻结预测。测试集不用于选型。原生前向与 STE 近似梯度边界必须记录，未取得评估改进不得声称模型更好。Sony、远程/A800 任务及机身部署继续暂停。
+
+
+**微调流程试验授权（2026-10-25，当前增量）**：用户明确要求先测试原厂模型能否微调、跑通现有标注接入，并分析几张多鸟图片。允许独立本地试验副本上的可训练性检查、少量样本和短步数检测头微调、权重导出/读回及原后处理验证；本轮仅验证流程，不扩展为正式训练或效果结论。保留原厂模型、冻结预测、原片和正式标注数据库；无人工确认标签时必须标明工程测试标签，不能写成人工真值。若使用 STE 或只更新检测头，明确记录前向一致性与梯度近似范围。Sony 和远程任务继续暂停，不自动部署到机身。
 
 适用范围：本仓库及其林鸟数据工作流。版本 1.0，2026-10-24。
 
@@ -11,6 +16,12 @@ Reports and progress updates to the user default to English, unless the user req
 User-facing repository pages default to English and link to a paired Simplified Chinese page (`*.zh-CN.md`). Keep counts, release status, commands, and links consistent across both languages. Use short factual prose; put detailed validation scope and licensing in their dedicated documents instead of repeating caveats on the landing page. GitHub descriptions, release titles, and commit messages default to English. Existing Chinese research notes may remain archived and should be identified as Chinese when linked from English navigation.
 
 ## 1. 目标和当前阶段
+
+
+**人工 Z8 纠错授权（2026-10-25，覆盖此前默认隐藏要求）**：用户要求全部图片重新人工复核，首页默认显示冻结 Z8 框。执行 [Z8 辅助人工纠错](docs/z8-review.zh-CN.md)，采用独立 `forest-bird-z8-correction-v1`；既有 LLM 标签和历史留在 `/annotate`，不作为本轮初始值。未修改并点击确认才记为正确，修改后按逐框差异记录部分有误/有误。翻页和自动保存不等于确认。无框不当无鸟，不确定单列。AI 只可写草稿，不代替用户确认。保存基线、前后值、增删、部位与修订；不删正确样本。原来的盲标/精标规范保留用于独立标注，不能把 Z8 辅助复核冒充独立测试真值。不自动开始 LLM 初标、训练、蒸馏或 Sony。
+
+
+**标注工具授权（2026-10-24）**：用户明确要求建立人和 AI 都能操作的完整工具，导入全部既有 384×256 素材。允许本地工具开发、部署、导入与独立测试工作区验收。默认隐藏 Z8 候选框，界面默认简体中文并提供英文选项。当前输入标签使用 `forest-bird-input-manual-v1`，坐标与可见性绑定 384×256；原图只作参考，不能把输入标签冒充原图真值。工具代码与文档可写入本仓库；正式标注数据库、图片和服务日志保留仓库外。仍不启动训练、蒸馏或 Sony。
 
 **最新授权（2026-10-24）**：上传征集目录现有全部图片；对比 `WonderLantern/e7-bird-network` 后开始 Z8 预标注，尽量使用本地 GPU。本段覆盖下文原有“本轮仅规范、不推理/GPU”的阶段限制。允许增量登记、公开副本制作、发布和预标注；不训练/蒸馏、不运行 Sony。预标注保留原始数字类号，未确认的部位语义不得伪造。
 
@@ -91,12 +102,13 @@ Latest import authorization (2026-10-24): extract the newly received ZIP into it
 
 ## 7. 复核与状态
 
+- **AI 初标流程 v2（2026-10-24）**：执行 [AI 初标与人工复核流程 v2](docs/ai-annotation-workflow-v2.zh-CN.md)。这是当前 AI 标注操作规范；历史运行脚本不因文档更新自动视为已修复。默认先做 5 张新图校准，保留已有标签并为上一完整批次生成复核清单。每张必须将建议画回当前输入并实际查看最终叠框，再校验、提交及完整读回比较。眼框默认 null，不批量生成固定尺寸眼框。续跑不重置额度、不覆盖已有标签，扩量须先完成人工校准确认。
 - 状态流转：`pending → annotated → reviewed`；存在分歧进入 `needs_adjudication`，裁决后方可 reviewed。
 - 每次编辑保留标注者、复核者、时间、协议版本和修订号，修订不覆盖历史冻结版本。
 - 首批 40 张进行独立双人标注和裁决，校准规则后再扩量。
 - 后续测试候选、应放弃/无鸟、严重遮挡、多鸟和所有不确定项 100% 复核；其余训练候选每批随机抽检至少 20%。
 - 抽检发现隐藏眼、实例错配、误判负例或连拍跨划分等关键错误，该批退回修正；不把未复核内容报告为测试真值。
-- 没有第二人时可以分时段自复核，但必须报告非独立复核，不伪造双人标注。
+- 没有第二人时可以分时段自复核，但必须报告非独立复核，不伪造双人标注。AI 初标加一名人工复核不称为独立双人标注；人工先独立观察输入，再显示 AI 结果。
 
 ## 8. 训练/测试与评测
 
@@ -137,3 +149,15 @@ Batch 03 (2026-10-24): 47 NEFs, IDs fb_0524–fb_0570. Preserve its explicitly s
 Batch 04: IDs fb_0571–fb_0634, 42 NEFs and 22 JPGs. Use --ignore-appledouble on future imports containing verified macOS resource forks; keep all auxiliary source files local and record exclusions before allocating IDs.
 
 Batch 05 (2026-10-25): 60 JPEGs, IDs fb_0635–fb_0694. RAR extraction and source hashes passed before archive deletion; public-copy pixels match originals. Fresh CUDA batch validation passed, with 22 images containing candidates and 38 without.
+
+## 11. 已发布标注与训练结果（2026-10-25）
+
+用户本轮明确要求把「未更新的图片、已标注的结果、训练代码」同步到 GitHub 仓库。执行范围与边界：
+
+- 已标注结果：`data/annotations-2026-10-25/labels/community-corrections-v1.jsonl`，由生产标注库只读副本经 `scripts/export_z8_labels.py` 生成。公开字段只含 384×256 输入上的部位几何、复核状态、冻结候选计数与逐框差异；原图绝对路径、原资产哈希、参考图哈希、复核者标识和内部备注一律剔除。
+- 评估划分：`data/annotations-2026-10-25/evaluation-split-v1.json`，由冻结 `split-lock.json` 与 `dataset.json` 经 `scripts/export_split_manifest.py` 生成，只发布划分、关联组和输入哈希。
+- 训练代码：`scripts/` 下 `prepare_z8_training.py`、`train_z8_heads.py`、`evaluate_z8_training.py` 等按仓库内无绝对路径、无私有数据的形式提交；执行需要本机自备原厂包与 CUDA。
+- 训练结果：`docs/training/z8-native-head-finetune.{md,zh-CN.md,json}`。只报告验证集选型与一次性留出测试结果，并声明 95% 组级区间触及零、眼精确率下降，不写作「模型更好」。
+- **候选权重 `resource744.finetuned.body.bin` 不入库**：其字节绝大部分是厂商权重，公开文件即公开原厂模型。只发布哈希、变化字节范围与复现路径。
+- 原片、公开副本、生产库、去重记录继续留在仓库外；图片仍按 Releases 分发。
+- 提交前必须运行 `python scripts/verify_repo.py`、`python scripts/verify_annotations.py`、`python -m unittest tests.test_published_exports -v` 与 `git diff --check`。

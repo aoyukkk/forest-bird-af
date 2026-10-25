@@ -15,13 +15,17 @@ Updated: 2026-10-25.
 | Simulation inputs | 694 lossless 384 × 256 RGB PNGs and exact saved CHW buffers |
 | Z8 prelabeling | 694/694 completed on a local RTX 4080 Laptop GPU; 0 execution errors |
 | Candidates | 1495 boxes across 469 images; 225 images have no candidates |
-| Human review | Pending |
-| Fine-tuning | Not started |
+| Human review | 547 confirmed, 146 draft, 1 held for adjudication |
+| Annotation tool | Local browser editor and shared human/AI API; [guide](docs/annotator.md) |
+| Reviewed labels | 694 records published with the frozen eval split; [dataset](data/annotations-2026-10-25/README.md) |
+| Head fine-tuning | Experiment candidate only: held-out macro F1 43.89% → 46.92%, eye precision fell; [results](docs/training/z8-native-head-finetune.md) |
 | Sony experiments | Paused |
 
 The [latest release](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-25-v5) adds **60 JPEG photos**, IDs **fb_0635–fb_0694**: 22 with candidates, 38 without, 45 raw boxes. [Batch 05 details](data/community-2026-10-25-batch05/README.md).
 
 ## Download and review
+
+Use the [Z8-assisted human review workspace](docs/z8-review.md) to inspect all frozen 384 × 256 inputs. Z8 boxes are visible by default. Explicit confirmation records accepted proposals or corrections, preserving every change and revision. Previous LLM labels remain in the historical precision editor.
 
 | Batch | Images | Download |
 |---|---:|---|
@@ -41,6 +45,27 @@ Review the whole image, starting with images without candidates. Export decision
 
 Use [data/registry.csv](data/registry.csv) for stable IDs. [Input conversion code](scripts/z8_input.py) and [workflow](docs/run-prelabel.md).
 
+## Published results
+
+Three artifacts are public and independently checkable:
+
+| Artifact | What it is |
+|---|---|
+| [Reviewed labels](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl) | 694 per-image records: confirmed bird/head/eye items, frozen vendor candidate counts, per-box diff |
+| [Evaluation split](data/annotations-2026-10-25/evaluation-split-v1.json) | 375 / 80 / 80 train-val-test assignment with leakage groups, frozen before training |
+| [Training results](docs/training/z8-native-head-finetune.md) | Native head fine-tune: method, held-out metrics, compute, and the exact publication boundary |
+
+```bash
+python scripts/verify_annotations.py                 # labels, coordinates, split leakage, no private fields
+python -m unittest tests.test_published_exports -v   # the same checks as tests
+python scripts/verify_repo.py                        # no vendor assets or photos in the tree
+```
+
+The candidate weight itself is **not** distributed: nearly every byte of it is
+vendor weight. What ships is its SHA-256, the changed-byte range and the scripts
+to rebuild it from your own verified package. See [what is not
+published](docs/releases/not-published.md).
+
 ## Model and validation
 
 The local Z8 resource744 body is byte-identical to [WonderLantern/e7-bird-network](https://github.com/WonderLantern/e7-bird-network). The validated CUDA adapter retains the original local Z8 postprocessor.
@@ -57,15 +82,19 @@ See the [validation report](docs/reports/05-e7-comparison-and-cuda.md) and [late
 
 ## Next steps
 
-- Review missed birds and incorrect boxes, then annotate visible eyes, heads, and birds.
-- Group bursts, matching RAW/JPEG captures, and related images before freezing the test set.
-- Fine-tune on corrected examples with normal-scene controls, then compare against the frozen original model.
+- Cut eye false positives at unmatched locations; the validation misses sit 8.1–11.2 px from the labelled eye and inside the current background guard.
+- Confirm the remaining draft images and adjudicate `fb_0588`, then refresh the published label snapshot.
+- Grow the number of independent leakage groups before treating held-out gains as stable.
+- Keep phase detection, lens drive and the whole-camera AF loop out of any accuracy claim.
 
 ## Documentation
 
 | Topic | Link |
 |---|---|
 | Images, manifests, and checksums | [Community datasets](data/README.md) |
+| Reviewed labels and evaluation split | [Annotations 2026-10-25](data/annotations-2026-10-25/README.md) |
+| Head fine-tuning results | [Native head fine-tune](docs/training/z8-native-head-finetune.md) |
+| Publication boundary | [Not published](docs/releases/not-published.md) |
 | Run inference and review results | [Prelabeling workflow](docs/run-prelabel.md) |
 | Model identity and GPU checks | [Validation report](docs/reports/05-e7-comparison-and-cuda.md) |
 | Dataset organization and annotation protocol | [Protocol v1, Chinese](docs/data/DATASET-SPEC-v1.md) |
