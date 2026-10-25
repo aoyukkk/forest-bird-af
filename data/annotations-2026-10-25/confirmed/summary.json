@@ -1,0 +1,33 @@
+{
+  "schema": "forest-bird-af-confirmed-v1",
+  "confirmed_images": 547,
+  "with_shapes": 545,
+  "explicitly_no_bird": 2,
+  "in_queue": 535,
+  "folded_by_similarity": 12,
+  "z8_verdict": {
+    "correct": 127,
+    "error": 276,
+    "partial_error": 144
+  },
+  "parts": {
+    "bird": 566,
+    "head": 412,
+    "eye": 223
+  },
+  "objects_in_coco": 1201,
+  "per_split": {
+    "train": 375,
+    "val": 80,
+    "test": 80
+  },
+  "confirmed_sha256": "b7055db9a9031a81062ff7bacb0c941476962ca34426a32d5be9b6f558c7f5f2",
+  "omitted_in_database": "draft and needs_adjudication records are not labels",
+  "notes": [
+    "This is the full human-confirmed set, not a quality ranking.",
+    "Labels describe the frozen 384 x 256 input, not the original photo.",
+    "Confirmed by a human after seeing the frozen vendor boxes: assisted review, not independent blind annotation.",
+    "Eyes without a visible boundary are exported as 12 x 12 boxes flagged eye_center_boxed; that size is a container, not a measured eye.",
+    "12 confirmed images are folded out of the annotation queue by the similarity grouping; in_queue keeps that visible instead of dropping them."
+  ]
+}

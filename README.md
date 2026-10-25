@@ -51,16 +51,17 @@ Everything in the repository can be checked offline:
 
 | Artifact | What it is |
 |---|---|
-| [Reviewed labels](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl) | 694 per-image records: confirmed bird/head/eye items, frozen vendor candidate counts, per-box diff |
+| [Human-confirmed labels](data/annotations-2026-10-25/confirmed/README.md) | **All 547 confirmed images** in JSONL, CSV, COCO and YOLO |
+| [Reviewed labels](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl) | 694 per-image records, including drafts, with frozen vendor candidate counts |
 | [Evaluation split](data/annotations-2026-10-25/evaluation-split-v1.json) | 375 / 80 / 80 train-val-test assignment with leakage groups, frozen before training |
 | [Dedupe queue](data/annotations-2026-10-25/dedupe-queue-v1.json) | 536 in queue, 158 folded, 42 similarity groups |
-| [Best images](data/annotations-2026-10-25/best-images-v1.json) | 120-image first-look ranking with its scoring rule |
+| [Best images](data/annotations-2026-10-25/best-images-v1.json) | 120-image first-look ordering; a review aid, not the label set |
 | [Toolchain](data/annotations-2026-10-25/TOOLCHAIN.md) | Annotation service, importer, dedupe, COCO/YOLO export |
 | [Training results](docs/training/z8-native-head-finetune.md) | Native head fine-tune: method, held-out metrics, compute, publication boundary |
 
 ```bash
-python scripts/verify_annotations.py                 # labels, coordinates, split leakage, queue, private fields
-python -m unittest tests.test_published_exports tests.test_curation_exports -v
+python scripts/verify_annotations.py                 # labels, confirmed export, coordinates, splits, queue
+python -m unittest tests.test_published_exports tests.test_curation_exports tests.test_confirmed_export -v
 python scripts/verify_repo.py                        # no vendor assets or photos in the tree
 ```
 

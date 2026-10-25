@@ -213,6 +213,39 @@ def verify_best(problems, path, known_ids):
     return best
 
 
+def verify_confirmed(problems, path, records):
+    """Every confirmed label must appear in the confirmed export, unchanged."""
+    if not path.exists():
+        return None
+    expected = {row['image_id']: row for row in records
+                if row['review_status'] == 'confirmed'}
+    exported = {}
+    for line in path.read_text(encoding='utf-8').splitlines():
+        if not line.strip():
+            continue
+        row = json.loads(line)
+        image_id = row['image_id']
+        if image_id in exported:
+            fail(problems, image_id, 'duplicate image in confirmed export')
+        exported[image_id] = row
+        if image_id not in expected:
+            fail(problems, image_id, 'confirmed export holds an unconfirmed image')
+            continue
+        if row.get('parts') != expected[image_id]['parts']:
+            fail(problems, image_id, 'confirmed part counts differ from the label file')
+        for item in row.get('items') or []:
+            x1, y1, x2, y2 = item['box_xyxy']
+            if not (x1 < x2 and y1 < y2):
+                fail(problems, image_id, 'confirmed box is not positive-area')
+            if not (-0.5 <= x1 and -0.5 <= y1 and x2 <= 384 + -0.5 and y2 <= 256 + -0.5):
+                fail(problems, image_id, 'confirmed box leaves the input')
+        scan_for_private_text(problems, image_id, row)
+    missing = sorted(set(expected) - set(exported))
+    for image_id in missing:
+        fail(problems, image_id, 'confirmed label missing from the confirmed export')
+    return exported
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -231,6 +264,7 @@ def main():
         {row['image_id']: row['split'] for row in manifest['images']}
     queue = verify_queue(problems, root / 'dedupe-queue-v1.json', known, splits)
     best = verify_best(problems, root / 'best-images-v1.json', known)
+    confirmed = verify_confirmed(problems, root / 'confirmed' / 'confirmed.jsonl', records)
     counts = {}
     for row in records:
         counts[row['review_status']] = counts.get(row['review_status'], 0) + 1
@@ -244,6 +278,7 @@ def main():
         'queue': queue['summary']['queue'] if queue else None,
         'folded': queue['summary']['folded'] if queue else None,
         'best_listed': best['listed'] if best else None,
+        'confirmed_exported': len(confirmed) if confirmed else None,
         'violations': len(problems),
     }
     print(json.dumps(summary, ensure_ascii=False, indent=2))

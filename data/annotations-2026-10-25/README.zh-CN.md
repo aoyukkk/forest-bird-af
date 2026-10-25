@@ -7,12 +7,13 @@
 
 | 文件 | 内容 |
 |---|---|
-| [labels/community-corrections-v1.jsonl](labels/community-corrections-v1.jsonl) | 694 张图的逐图标签（JSON Lines） |
+| [confirmed/](confirmed/README.zh-CN.md) | **人工校准好的全部 547 张标注**：JSONL、CSV、COCO、YOLO 四种格式 |
+| [labels/community-corrections-v1.jsonl](labels/community-corrections-v1.jsonl) | 694 张图的逐图标签（JSON Lines），含 146 张未确认草稿 |
 | [labels/community-corrections-v1.json](labels/community-corrections-v1.json) | 计数、标签文件哈希与字段剔除说明 |
 | [labels/summary.md](labels/summary.md) | 一行式摘要 |
 | [evaluation-split-v1.json](evaluation-split-v1.json) | 535 张训练/验证/测试划分与关联组 |
 | [dedupe-queue-v1.json](dedupe-queue-v1.json) | 去重队列：536 张在队列、158 张折叠、42 组 |
-| [best-images-v1.json](best-images-v1.json) | 120 张优先复核清单与评分规则 |
+| [best-images-v1.json](best-images-v1.json) | 120 张优先复核清单（只是复核顺序建议，不是标签集） |
 
 文档：
 

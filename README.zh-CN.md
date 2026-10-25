@@ -51,10 +51,11 @@
 
 | 产物 | 内容 |
 |---|---|
-| [已标注结果](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl) | 694 条逐图记录：确认的鸟身/头/眼、冻结原厂候选计数、逐框差异 |
+| [人工校准标注](data/annotations-2026-10-25/confirmed/README.zh-CN.md) | **547 张确认图的完整标签**，JSONL / CSV / COCO / YOLO 四种格式 |
+| [已标注结果](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl) | 694 条逐图记录：含确认项、冻结原厂候选计数、逐框差异 |
 | [评估划分](data/annotations-2026-10-25/evaluation-split-v1.json) | 375/80/80 训练-验证-测试划分与关联组，训练前冻结 |
 | [去重队列](data/annotations-2026-10-25/dedupe-queue-v1.json) | 536 张在队列、158 张折叠、42 组相似帧 |
-| [较好图片清单](data/annotations-2026-10-25/best-images-v1.json) | 120 张优先复核图与可解释的排序规则 |
+| [较好图片清单](data/annotations-2026-10-25/best-images-v1.json) | 120 张优先复核顺序，只是建议，不是标签集 |
 | [标注工具链](data/annotations-2026-10-25/TOOLCHAIN.zh-CN.md) | 标注服务、导入器、去重、导出格式与 COCO/YOLO 转换 |
 | [训练结果](docs/training/z8-native-head-finetune.zh-CN.md) | 原生检测头微调：方法、留出指标、算力与发布边界 |
 

@@ -9,12 +9,13 @@ database and no weights. Images come from the release packages; use
 
 | File | Content |
 |---|---|
-| [labels/community-corrections-v1.jsonl](labels/community-corrections-v1.jsonl) | One record per image, 694 lines |
+| [confirmed/](confirmed/README.md) | **All 547 human-confirmed labels** in JSONL, CSV, COCO and YOLO |
+| [labels/community-corrections-v1.jsonl](labels/community-corrections-v1.jsonl) | One record per image, 694 lines, including 146 unconfirmed drafts |
 | [labels/community-corrections-v1.json](labels/community-corrections-v1.json) | Counts, label hash, dropped fields |
 | [labels/summary.md](labels/summary.md) | One-screen summary |
 | [evaluation-split-v1.json](evaluation-split-v1.json) | Train/val/test split of 535 images with leakage groups |
 | [dedupe-queue-v1.json](dedupe-queue-v1.json) | Folded queue: 536 in queue, 158 folded, 42 groups |
-| [best-images-v1.json](best-images-v1.json) | 120-image first-look ranking and its scoring rule |
+| [best-images-v1.json](best-images-v1.json) | 120-image first-look ordering; a review aid, not the label set |
 
 Guides:
 
