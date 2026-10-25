@@ -1,4 +1,4 @@
-﻿# forest-bird-af 执行规范
+# forest-bird-af 执行规范
 
 **正式本地训练授权（2026-10-25，最新增量）**：用户明确要求“全权由你决策，目的就是训练出更好的模型，直接开始吧”，并要求复用本机 conda 环境。允许本地 Z8 正式训练、冻结数据划分、缓存特征、验证集选型、留出测试评估和独立候选权重导出；这覆盖历史不训练/只做短步数试验的限制。使用现有 `D:/anacondaenvs/machine/python.exe`，保留生产标注数据库、原片、原厂模型及冻结预测。测试集不用于选型。原生前向与 STE 近似梯度边界必须记录，未取得评估改进不得声称模型更好。Sony、远程/A800 任务及机身部署继续暂停。
 
@@ -161,3 +161,14 @@ Batch 05 (2026-10-25): 60 JPEGs, IDs fb_0635–fb_0694. RAR extraction and sourc
 - **候选权重 `resource744.finetuned.body.bin` 不入库**：其字节绝大部分是厂商权重，公开文件即公开原厂模型。只发布哈希、变化字节范围与复现路径。
 - 原片、公开副本、生产库、去重记录继续留在仓库外；图片仍按 Releases 分发。
 - 提交前必须运行 `python scripts/verify_repo.py`、`python scripts/verify_annotations.py`、`python -m unittest tests.test_published_exports -v` 与 `git diff --check`。
+
+## 12. 去重、较好图片与工具链发布（2026-10-26）
+
+用户确认「去重功能早已做好、标注已完成并开始训练」，要求把**较好图片、标注工具**一并开源。执行范围与边界：
+
+- 去重：`dedupe.py` 的 `restore` 动作与页面「撤销去重」按钮本轮补齐；折叠仍只写 `dedupe/`，不改图片、标注与修订历史。
+- 队列清单：`data/annotations-2026-10-25/dedupe-queue-v1.json`，由工作区 `dedupe/current.json` 只读快照经 `scripts/export_dedupe_queue.py` 生成。只发布分组成员、代表图、划分归属与阈值，不含原图路径与哈希。必须写明折叠图之间是**相似帧而非字节重复**（输入像素哈希零重合），分组不跨划分。
+- 较好图片：`data/annotations-2026-10-25/best-images-v1.json`，由 `scripts/export_best_images.py` 按固定公式排序，只从人工确认且仍在队列的图中选。必须声明该分数代表复核价值与纠错量，**不是识别准确率**。
+- 工具链：`data/annotations-2026-10-25/TOOLCHAIN.{md,zh-CN.md}` 说明标注服务、导入器、去重与导出；`scripts/export_label_formats.py` 提供 COCO/YOLO 转换（眼点无可见边界时按 12×12 补框并标记 `eye_center_boxed`）。
+- 校验：`scripts/verify_annotations.py` 增加队列与清单检查（代表图存在、折叠图不在队列、分组不跨划分、清单只含确认图），并由 `tests/test_curation_exports.py` 覆盖。
+- 数据库、原片、权重仍不入库；生产标注库仍为唯一真值来源，导出为单向只读快照。

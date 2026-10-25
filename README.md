@@ -47,17 +47,20 @@ Use [data/registry.csv](data/registry.csv) for stable IDs. [Input conversion cod
 
 ## Published results
 
-Three artifacts are public and independently checkable:
+Everything in the repository can be checked offline:
 
 | Artifact | What it is |
 |---|---|
 | [Reviewed labels](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl) | 694 per-image records: confirmed bird/head/eye items, frozen vendor candidate counts, per-box diff |
 | [Evaluation split](data/annotations-2026-10-25/evaluation-split-v1.json) | 375 / 80 / 80 train-val-test assignment with leakage groups, frozen before training |
-| [Training results](docs/training/z8-native-head-finetune.md) | Native head fine-tune: method, held-out metrics, compute, and the exact publication boundary |
+| [Dedupe queue](data/annotations-2026-10-25/dedupe-queue-v1.json) | 536 in queue, 158 folded, 42 similarity groups |
+| [Best images](data/annotations-2026-10-25/best-images-v1.json) | 120-image first-look ranking with its scoring rule |
+| [Toolchain](data/annotations-2026-10-25/TOOLCHAIN.md) | Annotation service, importer, dedupe, COCO/YOLO export |
+| [Training results](docs/training/z8-native-head-finetune.md) | Native head fine-tune: method, held-out metrics, compute, publication boundary |
 
 ```bash
-python scripts/verify_annotations.py                 # labels, coordinates, split leakage, no private fields
-python -m unittest tests.test_published_exports -v   # the same checks as tests
+python scripts/verify_annotations.py                 # labels, coordinates, split leakage, queue, private fields
+python -m unittest tests.test_published_exports tests.test_curation_exports -v
 python scripts/verify_repo.py                        # no vendor assets or photos in the tree
 ```
 
@@ -93,6 +96,8 @@ See the [validation report](docs/reports/05-e7-comparison-and-cuda.md) and [late
 |---|---|
 | Images, manifests, and checksums | [Community datasets](data/README.md) |
 | Reviewed labels and evaluation split | [Annotations 2026-10-25](data/annotations-2026-10-25/README.md) |
+| Annotation toolchain and export formats | [Toolchain](data/annotations-2026-10-25/TOOLCHAIN.md) |
+| Best images and the deduplicated queue | [Curation](data/annotations-2026-10-25/CURATION.md) |
 | Head fine-tuning results | [Native head fine-tune](docs/training/z8-native-head-finetune.md) |
 | Publication boundary | [Not published](docs/releases/not-published.md) |
 | Run inference and review results | [Prelabeling workflow](docs/run-prelabel.md) |

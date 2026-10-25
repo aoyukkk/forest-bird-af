@@ -47,17 +47,20 @@
 
 ## 已公开结果
 
-三份产物已入库，都能独立核对：
+入仓的产物全部能独立核对：
 
 | 产物 | 内容 |
 |---|---|
 | [已标注结果](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl) | 694 条逐图记录：确认的鸟身/头/眼、冻结原厂候选计数、逐框差异 |
 | [评估划分](data/annotations-2026-10-25/evaluation-split-v1.json) | 375/80/80 训练-验证-测试划分与关联组，训练前冻结 |
+| [去重队列](data/annotations-2026-10-25/dedupe-queue-v1.json) | 536 张在队列、158 张折叠、42 组相似帧 |
+| [较好图片清单](data/annotations-2026-10-25/best-images-v1.json) | 120 张优先复核图与可解释的排序规则 |
+| [标注工具链](data/annotations-2026-10-25/TOOLCHAIN.zh-CN.md) | 标注服务、导入器、去重、导出格式与 COCO/YOLO 转换 |
 | [训练结果](docs/training/z8-native-head-finetune.zh-CN.md) | 原生检测头微调：方法、留出指标、算力与发布边界 |
 
 ```bash
-python scripts/verify_annotations.py                 # 坐标、部位计数、划分泄漏、敏感字段
-python -m unittest tests.test_published_exports -v   # 同样的检查写成测试
+python scripts/verify_annotations.py                 # 标签、坐标、划分泄漏、队列与清单、敏感字段
+python -m unittest tests.test_published_exports tests.test_curation_exports -v
 python scripts/verify_repo.py                        # 仓库内无厂商资产与照片
 ```
 
@@ -91,6 +94,8 @@ python scripts/verify_repo.py                        # 仓库内无厂商资产�
 |---|---|
 | 图片、清单和校验值 | [社区数据集](data/README.zh-CN.md) |
 | 已标注结果与评估划分 | [已标注结果](data/annotations-2026-10-25/README.zh-CN.md) |
+| 标注工具链与导出格式 | [工具链](data/annotations-2026-10-25/TOOLCHAIN.zh-CN.md) |
+| 较好图片与去重队列 | [清单说明](data/annotations-2026-10-25/CURATION.zh-CN.md) |
 | 检测头微调结果 | [原生检测头微调](docs/training/z8-native-head-finetune.zh-CN.md) |
 | 发布边界 | [未发布内容](docs/releases/not-published.zh-CN.md) |
 | 推理与人工复核 | [预标注流程](docs/run-prelabel.zh-CN.md) |

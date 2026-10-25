@@ -156,6 +156,63 @@ def verify_split(problems, path, known_ids):
     return manifest
 
 
+def verify_queue(problems, path, known_ids, splits):
+    """The folded queue may hide images from the list view, never invent one."""
+    if not path.exists():
+        return None
+    queue = json.loads(path.read_text(encoding='utf-8'))
+    seen = set()
+    for row in queue['images']:
+        image_id = row['image_id']
+        if image_id in seen:
+            fail(problems, image_id, 'duplicate image in dedupe queue')
+        seen.add(image_id)
+        if known_ids is not None and image_id not in known_ids:
+            fail(problems, image_id, 'dedupe queue entry missing from the label file')
+        root = row.get('dedupe_root')
+        if root is not None:
+            if root not in known_ids:
+                fail(problems, image_id, 'dedupe root is not a published image')
+            if row['in_queue']:
+                fail(problems, image_id, 'folded image still marked in_queue')
+            if splits and splits.get(image_id) and splits.get(root) \
+                    and splits[image_id] != splits[root]:
+                fail(problems, image_id, 'dedupe group spans published splits')
+        elif not row['in_queue']:
+            fail(problems, image_id, 'image out of queue without a representative')
+    for group in queue.get('groups', []):
+        if group['representative'] not in group['members']:
+            fail(problems, group['representative'],
+                 'group representative missing from its own member list')
+        if len(set(group['members'])) != len(group['members']):
+            fail(problems, group['representative'], 'group repeats a member id')
+    scanned = int(queue['summary']['images'])
+    if scanned != len(queue['images']):
+        fail(problems, 'summary', 'summary.images disagrees with the record list')
+    scan_for_private_text(problems, 'dedupe-queue', queue)
+    return queue
+
+
+def verify_best(problems, path, known_ids):
+    if not path.exists():
+        return None
+    best = json.loads(path.read_text(encoding='utf-8'))
+    seen = set()
+    for row in best['images']:
+        image_id = row['image_id']
+        if image_id in seen:
+            fail(problems, image_id, 'image listed twice in best-images')
+        seen.add(image_id)
+        if known_ids is not None and image_id not in known_ids:
+            fail(problems, image_id, 'best-image entry missing from the label file')
+        if not any((row.get('parts') or {}).get(k) for k in COORDINATE_KINDS):
+            fail(problems, image_id, 'best-image entry has no bird/head/eye part')
+    if len(best['images']) != best['listed']:
+        fail(problems, 'best-images', 'listed count disagrees with the record list')
+    scan_for_private_text(problems, 'best-images', best)
+    return best
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -170,6 +227,10 @@ def main():
     records = verify_labels(problems, labels_path)
     known = {row['image_id'] for row in records}
     manifest = verify_split(problems, split_path, known) if split_path.exists() else None
+    splits = {}.fromkeys(()) if manifest is None else \
+        {row['image_id']: row['split'] for row in manifest['images']}
+    queue = verify_queue(problems, root / 'dedupe-queue-v1.json', known, splits)
+    best = verify_best(problems, root / 'best-images-v1.json', known)
     counts = {}
     for row in records:
         counts[row['review_status']] = counts.get(row['review_status'], 0) + 1
@@ -180,6 +241,9 @@ def main():
                                if row['review_status'] == 'confirmed'),
         'split_images': len(manifest['images']) if manifest else 0,
         'split_counts': manifest['counts'] if manifest else None,
+        'queue': queue['summary']['queue'] if queue else None,
+        'folded': queue['summary']['folded'] if queue else None,
+        'best_listed': best['listed'] if best else None,
         'violations': len(problems),
     }
     print(json.dumps(summary, ensure_ascii=False, indent=2))

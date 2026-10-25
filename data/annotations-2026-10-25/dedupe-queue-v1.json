@@ -1,0 +1,9416 @@
+{
+ "schema": "forest-bird-af-dedupe-queue-v1",
+ "source_created_at": "2026-10-25T12:52:26.164154+00:00",
+ "run_id": "20261025T125226-ff6727ed",
+ "thresholds": {
+  "candidate_ph": 12,
+  "candidate_dh": 12,
+  "candidate_mae": 15,
+  "mae": 7,
+  "structure": 0.96,
+  "tile_mae": 22,
+  "roi_mae": 12,
+  "sharpness_ratio": 1.8
+ },
+ "summary": {
+  "images": 694,
+  "queue": 536,
+  "folded": 158,
+  "groups": 42,
+  "candidate_groups": 101,
+  "folded_confirmed": 12,
+  "root_edges": 101,
+  "split_mismatch_pairs": 0
+ },
+ "group_shape": {
+  "representative": "the image whose number and quality anchor the group",
+  "members": "member ids, representative first",
+  "max_group_size": 6
+ },
+ "groups": [
+  {
+   "representative": "fb_0070",
+   "members": [
+    "fb_0070",
+    "fb_0071"
+   ],
+   "split": "train"
+  },
+  {
+   "representative": "fb_0086",
+   "members": [
+    "fb_0086",
+    "fb_0087"
+   ],
+   "split": "train"
+  },
+  {
+   "representative": "fb_0177",
+   "members": [
+    "fb_0177",
+    "fb_0208"
+   ],
+   "split": "val"
+  },
+  {
+   "representative": "fb_0182",
+   "members": [
+    "fb_0182",
+    "fb_0183",
+    "fb_0184"
+   ],
+   "split": "val"
+  },
+  {
+   "representative": "fb_0187",
+   "members": [
+    "fb_0187",
+    "fb_0188"
+   ],
+   "split": "val"
+  },
+  {
+   "representative": "fb_0189",
+   "members": [
+    "fb_0189",
+    "fb_0190",
+    "fb_0191",
+    "fb_0192"
+   ],
+   "split": "val"
+  },
+  {
+   "representative": "fb_0193",
+   "members": [
+    "fb_0193",
+    "fb_0194"
+   ],
+   "split": "val"
+  },
+  {
+   "representative": "fb_0195",
+   "members": [
+    "fb_0195",
+    "fb_0196"
+   ],
+   "split": "val"
+  },
+  {
+   "representative": "fb_0197",
+   "members": [
+    "fb_0197",
+    "fb_0198"
+   ],
+   "split": "val"
+  },
+  {
+   "representative": "fb_0199",
+   "members": [
+    "fb_0199",
+    "fb_0200"
+   ],
+   "split": "val"
+  },
+  {
+   "representative": "fb_0201",
+   "members": [
+    "fb_0201",
+    "fb_0202"
+   ],
+   "split": "val"
+  },
+  {
+   "representative": "fb_0210",
+   "members": [
+    "fb_0210",
+    "fb_0211",
+    "fb_0212",
+    "fb_0213",
+    "fb_0214",
+    "fb_0215"
+   ],
+   "split": "train"
+  },
+  {
+   "representative": "fb_0216",
+   "members": [
+    "fb_0216",
+    "fb_0217"
+   ],
+   "split": "train"
+  },
+  {
+   "representative": "fb_0218",
+   "members": [
+    "fb_0218",
+    "fb_0219",
+    "fb_0220"
+   ],
+   "split": "train"
+  },
+  {
+   "representative": "fb_0221",
+   "members": [
+    "fb_0221",
+    "fb_0222",
+    "fb_0223",
+    "fb_0224"
+   ],
+   "split": null
+  },
+  {
+   "representative": "fb_0225",
+   "members": [
+    "fb_0225",
+    "fb_0226"
+   ],
+   "split": null
+  },
+  {
+   "representative": "fb_0227",
+   "members": [
+    "fb_0227",
+    "fb_0228",
+    "fb_0229"
+   ],
+   "split": null
+  },
+  {
+   "representative": "fb_0233",
+   "members": [
+    "fb_0233",
+    "fb_0234"
+   ],
+   "split": null
+  },
+  {
+   "representative": "fb_0238",
+   "members": [
+    "fb_0238",
+    "fb_0239",
+    "fb_0240"
+   ],
+   "split": null
+  },
+  {
+   "representative": "fb_0264",
+   "members": [
+    "fb_0264",
+    "fb_0265"
+   ],
+   "split": "val"
+  },
+  {
+   "representative": "fb_0266",
+   "members": [
+    "fb_0266",
+    "fb_0267"
+   ],
+   "split": "val"
+  },
+  {
+   "representative": "fb_0270",
+   "members": [
+    "fb_0270",
+    "fb_0271"
+   ],
+   "split": "test"
+  },
+  {
+   "representative": "fb_0272",
+   "members": [
+    "fb_0272",
+    "fb_0273"
+   ],
+   "split": "test"
+  },
+  {
+   "representative": "fb_0301",
+   "members": [
+    "fb_0301",
+    "fb_0302",
+    "fb_0303"
+   ],
+   "split": "train"
+  },
+  {
+   "representative": "fb_0343",
+   "members": [
+    "fb_0343",
+    "fb_0344"
+   ],
+   "split": null
+  },
+  {
+   "representative": "fb_0351",
+   "members": [
+    "fb_0351",
+    "fb_0352"
+   ],
+   "split": "train"
+  },
+  {
+   "representative": "fb_0355",
+   "members": [
+    "fb_0355",
+    "fb_0356"
+   ],
+   "split": "train"
+  },
+  {
+   "representative": "fb_0357",
+   "members": [
+    "fb_0357",
+    "fb_0358"
+   ],
+   "split": null
+  },
+  {
+   "representative": "fb_0359",
+   "members": [
+    "fb_0359",
+    "fb_0360"
+   ],
+   "split": null
+  },
+  {
+   "representative": "fb_0392",
+   "members": [
+    "fb_0392",
+    "fb_0393"
+   ],
+   "split": null
+  },
+  {
+   "representative": "fb_0402",
+   "members": [
+    "fb_0402",
+    "fb_0403"
+   ],
+   "split": "train"
+  },
+  {
+   "representative": "fb_0404",
+   "members": [
+    "fb_0404",
+    "fb_0405",
+    "fb_0406"
+   ],
+   "split": "train"
+  },
+  {
+   "representative": "fb_0411",
+   "members": [
+    "fb_0411",
+    "fb_0412"
+   ],
+   "split": "train"
+  },
+  {
+   "representative": "fb_0426",
+   "members": [
+    "fb_0426",
+    "fb_0427",
+    "fb_0428",
+    "fb_0429"
+   ],
+   "split": null
+  },
+  {
+   "representative": "fb_0438",
+   "members": [
+    "fb_0438",
+    "fb_0439"
+   ],
+   "split": "train"
+  },
+  {
+   "representative": "fb_0441",
+   "members": [
+    "fb_0441",
+    "fb_0442"
+   ],
+   "split": null
+  },
+  {
+   "representative": "fb_0443",
+   "members": [
+    "fb_0443",
+    "fb_0444"
+   ],
+   "split": null
+  },
+  {
+   "representative": "fb_0446",
+   "members": [
+    "fb_0446",
+    "fb_0447"
+   ],
+   "split": "train"
+  },
+  {
+   "representative": "fb_0448",
+   "members": [
+    "fb_0448",
+    "fb_0449"
+   ],
+   "split": "train"
+  },
+  {
+   "representative": "fb_0451",
+   "members": [
+    "fb_0451",
+    "fb_0452",
+    "fb_0453"
+   ],
+   "split": "train"
+  },
+  {
+   "representative": "fb_0454",
+   "members": [
+    "fb_0454",
+    "fb_0455"
+   ],
+   "split": "train"
+  },
+  {
+   "representative": "fb_0560",
+   "members": [
+    "fb_0560",
+    "fb_0561"
+   ],
+   "split": "train"
+  }
+ ],
+ "images": [
+  {
+   "image_id": "fb_0001",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0002",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0003",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0004",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 2,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0005",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 2,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0006",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 2,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0007",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0008",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0009",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0010",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0011",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0012",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0013",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0014",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0015",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0016",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0017",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0018",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0019",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0020",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0021",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0022",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0023",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0024",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0025",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0026",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0027",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0028",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0029",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0030",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0031",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0032",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0033",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0034",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0035",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 2,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0036",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0037",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0038",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 2,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0039",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0040",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0041",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0042",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0043",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0044",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0045",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0046",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0047",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0048",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0049",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0050",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0051",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0052",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0053",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0054",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0055",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0056",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0057",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0058",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0059",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0060",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0061",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0062",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0063",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0064",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0065",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0066",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0067",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0068",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0069",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0070",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0071",
+   "split": null,
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": "fb_0070",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0072",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0073",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0074",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0075",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0076",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0077",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0078",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0079",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0080",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0081",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0082",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0083",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0084",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0085",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0086",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0087",
+   "split": null,
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": "fb_0086",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0088",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0089",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0090",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0091",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0092",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0093",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0094",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0095",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0096",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0097",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0098",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0099",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0100",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0101",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0102",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0103",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0104",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0105",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0106",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0107",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0108",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0109",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0110",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 2,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0111",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0112",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0113",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0114",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0115",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0116",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0117",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0118",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0119",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0120",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0121",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0122",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0123",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0124",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0125",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0126",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0127",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0128",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0129",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0130",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0131",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0132",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0133",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0134",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0135",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 0,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0136",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0137",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0138",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0139",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 0,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0140",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0141",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0142",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0143",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0144",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0145",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0146",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0147",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0148",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0149",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0150",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0151",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0152",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0153",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0154",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0155",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0156",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0157",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0158",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0159",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0160",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0161",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0162",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0163",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0164",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0165",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0166",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0167",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0168",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0169",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0170",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0171",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0172",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0173",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0174",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0175",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0176",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "absent",
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0177",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0178",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0179",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0180",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0181",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0182",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0183",
+   "split": null,
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0182",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0184",
+   "split": null,
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0182",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0185",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0186",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0187",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0188",
+   "split": null,
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0187",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0189",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0190",
+   "split": null,
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 2,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0189",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0191",
+   "split": null,
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 2,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0189",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0192",
+   "split": null,
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 2,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0189",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0193",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0194",
+   "split": null,
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 2,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0193",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0195",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0196",
+   "split": null,
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 2,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0195",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0197",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0198",
+   "split": null,
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 2,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0197",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0199",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0200",
+   "split": null,
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 2,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0199",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0201",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0202",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0201",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0203",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0204",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0205",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0206",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0207",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0208",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0177",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0209",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0210",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0211",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0210",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0212",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0210",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0213",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0210",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0214",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0210",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0215",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0210",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0216",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0217",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0216",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0218",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0219",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0220",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0221",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0222",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0223",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0224",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0225",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0226",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0227",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0228",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0229",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0230",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0231",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0232",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0233",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0234",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0235",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0236",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0237",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0238",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0239",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0240",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0218",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0241",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0242",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0243",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0244",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0245",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0246",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0247",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0248",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0249",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0250",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0251",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0252",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0251",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0253",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0251",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0254",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0255",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": "fb_0254",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0256",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0254",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0257",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0258",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0259",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0260",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0261",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0262",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0263",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0264",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0265",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0264",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0266",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0267",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0266",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0268",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0269",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0270",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0271",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0270",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0272",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0273",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 2,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0272",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0274",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0275",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0276",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0275",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0277",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0275",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0278",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0275",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0279",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0280",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0281",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0280",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0282",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0280",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0283",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0284",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0285",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0286",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0287",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0288",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0289",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0290",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0291",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0292",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0293",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0294",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0295",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 2,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0296",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0297",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0298",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0297",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0299",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0297",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0300",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0301",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0302",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0301",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0303",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0301",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0304",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0305",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0306",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 3
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0307",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0308",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0309",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0310",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0311",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0312",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0313",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0314",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 2,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0315",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0316",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0317",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 2
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0318",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 2
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0319",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0320",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0321",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0322",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0323",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0324",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0325",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0326",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0327",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0328",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0329",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0330",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0331",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0332",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0333",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 3
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0334",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0335",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0336",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0337",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0338",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0339",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 4
+   },
+   "dedupe_root": "fb_0304",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0340",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0341",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0342",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0341",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0343",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0341",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0344",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0341",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0345",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0341",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0346",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 3
+   },
+   "dedupe_root": "fb_0341",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0347",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0341",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0348",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 3
+   },
+   "dedupe_root": "fb_0341",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0349",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0341",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0350",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0341",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0351",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0352",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0351",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0353",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0351",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0354",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0351",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0355",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0356",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0355",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0357",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0355",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0358",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0355",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0359",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0355",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0360",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0355",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0361",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0355",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0362",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0363",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0364",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0365",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0366",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0367",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0368",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0369",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0370",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0371",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0372",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0373",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0374",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0375",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0376",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0377",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0378",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0379",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0380",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0381",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0382",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0383",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0382",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0384",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0385",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0386",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0387",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0388",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0389",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0390",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0389",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0391",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0392",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0391",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0393",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0391",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0394",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0395",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0396",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0397",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0398",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0399",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0400",
+   "split": "val",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0401",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0402",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0403",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0402",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0404",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0405",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0404",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0406",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0404",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0407",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0408",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0409",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0410",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0411",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0412",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0411",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0413",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0414",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0415",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0416",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0417",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0418",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0419",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0420",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0421",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0422",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 2,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0423",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0424",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0425",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 3
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0426",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0427",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0428",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0429",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0430",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 3
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0431",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0432",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0433",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0434",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0435",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0436",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0437",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0419",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0438",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0439",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0438",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0440",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0441",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0440",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0442",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0440",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0443",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0440",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0444",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0440",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0445",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0440",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0446",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0447",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0446",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0448",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0449",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0448",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0450",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0451",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0452",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0451",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0453",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0451",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0454",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0455",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0454",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0456",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0457",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0458",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0459",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0460",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0461",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0462",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0463",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0464",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0465",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0466",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0467",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0468",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0469",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 7,
+    "eye": 0,
+    "head": 4
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0470",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0471",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0472",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0473",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0474",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 2
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0475",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0476",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0477",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0478",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0479",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0480",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0481",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0482",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0483",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0484",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 2,
+    "eye": 2,
+    "head": 2
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0485",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0486",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0487",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0488",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0489",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0490",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0491",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0492",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0493",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0494",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0495",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0496",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 2,
+    "eye": 2,
+    "head": 2
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0497",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0498",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0499",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0500",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0501",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0502",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0503",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0504",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0505",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0506",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0507",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0508",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0509",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0510",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0511",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0512",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0513",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0514",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0515",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0516",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0517",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0518",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0519",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0520",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0521",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0522",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0523",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0524",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0525",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0526",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0527",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0528",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0529",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0530",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0531",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0532",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0533",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0534",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0535",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0536",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0537",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0538",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0539",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0540",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0541",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0542",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0543",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0544",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0545",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0546",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0547",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0546",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0548",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0546",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0549",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 2,
+    "eye": 1,
+    "head": 2
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0550",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0551",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0552",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0553",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0554",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0555",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0556",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0557",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0558",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0559",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0560",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0561",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": "fb_0560",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0562",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0563",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0564",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 8,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0565",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0566",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0567",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0566",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0568",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0569",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0570",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0571",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0572",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0573",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0574",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0575",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0576",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0577",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0578",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0579",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0580",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0581",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0582",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0583",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0584",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0585",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0584",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0586",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0587",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0588",
+   "split": null,
+   "review_status": "needs_adjudication",
+   "presence": "absent",
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0589",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0590",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0591",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0592",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0593",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0594",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0595",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0596",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0597",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0598",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0599",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0600",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0601",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0602",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0603",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0604",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0605",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 2,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0604",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0606",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0607",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0608",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0609",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0610",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0611",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0612",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0613",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0612",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0614",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0615",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0616",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0617",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0618",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0619",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0620",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0621",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0622",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0623",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0624",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0625",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0626",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0627",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0626",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0628",
+   "split": null,
+   "review_status": "draft",
+   "presence": null,
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": "fb_0626",
+   "in_queue": false
+  },
+  {
+   "image_id": "fb_0629",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0630",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0631",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0632",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 4,
+    "eye": 0,
+    "head": 4
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0633",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0634",
+   "split": "test",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0635",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0636",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0637",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0638",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0639",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0640",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0641",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0642",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0643",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "absent",
+   "parts": {
+    "bird": 0,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0644",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0645",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0646",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0647",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0648",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0649",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0650",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0651",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0652",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0653",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0654",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0655",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0656",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0657",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0658",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0659",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0660",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0661",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0662",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0663",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0664",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0665",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0666",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0667",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0668",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0669",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0670",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0671",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0672",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0673",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0674",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0675",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0676",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0677",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0678",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0679",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 2
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0680",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 0,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0681",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0682",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0683",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0684",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0685",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0686",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0687",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0688",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0689",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0690",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0691",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 1,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0692",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 1
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0693",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  },
+  {
+   "image_id": "fb_0694",
+   "split": "train",
+   "review_status": "confirmed",
+   "presence": "present",
+   "parts": {
+    "bird": 1,
+    "eye": 0,
+    "head": 0
+   },
+   "dedupe_root": null,
+   "in_queue": true
+  }
+ ],
+ "semantics": [
+  "Reversible queue view: folding never writes images, labels or history.",
+  "Every member matched its representative directly; no transitive collapsing.",
+  "No folded member has input pixels identical to its representative: these are similar frames of the same scene or burst, not byte duplicates.",
+  "A similarity group is an engineering hint, not a confirmed capture sequence, and it never spans published splits.",
+  "To see a folded frame again, clear \"Hide duplicates\" in the annotator or use the Duplicates filter."
+ ]
+}

@@ -11,12 +11,18 @@
 | [labels/community-corrections-v1.json](labels/community-corrections-v1.json) | 计数、标签文件哈希与字段剔除说明 |
 | [labels/summary.md](labels/summary.md) | 一行式摘要 |
 | [evaluation-split-v1.json](evaluation-split-v1.json) | 535 张训练/验证/测试划分与关联组 |
+| [dedupe-queue-v1.json](dedupe-queue-v1.json) | 去重队列：536 张在队列、158 张折叠、42 组 |
+| [best-images-v1.json](best-images-v1.json) | 120 张优先复核清单与评分规则 |
+
+文档：
+
+| 文件 | 内容 |
+|---|---|
+| [TOOLCHAIN.zh-CN.md](TOOLCHAIN.zh-CN.md) | 标注工具链：从原片到可训练标签的全流程与导出格式 |
+| [CURATION.zh-CN.md](CURATION.zh-CN.md) | 较好图片怎么选、去重队列的事实 |
 | [review-rounds.zh-CN.md](review-rounds.zh-CN.md) | 复核轮次、纠错统计与剩余问题 |
 
-字段、坐标语义、划分与可做/不可做见本页；纠错轮次与剩余 3 张待复核图见
-[review-rounds.zh-CN.md](review-rounds.zh-CN.md)；训练与发布边界见
-[原生检测头微调](../../docs/training/z8-native-head-finetune.zh-CN.md)与
-[未发布内容](../../docs/releases/not-published.zh-CN.md)。
+训练与发布边界见[原生检测头微调](../../docs/training/z8-native-head-finetune.zh-CN.md)与[未发布内容](../../docs/releases/not-published.zh-CN.md)。
 
 ## 当前状态
 

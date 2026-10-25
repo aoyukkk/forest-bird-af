@@ -13,7 +13,19 @@ database and no weights. Images come from the release packages; use
 | [labels/community-corrections-v1.json](labels/community-corrections-v1.json) | Counts, label hash, dropped fields |
 | [labels/summary.md](labels/summary.md) | One-screen summary |
 | [evaluation-split-v1.json](evaluation-split-v1.json) | Train/val/test split of 535 images with leakage groups |
-| [review-rounds.zh-CN.md](review-rounds.zh-CN.md) | Review rounds, correction statistics and open issues (Chinese) |
+| [dedupe-queue-v1.json](dedupe-queue-v1.json) | Folded queue: 536 in queue, 158 folded, 42 groups |
+| [best-images-v1.json](best-images-v1.json) | 120-image first-look ranking and its scoring rule |
+
+Guides:
+
+| File | Content |
+|---|---|
+| [TOOLCHAIN.md](TOOLCHAIN.md) | Annotation toolchain: photo to trainable label, plus export formats |
+| [CURATION.md](CURATION.md) | How "best images" is ranked and the queue facts |
+| [review-rounds.zh-CN.md](review-rounds.zh-CN.md) | Review rounds and open issues (Chinese) |
+
+Training and publication boundaries: [native head fine-tune](../../docs/training/z8-native-head-finetune.md)
+and [what is not published](../../docs/releases/not-published.md).
 
 ## Current state
 
