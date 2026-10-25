@@ -21,6 +21,28 @@ Initialization compares the complete registry against saved runs, verifies each 
 
 The launcher starts a background service at `http://127.0.0.1:8765`, reuses a service belonging to the same workspace, and opens the browser. Use `--port` for another local port or `--no-open` to leave the browser unchanged. The service listens on loopback only. It remains running until the process stops or the computer restarts; rerun the launcher afterward.
 
+## Deduplication (one-click duplicate marking)
+
+The **Deduplicate** button is a single action: it marks the **current image** as a duplicate of
+the **previous numbered image**, folds it out of the queue, and advances to the next visible
+image. Labels, revision history and originals are untouched; the image is simply no longer
+inspected twice.
+
+| Button | Where | Effect |
+|---|---|---|
+| Deduplicate | header and the bottom bar ("Same as previous") | current image -> previous numbered image, fold and advance |
+| Undo deduplication | header and the bottom bar | return the current image to the queue; enabled only for a folded image |
+| Manage duplicates | header | rescan, expand similarity groups, keep an image, type a representative id |
+
+- The first image has no predecessor, so the button is disabled there.
+- If the previous image is itself folded, the action follows to its root, so no cycle appears.
+- The scan in "Manage duplicates" is a conservative grouping: it only folds frames with strong
+  evidence. Pose, defocus and occlusion changes stay visible, so a similarity group is still not
+  a confirmed capture sequence.
+- "Export confirmed usable records (deduplicated)" excludes folded images; the full export keeps
+  every record.
+- To see everything again, clear "Hide duplicates" or pick the "Duplicates" filter.
+
 ## Historical precision-label workflow (`/annotate`)
 
 1. Pick an image in the queue. Filter by ID, batch, status, or images with no Z8 candidates. Predictions are hidden by default.

@@ -190,6 +190,12 @@ def decide(store,body):
             for other,rep in list(data['hidden'].items()):
                 if rep==ident:data['hidden'][other]=target
         elif action=='keep':keep.add(ident);manual.pop(ident,None);data['hidden'].pop(ident,None)
+        elif action=='restore':
+            # Undo one manual decision: the image returns to the visible queue and
+            # any automatic collapse that leaned on it is recomputed on next scan.
+            manual.pop(ident,None);keep.discard(ident);data['hidden'].pop(ident,None)
+            for other,rep in list(data['hidden'].items()):
+                if rep==ident and other in manual:manual[other]=data['hidden'].get(other,rep)
         elif action=='hide':
             if target not in ids or ident==target:raise Problem('Choose a different existing representative')
             seen={ident}
@@ -203,6 +209,7 @@ def decide(store,body):
         with store.connect() as c:
             confirmed={r[0] for r in c.execute('SELECT id FROM z8_reviews WHERE json_extract(document,\'$.status\')=\'confirmed\'')}
         data['summary']['confirmed_hidden']=len(confirmed&set(data['hidden']))
+        data['summary']['manual_hidden']=len(manual)
         data['last_decision']={'image_id':ident,'action':action,'representative':target if action in ('hide','previous') else None,
                                'previous_image_id':previous}
         return publish(store,data)

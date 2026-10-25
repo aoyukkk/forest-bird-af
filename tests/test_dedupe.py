@@ -81,6 +81,23 @@ class DedupeTests(unittest.TestCase):
         before=self.snapshot();r=dedupe.decide(self.store,{'action':'previous','image_id':'fb_0002'})
         self.assertEqual(r['hidden'],{'fb_0002':'fb_0001'});self.assertEqual(before,self.snapshot())
 
+    def test_restore_returns_image_to_queue_without_touching_labels(self):
+        before=self.snapshot()
+        r=dedupe.decide(self.store,{'action':'previous','image_id':'fb_0002'})
+        self.assertEqual(r['hidden'],{'fb_0002':'fb_0001'})
+        restored=dedupe.decide(self.store,{'action':'restore','image_id':'fb_0002'})
+        self.assertNotIn('fb_0002',restored['hidden'])
+        self.assertNotIn('fb_0002',restored['manual_hidden'])
+        self.assertEqual(restored['summary']['manual_hidden'],0)
+        self.assertEqual(restored['summary']['visible'],5)
+        self.assertEqual(restored['last_decision']['action'],'restore')
+        self.assertEqual(before,self.snapshot())
+        # Restoring an image that was never excluded is a no-op, not an error.
+        again=dedupe.decide(self.store,{'action':'restore','image_id':'fb_0002'})
+        self.assertEqual(again['hidden'],{})
+        with self.assertRaises(Problem):dedupe.decide(self.store,{'action':'restore','image_id':'fb_9999'})
+        self.assertEqual(before,self.snapshot())
+
     def test_api_does_not_expose_private_backup_paths(self):
         import threading
         from urllib.request import Request,urlopen
