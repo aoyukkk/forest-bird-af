@@ -2,126 +2,102 @@
 
 [English](README.md) | **简体中文**
 
-优化枝叶遮挡下的鸟类自动对焦，重点处理漏鸟和误锁树枝。目标是：有可用眼锁眼，否则退到头，再退到整鸟；都不可用时释放目标。
+面向枝叶遮挡场景的鸟类主体识别与对焦研究，目标是 **有可用眼锁眼 → 否则锁头 → 再退到鸟身**。
+这里公开社区照片、人工复核标注和 Z8 原生检测头训练代码，尚未验证整机自动对焦。
 
-## 当前进度
+**694 个图片资产 · 547 条人工确认记录 · 535 条去重后可用记录**
 
-更新于 2026-10-25。
+更新于 **2026-10-26**。
 
-| 工作 | 状态 |
+## 从这里开始
+
+| 你想做什么 | 入口 |
 |---|---|
-| 社区照片 | 694 个文件：568 JPG、7 PNG、119 NEF |
-| 图像校验 | 原资产哈希保持不变；公开副本校验通过，各批写明所用图像表示 |
-| 模拟输入 | 694 张 384 × 256 无损 RGB PNG，附实际留存的 CHW 输入 |
-| Z8 预标注 | 本地 RTX 4080 Laptop GPU 完成 694/694 张，执行错误 0 |
-| 候选结果 | 469 张有框，共 1495 个候选；225 张无候选 |
-| 人工复核 | 547 张确认、146 张草稿、1 张待裁决 |
-| 标注工具 | 本地浏览器编辑器与人／AI 共用接口；[使用说明](docs/tools/annotator.zh-CN.md) |
-| 已标注结果 | 694 条逐图记录与冻结评估划分已公开；[数据集](data/annotations-2026-10-25/docs/README.zh-CN.md) |
-| 检测头微调 | 仅实验候选：留出宏 F1 43.89% → 46.92%，眼精确率下降；[结果](docs/training/z8-native-head-finetune.zh-CN.md) |
-| Sony 实验 | 暂停 |
+| 下载照片或精确的 384×256 输入 | [图片下载](data/README.zh-CN.md#图片下载) |
+| 使用完整人工确认标注 | [标注与格式](data/annotations-2026-10-25/README.zh-CN.md) |
+| 复现或改进原生识别模型 | [训练代码与依赖](docs/training/README.zh-CN.md) |
+| 查看、修改标注 | [本地人工复核工具](docs/tools/z8-review.zh-CN.md) |
+| 找其他文档或脚本 | [文档索引](docs/INDEX.zh-CN.md) · [脚本索引](scripts/README.zh-CN.md) |
 
-最新发布 [v0.5](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-25-v5) 新增 **60 张 JPEG**，编号 **fb_0635–fb_0694**：22 张有候选，38 张无候选，共 45 个原始框。[第五批详情](data/community-2026-10-25-batch05/README.zh-CN.md)。
+## 当前可用内容
 
-## 下载与复核
-
-使用 [Z8 辅助人工复核工具](docs/tools/z8-review.zh-CN.md)检查全部冻结的 384×256 输入，默认显示 Z8 框。明确确认后记录原厂正确或纠错结果，保留逐框差异和修订历史。旧 LLM 标签留在历史精标入口。
-
-| 批次 | 图数 | 下载 |
-|---|---:|---|
-| 首批快照 | 296 | [v0.1](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v1) |
-| 第二批 | 227 | [v0.2](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v2) |
-| 第三批 | 47 | [v0.3](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v3) |
-| 第四批 | 64 | [v0.4](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v4) |
-| 第五批 | 60 | [v0.5](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-25-v5) |
-
-完整 694 个资产需要下载五批。每批提供原分辨率公开副本、固定模拟输入和复核包，下载后用 `SHA256SUMS.txt` 核对。
-
-图片包与复核包解压到同一目录，打开 `review.html`；默认英文，可切换简体中文。首批发布需用其独立 `review.html` 替换包内页面。
-
-第三批使用 NEF **内嵌的机内 JPEG** 做审核图和预测。rawpy 路径失败 28 张后，全部 47 张统一采用此明确表示。公开 NEF 的压缩图像数据与原片一致；内嵌 JPEG 与 RAW 传感器渲染分开记录。
-
-检查整张照片，优先复核无候选图，导出决定 JSON。正确图保留作对照，错误图进入精标。原始类号 0–5 的语义仍待确认。
-
-编号以 [data/registry.csv](data/registry.csv) 为准。[输入转换代码](scripts/pipeline/z8_input.py)、[预标注流程](docs/workflow/run-prelabel.zh-CN.md)。
-
-## 仓库结构
-
-| 目录 | 内容 | 索引 |
-|---|---|---|
-| `data/` | 注册表、五批清单、**已标注结果** | [data](data/README.zh-CN.md) |
-| `docs/` | 全部文档，按 9 个主题分组 | [文档索引](docs/INDEX.zh-CN.md) |
-| `scripts/` | pipeline / annotator / training / publish / tools | [脚本](scripts/README.zh-CN.md) |
-| `src/forest_bird_annotator/` | 标注服务与前端 | [源码](src/forest_bird_annotator/README.zh-CN.md) |
-| `tests/` | 69 项单元与契约测试 | [测试](tests/README.zh-CN.md) |
-| `experiments/` | 各批预标注运行的校验记录 | [记录](experiments/README.zh-CN.md) |
-
-照片不在仓库里，按 `image_id` 查 [registry.csv](data/registry.csv) 后从对应 Release 下载。
-
-## 已公开结果
-
-入仓的产物全部能独立核对：
-
-| 产物 | 内容 |
+| 产物 | 状态 |
 |---|---|
-| [人工校准标注](data/annotations-2026-10-25/confirmed/README.zh-CN.md) | **547 张确认图的完整标签**，JSONL / CSV / COCO / YOLO 四种格式 |
-| [已标注结果](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl) | 694 条逐图记录：含确认项、冻结原厂候选计数、逐框差异 |
-| [评估划分](data/annotations-2026-10-25/splits/evaluation-split-v1.json) | 375/80/80 训练-验证-测试划分与关联组，训练前冻结 |
-| [去重队列](data/annotations-2026-10-25/curation/dedupe-queue-v1.json) | 536 张在队列、158 张折叠、42 组相似帧 |
-| [较好图片清单](data/annotations-2026-10-25/curation/best-images-v1.json) | 120 张优先复核顺序，只是建议，不是标签集 |
-| [标注工具链](data/annotations-2026-10-25/docs/TOOLCHAIN.zh-CN.md) | 标注服务、导入器、去重、导出格式与 COCO/YOLO 转换 |
-| [训练结果](docs/training/z8-native-head-finetune.zh-CN.md) | 原生检测头微调：方法、留出指标、算力与发布边界 |
+| 图片 | 五批 Release 已公开：568 JPG、7 PNG、119 NEF；图片本体不放 Git |
+| 模型输入 | 694 张冻结 RGB PNG、对应 CHW 输入和哈希 |
+| 人工确认标注 | 547 条，保留原始眼点、框、形状 ID 和辅助区域 |
+| 去重后的复核队列 | 535 张已确认可用，**仅 1 张待裁决**（`fb_0588`） |
+| 重复图归档 | 保留 12 条已确认、146 条草稿；这些草稿不是新增待标任务 |
+| 评估划分 | 训练 375 / 验证 80 / 测试 80，训练前按关联组冻结 |
+| 训练进度 | 完成首轮五组和继续微调四组，目前仅有实验候选 |
+
+[694 条全量快照](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl)
+还包括草稿和待裁决项。**未确认记录不能当作无鸟负例。**
+[120 张优先浏览清单](data/annotations-2026-10-25/docs/CURATION.zh-CN.md)仅用于查看顺序，
+不是完整标签集，也不是测试集。
+
+## 怎样使用标注
+
+- 以 [confirmed.jsonl](data/annotations-2026-10-25/confirmed/confirmed.jsonl) 为无损入口，
+  坐标绑定冻结的 **384×256 输入**。
+- 眼睛只有实际标过边界才有眼框。COCO/YOLO 视图包含 **1,041 个原有框**，
+  另外保留 **160 个纯眼点**，不制造固定尺寸眼框。[格式说明](data/annotations-2026-10-25/confirmed/README.zh-CN.md)。
+- COCO/YOLO 是**部分框视图**，不能直接当作完整 BHE 检测训练真值；
+  缺少眼框不代表该处是背景。
+- 本轮是在显示 Z8 候选后人工复核，不是独立盲标；多鸟部位的实例关联尚未建立。
+
+## 下载后先检查
+
+公开数据检查仅需 Python 3.11+ 标准库，不需要 GPU、照片或厂商包：
 
 ```bash
-python scripts/tools/verify_annotations.py                 # 标签、坐标、划分泄漏、队列与清单、敏感字段
-python -m unittest tests.test_published_exports tests.test_curation_exports -v
-python scripts/tools/verify_repo.py                        # 仓库内无厂商资产与照片
+git clone https://github.com/aoyukkk/forest-bird-af.git
+cd forest-bird-af
+python scripts/tools/verify_annotations.py
+python scripts/tools/verify_links.py
+python scripts/tools/verify_repo.py
 ```
 
-候选权重本身**不公开**：它绝大部分字节仍是厂商权重。公开的是 SHA-256、变化字节范围
-以及用你自己的合法副本重建它的脚本，详见[未发布内容](docs/releases/not-published.zh-CN.md)。
+标注界面依赖见 [requirements-annotator.txt](requirements-annotator.txt)。
+训练另需 NumPy、适配 CUDA 的 PyTorch 和自行取得的已验证厂商包，详见
+[训练指南](docs/training/README.zh-CN.md)及[测试指南](tests/README.zh-CN.md)。
+仓库不包含固件、原厂或修改后的厂商权重、特征缓存和生产标注数据库。
 
-## 模型与验证
+## 已有实验结果
 
-本地 Z8 resource744 模型主体与 [WonderLantern/e7-bird-network](https://github.com/WonderLantern/e7-bird-network) 逐字节一致，使用已验证的 CUDA 适配与本地 Z8 原厂后处理。
+候选经过验证集选型后，在 80 张留出图片上测试一次。
+严格离线标准：鸟/头 IoU≥0.5，眼中心误差≤4 个输入像素。
 
-- 实机参考样例、真实图 CPU/GPU 对照通过逐位检查。
-- 五批共 694 张图的 E7 主机解码与留存 Z8 候选记录全部一致。
-- 第三批重新通过 CUDA 批量验证，GPU 网络耗时 30.40 秒，不含图片读写、后处理及复核。
+| 测试指标 | 原模型 | 候选 |
+|---|---:|---:|
+| 宏平均 F1 | 43.89% | 46.92% |
+| 眼命中 / 标注 | 4/22 | 6/22 |
+| 眼部未匹配位置误检 | 1 | 3 |
+| 眼精确率 | 80.00% | 66.67% |
 
-第四批 GPU 网络耗时 42.59 秒，采用同一已验证批量配置；42 张 NEF 使用内嵌 JPEG，22 张 JPG 保持原始解码像素。
+**检出的眼更多，误检也更多，目前不推荐替换原模型。**
+后续四组继续微调未得到合格提升，均保留父权重。
+测试集仅有五个保守关联组，其中 58 张同组；眼精确率只统计标有该部位的图片。
+这些数字不代表机身合焦率或跟踪性能。旧测试划分保留供复现，
+不能再次当作后续调参的新测试集。
 
-第五批重新通过 CUDA 批量验证：60 张 JPEG 的 GPU 网络耗时 39.09 秒，两套解码全部一致。
+[完整方法、结果与算力](docs/training/z8-native-head-finetune.zh-CN.md) ·
+[模型与数值核对证据](docs/reports/05-e7-comparison-and-cuda.zh-CN.md) ·
+[发布边界](docs/releases/not-published.zh-CN.md)
 
-详见[验证报告](docs/reports/05-e7-comparison-and-cuda.zh-CN.md)和[最新执行记录](experiments/community-prelabel-2026-10-25-batch05/)。
+## 仓库地图
 
-## 下一步
-
-- 降低未匹配位置的眼误检：验证误检距人工眼点 8.1–11.2 像素，落在当前背景保护半径内。
-- 确认剩余草稿图并裁决 `fb_0588`，然后刷新已发布标签快照。
-- 先扩大独立泄漏组数量，再把留出收益当作稳定结论。
-- 相位测距、镜头驱动和整机 AF 闭环不计入任何准确率声明。
-
-## 文档
-
-| 内容 | 入口 |
+| 目录 | 内容 |
 |---|---|
-| 图片、清单和校验值 | [社区数据集](data/README.zh-CN.md) |
-| 已标注结果与评估划分 | [已标注结果](data/annotations-2026-10-25/docs/README.zh-CN.md) |
-| 标注工具链与导出格式 | [工具链](data/annotations-2026-10-25/docs/TOOLCHAIN.zh-CN.md) |
-| 较好图片与去重队列 | [清单说明](data/annotations-2026-10-25/docs/CURATION.zh-CN.md) |
-| 检测头微调结果 | [原生检测头微调](docs/training/z8-native-head-finetune.zh-CN.md) |
-| 发布边界 | [未发布内容](docs/releases/not-published.zh-CN.md) |
-| 推理与人工复核 | [预标注流程](docs/workflow/run-prelabel.zh-CN.md) |
-| 模型身份与 GPU 检查 | [验证报告](docs/reports/05-e7-comparison-and-cuda.zh-CN.md) |
-| 数据归类与标注规则 | [规范 v1](docs/protocol/DATASET-SPEC-v1.md) |
-| 固件解包与模型容器格式 | [解包说明](docs/reference/UNPACK-GUIDE.md) |
-| 项目执行与发布规则 | [AGENTS.md](AGENTS.md)、[NOTICE.md](NOTICE.md) |
-
-历史方案、CUB 校准集和失败运行记录保留在仓库中供查阅。
+| [data/](data/README.zh-CN.md) | 图片下载、编号、标注、去重和划分 |
+| [scripts/](scripts/README.zh-CN.md) | 数据流水线、标注工具、训练、导出和检查 |
+| [src/forest_bird_annotator/](src/forest_bird_annotator/README.zh-CN.md) | 标注服务与浏览器前端 |
+| [docs/](docs/INDEX.zh-CN.md) | 当前指南、结果，以及单独保留的历史研究 |
+| [experiments/](experiments/README.zh-CN.md) | 冻结运行记录和源码路径迁移说明 |
+| [tests/](tests/README.zh-CN.md) | 单元测试与公开数据契约检查 |
 
 ## 致谢与许可
 
-感谢提供照片的摄影者，以及 [WonderLantern](https://github.com/WonderLantern/e7-bird-network)、[fwtool.py](https://github.com/ma1co/fwtool.py) 和 [TIM-VX](https://github.com/VeriSilicon/TIM-VX)。完整名单见[致谢](ACKNOWLEDGMENTS.md)。
-
-代码采用 [Apache-2.0](LICENSE)，原创文档与元数据采用 CC BY 4.0。照片版权归各自摄影者，使用范围见[数据集许可说明](data/community-2026-10-24/README.zh-CN.md#使用范围)。
+代码采用 [Apache-2.0](LICENSE)，原创文档和元数据采用 CC BY 4.0。
+照片版权归投稿者，遵循[照片使用范围](data/community-2026-10-24/README.zh-CN.md#使用范围)。
+感谢提供照片的摄影者和[致谢名单](ACKNOWLEDGMENTS.md)中的上游项目。

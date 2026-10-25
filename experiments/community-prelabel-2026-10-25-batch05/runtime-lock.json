@@ -8,10 +8,10 @@
   "network_and_decode_scripts_match_previous_batch": true,
   "review_origin": "60 EXIF-oriented source JPEGs; decoded public-copy pixels match originals",
   "scripts": {
-    "scripts/training/e7_backend.py": "a3df00e8b38991e6ca964adb82b39a61aeaee5fbe83951cbe0123f3e7ab3e203",
-    "scripts/pipeline/prelabel_community.py": "523ce0d31428aeddef92f5a173511b312e7fbcaadd8833f96ba845c8bdc54616",
-    "scripts/tools/compare_saved_decoders.py": "2d3954e991ac4a787eea0c42cdad9066e24249c12681248c6d1fb8ca40f35bff",
-    "scripts/pipeline/validate_e7_batch.py": "4a2699d787e5e4106f3fe1148bf2fa20ec053b66bd3c17c4556f1dc91a97c07e"
+    "scripts/e7_backend.py": "a3df00e8b38991e6ca964adb82b39a61aeaee5fbe83951cbe0123f3e7ab3e203",
+    "scripts/prelabel_community.py": "523ce0d31428aeddef92f5a173511b312e7fbcaadd8833f96ba845c8bdc54616",
+    "scripts/compare_saved_decoders.py": "2d3954e991ac4a787eea0c42cdad9066e24249c12681248c6d1fb8ca40f35bff",
+    "scripts/validate_e7_batch.py": "4a2699d787e5e4106f3fe1148bf2fa20ec053b66bd3c17c4556f1dc91a97c07e"
   },
   "training_started": false
 }

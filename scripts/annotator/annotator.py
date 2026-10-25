@@ -14,7 +14,7 @@ def main():
     init=sub.add_parser('init')
     init.add_argument('--workspace',required=True,type=Path)
     init.add_argument('--runs',required=True,type=Path)
-    init.add_argument('--registry',type=Path,default=Path(__file__).resolve().parents[1]/'data/registry.csv')
+    init.add_argument('--registry',type=Path,default=Path(__file__).resolve().parents[2]/'data/registry.csv')
     serve=sub.add_parser('serve')
     serve.add_argument('--workspace',required=True,type=Path)
     serve.add_argument('--port',type=int,default=8765)

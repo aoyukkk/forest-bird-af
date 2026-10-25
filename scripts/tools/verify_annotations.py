@@ -15,7 +15,7 @@ import sys
 from pathlib import Path
 
 INPUT_WIDTH, INPUT_HEIGHT = 384, 256
-KINDS = {'bird', 'head', 'eye', 'auxiliary'}
+KINDS = {'bird', 'head', 'eye', 'auxiliary', 'uncertain'}
 COORDINATE_KINDS = ('bird', 'head', 'eye')
 STATUSES = {'draft', 'confirmed', 'needs_adjudication'}
 PRESENCES = {'present', 'absent', 'uncertain'}
@@ -52,9 +52,8 @@ def check_box(problems, image_id, item):
     if not (x1 < x2 and y1 < y2):
         fail(problems, image_id, 'box not positive-area: %s' % (box,))
         return
-    tolerance = -.5
-    if not (-0.5 <= x1 < x2 <= INPUT_WIDTH + tolerance
-            and -0.5 <= y1 < y2 <= INPUT_HEIGHT + tolerance):
+    if not (-0.5 <= x1 < x2 <= INPUT_WIDTH
+            and -0.5 <= y1 < y2 <= INPUT_HEIGHT):
         fail(problems, image_id, 'box out of range: %s' % (box,))
 
 
@@ -68,6 +67,8 @@ def check_item(problems, image_id, item):
     if item.get('box_xyxy') is None and item.get('point_xy') is None:
         fail(problems, image_id, 'item %s has neither box nor point' % item.get('id'))
     if kind == 'eye':
+        if item.get('box_xyxy') is not None:
+            check_box(problems, image_id, item)
         if item.get('point_xy') is not None:
             check_point(problems, image_id, item)
         if item.get('box_xyxy') is None and item.get('point_xy') is None:
@@ -233,12 +234,10 @@ def verify_confirmed(problems, path, records):
             continue
         if row.get('parts') != expected[image_id]['parts']:
             fail(problems, image_id, 'confirmed part counts differ from the label file')
+        if row.get('items') != expected[image_id]['items']:
+            fail(problems, image_id, 'confirmed geometry/ids differ from source labels; eye points must not become boxes')
         for item in row.get('items') or []:
-            x1, y1, x2, y2 = item['box_xyxy']
-            if not (x1 < x2 and y1 < y2):
-                fail(problems, image_id, 'confirmed box is not positive-area')
-            if not (-0.5 <= x1 and -0.5 <= y1 and x2 <= 384 + -0.5 and y2 <= 256 + -0.5):
-                fail(problems, image_id, 'confirmed box leaves the input')
+            check_item(problems, image_id, item)
         scan_for_private_text(problems, image_id, row)
     missing = sorted(set(expected) - set(exported))
     for image_id in missing:

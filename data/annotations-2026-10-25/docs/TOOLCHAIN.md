@@ -35,7 +35,7 @@ gitignored.
 original photo + release copy
    -> fixed preprocessing review-EXIF-RGB-bilinear-stretch-384x256-u8-div256-v1
         -> 384 x 256 RGB PNG + 3 x 384 x 256 CHW bytes, each with SHA-256
-             -> frozen vendor candidates (never trained on)
+             -> frozen vendor candidates (proposals, not human ground truth)
                   -> human review: B bird / H head / E eye point / R eye box / U uncertain
                        -> z8_reviews + z8_review_history, one row per revision
                             -> export_z8_labels.py -> community-corrections-v1.jsonl
@@ -73,10 +73,7 @@ record:
 python scripts/publish/export_label_formats.py --labels data/annotations-2026-10-25/labels/community-corrections-v1.jsonl --image fb_0241 --output <dir>
 ```
 
-It writes `<id>.coco.json`, `<id>.yolo.txt` and `<id>.json`. Categories are fixed
-to `bird`/`head`/`eye`; an eye point without a visible boundary becomes a 12 x 12
-box flagged `eye_center_boxed` in COCO `source`. Do not read that box as a
-human-measured eye size.
+It writes `<id>.coco.json`, `<id>.yolo.txt` and `<id>.json`. Categories are bird/head/eye for actual source boxes only. Point-only eyes stay in the COCO point_annotations extension and the companion JSON; YOLO TXT is only a partial box view. Do not train a standard BHE detector from these TXT files while treating missing eye boxes as negatives.
 
 ## Licence and scope
 

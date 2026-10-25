@@ -112,7 +112,7 @@ def main():
     if not torch.cuda.is_available():
         p.error('CUDA required; no alternate backend')
     root, out = a.dataset.resolve(), a.output.resolve()
-    if any(out.is_relative_to(v.resolve()) for v in (a.upstream, a.workspace, Path(__file__).parents[1])):
+    if any(out.is_relative_to(v.resolve()) for v in (a.upstream, a.workspace, Path(__file__).parents[2])):
         p.error('Output must be outside original packages, annotations and public repository')
     lock = json.loads((root / 'split-lock.json').read_text(encoding='utf-8'))
     dataset_bytes = (root / 'dataset.json').read_bytes()

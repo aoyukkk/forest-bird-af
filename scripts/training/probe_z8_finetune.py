@@ -45,7 +45,7 @@ def main():
     if not 0 < a.learning_rate <= .01:
         p.error('Use a learning rate in (0,.01]')
     out = a.output.resolve()
-    repo = Path(__file__).resolve().parents[1]
+    repo = Path(__file__).resolve().parents[2]
     if out.is_relative_to(repo) or out.is_relative_to(a.upstream.resolve()) or out.is_relative_to(a.z8_package.resolve()) or out.is_relative_to(a.workspace.resolve()):
         p.error('Experiment output must be separate from source packages, public repo and production annotations')
     out.mkdir(parents=True, exist_ok=False)

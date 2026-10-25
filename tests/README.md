@@ -20,3 +20,5 @@ python -m unittest discover -s tests -p "test_*.py"
 
 Publication tests use the standard library only; they need neither the vendor
 package nor CUDA.
+
+`test_repository_publication.py` checks lossless eye geometry, reproducible exports/checksums, links and the label-archive boundary. `test_training_output_guards.py` checks that moved training scripts still reject repository-local private outputs; it imports PyTorch but launches no GPU job. Full tests need Pillow, NumPy and PyTorch.

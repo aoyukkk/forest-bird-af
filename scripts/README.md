@@ -55,5 +55,6 @@ plus `z8_probe_labels.py`, `z8_trainable_heads.py`, `z8_training_targets.py` and
 |---|---|
 | `verify_repo.py` | Scan the tree for vendor assets or photos |
 | `verify_annotations.py` | Check labels, splits, queue, confirmed export, private fields |
+| `verify_links.py` | Check relative Markdown file targets after directory changes |
 | `verify_review_page.mjs` | Static check of the review page |
 | `compare_saved_decoders.py` | Compare two decoder outputs |

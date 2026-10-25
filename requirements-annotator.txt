@@ -1,0 +1,2 @@
+# Local annotation UI. Published-data checks use the standard library.
+Pillow>=10,<12

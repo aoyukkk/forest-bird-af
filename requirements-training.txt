@@ -1,0 +1,5 @@
+-r requirements-annotator.txt
+numpy>=1.26,<3
+# Install PyTorch compatible with your CUDA environment separately.
+# Tested: torch 2.7.0.dev20250117+cu126, numpy 1.26.4.
+# Other runtimes must pass native parity checks before training.

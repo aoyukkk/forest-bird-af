@@ -104,7 +104,7 @@ def main():
     output.mkdir(parents=True, exist_ok=True)
     target = output / 'evaluation-split-v1.json'
     target.write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + '\n',
-                      encoding='utf-8')
+                      encoding='utf-8', newline='\n')
     print(json.dumps({'counts': counts, 'groups': manifest['group_counts'],
                       'path': str(target),
                       'sha256': sha_file(target)}, ensure_ascii=False))

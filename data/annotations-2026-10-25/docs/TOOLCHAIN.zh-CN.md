@@ -65,8 +65,7 @@ python scripts/publish/export_label_formats.py --labels data/annotations-2026-10
 ```
 
 输出 `<id>.coco.json`、`<id>.yolo.txt`、`<id>.json`。类别固定为 `bird`/`head`/`eye`；
-眼点在没有可见边界时按 12×12 像素补框，并在 COCO 的 `source` 字段标注为 `eye_center_boxed`，
-不要把这个框当成人工眼框尺寸。
+只导出原有鸟、头及可见边界眼框，不制造眼框。纯眼点保留在 COCO 的 point_annotations 扩展及配套 JSON 中；YOLO TXT 只是部分框视图，不能把缺失眼框作为背景直接训练完整 BHE 检测器。
 
 ## 许可与边界
 

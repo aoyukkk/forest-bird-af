@@ -25,6 +25,13 @@ package.
 
 ## Key arguments
 
+The public label JSONL is not a drop-in replacement for the local training
+workspace. `prepare_z8_training.py` currently consumes the annotation SQLite
+database, saved prelabel runs and private source-group maps; it does not import
+`confirmed.jsonl` directly. The public labels/split support inspection and
+independent adapters, but a standalone public-data-to-native-workspace importer
+is not supplied. Published-data verification needs none of these private inputs.
+
 ```text
 --dataset            frozen data directory (split-lock.json, dataset.json, cache-report.json, features/)
 --upstream           locally verified vendor model package
@@ -46,8 +53,8 @@ package.
 - The backward pass is an STE approximation: the true derivative of FP16
   quantization and integer arithmetic is not derived, only an approximate
   direction is claimed.
-- Every epoch checks that FP16 parameters outside the allowed mask are
-  unchanged; any change fails the run.
+- Gradient masks restrict updates; the selected checkpoint is checked before
+  export for FP16 changes outside the allowed mask.
 - The exported body has the same size as the original; only bytes inside the
   allowed head range differ.
 

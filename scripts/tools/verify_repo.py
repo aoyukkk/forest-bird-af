@@ -8,6 +8,8 @@
 """
 import os
 import sys
+import re
+import zipfile
 
 # 禁止入库的扩展名
 FORBIDDEN_EXT = {
@@ -24,8 +26,8 @@ FORBIDDEN_EXT = {
 # 这里的 zip 只含逐图 YOLO 文本，不含图片或权重。
 ALLOWED_PREFIX = (
     'docs/figures/',
-    'data/annotations-2026-10-25/confirmed/yolo-labels.zip',
 )
+LABEL_ARCHIVE = 'data/annotations-2026-10-25/confirmed/yolo-labels.zip'
 
 # 禁止出现的目录名
 FORBIDDEN_DIR = {
@@ -76,6 +78,18 @@ def main():
             total += 1
             total_bytes += size
 
+            if rel == LABEL_ARCHIVE:
+                try:
+                    with zipfile.ZipFile(full) as archive:
+                        for member in archive.infolist():
+                            allowed = member.filename in ('README.txt', 'eye-points.jsonl', 'yolo/classes.txt') or re.fullmatch(r'yolo/fb_[0-9]+\.txt', member.filename)
+                            if not allowed or member.file_size > 1024 * 1024:
+                                violations.append((rel + ':' + member.filename, 'forbidden archive entry'))
+                            else:
+                                archive.read(member).decode('utf-8')
+                except (zipfile.BadZipFile, UnicodeError, RuntimeError) as error:
+                    violations.append((rel, str(error)))
+                continue
             if any(rel.startswith(p) for p in ALLOWED_PREFIX):
                 continue
 

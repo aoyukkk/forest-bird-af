@@ -1,0 +1,363 @@
+{
+  "schema": "historical-script-relocations-v1",
+  "locks_preserved": true,
+  "scripts": [
+    {
+      "experiment": "community-prelabel-2026-10-24",
+      "recorded_path": "scripts/e7_backend.py",
+      "recorded_sha256": "a3df00e8b38991e6ca964adb82b39a61aeaee5fbe83951cbe0123f3e7ab3e203",
+      "current_path": "scripts/training/e7_backend.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24",
+      "recorded_path": "scripts/prelabel_community.py",
+      "recorded_sha256": "523ce0d31428aeddef92f5a173511b312e7fbcaadd8833f96ba845c8bdc54616",
+      "current_path": "scripts/pipeline/prelabel_community.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24",
+      "recorded_path": "scripts/validate_e7_backend.py",
+      "recorded_sha256": "60194bf16104caa43a438e9b0d5959505138681b2c871fe7e4d55d460cc250b8",
+      "current_path": "scripts/pipeline/validate_e7_backend.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24",
+      "recorded_path": "scripts/validate_e7_batch.py",
+      "recorded_sha256": "4a2699d787e5e4106f3fe1148bf2fa20ec053b66bd3c17c4556f1dc91a97c07e",
+      "current_path": "scripts/pipeline/validate_e7_batch.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24",
+      "recorded_path": "scripts/build_review_page.py",
+      "recorded_sha256": "31ef116a39247eddc0286deea7c306946ff8fd29e68abff4a0c3b0e9a81aecf9",
+      "current_path": "scripts/pipeline/build_review_page.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24",
+      "recorded_path": "scripts/package_prelabels.py",
+      "recorded_sha256": "27bd2dc0284752db14bb036bec7d1b0db12f8bda455ddc826af7de54a409f8c6",
+      "current_path": "scripts/pipeline/package_prelabels.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch02",
+      "recorded_path": "scripts/e7_backend.py",
+      "recorded_sha256": "a3df00e8b38991e6ca964adb82b39a61aeaee5fbe83951cbe0123f3e7ab3e203",
+      "current_path": "scripts/training/e7_backend.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch02",
+      "recorded_path": "scripts/prelabel_community.py",
+      "recorded_sha256": "523ce0d31428aeddef92f5a173511b312e7fbcaadd8833f96ba845c8bdc54616",
+      "current_path": "scripts/pipeline/prelabel_community.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch02",
+      "recorded_path": "scripts/validate_e7_batch.py",
+      "recorded_sha256": "4a2699d787e5e4106f3fe1148bf2fa20ec053b66bd3c17c4556f1dc91a97c07e",
+      "current_path": "scripts/pipeline/validate_e7_batch.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch02",
+      "recorded_path": "scripts/build_review_page.py",
+      "recorded_sha256": "bd3eb5edddd33b5013b7cbb41b373b951e77ed8945c15d1bf41e8985f6f798e6",
+      "current_path": "scripts/pipeline/build_review_page.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch02",
+      "recorded_path": "scripts/package_prelabels.py",
+      "recorded_sha256": "b3afe4e80b12bf9c26d594c6df2f2936a48c17a24844d546022b1287a99703ec",
+      "current_path": "scripts/pipeline/package_prelabels.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch02",
+      "recorded_path": "scripts/package_z8_inputs.py",
+      "recorded_sha256": "c5738bed11d78979bb8009b73f09536eeee8fdca596261648ff5a16461a69da2",
+      "current_path": "scripts/pipeline/package_z8_inputs.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch02",
+      "recorded_path": "scripts/sanitize_jpeg.py",
+      "recorded_sha256": "5a1dfa902b609a3b332cb7983c06d547692e939b265b00a647e53929490fc9c8",
+      "current_path": "scripts/pipeline/sanitize_jpeg.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch02",
+      "recorded_path": "scripts/prepare_community_release.py",
+      "recorded_sha256": "faa3ddd1609f84665994c4b6a0fe30af7738ed4154751b0aae04c57ff3a167df",
+      "current_path": "scripts/pipeline/prepare_community_release.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch02",
+      "recorded_path": "scripts/finalize_community_release.py",
+      "recorded_sha256": "39f8c5ebae7080140aefc041afcb4c94d551f06ab40f3a97acbd193ab3e1f7a0",
+      "current_path": "scripts/pipeline/finalize_community_release.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch02",
+      "recorded_path": "scripts/extract_verified_zip.py",
+      "recorded_sha256": "e0d2696bbd84f8f381a681e5ba73399e522560f0fe67371d42c1a11a44b7e41a",
+      "current_path": "scripts/pipeline/extract_verified_zip.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch02",
+      "recorded_path": "scripts/compare_saved_decoders.py",
+      "recorded_sha256": "2d3954e991ac4a787eea0c42cdad9066e24249c12681248c6d1fb8ca40f35bff",
+      "current_path": "scripts/tools/compare_saved_decoders.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch02",
+      "recorded_path": "scripts/z8_input.py",
+      "recorded_sha256": "4c17f8d10c6feacf1998dd07a10de4287ca9d73c3052ae85aa9bbda3c4622e22",
+      "current_path": "scripts/pipeline/z8_input.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch02",
+      "recorded_path": "scripts/verify_review_page.mjs",
+      "recorded_sha256": "da1976c50f2d1d331499fc1b4890e29547d3d9790ef87d3505ba99008d820626",
+      "current_path": "scripts/tools/verify_review_page.mjs",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch03",
+      "recorded_path": "scripts/e7_backend.py",
+      "recorded_sha256": "a3df00e8b38991e6ca964adb82b39a61aeaee5fbe83951cbe0123f3e7ab3e203",
+      "current_path": "scripts/training/e7_backend.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch03",
+      "recorded_path": "scripts/prelabel_community.py",
+      "recorded_sha256": "523ce0d31428aeddef92f5a173511b312e7fbcaadd8833f96ba845c8bdc54616",
+      "current_path": "scripts/pipeline/prelabel_community.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch03",
+      "recorded_path": "scripts/validate_e7_batch.py",
+      "recorded_sha256": "4a2699d787e5e4106f3fe1148bf2fa20ec053b66bd3c17c4556f1dc91a97c07e",
+      "current_path": "scripts/pipeline/validate_e7_batch.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch03",
+      "recorded_path": "scripts/build_review_page.py",
+      "recorded_sha256": "bd3eb5edddd33b5013b7cbb41b373b951e77ed8945c15d1bf41e8985f6f798e6",
+      "current_path": "scripts/pipeline/build_review_page.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch03",
+      "recorded_path": "scripts/package_prelabels.py",
+      "recorded_sha256": "b3afe4e80b12bf9c26d594c6df2f2936a48c17a24844d546022b1287a99703ec",
+      "current_path": "scripts/pipeline/package_prelabels.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch03",
+      "recorded_path": "scripts/package_z8_inputs.py",
+      "recorded_sha256": "96a6cbebcc8786acd98109d53acbe7c54a9cbfc34b6584340360a4352594b016",
+      "current_path": "scripts/pipeline/package_z8_inputs.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch03",
+      "recorded_path": "scripts/sanitize_jpeg.py",
+      "recorded_sha256": "5a1dfa902b609a3b332cb7983c06d547692e939b265b00a647e53929490fc9c8",
+      "current_path": "scripts/pipeline/sanitize_jpeg.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch03",
+      "recorded_path": "scripts/prepare_community_release.py",
+      "recorded_sha256": "faa3ddd1609f84665994c4b6a0fe30af7738ed4154751b0aae04c57ff3a167df",
+      "current_path": "scripts/pipeline/prepare_community_release.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch03",
+      "recorded_path": "scripts/finalize_community_release.py",
+      "recorded_sha256": "15629a85e5a8975f69e58f9b99c9e12ea83ed767e99db25129bfedf904f25ef4",
+      "current_path": "scripts/pipeline/finalize_community_release.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch03",
+      "recorded_path": "scripts/extract_verified_zip.py",
+      "recorded_sha256": "e0d2696bbd84f8f381a681e5ba73399e522560f0fe67371d42c1a11a44b7e41a",
+      "current_path": "scripts/pipeline/extract_verified_zip.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch03",
+      "recorded_path": "scripts/compare_saved_decoders.py",
+      "recorded_sha256": "2d3954e991ac4a787eea0c42cdad9066e24249c12681248c6d1fb8ca40f35bff",
+      "current_path": "scripts/tools/compare_saved_decoders.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch03",
+      "recorded_path": "scripts/z8_input.py",
+      "recorded_sha256": "4c17f8d10c6feacf1998dd07a10de4287ca9d73c3052ae85aa9bbda3c4622e22",
+      "current_path": "scripts/pipeline/z8_input.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch03",
+      "recorded_path": "scripts/verify_review_page.mjs",
+      "recorded_sha256": "29e659a77ec18e3991bdddb4833af04d47d12e2c69edf917c578ae0ae1a4d6c0",
+      "current_path": "scripts/tools/verify_review_page.mjs",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch03",
+      "recorded_path": "scripts/nef_review.py",
+      "recorded_sha256": "15372b228abc34b3b696acc52d64752017a7177f6cb0f8b9437ae5d05c4cabae",
+      "current_path": "scripts/pipeline/nef_review.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch04",
+      "recorded_path": "scripts/e7_backend.py",
+      "recorded_sha256": "a3df00e8b38991e6ca964adb82b39a61aeaee5fbe83951cbe0123f3e7ab3e203",
+      "current_path": "scripts/training/e7_backend.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch04",
+      "recorded_path": "scripts/prelabel_community.py",
+      "recorded_sha256": "523ce0d31428aeddef92f5a173511b312e7fbcaadd8833f96ba845c8bdc54616",
+      "current_path": "scripts/pipeline/prelabel_community.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch04",
+      "recorded_path": "scripts/validate_e7_batch.py",
+      "recorded_sha256": "4a2699d787e5e4106f3fe1148bf2fa20ec053b66bd3c17c4556f1dc91a97c07e",
+      "current_path": "scripts/pipeline/validate_e7_batch.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch04",
+      "recorded_path": "scripts/build_review_page.py",
+      "recorded_sha256": "bd3eb5edddd33b5013b7cbb41b373b951e77ed8945c15d1bf41e8985f6f798e6",
+      "current_path": "scripts/pipeline/build_review_page.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch04",
+      "recorded_path": "scripts/package_prelabels.py",
+      "recorded_sha256": "b3afe4e80b12bf9c26d594c6df2f2936a48c17a24844d546022b1287a99703ec",
+      "current_path": "scripts/pipeline/package_prelabels.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch04",
+      "recorded_path": "scripts/package_z8_inputs.py",
+      "recorded_sha256": "96a6cbebcc8786acd98109d53acbe7c54a9cbfc34b6584340360a4352594b016",
+      "current_path": "scripts/pipeline/package_z8_inputs.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch04",
+      "recorded_path": "scripts/sanitize_jpeg.py",
+      "recorded_sha256": "5a1dfa902b609a3b332cb7983c06d547692e939b265b00a647e53929490fc9c8",
+      "current_path": "scripts/pipeline/sanitize_jpeg.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch04",
+      "recorded_path": "scripts/prepare_community_release.py",
+      "recorded_sha256": "19b72a23e7cb9f48b3ca9569d404869962be53c45d7b1ea745412bbfd226f85c",
+      "current_path": "scripts/pipeline/prepare_community_release.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch04",
+      "recorded_path": "scripts/finalize_community_release.py",
+      "recorded_sha256": "15629a85e5a8975f69e58f9b99c9e12ea83ed767e99db25129bfedf904f25ef4",
+      "current_path": "scripts/pipeline/finalize_community_release.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch04",
+      "recorded_path": "scripts/extract_verified_zip.py",
+      "recorded_sha256": "e0d2696bbd84f8f381a681e5ba73399e522560f0fe67371d42c1a11a44b7e41a",
+      "current_path": "scripts/pipeline/extract_verified_zip.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch04",
+      "recorded_path": "scripts/compare_saved_decoders.py",
+      "recorded_sha256": "2d3954e991ac4a787eea0c42cdad9066e24249c12681248c6d1fb8ca40f35bff",
+      "current_path": "scripts/tools/compare_saved_decoders.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch04",
+      "recorded_path": "scripts/z8_input.py",
+      "recorded_sha256": "4c17f8d10c6feacf1998dd07a10de4287ca9d73c3052ae85aa9bbda3c4622e22",
+      "current_path": "scripts/pipeline/z8_input.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch04",
+      "recorded_path": "scripts/verify_review_page.mjs",
+      "recorded_sha256": "29e659a77ec18e3991bdddb4833af04d47d12e2c69edf917c578ae0ae1a4d6c0",
+      "current_path": "scripts/tools/verify_review_page.mjs",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-24-batch04",
+      "recorded_path": "scripts/nef_review.py",
+      "recorded_sha256": "15372b228abc34b3b696acc52d64752017a7177f6cb0f8b9437ae5d05c4cabae",
+      "current_path": "scripts/pipeline/nef_review.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-25-batch05",
+      "recorded_path": "scripts/e7_backend.py",
+      "recorded_sha256": "a3df00e8b38991e6ca964adb82b39a61aeaee5fbe83951cbe0123f3e7ab3e203",
+      "current_path": "scripts/training/e7_backend.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-25-batch05",
+      "recorded_path": "scripts/prelabel_community.py",
+      "recorded_sha256": "523ce0d31428aeddef92f5a173511b312e7fbcaadd8833f96ba845c8bdc54616",
+      "current_path": "scripts/pipeline/prelabel_community.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-25-batch05",
+      "recorded_path": "scripts/compare_saved_decoders.py",
+      "recorded_sha256": "2d3954e991ac4a787eea0c42cdad9066e24249c12681248c6d1fb8ca40f35bff",
+      "current_path": "scripts/tools/compare_saved_decoders.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    },
+    {
+      "experiment": "community-prelabel-2026-10-25-batch05",
+      "recorded_path": "scripts/validate_e7_batch.py",
+      "recorded_sha256": "4a2699d787e5e4106f3fe1148bf2fa20ec053b66bd3c17c4556f1dc91a97c07e",
+      "current_path": "scripts/pipeline/validate_e7_batch.py",
+      "note": "Historical lock restored verbatim; relocation does not claim current script bytes produced the frozen run."
+    }
+  ]
+}

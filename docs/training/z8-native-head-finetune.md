@@ -50,7 +50,7 @@ bound to the frozen 384 x 256 input.
 - The original consumer post-processes the output with unchanged thresholds and
   lookup tables.
 - Selection maximises validation macro F1 with a per-part guard of at most 0.05
-  recall drop and 0.03 F1 drop. The F1 guard was added on validation after trial
+  recall drop and 0.03 F1 drop. The F1 guard was added on validation before trial
   4, before the test set was opened.
 
 ## Results

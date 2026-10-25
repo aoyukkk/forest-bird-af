@@ -4,8 +4,8 @@
 The published labels describe the frozen 384 x 256 review input, so the helper
 writes exactly three outputs for one ``image_id``:
 
-* ``<id>.coco.json``   - COCO detection with three categories
-* ``<id>.yolo.txt``    - YOLO txt rows ``class cx cy w h`` normalised 0-1
+* ``<id>.coco.json``   - source boxes plus a custom point_annotations extension
+* ``<id>.yolo.txt``    - partial measured-box view, normalised 0-1
 * ``<id>.json``        - the source record plus a portable summary
 
 Part semantics follow the published data: bird and head are boxes, an eye is a
@@ -15,7 +15,7 @@ regions are not bird labels and are excluded from COCO/YOLO output.
 Usage::
 
     python scripts/publish/export_label_formats.py --labels <jsonl> --image fb_0241 --output <dir>
-    python scripts/publish/export_label_formats.py --labels <jsonl> --output <dir>   # every record
+    python scripts/publish/export_label_formats.py --labels <jsonl> --output <dir>   # confirmed records
 """
 import argparse
 import json
@@ -25,25 +25,26 @@ from pathlib import Path
 WIDTH, HEIGHT = 384, 256
 CATEGORIES = [{'id': 1, 'name': 'bird'}, {'id': 2, 'name': 'head'}, {'id': 3, 'name': 'eye'}]
 CLASS_INDEX = {'bird': 0, 'head': 1, 'eye': 2}
-EYE_BOX_PX = 12.0
-
-
-def eye_box(item):
-    if item.get('box_xyxy'):
-        return [float(v) for v in item['box_xyxy']]
-    x, y = item['point_xy']
-    half = EYE_BOX_PX / 2
-    return [max(0.0, x - half), max(0.0, y - half),
-            min(float(WIDTH), x + half), min(float(HEIGHT), y + half)]
+def measured_boxes(row):
+    """Only actual source boxes; point annotations never acquire an extent."""
+    for item in row['items']:
+        if item['kind'] in CLASS_INDEX and item.get('box_xyxy') is not None:
+            yield item['kind'], item, [float(v) for v in item['box_xyxy']]
 
 
 def to_coco(row):
-    annotations, index = [], 1
+    annotations, points, index = [], [], 1
     for item in row['items']:
         kind = item['kind']
         if kind not in CLASS_INDEX:
             continue
-        box = eye_box(item) if kind == 'eye' else [float(v) for v in item['box_xyxy']]
+        if item.get('box_xyxy') is None:
+            if kind == 'eye' and item.get('point_xy') is not None:
+                points.append({'id': index, 'image_id': row['image_id'], 'source_item_id': item['id'],
+                               'category_id': 3, 'point_xy': list(item['point_xy'])})
+                index += 1
+            continue
+        box = [float(v) for v in item['box_xyxy']]
         x1, y1, x2, y2 = box
         annotations.append({
             'id': index,
@@ -52,28 +53,29 @@ def to_coco(row):
             'bbox': [round(x1, 3), round(y1, 3), round(x2 - x1, 3), round(y2 - y1, 3)],
             'area': round((x2 - x1) * (y2 - y1), 3),
             'iscrowd': 0,
-            'source': 'eye_center_boxed' if kind == 'eye' and not item.get('box_xyxy') else 'human',
+            'source_item_id': item['id'],
         })
         index += 1
     return {
         'info': {'description': 'Z8-assisted human correction, frozen 384x256 input',
+                 'review_status': row['review_status'],
                  'width': WIDTH, 'height': HEIGHT},
         'licenses': [],
         'images': [{'id': row['image_id'], 'file_name': row['image_id'] + '.png',
                     'width': WIDTH, 'height': HEIGHT,
                     'input_chw_u8_sha256': row['annotation_image']['input_chw_u8_sha256']}],
         'annotations': annotations,
+        'point_annotations': points,
+        'geometry_policy': 'COCO annotations contain source boxes only. point_annotations is a custom extension; use JSONL for complete partial-label supervision.',
         'categories': CATEGORIES,
     }
 
 
 def to_yolo(row):
     lines = []
-    for item in row['items']:
-        kind = item['kind']
-        if kind not in CLASS_INDEX:
-            continue
-        x1, y1, x2, y2 = eye_box(item) if kind == 'eye' else [float(v) for v in item['box_xyxy']]
+    for kind, item, box in measured_boxes(row):
+        x1, y1, x2, y2 = box
+        x1, y1, x2, y2 = max(0., x1), max(0., y1), min(WIDTH, x2), min(HEIGHT, y2)
         cx, cy = (x1 + x2) / 2 / WIDTH, (y1 + y2) / 2 / HEIGHT
         w, h = (x2 - x1) / WIDTH, (y2 - y1) / HEIGHT
         lines.append('%d %.6f %.6f %.6f %.6f' % (CLASS_INDEX[kind], cx, cy, w, h))
@@ -87,7 +89,9 @@ def main():
     parser.add_argument('--output', required=True, type=Path)
     parser.add_argument('--image', help='one image id, e.g. fb_0241')
     parser.add_argument('--confirmed-only', action='store_true',
-                        help='skip draft and unconfirmed records')
+                        help='compatibility alias; confirmed-only is the default')
+    parser.add_argument('--include-unconfirmed', action='store_true',
+                        help='inspection only: also export drafts/adjudication, with status in the JSON')
     args = parser.parse_args()
 
     rows = []
@@ -97,7 +101,7 @@ def main():
         row = json.loads(line)
         if args.image and row['image_id'] != args.image:
             continue
-        if args.confirmed_only and row['review_status'] != 'confirmed':
+        if (args.confirmed_only or not args.include_unconfirmed) and row['review_status'] != 'confirmed':
             continue
         rows.append(row)
     if not rows:
@@ -110,14 +114,14 @@ def main():
         stem = output / row['image_id']
         coco = to_coco(row)
         (stem.parent / (row['image_id'] + '.coco.json')).write_text(
-            json.dumps(coco, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+            json.dumps(coco, ensure_ascii=False, indent=1) + '\n', encoding='utf-8', newline='\n')
         (stem.parent / (row['image_id'] + '.yolo.txt')).write_text(
-            to_yolo(row), encoding='utf-8')
+            to_yolo(row), encoding='utf-8', newline='\n')
         portable = {k: row[k] for k in ('image_id', 'annotation_image', 'review_status',
                                         'presence', 'decision', 'parts', 'items')}
         portable['coordinate_space'] = row['annotation_image']['coordinate_space']
         (stem.parent / (row['image_id'] + '.json')).write_text(
-            json.dumps(portable, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+            json.dumps(portable, ensure_ascii=False, indent=1) + '\n', encoding='utf-8', newline='\n')
         written += 1
     print(json.dumps({'records': written, 'directory': str(output),
                       'categories': [c['name'] for c in CATEGORIES]}, ensure_ascii=False))

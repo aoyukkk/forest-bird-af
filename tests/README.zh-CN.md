@@ -19,3 +19,5 @@ python -m unittest discover -s tests -p "test_*.py"
 | `test_z8_probe_labels.py` | 原生查表与候选适配 |
 
 发布相关测试只依赖标准库，不需要原厂包或 CUDA。
+
+`test_repository_publication.py` 检查无损眼几何、导出/哈希复现、链接与标签压缩包边界。`test_training_output_guards.py` 检查迁移后训练脚本仍拒绝向仓库写私有产物；它导入 PyTorch，但不启动 GPU 作业。完整测试需 Pillow、NumPy 和 PyTorch。

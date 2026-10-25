@@ -55,7 +55,7 @@ def capture_batch(backend, raws):
 
 def freeze(args):
     out = args.output.resolve()
-    if any(out.is_relative_to(x.resolve()) for x in (args.workspace, args.upstream, Path(__file__).parents[1])):
+    if any(out.is_relative_to(x.resolve()) for x in (args.workspace, args.upstream, Path(__file__).parents[2])):
         raise ValueError('Output must be outside production data, upstream, and public repository')
     out.mkdir(parents=True, exist_ok=False)
     db = sqlite3.connect((args.workspace / 'annotations.sqlite3').resolve().as_uri() + '?mode=ro', uri=True)

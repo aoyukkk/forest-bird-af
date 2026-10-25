@@ -1,39 +1,48 @@
-# Datasets
+# Data: photographs, labels and splits
 
 **English** | [简体中文](README.zh-CN.md)
 
-| Dataset | Files | Use |
-|---|---:|---|
-| [Cumulative register](registry.csv) | 694 | Authoritative IDs and source hashes for future imports |
-| [Reviewed labels 2026-10-25](annotations-2026-10-25/docs/README.md) | 694 | Human-confirmed bird/head/eye labels and the frozen train/val/test split |
-| [Community batch 05](community-2026-10-25-batch05/README.md) | 60 | New JPEGs and Z8 predictions; IDs fb_0635–fb_0694 |
-| [Community batch 04](community-2026-10-24-batch04/README.md) | 64 | 42 NEFs, 22 JPGs and Z8 predictions; IDs fb_0571–fb_0634 |
-| [Community batch 03](community-2026-10-24-batch03/README.md) | 47 | New NEFs, embedded-JPEG review images, and Z8 proposals; IDs fb_0524–fb_0570 |
-| [Community batch 02](community-2026-10-24-batch02/README.md) | 227 | New images and Z8 prelabels, IDs fb_0297–fb_0523 |
-| [First community snapshot](community-2026-10-24/README.md) | 296 | Frozen first release and Z8 prelabels |
-| [First contribution register](contributions-2026-10-23/) | 292 | Original IDs retained in the current snapshot |
-| [CUB calibration set](calibration-200/) | 200 | Earlier calibration material; obtain images from CUB |
+## Choose a dataset view
 
-Community images, fixed simulation inputs, and review bundles are distributed through [Releases](https://github.com/aoyukkk/forest-bird-af/releases). Manifests and proposals live in Git. The five community batches contain different assets; download all five for all 694 images.
+| Need | Entry |
+|---|---|
+| All human-confirmed labels | [547 confirmed records](annotations-2026-10-25/README.md) |
+| Training/validation/test assignment | [535 usable records, 375/80/80 split](annotations-2026-10-25/splits/evaluation-split-v1.json) |
+| Complete review snapshot, including drafts | [694 source records](annotations-2026-10-25/labels/community-corrections-v1.jsonl) |
+| Stable image IDs and hashes | [registry.csv](registry.csv) |
+| Duplicate handling and priority list | [Curation guide](annotations-2026-10-25/docs/CURATION.md) |
 
-## Organization
+## Image downloads
 
-Keep incoming files unchanged. Assign stable IDs and record source, capture sequence, occlusion, image quality, annotation status, and permission separately. One image can have several tags.
+Photographs and exact input PNG/CHW buffers are release assets, not Git files.
+Download all five batches for **694 unique assets**. Each release has
+`SHA256SUMS.txt`; [releases.json](releases.json) lists asset sizes and hashes.
 
-The current register contains `fb_0001` through `fb_0694`. Future imports must use [registry.csv](registry.csv), matching `original_sha256` before assigning another ID. Batch manifests are frozen historical subsets.
+| Batch | IDs | Images | Download |
+|---|---|---:|---|
+| [01](community-2026-10-24/README.md) | fb_0001–fb_0296 | 296 | [v0.1](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v1) |
+| [02](community-2026-10-24-batch02/README.md) | fb_0297–fb_0523 | 227 | [v0.2](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v2) |
+| [03](community-2026-10-24-batch03/README.md) | fb_0524–fb_0570 | 47 | [v0.3](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v3) |
+| [04](community-2026-10-24-batch04/README.md) | fb_0571–fb_0634 | 64 | [v0.4](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v4) |
+| [05](community-2026-10-25-batch05/README.md) | fb_0635–fb_0694 | 60 | [v0.5](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-25-v5) |
 
-## Annotation
+For label/point evaluation, use the `z8-inputs-384x256-*.zip` assets. Do not apply
+384×256 label coordinates directly to original-resolution photographs. NEF
+review inputs use the explicitly documented camera-embedded JPEG representation.
 
-Annotate every identifiable bird, its visible head, and each locatable eye. Record uncertainty and the eye/head/bird fallback target. Original-image visibility and model-input usability are separate fields.
+## Review status
 
-Current prelabels contain native numeric class slots and await review. A missing detection is not a negative label. The older 292-row blank template also represents unannotated images, despite its empty instance arrays.
+The active deduplicated queue is **535 confirmed + 1 adjudication item**.
+Another 12 confirmed and 146 draft records are folded duplicates, retained for
+history; drafts are not negatives or a new annotation backlog. Use JSONL to
+preserve eye points and partial labels. COCO/YOLO views are not complete BHE truth.
 
-Keep bursts, matching RAW/JPEG captures, crops, and re-encoded versions in the same data split. The training split is frozen and published in `annotations-2026-10-25/evaluation-split-v1.json`; grouping is an engineering anti-leakage approximation, not verified capture-event identity.
-
-Human review status: 547 confirmed, 146 draft and 1 held for adjudication. See [reviewed labels 2026-10-25](annotations-2026-10-25/docs/README.md).
-
-See the [prelabeling workflow](../docs/workflow/run-prelabel.md) and [dataset protocol v1, Chinese](../docs/protocol/DATASET-SPEC-v1.md).
+The [292-row first contribution register](contributions-2026-10-23/) and
+[CUB calibration metadata](calibration-200/) are historical, separate datasets.
+New imports must append after the actual maximum ID in the cumulative register.
 
 ## Rights
 
-Photographers retain their image copyrights. Dataset documentation and original metadata use CC BY 4.0; this does not grant a blanket license to the photographs. CUB images follow their source terms.
+Photographers retain copyrights; see the [photo terms](community-2026-10-24/README.md#rights).
+Documentation/annotation metadata use CC BY 4.0, not a blanket image license.
+CUB follows its own source terms.

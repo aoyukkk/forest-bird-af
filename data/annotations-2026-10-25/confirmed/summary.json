@@ -1,5 +1,5 @@
 {
-  "schema": "forest-bird-af-confirmed-v1",
+  "schema": "forest-bird-af-confirmed-v2",
   "confirmed_images": 547,
   "with_shapes": 545,
   "explicitly_no_bird": 2,
@@ -15,19 +15,24 @@
     "head": 412,
     "eye": 223
   },
-  "objects_in_coco": 1201,
+  "objects_in_coco": 1041,
+  "point_only_eyes": 160,
+  "auxiliary_items": 240,
+  "source_labels_sha256": "8e9a130d1c5cd2f5b21cb538ef761e06bfd4a85ecafc477c902fcb79c36431ce",
+  "yolo_archive_sha256": "3d06f8280e986a03fd04516efecf9733e00bbebf7d8d02e80e37bb7e071abef2",
   "per_split": {
     "train": 375,
     "val": 80,
     "test": 80
   },
-  "confirmed_sha256": "b7055db9a9031a81062ff7bacb0c941476962ca34426a32d5be9b6f558c7f5f2",
+  "confirmed_sha256": "95704a91efb9eeeaca9c9c5355f68a0ab0cf13c925051de4e2ecdd233ebc324a",
   "omitted_in_database": "draft and needs_adjudication records are not labels",
   "notes": [
     "This is the full human-confirmed set, not a quality ranking.",
     "Labels describe the frozen 384 x 256 input, not the original photo.",
     "Confirmed by a human after seeing the frozen vendor boxes: assisted review, not independent blind annotation.",
-    "Eyes without a visible boundary are exported as 12 x 12 boxes flagged eye_center_boxed; that size is a container, not a measured eye.",
+    "Source items, ids, points and boxes are preserved exactly in confirmed.jsonl, including auxiliary regions.",
+    "Point-only eyes have no fabricated extent. COCO keeps them in point_annotations; YOLO keeps eye-points.jsonl beside its partial box view. These are not complete standalone BHE detector targets.",
     "12 confirmed images are folded out of the annotation queue by the similarity grouping; in_queue keeps that visible instead of dropping them."
   ]
 }

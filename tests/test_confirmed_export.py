@@ -38,9 +38,14 @@ class ConfirmedPackageTests(unittest.TestCase):
         for row in self.records:
             source = self.labels[row['image_id']]
             self.assertEqual(row['parts'], source['parts'], row['image_id'])
+            self.assertEqual(row['items'], source['items'], row['image_id'])
             for kind in parts:
                 parts[kind] += sum(1 for item in row['items'] if item['kind'] == kind)
             for item in row['items']:
+                if item.get('box_xyxy') is None:
+                    self.assertEqual(item['kind'], 'eye')
+                    self.assertIsNotNone(item.get('point_xy'))
+                    continue
                 x1, y1, x2, y2 = item['box_xyxy']
                 self.assertLess(x1, x2, row['image_id'])
                 self.assertLess(y1, y2, row['image_id'])
@@ -55,19 +60,38 @@ class ConfirmedPackageTests(unittest.TestCase):
         self.assertEqual(len(coco['images']), len(self.records))
         self.assertEqual(len(coco['annotations']), self.summary['objects_in_coco'])
         self.assertEqual(len(coco['annotations']),
-                         sum(len(row['items']) for row in self.records))
+                         sum(item['kind'] in ('bird', 'head', 'eye') and item.get('box_xyxy') is not None for row in self.records for item in row['items']))
+        points = [item for row in self.records for item in row['items'] if item['kind'] == 'eye' and item.get('box_xyxy') is None]
+        self.assertEqual(len(coco['point_annotations']), len(points))
+        self.assertTrue(all('bbox' not in p for p in coco['point_annotations']))
         import zipfile
         archive = zipfile.ZipFile(CONFIRMED / 'yolo-labels.zip')
         self.assertIn('yolo/classes.txt', archive.namelist())
         for row in self.records:
             lines = archive.read('yolo/' + row['image_id'] + '.txt').decode('utf-8')
             rows = [line for line in lines.splitlines() if line.strip()]
-            self.assertEqual(len(rows), len(row['items']), row['image_id'])
+            self.assertEqual(len(rows), sum(i['kind'] in ('bird', 'head', 'eye') and i.get('box_xyxy') is not None for i in row['items']), row['image_id'])
             for line in rows:
                 index, cx, cy, w, h = line.split()
                 self.assertIn(int(index), (0, 1, 2), row['image_id'])
                 for value in (cx, cy, w, h):
                     self.assertTrue(0.0 <= float(value) <= 1.0, row['image_id'])
+        point_rows = [json.loads(line) for line in archive.read('eye-points.jsonl').decode().splitlines()]
+        self.assertEqual(len(point_rows), len(points))
+        self.assertTrue(all('box_xyxy' not in p for p in point_rows))
+
+    def test_checker_rejects_invented_eye_extent(self):
+        import copy
+        row = copy.deepcopy(next(r for r in self.records if any(i['kind'] == 'eye' and i.get('box_xyxy') is None for i in r['items'])))
+        eye = next(i for i in row['items'] if i['kind'] == 'eye' and i.get('box_xyxy') is None)
+        x, y = eye['point_xy']
+        eye['box_xyxy'] = [x - 6, y - 6, x + 6, y + 6]
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / 'confirmed.jsonl'
+            path.write_text(json.dumps(row), encoding='utf-8')
+            problems = []
+            published.verify_confirmed(problems, path, list(self.labels.values()))
+        self.assertTrue(any('geometry/ids differ' in p for p in problems))
 
     def test_queue_membership_is_reported_not_dropped(self):
         self.assertEqual(self.summary['in_queue'] + self.summary['folded_by_similarity'],

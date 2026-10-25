@@ -16,3 +16,5 @@ summary. These record what happened and are not rewritten later.
 | `run-001-frozen/` `run-002-parser/` `run-003-runtime/` | Early protocol, parser and runtime admission |
 
 Images ship through releases; manifests live under `data/`.
+
+Historical runtime locks retain their original source paths and hashes. [source-relocations.json](source-relocations.json) maps them to the current layout without asserting that refactored code produced the frozen run.

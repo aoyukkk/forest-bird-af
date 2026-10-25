@@ -1,39 +1,45 @@
-# 数据集
+# 数据：照片、标注与划分
 
 [English](README.md) | **简体中文**
 
-| 数据集 | 文件数 | 用途 |
-|---|---:|---|
-| [累计注册表](registry.csv) | 694 | 后续导入使用的权威编号与原资产哈希 |
-| [已标注结果 2026-10-25](annotations-2026-10-25/docs/README.zh-CN.md) | 694 | 人工确认的鸟身/头/眼标签与冻结训练/验证/测试划分 |
-| [社区第五批](community-2026-10-25-batch05/README.zh-CN.md) | 60 | 新增 JPEG 与 Z8 预测，编号 fb_0635–fb_0694 |
-| [社区第四批](community-2026-10-24-batch04/README.zh-CN.md) | 64 | 新增 42 NEF、22 JPG 与 Z8 预测，编号 fb_0571–fb_0634 |
-| [社区第三批](community-2026-10-24-batch03/README.zh-CN.md) | 47 | 新增 NEF、内嵌 JPEG 审核图与 Z8 预标注，编号 fb_0524–fb_0570 |
-| [社区第二批](community-2026-10-24-batch02/README.zh-CN.md) | 227 | 新增图片与 Z8 预标注，编号 fb_0297–fb_0523 |
-| [社区首批快照](community-2026-10-24/README.zh-CN.md) | 296 | 冻结的首批发布与 Z8 预标注 |
-| [首批投稿登记](contributions-2026-10-23/) | 292 | 已继承到当前快照的原始编号 |
-| [CUB 校准集](calibration-200/) | 200 | 早期校准材料，原图从 CUB 获取 |
+## 先选用途
 
-社区图片、固定模拟输入与复核包通过 [Releases](https://github.com/aoyukkk/forest-bird-af/releases) 分发，Git 保存清单和候选。五批图片互不重复，完整 694 张需要下载五批。
+| 需要什么 | 入口 |
+|---|---|
+| 全部人工确认标注 | [547 条确认记录](annotations-2026-10-25/README.zh-CN.md) |
+| 训练、验证与测试划分 | [535 条可用记录，375/80/80 划分](annotations-2026-10-25/splits/evaluation-split-v1.json) |
+| 含草稿的完整复核快照 | [694 条源记录](annotations-2026-10-25/labels/community-corrections-v1.jsonl) |
+| 稳定图片编号与哈希 | [registry.csv](registry.csv) |
+| 去重与优先浏览清单 | [整理说明](annotations-2026-10-25/docs/CURATION.zh-CN.md) |
 
-## 管理方式
+## 图片下载
 
-接收原片保持不变，编号长期稳定。来源、拍摄序列、遮挡、图像质量、标注和授权分别记录，一张图可以有多个标签。
+照片及精确 PNG/CHW 输入放在 Release，不放 Git。完整 **694 个不重复资产**
+需要下载五批。每批提供 `SHA256SUMS.txt`；
+[releases.json](releases.json) 汇总下载文件、大小和哈希。
 
-当前注册编号为 `fb_0001` 至 `fb_0694`。后续导入以 [registry.csv](registry.csv) 为准，先匹配 `original_sha256`，再给新资产追加编号。各批清单保留为冻结的历史子集。
+| 批次 | 编号 | 图数 | 下载 |
+|---|---|---:|---|
+| [第一批](community-2026-10-24/README.zh-CN.md) | fb_0001–fb_0296 | 296 | [v0.1](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v1) |
+| [第二批](community-2026-10-24-batch02/README.zh-CN.md) | fb_0297–fb_0523 | 227 | [v0.2](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v2) |
+| [第三批](community-2026-10-24-batch03/README.zh-CN.md) | fb_0524–fb_0570 | 47 | [v0.3](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v3) |
+| [第四批](community-2026-10-24-batch04/README.zh-CN.md) | fb_0571–fb_0634 | 64 | [v0.4](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v4) |
+| [第五批](community-2026-10-25-batch05/README.zh-CN.md) | fb_0635–fb_0694 | 60 | [v0.5](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-25-v5) |
 
-## 标注方式
+复现标注和眼点评估时下载 `z8-inputs-384x256-*.zip`，
+不要把 384×256 坐标直接套到原分辨率照片。NEF 的审核输入采用各批明确记录的机内 JPEG 表示。
 
-标出全部可辨鸟、可见头部和可定位眼，记录不确定性及眼／头／整鸟回退目标。原图可见性与模型输入上的可用性分别保存。
+## 复核状态
 
-当前预标注保留原始数字类号，等待人工复核。漏检不能当成无鸟；旧 292 行空模板也全部是未标状态。
+去重后的活动队列为 **535 条确认 + 1 条待裁决**。
+另有 12 条已确认、146 条草稿属于折叠重复图，保留供追溯；
+草稿不是负例，也不是新增待标任务。使用 JSONL 可保留眼点和部分标注信息，
+COCO/YOLO 视图不能独立充当完整 BHE 真值。
 
-人工复核进度与公开标签见[已标注结果 2026-10-25](annotations-2026-10-25/docs/README.zh-CN.md)：547 张已确认、146 张草稿、1 张待裁决。
+[最初 292 条投稿注册](contributions-2026-10-23/)和
+[CUB 校准元数据](calibration-200/)是独立历史资料。后续导入须从累计注册表实际最大编号追加。
 
-同一连拍、同曝光 RAW/JPEG、裁切和重编码版本应落在同一数据划分。训练用的划分已按保守关联组冻结并公开在 `annotations-2026-10-25/evaluation-split-v1.json`，分组是工程防泄漏近似，不等于已核实的拍摄事件身份。
+## 许可
 
-详见[预标注流程](../docs/workflow/run-prelabel.zh-CN.md)和[数据规范 v1](../docs/protocol/DATASET-SPEC-v1.md)。
-
-## 使用范围
-
-照片版权归各自摄影者。数据文档与原创元数据采用 CC BY 4.0，该许可不自动覆盖照片；CUB 图片遵循原来源条件。
+照片版权归摄影者，遵循[照片使用范围](community-2026-10-24/README.zh-CN.md#使用范围)。
+文档及标注元数据采用 CC BY 4.0，不自动授予照片许可；CUB 遵循其来源条款。

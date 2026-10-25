@@ -2,129 +2,108 @@
 
 **English** | [简体中文](README.zh-CN.md)
 
-Bird autofocus in foliage, focused on missed birds and boxes that drift onto branches. The target is a visible eye, then the head, then the bird; release the target when none is usable.
+Bird detection in foliage for autofocus research: **visible eye → head → bird**.
+Community photographs, human-reviewed labels and a native Z8 head-training
+pipeline. Whole-camera autofocus has not been verified.
 
-## Progress
+**694 image assets · 547 confirmed records · 535 deduplicated usable records**
 
-Updated: 2026-10-25.
+Updated: **2026-10-26**.
 
-| Work | Status |
+## Start here
+
+| I want to… | Open |
 |---|---|
-| Community images | 694 files: 568 JPG, 7 PNG, 119 NEF |
-| Image checks | Source hashes preserved; public-copy image checks passed with the representation recorded per batch |
-| Simulation inputs | 694 lossless 384 × 256 RGB PNGs and exact saved CHW buffers |
-| Z8 prelabeling | 694/694 completed on a local RTX 4080 Laptop GPU; 0 execution errors |
-| Candidates | 1495 boxes across 469 images; 225 images have no candidates |
-| Human review | 547 confirmed, 146 draft, 1 held for adjudication |
-| Annotation tool | Local browser editor and shared human/AI API; [guide](docs/tools/annotator.md) |
-| Reviewed labels | 694 records published with the frozen eval split; [dataset](data/annotations-2026-10-25/docs/README.md) |
-| Head fine-tuning | Experiment candidate only: held-out macro F1 43.89% → 46.92%, eye precision fell; [results](docs/training/z8-native-head-finetune.md) |
-| Sony experiments | Paused |
+| Download photographs or exact 384×256 inputs | [Image downloads](data/README.md#image-downloads) |
+| Use the complete confirmed labels | [Labels and formats](data/annotations-2026-10-25/README.md) |
+| Reproduce or improve the native detector | [Training code and prerequisites](docs/training/README.md) |
+| Review or correct annotations | [Local review tool](docs/tools/z8-review.md) |
+| Find another document or script | [Documentation](docs/INDEX.md) · [Scripts](scripts/README.md) |
 
-The [latest release](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-25-v5) adds **60 JPEG photos**, IDs **fb_0635–fb_0694**: 22 with candidates, 38 without, 45 raw boxes. [Batch 05 details](data/community-2026-10-25-batch05/README.md).
+## What is ready
 
-## Download and review
-
-Use the [Z8-assisted human review workspace](docs/tools/z8-review.md) to inspect all frozen 384 × 256 inputs. Z8 boxes are visible by default. Explicit confirmation records accepted proposals or corrections, preserving every change and revision. Previous LLM labels remain in the historical precision editor.
-
-| Batch | Images | Download |
-|---|---:|---|
-| First snapshot | 296 | [v0.1](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v1) |
-| Batch 02 | 227 | [v0.2](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v2) |
-| Batch 03 | 47 | [v0.3](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v3) |
-| Batch 04 | 64 | [v0.4](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-24-v4) |
-| Batch 05 | 60 | [v0.5](https://github.com/aoyukkk/forest-bird-af/releases/tag/community-images-2026-10-25-v5) |
-
-Download all five batches for all 694 assets. Each release provides original-resolution public copies, fixed simulation inputs, and a review bundle. Verify downloads with `SHA256SUMS.txt`.
-
-Extract a batch's image and review ZIPs into one directory and open `review.html`. The page defaults to English with a Simplified Chinese selector. For the first release, replace the bundled page with its separate `review.html`.
-
-Batch 03 uses the NEFs' **camera-embedded JPEGs** for review and prediction. The rawpy path failed on 28 files; all 47 instead use the same explicit JPEG representation. Compressed image payloads in the public NEFs match their originals. These JPEGs are distinct from RAW sensor renders.
-
-Review the whole image, starting with images without candidates. Export decisions as JSON; keep correct examples as controls and annotate errors in detail. Native slots 0–5 await semantic labels.
-
-Use [data/registry.csv](data/registry.csv) for stable IDs. [Input conversion code](scripts/pipeline/z8_input.py) and [workflow](docs/workflow/run-prelabel.md).
-
-## Repository layout
-
-| Folder | Content | Index |
-|---|---|---|
-| `data/` | Register, five batch manifests, **published labels** | [data](data/README.md) |
-| `docs/` | All documentation, grouped into 9 topics | [docs index](docs/INDEX.md) |
-| `scripts/` | pipeline / annotator / training / publish / tools | [scripts](scripts/README.md) |
-| `src/forest_bird_annotator/` | Annotation service and front end | [source](src/forest_bird_annotator/README.md) |
-| `tests/` | 69 unit and contract tests | [tests](tests/README.md) |
-| `experiments/` | Validation records per prelabel batch | [records](experiments/README.md) |
-
-Photos are not in the repository; look up `image_id` in
-[registry.csv](data/registry.csv), then download the matching release.
-
-## Published results
-
-Everything in the repository can be checked offline:
-
-| Artifact | What it is |
+| Artifact | Current state |
 |---|---|
-| [Human-confirmed labels](data/annotations-2026-10-25/confirmed/README.md) | **All 547 confirmed images** in JSONL, CSV, COCO and YOLO |
-| [Reviewed labels](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl) | 694 per-image records, including drafts, with frozen vendor candidate counts |
-| [Evaluation split](data/annotations-2026-10-25/splits/evaluation-split-v1.json) | 375 / 80 / 80 train-val-test assignment with leakage groups, frozen before training |
-| [Dedupe queue](data/annotations-2026-10-25/curation/dedupe-queue-v1.json) | 536 in queue, 158 folded, 42 similarity groups |
-| [Best images](data/annotations-2026-10-25/curation/best-images-v1.json) | 120-image first-look ordering; a review aid, not the label set |
-| [Toolchain](data/annotations-2026-10-25/docs/TOOLCHAIN.md) | Annotation service, importer, dedupe, COCO/YOLO export |
-| [Training results](docs/training/z8-native-head-finetune.md) | Native head fine-tune: method, held-out metrics, compute, publication boundary |
+| Images | Five published Releases: 568 JPG, 7 PNG, 119 NEF; image files stay outside Git |
+| Model inputs | 694 frozen RGB PNGs plus exact CHW buffers and hashes |
+| Confirmed labels | 547 records; original points, boxes, IDs and auxiliary items retained |
+| Deduplicated queue | 535 confirmed usable images and **1 adjudication item** (`fb_0588`) |
+| Archived duplicates | 12 confirmed and 146 draft records retained; these drafts are not a new annotation backlog |
+| Evaluation split | 375 train / 80 validation / 80 test, grouped before training |
+| Training | Five initial configurations and four refinements; experimental candidate only |
+
+The [694-record snapshot](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl)
+also includes drafts and the adjudication item. **Unconfirmed records are not
+negatives.** The [120-image ranking](data/annotations-2026-10-25/docs/CURATION.md)
+is a browsing aid, not the complete label set or a test set.
+
+## Use the labels correctly
+
+- [confirmed.jsonl](data/annotations-2026-10-25/confirmed/confirmed.jsonl)
+  preserves full geometry on the frozen **384×256 input**.
+- Eyes remain points unless their boundaries were actually boxed. COCO/YOLO
+  views contain **1,041 source boxes** and keep **160 point-only eyes separately**;
+  no fixed-size eye boxes are invented. See [formats](data/annotations-2026-10-25/confirmed/README.md).
+- COCO/YOLO are **partial box views**, not complete standalone BHE training
+  targets. A missing eye box is unknown, not background.
+- Review was assisted by visible Z8 proposals, not independently blinded.
+  Multi-bird part association is not established.
+
+## Check a checkout
+
+These checks need Python 3.11+ and the standard library, without a GPU, photos
+or vendor package:
 
 ```bash
-python scripts/tools/verify_annotations.py                 # labels, confirmed export, coordinates, splits, queue
-python -m unittest tests.test_published_exports tests.test_curation_exports tests.test_confirmed_export -v
-python scripts/tools/verify_repo.py                        # no vendor assets or photos in the tree
+git clone https://github.com/aoyukkk/forest-bird-af.git
+cd forest-bird-af
+python scripts/tools/verify_annotations.py
+python scripts/tools/verify_links.py
+python scripts/tools/verify_repo.py
 ```
 
-The candidate weight itself is **not** distributed: nearly every byte of it is
-vendor weight. What ships is its SHA-256, the changed-byte range and the scripts
-to rebuild it from your own verified package. See [what is not
-published](docs/releases/not-published.md).
+For the annotation UI, install [requirements-annotator.txt](requirements-annotator.txt).
+Training additionally needs NumPy, a compatible CUDA PyTorch installation and
+your own verified vendor package; see [training](docs/training/README.md) and
+[tests](tests/README.md). Firmware, original/modified vendor weights, feature
+caches and the production database are not distributed.
 
-## Model and validation
+## Results so far
 
-The local Z8 resource744 body is byte-identical to [WonderLantern/e7-bird-network](https://github.com/WonderLantern/e7-bird-network). The validated CUDA adapter retains the original local Z8 postprocessor.
+One candidate was selected on validation and tested once on 80 held-out images.
+Strict criteria: bird/head IoU ≥0.5; eye-center error ≤4 input pixels.
 
-- Physical-reference fixtures and real-image CPU/GPU comparisons passed bitwise checks.
-- E7 host decoding matched all 694 saved Z8 candidate records across five batches.
-- Batch 03 passed fresh CUDA batch validation. Its GPU network time was 30.40 seconds, excluding image I/O, postprocessing, and review.
+| Test metric | Original | Candidate |
+|---|---:|---:|
+| Macro F1 | 43.89% | 46.92% |
+| Eye hits / labels | 4/22 | 6/22 |
+| Eye unmatched-location false positives | 1 | 3 |
+| Eye precision | 80.00% | 66.67% |
 
-Batch 04 used the same validated batch configuration: 42.59 seconds of GPU network time. Its 42 NEFs use embedded JPEGs; its 22 JPGs retain the source decoded pixels.
+**More eyes were found, with more false eye detections. The candidate is not
+recommended as a replacement for the vendor model.** Four further refinements
+retained the parent weights. The test has only five conservative groups, 58
+images share one group, and eye precision is evaluated where that part was
+labelled. This is neither camera focus rate nor tracking performance. The used
+test split is preserved for reproduction, not as a fresh test for further tuning.
 
-Batch 05 passed fresh CUDA batch validation: 60 JPEGs, 39.09 seconds of GPU network time, and matching host/native decoder results.
+[Full method, results and compute](docs/training/z8-native-head-finetune.md) ·
+[Model/parity evidence](docs/reports/05-e7-comparison-and-cuda.md) ·
+[Publication boundaries](docs/releases/not-published.md)
 
-See the [validation report](docs/reports/05-e7-comparison-and-cuda.md) and [latest execution records](experiments/community-prelabel-2026-10-25-batch05/).
+## Repository map
 
-## Next steps
-
-- Cut eye false positives at unmatched locations; the validation misses sit 8.1–11.2 px from the labelled eye and inside the current background guard.
-- Confirm the remaining draft images and adjudicate `fb_0588`, then refresh the published label snapshot.
-- Grow the number of independent leakage groups before treating held-out gains as stable.
-- Keep phase detection, lens drive and the whole-camera AF loop out of any accuracy claim.
-
-## Documentation
-
-| Topic | Link |
+| Directory | Purpose |
 |---|---|
-| Images, manifests, and checksums | [Community datasets](data/README.md) |
-| Reviewed labels and evaluation split | [Annotations 2026-10-25](data/annotations-2026-10-25/docs/README.md) |
-| Annotation toolchain and export formats | [Toolchain](data/annotations-2026-10-25/docs/TOOLCHAIN.md) |
-| Best images and the deduplicated queue | [Curation](data/annotations-2026-10-25/docs/CURATION.md) |
-| Head fine-tuning results | [Native head fine-tune](docs/training/z8-native-head-finetune.md) |
-| Publication boundary | [Not published](docs/releases/not-published.md) |
-| Run inference and review results | [Prelabeling workflow](docs/workflow/run-prelabel.md) |
-| Model identity and GPU checks | [Validation report](docs/reports/05-e7-comparison-and-cuda.md) |
-| Dataset organization and annotation protocol | [Protocol v1, Chinese](docs/protocol/DATASET-SPEC-v1.md) |
-| Firmware extraction and model-container format | [Extraction guide, Chinese](docs/reference/UNPACK-GUIDE.md) |
-| Contribution and publication rules | [AGENTS.md](AGENTS.md), [NOTICE.md](NOTICE.md) |
-
-Earlier plans, the CUB calibration set, and failed runs remain in the repository for reference.
+| [data/](data/README.md) | Downloads, stable IDs, labels, curation and splits |
+| [scripts/](scripts/README.md) | Pipeline, annotator, training, publishing and checks |
+| [src/forest_bird_annotator/](src/forest_bird_annotator/README.md) | Annotation service and browser UI |
+| [docs/](docs/INDEX.md) | Current guides, results and separate historical research |
+| [experiments/](experiments/README.md) | Frozen run records and source-relocation notes |
+| [tests/](tests/README.md) | Unit tests and published-data contracts |
 
 ## Credits and licenses
 
-Thanks to the contributing photographers, [WonderLantern](https://github.com/WonderLantern/e7-bird-network), [fwtool.py](https://github.com/ma1co/fwtool.py), and [TIM-VX](https://github.com/VeriSilicon/TIM-VX). See [acknowledgments](ACKNOWLEDGMENTS.md) for the full list.
-
-Code: [Apache-2.0](LICENSE). Original documentation and metadata: CC BY 4.0. Photographs retain their contributors' copyrights; see the [dataset terms](data/community-2026-10-24/README.md#rights).
+Code: [Apache-2.0](LICENSE). Original documentation and metadata: CC BY 4.0.
+Photographs retain contributor copyrights; see [photo terms](data/community-2026-10-24/README.md#rights).
+Thanks to the photographers and upstream projects in [Acknowledgments](ACKNOWLEDGMENTS.md).

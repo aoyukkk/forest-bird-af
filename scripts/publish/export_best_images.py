@@ -101,7 +101,7 @@ def main():
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=True)
     target = output / 'best-images-v1.json'
-    target.write_text(body, encoding='utf-8')
+    target.write_text(body, encoding='utf-8', newline='\n')
     print(json.dumps({'ranked_total': len(ranked), 'listed': len(chosen),
                       'rejected': rejected, 'per_split': payload['per_split'],
                       'sha256': hashlib.sha256(body.encode()).hexdigest()}, ensure_ascii=False))

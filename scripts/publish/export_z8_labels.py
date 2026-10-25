@@ -168,7 +168,7 @@ def main():
 
     lines = [json.dumps(row, ensure_ascii=False, sort_keys=True) for row in records]
     body = '\n'.join(lines) + '\n'
-    (labels_dir / 'community-corrections-v1.jsonl').write_text(body, encoding='utf-8')
+    (labels_dir / 'community-corrections-v1.jsonl').write_text(body, encoding='utf-8', newline='\n')
 
     def counter(key):
         out = {}
@@ -204,7 +204,7 @@ def main():
                              'photographer identity or capture event'],
     }
     (labels_dir / 'community-corrections-v1.json').write_text(
-        json.dumps(counts, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        json.dumps(counts, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
 
     summary = [
         '# 已标注结果摘要 / Annotation summary',
@@ -224,7 +224,7 @@ def main():
         'human corrections, not independent blind annotation.',
         '',
     ]
-    (labels_dir / 'summary.md').write_text('\n'.join(summary), encoding='utf-8')
+    (labels_dir / 'summary.md').write_text('\n'.join(summary), encoding='utf-8', newline='\n')
     print(json.dumps({k: counts[k] for k in
                       ('images', 'confirmed_images', 'confirmed_parts',
                        'by_review_status', 'labels_sha256')}, ensure_ascii=False))

@@ -35,7 +35,7 @@
 & 'E:\Z8\NikonFirmwarePatch\.venv\Scripts\python.exe' -B 'E:\Z8\analysis\af_portability_2026-10-23\audit_budget.py'
 ```
 
-输出：[结构化证据](budget_evidence.json)、[模型预算 CSV](model_budget.csv)。源模型包的输入预处理、精确硬件舍入等尚未全部由机身验证；本轮通过的是静态身份与预算核验，没有重新声称通过全部推理或机身一致性测试。
+输出：结构化证据（历史本地文件 `budget_evidence.json`，未随仓库发布）、模型预算 CSV（历史本地文件 `model_budget.csv`，未随仓库发布）。源模型包的输入预处理、精确硬件舍入等尚未全部由机身验证；本轮通过的是静态身份与预算核验，没有重新声称通过全部推理或机身一致性测试。
 
 ## 3. “侦测次数”目前能拿到什么
 

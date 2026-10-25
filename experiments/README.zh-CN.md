@@ -15,3 +15,5 @@
 | `run-001-frozen/` `run-002-parser/` `run-003-runtime/` | 早期协议与解析、运行时准入记录 |
 
 图片与候选在 Releases 分发，清单在 `data/` 下。
+
+历史 runtime lock 保留原始源码路径和哈希。[source-relocations.json](source-relocations.json) 仅记录新位置，不把重构后的代码冒充当时执行的版本。

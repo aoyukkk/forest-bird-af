@@ -53,5 +53,6 @@
 |---|---|
 | `verify_repo.py` | 扫描仓库是否误入厂商资产或照片 |
 | `verify_annotations.py` | 校验标签、划分、队列、确认导出与敏感字段 |
+| `verify_links.py` | 检查 Markdown 相对文件目标和移动后的文档链接 |
 | `verify_review_page.mjs` | 复核页静态检查 |
 | `compare_saved_decoders.py` | 两套解码器输出对比 |
