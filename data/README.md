@@ -4,7 +4,8 @@
 
 | Dataset | Files | Use |
 |---|---:|---|
-| [Cumulative register](registry.csv) | 634 | Authoritative IDs and source hashes for future imports |
+| [Cumulative register](registry.csv) | 694 | Authoritative IDs and source hashes for future imports |
+| [Community batch 05](community-2026-10-25-batch05/README.md) | 60 | New JPEGs and Z8 predictions; IDs fb_0635–fb_0694 |
 | [Community batch 04](community-2026-10-24-batch04/README.md) | 64 | 42 NEFs, 22 JPGs and Z8 predictions; IDs fb_0571–fb_0634 |
 | [Community batch 03](community-2026-10-24-batch03/README.md) | 47 | New NEFs, embedded-JPEG review images, and Z8 proposals; IDs fb_0524–fb_0570 |
 | [Community batch 02](community-2026-10-24-batch02/README.md) | 227 | New images and Z8 prelabels, IDs fb_0297–fb_0523 |
@@ -12,13 +13,13 @@
 | [First contribution register](contributions-2026-10-23/) | 292 | Original IDs retained in the current snapshot |
 | [CUB calibration set](calibration-200/) | 200 | Earlier calibration material; obtain images from CUB |
 
-Community images, fixed simulation inputs, and review bundles are distributed through [Releases](https://github.com/aoyukkk/forest-bird-af/releases). Manifests and proposals live in Git. The four community batches contain different assets; download all four for all 634 images.
+Community images, fixed simulation inputs, and review bundles are distributed through [Releases](https://github.com/aoyukkk/forest-bird-af/releases). Manifests and proposals live in Git. The five community batches contain different assets; download all five for all 694 images.
 
 ## Organization
 
 Keep incoming files unchanged. Assign stable IDs and record source, capture sequence, occlusion, image quality, annotation status, and permission separately. One image can have several tags.
 
-The current register contains `fb_0001` through `fb_0634`. Future imports must use [registry.csv](registry.csv), matching `original_sha256` before assigning another ID. Batch manifests are frozen historical subsets.
+The current register contains `fb_0001` through `fb_0694`. Future imports must use [registry.csv](registry.csv), matching `original_sha256` before assigning another ID. Batch manifests are frozen historical subsets.
 
 ## Annotation
 

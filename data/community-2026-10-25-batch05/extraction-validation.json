@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "format": "RAR",
+  "archive_files_verified": 60,
+  "images_imported": 60,
+  "archive_deleted": true,
+  "archive_sha256": "107cf693385470ffaac6146df5c9eaf592a67bd48ba2aa3a45b82b1c2fae9175",
+  "original_hash_mismatches": 0,
+  "validation": "Regular members decoded by bsdtar and matched to extracted file sizes and SHA-256; archive hash stable before deletion.",
+  "amendment": "A first stdout-verification command included a RAR directory record and failed after matching all regular files. Reverification selected regular members explicitly; extracted photos were not rewritten."
+}

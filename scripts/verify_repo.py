@@ -17,7 +17,7 @@ FORBIDDEN_EXT = {
     '.jpg', '.jpeg', '.png', '.tif', '.tiff',
     '.nef', '.arw', '.cr2', '.cr3', '.raf', '.orf',
     '.pt', '.pth', '.onnx', '.weights', '.engine', '.safetensors',
-    '.zip', '.7z', '.gz',
+    '.zip', '.7z', '.rar', '.gz',
 }
 
 # 允许的例外（文档插图等），按相对路径前缀匹配

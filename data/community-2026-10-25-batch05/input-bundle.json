@@ -1,0 +1,23 @@
+{
+  "file": "z8-inputs-384x256-20261025-batch05.zip",
+  "bytes": 24876925,
+  "sha256": "e0fd935de64efe34cc97bf09789224d168f6fdc60749bfe59c485d6ff039fbb0",
+  "images": 60,
+  "validation": {
+    "passed": true,
+    "images": 60,
+    "width": 384,
+    "height": 256,
+    "saved_input_hash_mismatches": 0,
+    "png_roundtrip_mismatches": 0,
+    "input_bytes_per_image": 294912,
+    "dtype": "uint8",
+    "layout": "CHW",
+    "network_normalization": "float32(u8) / 256",
+    "preprocess_id": "review-EXIF-RGB-bilinear-stretch-384x256-u8-div256-v1",
+    "pillow": "11.0.0",
+    "inference_rerun": false,
+    "human_review_complete": false,
+    "input_manifest_sha256": "5a8e640a49911424351f3e8e18712df1b7d3453ce48c7abb7de3325afa30e431"
+  }
+}

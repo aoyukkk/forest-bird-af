@@ -44,6 +44,7 @@ toolchains/
 *.zip
 *.tar.gz
 *.7z
+*.rar
 *.pt
 *.pth
 *.onnx

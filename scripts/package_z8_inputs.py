@@ -17,7 +17,7 @@ def sha256(raw):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run', type=Path, required=True)
-    parser.add_argument('--manifest', type=Path, required=True)
+    parser.add_argument('--manifest', type=Path, required=True, help='Prepared manifest.json (not CSV)')
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--archive-name', default='z8-inputs-384x256-20261024.zip')
     args = parser.parse_args()

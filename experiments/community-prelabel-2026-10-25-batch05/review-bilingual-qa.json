@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "images": 60,
+  "zeroCandidateFilter": 38,
+  "storageKey": "forest-bird-z8-prelabel-forest-bird-z8-20261025-batch05",
+  "checks": [
+    "JavaScript parse",
+    "English default",
+    "Simplified Chinese switch",
+    "all cards",
+    "zero-candidate filter",
+    "decision serialization",
+    "error filter",
+    "original/overlay switch",
+    "export trigger",
+    "all image links exist"
+  ],
+  "scope": "Pure JavaScript logic with an in-memory DOM stub; no browser automation or layout verification."
+}

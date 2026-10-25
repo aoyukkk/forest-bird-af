@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "checked": 60,
+  "identifying_fields_remaining": [],
+  "public_copies_only": true,
+  "originals_modified": false,
+  "method": "JPEG metadata segment removal retaining compressed samples, color markers and orientation; separate pixel verification follows."
+}

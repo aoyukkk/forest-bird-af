@@ -21,6 +21,7 @@
 | 脚本 | 用途 |
 |---|---|
 | `prepare_community_release.py` | 稳定编号登记与私人来源映射 |
+| `extract_verified_rar.py` | 用 bsdtar 解压 RAR，并逐文件匹配归档流的大小与 SHA-256 |
 | `extract_verified_zip.py` | 解压到新目录并逐文件校验，完成后再删除源 ZIP |
 | `sanitize_jpeg.py` | 移除 JPEG 元数据段，保留压缩采样、颜色标记和方向 |
 | `finalize_community_release.py` | 图片完整性校验、NEF 审核图和公开副本打包 |

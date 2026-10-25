@@ -27,6 +27,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--snapshot', type=Path, required=True)
     p.add_argument('--archive-prefix', default='community-images-20261024')
+    p.add_argument('--release-date', default='2026-10-24', help='Date printed in the batch release note')
     p.add_argument('--nef-review-mode', choices=['rawpy', 'embedded-jpeg'], default='rawpy')
     p.add_argument('--exiftool', type=Path)
     a = p.parse_args()
@@ -107,7 +108,7 @@ def main():
                       'the camera-embedded JpgFromRaw images, with unchanged decoded pixels. '
                       'These are not rawpy sensor renders.' if a.nef_review_mode == 'embedded-jpeg'
                       else 'JPEG/PNG pixels and NEF sensor samples were checked against originals.')
-    (root / 'RELEASE.md').write_text('# Community image snapshot 2026-10-24\n\n'
+    (root / 'RELEASE.md').write_text('# Community image snapshot ' + a.release_date + '\n\n'
         + json.dumps(report, indent=2) + '\n\nPublic copies have identifying EXIF fields removed. '
         + integrity_note + ' '
         'Original files remain local and unchanged. No training or reviewed ground truth is included.\n', encoding='utf-8')

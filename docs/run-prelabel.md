@@ -21,6 +21,7 @@ Obtain the pinned [E7 checkout](https://github.com/WonderLantern/e7-bird-network
 | Script | Purpose |
 |---|---|
 | `prepare_community_release.py` | Import assets with stable IDs and a private source map |
+| `extract_verified_rar.py` | Extract RARs with bsdtar and verify every regular member against the archive stream |
 | `extract_verified_zip.py` | Extract a new ZIP directory and verify every file before deleting the source archive |
 | `sanitize_jpeg.py` | Remove JPEG metadata segments while preserving compressed samples, color markers, and orientation |
 | `finalize_community_release.py` | Check image integrity, render NEF review images, and package public copies |

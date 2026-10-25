@@ -27,7 +27,7 @@ User-facing repository pages default to English and link to a paired Simplified 
 
 历史 `data/schema/annotation-schema.md`、CUB 空模板和 DS 的首批投稿空模板存在字段差异。不得直接合并后作为训练标签。按新规范显式迁移，保留原文件和迁移记录。
 
-`data/registry.csv` 保存当前累计 634 个 ID，以 `image_id + original_sha256` 锁定对应关系。`data/contributions-2026-10-23/manifest.csv` 是最初 292 条历史记录，四个社区批次清单分别冻结 296、227、47 与 64 条。下一次登记必须使用累计注册表，不能退回历史子集重新分配 ID。清单不证明已标注或来源身份已核实。历史目录名是弱线索，不是语义真值。
+`data/registry.csv` 保存当前累计 694 个 ID，以 `image_id + original_sha256` 锁定对应关系。`data/contributions-2026-10-23/manifest.csv` 是最初 292 条历史记录，四个社区批次清单分别冻结 296、227、47 与 64 条。下一次登记必须使用累计注册表，不能退回历史子集重新分配 ID。清单不证明已标注或来源身份已核实。历史目录名是弱线索，不是语义真值。
 
 ## 3. 原片与工作目录
 
@@ -46,7 +46,7 @@ Latest import authorization (2026-10-24): extract the newly received ZIP into it
 - 旧 `fb_0001`～`fb_0292` 保持不变；不是再次按文件名、鸟种、时间或目录排序后重编。
 - 新字节资产先查完整 SHA-256，再从注册表最大已用号追加，删除或撤回的 ID 不复用。
 - 分配编号必须单写者、事务化；以注册表为准，禁止多个代理各自分配相同范围。
-- 已注册至 `fb_0634`；后续新哈希从累计注册表的实际最大编号追加。
+- 已注册至 `fb_0694`；后续新哈希从累计注册表的实际最大编号追加。
 - 同 SHA-256 的重复投稿保留多个来源记录并指向同一资产；不删除接收文件。若旧数据已有双 ID，保留兼容别名。
 - 不同字节的 RAW/JPEG、平台压缩、裁切、修图和重编码副本单独登记，通过 `capture_id`、`parent_asset_id`、`duplicate_group_id` 关联。
 - 文件名、EXIF 缺失、感知哈希接近都不是自动删除或合并的充分条件。
@@ -135,3 +135,5 @@ git diff --check
 Batch 03 (2026-10-24): 47 NEFs, IDs fb_0524–fb_0570. Preserve its explicitly selected camera-embedded JPEG review representation. The failed rawpy gate and amendment are recorded; do not describe these reviews as RAW sensor renders. Sony remains paused.
 
 Batch 04: IDs fb_0571–fb_0634, 42 NEFs and 22 JPGs. Use --ignore-appledouble on future imports containing verified macOS resource forks; keep all auxiliary source files local and record exclusions before allocating IDs.
+
+Batch 05 (2026-10-25): 60 JPEGs, IDs fb_0635–fb_0694. RAR extraction and source hashes passed before archive deletion; public-copy pixels match originals. Fresh CUDA batch validation passed, with 22 images containing candidates and 38 without.
