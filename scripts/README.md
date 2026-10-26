@@ -31,12 +31,18 @@ vendor assets.
 | `dedupe_annotator.py` | Similarity scan and queue folding |
 | `verify_annotator_workspace.py` | Workspace structure and hash checks |
 
-## training/ — native head fine-tune
+## training/ — native heads and YOLO26 parts
 
 `prepare_z8_training.py`, `train_z8_heads.py`, `evaluate_z8_training.py`,
 `probe_z8_finetune.py`, `probe_z8_multibird.py`, `benchmark_z8_candidate.py`,
 plus `z8_probe_labels.py`, `z8_trainable_heads.py`, `z8_training_targets.py` and
 `e7_backend.py`. Method and results: [training](../docs/training/README.md).
+
+The independent [YOLO26 route](../docs/training/yolo26-parts.md) uses
+`prepare_public_community.py`, `prepare_bird_parts.py`, `import_nabirds_parts.py`,
+`prepare_yolo26_weights.py`, `bird_parts_model.py`, `train_bird_parts.py` and
+`evaluate_bird_parts.py` and `predict_bird_parts.py`. It supports B/H boxes and eye points without vendor
+weights; the comparison evaluator additionally needs your local native package.
 
 ## publish/ — database to public files
 

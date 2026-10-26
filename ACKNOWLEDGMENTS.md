@@ -127,7 +127,7 @@ fwtool 本身继承了更早的研究：
 
 > Jocher, G.; Chaurasia, A.; Qiu, J. *Ultralytics YOLO*.
 
-**说明**：本项目只引用了其公开文档中的结构说明与算力数字用于对照，未复制代码。若后续使用其权重或代码，需按其 AGPL-3.0 条款处理。
+**2026-10-26 更新**：本地鸟类部位实验已实际集成 Ultralytics 8.4.189 与官方 YOLO26n/s-pose 初始化，修改输出和损失。该路线遵循上游 [AGPL-3.0 / Enterprise 条件](https://www.ultralytics.com/license)，仓库原创代码的 Apache-2.0 不替代上游许可。
 
 ### 知识蒸馏
 
@@ -184,3 +184,18 @@ Z8 DGO 可行性评估参考的公开技术资料：
 这个列表一定不完整。如果你认为自己的工作被使用但未列出，请提 issue，我们会补上。
 
 **致谢不是形式。** 本项目选择公开方法与格式，很大程度是因为上游的工作本身是公开的——如果把这些成果据为己有，这个项目就没有存在的理由。
+
+
+### 2026-10-26: public bird-parts training data
+
+CUB-200-2011: Wah, Branson, Welinder, Perona and Belongie (2011),
+*The Caltech-UCSD Birds-200-2011 Dataset*, CNS-TR-2011-001.
+[Original dataset and citation](https://www.vision.caltech.edu/datasets/cub_200_2011/).
+
+NABirds: Van Horn et al. (2015), *Building a Bird Recognition App and Large
+Scale Dataset With Citizen Scientists*.
+[Original paper](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Horn_Building_a_Bird_2015_CVPR_paper.pdf).
+We credit the Cornell Lab of Ornithology, contributing photographers at
+AllAboutBirds.org/Labs, and NSF award 1010818. Local non-commercial research
+uses the [original NABirds terms](https://dl.allaboutbirds.org/merlin-computer-vision-terms-of-use).
+Images and per-image NABirds annotations are not redistributed here.

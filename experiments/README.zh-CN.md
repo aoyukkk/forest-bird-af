@@ -1,4 +1,4 @@
-# 预标注运行记录
+# 实验运行记录
 
 [English](README.md) | **简体中文**
 
@@ -17,3 +17,9 @@
 图片与候选在 Releases 分发，清单在 `data/` 下。
 
 历史 runtime lock 保留原始源码路径和哈希。[source-relocations.json](source-relocations.json) 仅记录新位置，不把重构后的代码冒充当时执行的版本。
+
+
+## 训练对照
+
+[2026-10-26 汇总](next-training-2026-10-26/README.zh-CN.md)记录原生修复、
+YOLO26衍生n/s训练、稀疏正点蒸馏及锁定后的公开配对测试。失败运行和厂商资产保留Git外。

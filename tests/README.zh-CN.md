@@ -21,3 +21,10 @@ python -m unittest discover -s tests -p "test_*.py"
 发布相关测试只依赖标准库，不需要原厂包或 CUDA。
 
 `test_repository_publication.py` 检查无损眼几何、导出/哈希复现、链接与标签压缩包边界。`test_training_output_guards.py` 检查迁移后训练脚本仍拒绝向仓库写私有产物；它导入 PyTorch，但不启动 GPU 作业。完整测试需 Pillow、NumPy 和 PyTorch。
+
+
+YOLO 路线另有 `test_competition_preservation.py`（空间掩膜、已知缺失）、
+`test_bird_parts.py`（部分监督、推导背景、增强几何、无序稀疏蒸馏）、
+`test_bird_parts_preparation.py`（弱头框几何）和
+`test_public_community_training.py`（旧测试隔离）。模型测试还需固定的可选
+[YOLO 依赖](../requirements-yolo26.txt)，使用 CPU。本地完整执行通过 99 项测试。

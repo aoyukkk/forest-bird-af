@@ -29,12 +29,18 @@
 | `dedupe_annotator.py` | 去重扫描与队列折叠 |
 | `verify_annotator_workspace.py` | 工作区结构与哈希校验 |
 
-## training/ — 原生检测头微调
+## training/ — 原生检测头与 YOLO26 部位模型
 
 `prepare_z8_training.py`、`train_z8_heads.py`、`evaluate_z8_training.py`、
 `probe_z8_finetune.py`、`probe_z8_multibird.py`、`benchmark_z8_candidate.py`，
 配套 `z8_probe_labels.py`、`z8_trainable_heads.py`、`z8_training_targets.py`、`e7_backend.py`。
 方法与结果见[训练](../docs/training/README.zh-CN.md)。
+
+独立的 [YOLO26 路线](../docs/training/yolo26-parts.zh-CN.md)使用
+`prepare_public_community.py`、`prepare_bird_parts.py`、`import_nabirds_parts.py`、
+`prepare_yolo26_weights.py`、`bird_parts_model.py`、`train_bird_parts.py`、
+`evaluate_bird_parts.py`、`predict_bird_parts.py`。它输出鸟/头框和眼点，训练无需厂商权重；
+原生对比评价器另需本地已验证厂商包。
 
 ## publish/ — 生产库到公开文件
 

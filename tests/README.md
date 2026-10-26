@@ -22,3 +22,12 @@ Publication tests use the standard library only; they need neither the vendor
 package nor CUDA.
 
 `test_repository_publication.py` checks lossless eye geometry, reproducible exports/checksums, links and the label-archive boundary. `test_training_output_guards.py` checks that moved training scripts still reject repository-local private outputs; it imports PyTorch but launches no GPU job. Full tests need Pillow, NumPy and PyTorch.
+
+
+The YOLO route adds `test_competition_preservation.py` (spatial masks and known
+absence), `test_bird_parts.py` (partial supervision, derived background,
+augmentation geometry and unordered sparse distillation),
+`test_bird_parts_preparation.py` (weak-head geometry) and
+`test_public_community_training.py` (historical-test quarantine). Model tests
+also need the pinned optional [YOLO dependencies](../requirements-yolo26.txt);
+they run on CPU. The complete local run passed 99 tests.

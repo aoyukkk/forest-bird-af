@@ -3,8 +3,8 @@
 **English** | [简体中文](README.zh-CN.md)
 
 Bird detection in foliage for autofocus research: **visible eye → head → bird**.
-Community photographs, human-reviewed labels and a native Z8 head-training
-pipeline. Whole-camera autofocus has not been verified.
+Community photographs, human-reviewed labels, native Z8 head training and
+independent YOLO26-derived bird-parts experiments. Whole-camera autofocus has not been verified.
 
 **694 image assets · 547 confirmed records · 535 deduplicated usable records**
 
@@ -30,7 +30,7 @@ Updated: **2026-10-26**.
 | Deduplicated queue | 535 confirmed usable images and **1 adjudication item** (`fb_0588`) |
 | Archived duplicates | 12 confirmed and 146 draft records retained; these drafts are not a new annotation backlog |
 | Evaluation split | 375 train / 80 validation / 80 test, grouped before training |
-| Training | Five initial configurations and four refinements; experimental candidate only |
+| Training | Native repair controls and seven n/s configurations completed; no replacement recommended |
 
 The [694-record snapshot](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl)
 also includes drafts and the adjudication item. **Unconfirmed records are not
@@ -63,12 +63,33 @@ python scripts/tools/verify_repo.py
 ```
 
 For the annotation UI, install [requirements-annotator.txt](requirements-annotator.txt).
-Training additionally needs NumPy, a compatible CUDA PyTorch installation and
-your own verified vendor package; see [training](docs/training/README.md) and
+Training needs NumPy and compatible CUDA PyTorch; the native route also needs
+your own verified vendor package. The independent YOLO route uses public data. See [training](docs/training/README.md) and
 [tests](tests/README.md). Firmware, original/modified vendor weights, feature
 caches and the production database are not distributed.
 
-## Results so far
+## Latest comparison — 2026-10-26
+
+The selected YOLO26n-derived model improves eye localization on the locked
+original-size public images. On matched small-target images its bird-box
+recall drops below the native detector. **No camera replacement is recommended.**
+
+| Public view | Model | Bird hits / 200 | Eye hits | Unmatched eye proposals |
+|---|---|---:|---:|---:|
+| Original | Native | 65 | 150/201 | 23 |
+| Original | n candidate | 193 | 160/201 | 19 |
+| Small-target paired view | Native | 117 | 40/179 | 16 |
+| Small-target paired view | n candidate | 64 | 48/179 | 13 |
+
+Boxes use IoU .5; eyes use 4 input pixels. Thresholds were fixed on community
+validation. The two views share 200 CUB sources; they are not new real forest
+captures. Native original-view bird hits rise to 183/200 at IoU .3, so strict
+unmatched boxes cannot be read as background focus locks. Overall community
+validation F1 still favours the native candidate; sparse distillation retained
+its n parent. [Full comparison, compute and limitations](docs/training/next-round-2026-10-26.md)
+· [Implementation](docs/training/yolo26-parts.md).
+
+## Historical first-round test
 
 One candidate was selected on validation and tested once on 80 held-out images.
 Strict criteria: bird/head IoU ≥0.5; eye-center error ≤4 input pixels.

@@ -1,0 +1,6 @@
+# Install a compatible CUDA PyTorch build separately. Do not replace a verified
+# local torch environment merely to install the optional experiment framework.
+-r requirements-training.txt
+ultralytics==8.4.189
+pyarrow==17.0.0
+opencv-python==4.11.0.86

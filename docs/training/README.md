@@ -1,10 +1,21 @@
 # Training code
 
-The scripts under `scripts/` are the code that produced the local head
-fine-tune. This repository does **not** contain the vendor model package, CUDA
-weights, the annotation database or the photos, so the scripts are complete and
-their arguments are accurate, but they will not run without your own verified
-package.
+**English** | [简体中文](README.zh-CN.md)
+
+This directory covers native head fine-tuning and an independent
+[YOLO26 parts model](yolo26-parts.md). The repository contains no vendor model
+package, weights, feature caches, production database or photo files.
+
+The native preparation route needs local SQLite, prelabel runs and source-group
+maps. The YOLO route includes `prepare_public_community.py`, which adapts public
+labels, the frozen split and downloaded input PNGs without a vendor package.
+Historical test entries import metadata only. Keep all derived workspaces outside Git.
+
+
+Current next-round results: [2026-10-26 comparison](next-round-2026-10-26.md).
+It includes repaired native controls, public bird-parts data, n/s models,
+augmentation, sparse positive distillation and the locked public test.
+
 
 ## What each script does
 

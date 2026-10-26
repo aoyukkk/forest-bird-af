@@ -262,8 +262,8 @@ def partial_loss(outputs, samples, preservation=1., competition=0., background_w
                 competing = [c for c in target['allowed_slots'] if c != 5 and c not in SLOTS[target['kind']]]
                 if competing:
                     loss = loss + competition * F.softplus(pred[[5 + c for c in competing]]).mean()
-                    for c in competing:
-                        mask[k][start + 5 + c, r, c] = False
+                    for competitor_slot in competing:
+                        mask[k][start + 5 + competitor_slot, r, c] = False
             positive.append(loss)
         for target in sample.get('negative_targets', []):
             k, a, r, c, slot = target['head'], target['anchor'], target['row'], target['col'], target['class_slot']
@@ -334,7 +334,7 @@ def match_metrics(rows, prediction_by_id, box_iou=.5, eye_pixels=4.):
             truth = [x for x in doc['items'] if x['kind'] == kind]
             # Partial annotation: precision is conditional on this part having
             # visible labels, or an explicitly confirmed no-bird frame.
-            if not truth and doc['presence'] != 'absent':
+            if not truth and doc['presence'] != 'absent' and kind not in doc.get('known_absent_parts', []):
                 continue
             pred = [x for x in predictions if x['kind'] == kind]
             used = set()
@@ -361,5 +361,5 @@ def match_metrics(rows, prediction_by_id, box_iou=.5, eye_pixels=4.):
         recall = c['tp'] / max(1, c['labels'])
         result[kind] = {**dict(c), 'precision': precision, 'recall': recall, 'f1': 2 * precision * recall / max(1e-12, precision + recall)}
     result['macro_f1'] = float(np.mean([result[k]['f1'] for k in SLOTS]))
-    result['criteria'] = {'box_iou': box_iou, 'eye_distance_pixels': eye_pixels, 'precision_scope': 'part-labelled images and explicit no-bird frames only; unknown parts ignored', 'subclass_unions': SLOTS, 'not_camera_AF': True}
+    result['criteria'] = {'box_iou': box_iou, 'eye_distance_pixels': eye_pixels, 'precision_scope': 'part-labelled images, explicit no-bird frames and known-absent parts; unknown parts ignored', 'subclass_unions': SLOTS, 'not_camera_AF': True}
     return result, detail
