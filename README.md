@@ -68,6 +68,15 @@ your own verified vendor package. The independent YOLO route uses public data. S
 [tests](tests/README.md). Firmware, original/modified vendor weights, feature
 caches and the production database are not distributed.
 
+## Point-availability review — 2026-10-26
+
+Human review is complete for 51 previously unassessed capture points:
+**44 usable coarse cues and 7 unusable points**. Original AI drafts and the
+validated human export are kept separately. Low-threshold empty-target fallback
+still adds too many bad points; a .7 cutoff adds only one usable point per
+primary policy on reused validation data. No default change or new training.
+[Findings and offline review tools](docs/training/point-review-2026-10-26.md).
+
 ## Selected focus-cue follow-up — 2026-10-26
 
 Six matched continuations completed 48 epochs in 27.49 minutes. Fine-guidance

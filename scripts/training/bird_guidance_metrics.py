@@ -38,12 +38,15 @@ def select_candidate(predictions, threshold=.8, gate='none', bird_threshold=.4, 
     return None
 
 
-def assess_guidance(rows, predictions, threshold=.8, gate='none', bird_threshold=.4, head_threshold=.5):
+def assess_guidance(rows, predictions, threshold=.8, gate='none', bird_threshold=.4, head_threshold=.5,
+                    selected_by_id=None):
     """Fixed denominators, conditional eye errors, and explicit unknowns.
 
     nearest-eye matches cannot establish designated-bird identity. Out-of-box
     points are unmatched geometry, not proven background/branch false locks.
     """
+    if selected_by_id is not None and set(selected_by_id) != {r['image_id'] for r in rows}:
+        raise ValueError('External selection IDs must exactly match the fixed denominator')
     counts = Counter({k: 0 for k in (
         'images', 'selected', 'selected_eye', 'abstain', 'eye_known_images',
         'eye_labelled_images', 'eye_known_selected', 'eye_unassessed_selected',
@@ -63,7 +66,8 @@ def assess_guidance(rows, predictions, threshold=.8, gate='none', bird_threshold
         counts['images'] += 1
         counts['eye_known_images'] += int(eye_known)
         counts['eye_labelled_images'] += int(bool(eyes))
-        chosen = select_candidate(predictions[key], threshold, gate, bird_threshold, head_threshold)
+        chosen = (select_candidate(predictions[key], threshold, gate, bird_threshold, head_threshold)
+                  if selected_by_id is None else selected_by_id[key])
         record = dict(image_id=key, group=row['group'], selected=chosen, eye_known=eye_known,
                       nearest_eye_pixels=None, category='abstain')
         if chosen is None:

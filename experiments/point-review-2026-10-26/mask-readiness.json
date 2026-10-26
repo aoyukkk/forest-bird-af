@@ -1,0 +1,35 @@
+{
+  "schema": "training-mask-readiness-v1",
+  "dataset_sha256": "06f8eb9ec5b2eb1cda6d89b5aba6e9739bc4b09f97d0689ec12574ce8d304145",
+  "mask_content_ledger_sha256": "cec4cf1c105c662ad154dae0c3197eceb40dab93058174c885311079595cba56",
+  "masks_checked": 5385,
+  "by_split": {
+    "public_train": 5385
+  },
+  "dimension_errors": [],
+  "empty_masks": 0,
+  "empty_after_2px_erosion": 0,
+  "area_quantiles": {
+    "min": 987.0,
+    "p05": 4071.0,
+    "median": 11517.0,
+    "p95": 27016.600000000024,
+    "max": 65950.0
+  },
+  "eroded_area_quantiles": {
+    "min": 294.0,
+    "p05": 3063.6,
+    "median": 9771.0,
+    "p95": 24492.600000000002,
+    "max": 62900.0
+  },
+  "existing_use": "already used for hard-context compositing and dropping unreliable eye labels",
+  "proposed_difference": "use visible foreground minus known synthetic occluder as an explicit coarse-surface target; not a repeat of hard-context-only augmentation",
+  "semantic_visual_validation": false,
+  "new_training_started": false,
+  "limits": [
+    "structural mask audit only; no proof of true visibility, focus plane or correct boundaries",
+    "erosion is a diagnostic, not a chosen training hyperparameter",
+    "CUB segmentation covers the annotated focal bird, not exhaustive scene foreground"
+  ]
+}

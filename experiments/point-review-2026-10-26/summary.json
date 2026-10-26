@@ -1,0 +1,2247 @@
+{
+  "schema": "forest-bird-point-review-v2",
+  "date": "2026-10-26",
+  "parent_public_commit": "80397bcc1da5ef2798a02937442f0d55238ca5dc",
+  "input_shape": [
+    384,
+    256
+  ],
+  "scope": "51 selected-eye-unassessed images from the repeatedly used 80-image community development set",
+  "predictions_weights_sha256": "86fce7383109b44c279ebf4163e6227a9af7d20d0b279b8eb25f64ebb37a4bfe",
+  "ai_draft_counts": {
+    "supported": 36,
+    "unknown": 10,
+    "unsupported": 5
+  },
+  "surface_counts": {
+    "visible_bird": 36,
+    "unknown": 1,
+    "boundary_or_mixed": 9,
+    "vegetation": 5
+  },
+  "eye_localizable_input": {
+    "no": 22,
+    "unknown": 29
+  },
+  "human_confirmed": 51,
+  "accepted_for_training": 0,
+  "production_annotation_writes": 0,
+  "proposals": [
+    {
+      "image_id": "fb_0171",
+      "input_sha256": "3f34218e20a58c93429eb670579ede6492cf6b0022159a36283f5b35998195ec",
+      "point_xy": [
+        214.0508575439453,
+        133.52947998046875
+      ],
+      "score": 0.7627776861190796,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "整图可辨橙腹黑头鸟；点在黑色头部区域内，局部没有足够清晰的独立眼像素。可作头部粗引导，不能确认精确眼。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "841e2e3c6255190edb9fdd38917019bb90c7060ced6687ba3abc0ee638ed5416"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0172",
+      "input_sha256": "11d29b258c7646a4c7ab9ed6e78d870763fce292c76b6266363bea975ec5dfff",
+      "point_xy": [
+        182.90989685058594,
+        114.94815063476562
+      ],
+      "score": 0.9257686138153076,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "本图点落在鸟的黑头，右侧邻近斜枝；头形与橙腹连续，当前尺度无法稳定分辨眼中心。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "a3fdc13bfc1c7a91be204c0e32a2fe66c601367492967ee8d547303fab9c3709"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0177",
+      "input_sha256": "452f15f7c2c8014b7a059169ddd720315b8bbaacdc3275208868807245f2b9b8",
+      "point_xy": [
+        172.7366180419922,
+        108.51134490966797
+      ],
+      "score": 0.2436424344778061,
+      "judgement": {
+        "surface": "unknown",
+        "part": "unknown",
+        "eye_localizable_input": "no",
+        "capture_hint": "unknown",
+        "confidence": "low",
+        "note": "密集暗枝遮挡，点附近为暗色斑块与穿过的枝线，无法从输入可靠确认具体鸟部位或眼。保留未知，不因旧鸟框推定正确。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "3ef75bf127c58bea31ca5d4cffb8dcb29252625db455344af07e49acefc04ab9",
+        "de326986a25200dab903833e1fdbe79f9ce8bca40ed70d8f007cf6bf9dba0f6a"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0180",
+      "input_sha256": "d29fdb1cd4636f45fd6ec28904c2a7ddaafe483440345676ea3f3b4bcce9d408",
+      "point_xy": [
+        191.0172882080078,
+        130.95179748535156
+      ],
+      "score": 0.8661325573921204,
+      "judgement": {
+        "surface": "boundary_or_mixed",
+        "part": "unknown",
+        "eye_localizable_input": "no",
+        "capture_hint": "unknown",
+        "confidence": "low",
+        "note": "可见鸟头位于大块前景虚叶之后；点靠近头、叶缘和斜枝接触处，混合像素与遮挡关系不够清楚，不能稳定确认点在鸟面上。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "39625bf2b9df61ccd317d1bc33eb0da4e39f512cb6b24fb0eb58d832933be94b",
+        "f7f782f326f97a6b7c5d1ba39a588cc2fc9411e80ebd993fa12114d7d3199d7e"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0186",
+      "input_sha256": "a3fbb46e3b1fb1d46833b4641a89ce0e8e46836d0cd7ca7b8343a3c222694514",
+      "point_xy": [
+        215.03317260742188,
+        148.87432861328125
+      ],
+      "score": 0.8679338097572327,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "body",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "飞鸟躯干与展开翼形可辨，所选点在右侧深色翼部附近；不足以分辨头眼，只支持鸟身/翼部粗位置。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "2950d9e10ea6af797b62cc67e64b5b4a7a8f79102a8a63ac8f17f4faa7c7bab9",
+        "214ebbfae6ef70fd0a776e44daf7d070ff21c54db2dd5ca6d07a6d2d5a514bd2"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0187",
+      "input_sha256": "12609e5e3ffe5cc1a08f6a694c6b7321f0dd58351a6d73b97db0749e0bf8bfbc",
+      "point_xy": [
+        206.25863647460938,
+        110.6436538696289
+      ],
+      "score": 0.5399537086486816,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "电线上鸟的头身剪影可辨，点位于上方小头部轮廓内；与线缆相邻，不能辨眼或确认景深。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "2cfe130d5348e2e5aae72805e8ec76d475cad25bb3c2985c1234c9cfef25ca01"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0189",
+      "input_sha256": "567a5c3dc99e4c0721bbacc8035c9f4620789b7c97ebdbba4c3163d1eb260576",
+      "point_xy": [
+        193.62460327148438,
+        102.47661590576172
+      ],
+      "score": 0.7981867790222168,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "本帧鸟头朝左，点在黑色头部与线缆交接附近，鸟头轮廓支持粗定位；欠曝和小尺度不支持眼中心。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "418d452984420c93bd7958c5dcd0a7fd52db2348ec924dbc5a6b8ddf39cda55a"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0193",
+      "input_sha256": "f4e3c8284c8bbf567ca61183f9f3f48adc2d894c86e763cca74894a97164c877",
+      "point_xy": [
+        228.56838989257812,
+        106.8839111328125
+      ],
+      "score": 0.5165954232215881,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "竖线旁的黑鸟呈头、胸、尾连续轮廓，点在较小头部上侧，能够引导到鸟；眼部像素不足。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "ae7a04fe9a9c3ee02688d243565f18bbafe446ae7baf51f63f9f111bbb403e88"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0195",
+      "input_sha256": "fb24fbc772012b5e2a23f2c7c7b2116a7cb61b9515792e4f420f74826d20d995",
+      "point_xy": [
+        226.5640106201172,
+        108.01519775390625
+      ],
+      "score": 0.6645402908325195,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "本图点随头部位置移动，位于黑色小头轮廓，不在宽电杆上；头部仍不足以分辨眼睛。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "074ec19bc25c55b1ec38fb8787fc0d19f2963b90a0123453803add98f853440e"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0197",
+      "input_sha256": "e5d0122a2828318a7a96cb0ab3f4327c829da7bfd5accc339eb1998d8cb4db0e",
+      "point_xy": [
+        209.90060424804688,
+        134.35890197753906
+      ],
+      "score": 0.8563323616981506,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "点落在竖线旁鸟头的暗色区域，头向左的轮廓与下方身尾可连贯辨认；黑色小头无法可靠点眼。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "14f3950932a74b15105cef9c690f2f59742327bf050cc75d87f7e6a392129b88"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0199",
+      "input_sha256": "f151fc8eef3c0532499314de7a64efab0d5e86427cea0dc06566571b302a5de5",
+      "point_xy": [
+        207.29823303222656,
+        134.8602294921875
+      ],
+      "score": 0.875361442565918,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "当前点在电线旁黑鸟头部，轮廓与颈身连贯；仍是欠曝小剪影，没有可单独定位的眼。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "f45eb8ffd3c683fe10c32c892941fe08a11813351bfa058e5cbdb088a1278518"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0201",
+      "input_sha256": "5c452d06ee13fcc4dca4d44579d656b5a2e4ff8103dde87a3d90e31990cebe87",
+      "point_xy": [
+        206.2412872314453,
+        123.1321792602539
+      ],
+      "score": 0.8553685545921326,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "斜置电线上鸟头位于所选点附近，点在暗色头部轮廓内；能指向鸟头，但线缆邻近且无法看清眼。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "6219e48fdf688d9fa99461b653adbe91da6c75d6d74d59e54d757b1a1c4b431b"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0203",
+      "input_sha256": "7418740045ffb40e2771a00451438f0e862b67c71122e9da2ae72abf01015989",
+      "point_xy": [
+        174.17750549316406,
+        169.72280883789062
+      ],
+      "score": 0.7416740655899048,
+      "judgement": {
+        "surface": "boundary_or_mixed",
+        "part": "body",
+        "eye_localizable_input": "no",
+        "capture_hint": "unknown",
+        "confidence": "low",
+        "note": "鸟已展开/转动，候选落在尾羽最外缘，中心紧邻灰色天空而不是头；边缘混合像素不足以确认稳定落在可见鸟面上。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "19c7ea8af30d514b0e224dbf01529d0f98716f7c1dd93beb34a105ad5c0894fc",
+        "c90c7a29d2288ea57ce639e099621cbc4bee8c3836a3b70dedfb806dc3bc4479"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0204",
+      "input_sha256": "9c1284aa1cc099802d397eb87f89d039a9fb6faee1e60e5c1c399affa13c43b3",
+      "point_xy": [
+        149.86990356445312,
+        166.59796142578125
+      ],
+      "score": 0.671470582485199,
+      "judgement": {
+        "surface": "boundary_or_mixed",
+        "part": "body",
+        "eye_localizable_input": "no",
+        "capture_hint": "unknown",
+        "confidence": "low",
+        "note": "点随上举的右侧翼尖移动，位于羽端轮廓与背景交界且邻近电线；有鸟体关联但不宜当可靠眼或明确可用表面。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "55472af40f44e741e02cf701e92afdf4803e6c23991dabb0ba68a100e6c11cdf",
+        "c53eda0932563f7b6e829d2c5a47e13c568da4528445a6c712557188e770d83e"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0205",
+      "input_sha256": "b1ca7ebaa0681381f3162e5dbdd4197fab06b4a87797131abf314548caa5c605",
+      "point_xy": [
+        101.13137817382812,
+        210.12857055664062
+      ],
+      "score": 0.2590751051902771,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "横向飞行黑鸟可辨，点落在左端头部暗色轮廓内，与右侧躯干尾羽连续；当前头部过小不能定位眼。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "4213a1b84df7f9772a327b035d62ad4fe5c34f44b7d2fbf7e5ca958216ab2fb8"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0206",
+      "input_sha256": "481e55958e896ebadf8d9731000e1645cf6598230d25520608d99f29359fa912",
+      "point_xy": [
+        189.21438598632812,
+        118.9550552368164
+      ],
+      "score": 0.7866228222846985,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "草丛中鸟的黄浅色头部与黑胸可区分，点接近喙根/头顶的黄色区域；头部虚焦，不能确定独立眼中心。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "89509150e3aaacde22b4d6b4197eb6d6ccd1095b8840ed685313395c9b4d6e83",
+        "fb3874f812e4da4cbc49b665c2ee9bb2c8103fff15c33ca40c77d7cf9e5ed07b"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0244",
+      "input_sha256": "6e3342ffe7cf8876ccc27e700a108dc37e47569907b0a717a13767c2da502c64",
+      "point_xy": [
+        229.60716247558594,
+        125.52613830566406
+      ],
+      "score": 0.38444983959198,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "点在前景竖枝左侧的鸟头褐灰冠纹，周围可见冠、颊和背的连续羽色；眼部暗斑与枝条/头缘难明确区分。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "20fbbf3fee3917424b54b6a6ee658eedf370c6e73b7a22d17422b84ac2ad4e8b",
+        "783214f29d5426082420883b299f84c1cb5ebae89995c0c1eaf21076f3dfcb74"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0245",
+      "input_sha256": "3b251bb7eb02153567170d6c4b3d021c272ac5a95d82dac9d3353937f3090b8b",
+      "point_xy": [
+        206.33328247070312,
+        155.30734252929688
+      ],
+      "score": 0.33111974596977234,
+      "judgement": {
+        "surface": "vegetation",
+        "part": "unknown",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "unsupported",
+        "confidence": "high",
+        "note": "点在鸟胸前方清晰的竖向枝条上，枝从画面上方贯穿到脚旁；虽处于整鸟外接框中，实际像素属于前景枝，不能当鸟面捕获位置。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "05ec9c139b4224ffe291287ea08cb778358e9b187727ab442d2171792b87bde1"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0251",
+      "input_sha256": "732df9837aad5fb31636f4e1a6a74896a19dadfe46518c50f064771b843ce056",
+      "point_xy": [
+        213.68663024902344,
+        100.91746520996094
+      ],
+      "score": 0.45519864559173584,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "本帧点在竖枝左侧的头顶/冠纹内，未落到中央粗枝；灰褐羽区可辨但眼中心无法明确确认。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "33368d47b9082b66f2af7dd93c9e9d5115bda4555041512204d53e4e64ac449a",
+        "7a322f1de57c7517cba503444faffa64929f0e10e49ded500ab18c7a7d6abc76"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0264",
+      "input_sha256": "243c2936daaee0d61449eefae2492b8510edbbb7f8cbbdad96b2ede3c38aeef2",
+      "point_xy": [
+        214.1373291015625,
+        109.94086456298828
+      ],
+      "score": 0.8879840970039368,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "鸟停在横草茎，点位于右侧脸/喙根的灰色鸟头区域；小头受模糊影响，没有足够细节定位眼。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "879d28c1672238154d844bacba5ddeb5fdafbcba79dcdce8bf16ff6a41010d1c",
+        "4019de92c7be2ad31bbe148b1a1ff301857e340829dbc0231b5eb46bf340a64d"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0266",
+      "input_sha256": "1ac622a56df4f392821691703363563b0bfcbe6b83db107bf41f653931a3a4f7",
+      "point_xy": [
+        213.75033569335938,
+        110.31387329101562
+      ],
+      "score": 0.9059898257255554,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "本帧点落在小鸟右侧头部，灰褐头与下方浅色胸有连续轮廓；头眼模糊，不能从黑斑可靠定位眼。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "7163793699c31321be3e6342d63a619c870a321cdd1bc371b21de87098faffa2"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0269",
+      "input_sha256": "ddd8e45eb91410204b368e638b1f19373b315f93556828a439d63fee364643dd",
+      "point_xy": [
+        201.89071655273438,
+        99.64861297607422
+      ],
+      "score": 0.8534248471260071,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "鸟稍转向，点位于头顶偏左的褐色冠区，未落到横草茎；仍只有模糊的小头，精确眼未知。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "44dc7b77bcb2ab6679503880aa2aaa0e1939a032952fc4e73122581033ef256e"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0364",
+      "input_sha256": "1156d5a6ae82944315e3cada3444592d0f09c67d10fdbb219d513ab6fd52ad1c",
+      "point_xy": [
+        190.98484802246094,
+        121.43739318847656
+      ],
+      "score": 0.9213575720787048,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "点在棕褐头部的前侧，绿色竖叶紧邻其右边；中心仍在可辨鸟头羽色中，眼状暗斑与周边细节不足以明确眼中心。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "431d3e31f74757673a391a6b87706445d35d03875e9b65a7695832f7dd38f05c",
+        "4b2b5dc5c31edd8a1388924e7cddec429ad2435bec5976f53b0e0e25decbe138"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0365",
+      "input_sha256": "e619cf4378c2fae194359f34d4de63a003a216f111a7fe48f93d87e48ffe586f",
+      "point_xy": [
+        185.8584747314453,
+        120.79856872558594
+      ],
+      "score": 0.9099069833755493,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "本图点在朝右头部的喙根/脸侧深浅交界，左侧冠与下方胸部连续，右侧邻绿色草叶；支持头部粗引导，精确眼不能确认。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "c11285d9402c5d6178cca2956d0627d3f80327fb313ebf25b285e92eb8d682d5",
+        "630ffaa287df3ce66ca41c25ed9ae6258f7c142e195582baf6d8d476a1f67b41"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0366",
+      "input_sha256": "d1f498b19bc0521e5a17c5c50d9e443b49dabe25a048c5baa3cbb82cccec5a17",
+      "point_xy": [
+        169.99266052246094,
+        116.49092102050781
+      ],
+      "score": 0.837619960308075,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "鸟转为近正面，点落在头顶至眉部的浅色区域；没有把点放到旁边长叶上，但输入细节不够明确区分两眼。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "a57eafb1a7a5d03011771bb5afa5dd6c8d0a1b20c4fcf0372994e974b0c31833",
+        "6302a3938192443823dd5efe64fc31f58a00413b780ec7c92b72928690edb95e"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0367",
+      "input_sha256": "3b2264a24747d0a7c64f3cfc1e0ed1f191169397e592dcd9a547110ed9d224df",
+      "point_xy": [
+        169.99703979492188,
+        116.31453704833984
+      ],
+      "score": 0.826151430606842,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "鸟近正面并有翼/身动作，点仍在浅色头顶区域内；头脸与羽毛姿态使精确眼位置不确定。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "f501f06e3faffecc4f5e155a50b0f1bc4c0c4a541e9e91c2daa8219f282634af"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0369",
+      "input_sha256": "718694edee3189a265021a6ed26bcba1428db72c840bfb5256937e4c4fd7381e",
+      "point_xy": [
+        178.12399291992188,
+        117.29276275634766
+      ],
+      "score": 0.8745065331459045,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "点落在鸟头偏左的棕褐冠部，右侧深色团块为转动中的鸟体；能指向鸟头而不能确认眼中心。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "8dee7940aa65982bc97b3ce6e79ff1fbe4660119e381fca264c760857eb7bb15"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0370",
+      "input_sha256": "1e5923a095aea345d712514351a91a464deb7cb5bdef160a20b88efbd00291a6",
+      "point_xy": [
+        173.4546661376953,
+        118.76345825195312
+      ],
+      "score": 0.8998277187347412,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "本帧点位于左侧头顶羽色中，与右侧浅色额/颊相连；不是旁边长叶的点，眼部仍缺可靠边界。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "fe32bf5056a0a03a50423893c872158895c7264a75945638070d57a776578d4b"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0371",
+      "input_sha256": "10901a5fa43bb311571461c8ee1ab8420e80928cf2c9ad03a25099c7b74ef2e0",
+      "point_xy": [
+        174.5300750732422,
+        117.51026153564453
+      ],
+      "score": 0.9114953279495239,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "可辨小鸟在草茎上的头身结构，点在前额偏左的褐灰羽区；动作、角度和输入模糊不支持精细眼判断。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "f1c06601d79476c005c42d33264a34c182f55ae65e962ba71ecedb1042d04ddb"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0372",
+      "input_sha256": "cf8227b812838a1a676bfcb40dc149e35e1e1b021a266b9e2f750a2346f517ea",
+      "point_xy": [
+        173.6946563720703,
+        116.95208740234375
+      ],
+      "score": 0.8828325867652893,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "点位于圆头浅色前额旁的冠羽区域，仍属可见鸟头；近正面姿态的眼睛没有可明确定位的独立像素特征。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "e965c0e76d416bde243e4431ed413b17d374537c19110c55bc35371220c07d9f"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0373",
+      "input_sha256": "a237764e7f50fdea8613c7729441661bb2795c1ddbdc0e9134aceb63bb3efe06",
+      "point_xy": [
+        169.49588012695312,
+        120.93250274658203
+      ],
+      "score": 0.8643104434013367,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "body",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "鸟伸展/转向，头与喙在画面右侧，点留在左侧上背/肩羽；是可见鸟面粗位置，但不应被解释成眼点。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "72266971960087f5379a321b99ce8a568d9f613467f49ace930122e1bdc4e9c9"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0377",
+      "input_sha256": "445dca3e88ab9cf4cecf2587d97feb1c2e91cdf28e81f5e5d131e915b6c2b685",
+      "point_xy": [
+        298.3952941894531,
+        114.6732406616211
+      ],
+      "score": 0.637030839920044,
+      "judgement": {
+        "surface": "vegetation",
+        "part": "unknown",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "unsupported",
+        "confidence": "high",
+        "note": "鸟在左侧枝后活动，候选却在画面右侧的浅色小叶/叶芽上，与鸟明显分离。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "8a9fd43da403a60a5f67e8ce2f1fb3100dd8cc0e8eca2ddce430e0cad264b51f"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0378",
+      "input_sha256": "e3a3a20b2f1157910931a3d5592a6b9a2a1b9eb16e410d838e1e06bde1182f0a",
+      "point_xy": [
+        299.0506896972656,
+        113.82662963867188
+      ],
+      "score": 0.581303060054779,
+      "judgement": {
+        "surface": "vegetation",
+        "part": "unknown",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "unsupported",
+        "confidence": "high",
+        "note": "本帧鸟在左侧展翼，点仍停在右侧独立绿色枝叶簇，局部没有鸟体像素。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "02a2da3d8a7b174f38bfe6f187c565f69db878ae4694e4544c1c504b087e62c4"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0379",
+      "input_sha256": "84933eaa907c39b458f184d1f33462028031b5d303a4a96381151d9546898b02",
+      "point_xy": [
+        305.8696594238281,
+        114.19403076171875
+      ],
+      "score": 0.4824290871620178,
+      "judgement": {
+        "surface": "vegetation",
+        "part": "unknown",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "unsupported",
+        "confidence": "high",
+        "note": "实际鸟在左上枝间，所选点在右侧叶芽/细茎，整图与局部均可确认两者相隔较远。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "65d1ec33f46089aafed1a831015266c98c38b8ad6dfe7c12bc3f298d98e7b06b"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0380",
+      "input_sha256": "7dfad6ff17f32d152d97f3176dfdfc09b7c6fa62e8fc0d4aa2b91c1706844106",
+      "point_xy": [
+        38.459686279296875,
+        77.83384704589844
+      ],
+      "score": 0.6048657894134521,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "本帧鸟已靠近左侧树干，点在深色头冠，白眉/颊与喙的结构可辨；眼中心与暗羽、枝干的区分仍不充分。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "cd7b4c9094d40fc201afdf0463329602b74769c0869fcfad9ad2d50503e35e86"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0381",
+      "input_sha256": "fa3c8283068e5fb45b6281fbc5dd69b63382cbb62fe47f849f52df8c72df66a9",
+      "point_xy": [
+        202.08160400390625,
+        96.6820068359375
+      ],
+      "score": 0.8098781704902649,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "逆光鸟靠树干停栖，点在深色头冠，主体轮廓与黄色喉胸连贯；头部暗且小，眼不可可靠定位。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "e35d5ce09641b02667cff1b585d757b4cce6649801b654e10ca0f4f5a20c0dbd",
+        "4284d2de02cebf74b1063007749bd891937bb471e16288e4559e22f2a5ba0ff1"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0382",
+      "input_sha256": "7e3eaec449f4fdb3cd3e2bea12cc09ca40ccd2978fa437383968ddc9895cf1a3",
+      "point_xy": [
+        197.80752563476562,
+        94.79177856445312
+      ],
+      "score": 0.83601975440979,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "当前点位于鸟头右上侧的暗羽内，未落在旁边树干；有头部粗引导价值，暗羽中无可靠眼中心。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "dfcf96667845e6c05906d36b6e67e2c9e59175f20dc6cc7b42d2e89297ebd5df",
+        "149370178fbf40eb1214db4a380626b79a9f47ceafdea0983ecdc66a1012edfd"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0384",
+      "input_sha256": "eb785fca12d841a4f46941cde947c7e398ffd466742c5363402120d0a6d89a66",
+      "point_xy": [
+        198.70095825195312,
+        93.35709381103516
+      ],
+      "score": 0.8122723698616028,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "no",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "点在逆光鸟的头顶/脸侧暗区，背光轮廓可辨；头部细节过少，不能据此叫精确眼。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "96cb479621a81bd28319063987f0b7b9a3f99f2bf7b09de44b692c72ede383e9",
+        "12141a947429d765b36c4f9e9cf7a553f40fd70ef30e0bc40ed5b012e09bcaa0"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0385",
+      "input_sha256": "18a0971bb2da479e94101333b54f0062716eb25dcd9be8f456811120430cc6fc",
+      "point_xy": [
+        189.60633850097656,
+        106.76437377929688
+      ],
+      "score": 0.7613611221313477,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "鸟已低头伸向左侧，点在头部黑黄区域而非右侧背景叶；姿态与阴影使眼中心不确定。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "25012f1c688cc7d94e3ac7357bb930a78f93efe433ac67191f89c0e502b22402"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0386",
+      "input_sha256": "4240ed1c7602971901971429d148e2a3ad51be577fe747e128e19c9b514e2c9b",
+      "point_xy": [
+        201.96502685546875,
+        121.3574447631836
+      ],
+      "score": 0.729519784450531,
+      "judgement": {
+        "surface": "boundary_or_mixed",
+        "part": "unknown",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "unknown",
+        "confidence": "low",
+        "note": "点靠近鸟的深色下胸/颈与前景横枝接触处，灰体下缘和枝条在当前像素中难以分离，不能确认纯鸟面。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "78b8ea62a6cac7da2fdd994ee243e11a5dc0a654070bcc4b3da08c9bafd27388",
+        "9bef7df9fad79e472732590b250ff32a39a9e2df620f8600d6f207b0f023f9a7"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0387",
+      "input_sha256": "1b213ebb8a88e607614c1fe0529900850e14634710230839d3bb61523e37c3f6",
+      "point_xy": [
+        189.04183959960938,
+        130.8902130126953
+      ],
+      "score": 0.2991051971912384,
+      "judgement": {
+        "surface": "boundary_or_mixed",
+        "part": "unknown",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "unknown",
+        "confidence": "low",
+        "note": "点贴鸟下胸右缘，紧接前景绿叶和暗细枝；局部可见鸟但中心位于接触/混合区域，无法稳定确认纯鸟面。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "f38776aabe2dc8ed9e917d625904f8d0230bd63a8209fdd4d573a2ee5561f7fa",
+        "85a2798d64c2bfa755c3cc3495b0af0e80c682a94082f9c05ae6b3939768da77"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0388",
+      "input_sha256": "40509d56347b00ca8e0604df5606ff3eb888b9536f9f913c32d2b771a4b022bf",
+      "point_xy": [
+        181.3708953857422,
+        124.12044525146484
+      ],
+      "score": 0.22168749570846558,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "body",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "本图点落在头下方浅灰/橄榄胸羽中，前景斜枝在点下侧穿过；支持鸟胸的粗引导，不是眼。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "08aa54edc1c8a1b2029e9df4ca0706bb9dffdc0da07b269de1a1c730d76651ee",
+        "9e1f9aa0f8a13a61052ae3ba5a2995a19aa32165d2a0dfc7288c71ee6665c532"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0389",
+      "input_sha256": "878d0f3efd17327e4326f67c92e0ecbeb7cdad246385031be0a76e5887d6f12d",
+      "point_xy": [
+        164.3792266845703,
+        124.75970458984375
+      ],
+      "score": 0.32039588689804077,
+      "judgement": {
+        "surface": "vegetation",
+        "part": "unknown",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "unsupported",
+        "confidence": "medium",
+        "note": "点在鸟体左侧偏下的细枝/叶缘，实际灰褐鸟体主要在点右上方；中心未落到可辨胸羽。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "edaf49d27359462d01f3a44f83be8bb4af25af6821b7aadd5dea2e86b57e49fe",
+        "30c96fc8a738d40bbdf04a8bc5712bd180f4718854ee1254ec8843b7227f6669"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0391",
+      "input_sha256": "7a448aa2e71a4e07a3966869a2b6688a0ab1a39d01578779ca1e30be48340ec2",
+      "point_xy": [
+        205.30935668945312,
+        117.60305786132812
+      ],
+      "score": 0.6584175229072571,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "点位于前景斜粗枝下方露出的头部褐色羽区，右侧浅色头缘可辨；没有足够细节确认眼中心。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "5fd5d11b50073cf943a046ac1637f1a53fb0301e7ce13797e8edae6620e4cc5e",
+        "2d620c692ba00c94d889d2fe366904699091a003b9ebf7128bbdf97896130460"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0394",
+      "input_sha256": "2401b5fc09da4ed92b8739a193fbc95ec24bf1ee55d64baef7a71d679b06d13c",
+      "point_xy": [
+        201.6796417236328,
+        119.18299865722656
+      ],
+      "score": 0.8647679686546326,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "鸟近正面，点在白色头缘包围的上额/冠部，周围有可辨鸟面而非枝干；暗眼与面羽仍难分。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "9d8f604d9b51c5e15e40cf0a61331d940cf4ffc612d7440dd46ff88bf2496165",
+        "3fb6620978e4097861e368c90c3692b7af5b978425aad08fea8ed1d0cadd6138"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0395",
+      "input_sha256": "aabd803d80a82dc2136ddbce0d57d71772f909ce35f0cd760d18d7d4e217ec28",
+      "point_xy": [
+        213.57427978515625,
+        126.4253921508789
+      ],
+      "score": 0.4799911677837372,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "点在鸟头金褐冠/前额区域，白色头缘与下方深色面羽连续；能给头部粗位置，眼不够清楚。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "05e48a6129efe7aab74bff86f47f0e431620c4bd158a2b9db7b095c7f4ba0656",
+        "c559c48f0b22d291fe6a75b4bab2da58018f762815732f2c3ad246853764f86f"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0396",
+      "input_sha256": "b2419728a28e109dd113d0c385ee61e119fe665f030baace9cfd8aab3cd24f56",
+      "point_xy": [
+        206.25863647460938,
+        118.07523345947266
+      ],
+      "score": 0.622459352016449,
+      "judgement": {
+        "surface": "visible_bird",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "supported",
+        "confidence": "medium",
+        "note": "鸟朝右，点落在灰色喙根/前额附近，右侧大叶在其下方而非中心；支持头部粗引导但无法确认为眼。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "b6d53da36f292548ac3189123a0e0415523da00487e5e2d722b4d2abbad8d3de",
+        "f64902c9e09ead61beef43ee471ff0d5411dc4412406dd0f3d3dc09f2061772f"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0397",
+      "input_sha256": "bee3758f4d20e6cd230b50f27cbc449f28bd8b091e47321f7e05668e52d52ea9",
+      "point_xy": [
+        209.11517333984375,
+        121.65771484375
+      ],
+      "score": 0.8828325867652893,
+      "judgement": {
+        "surface": "boundary_or_mixed",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "unknown",
+        "confidence": "low",
+        "note": "候选贴在鸟向右的喙/脸最前缘，紧邻暗背景，边界只有少量混合像素；不能稳确认点在羽面或喙上。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "8e3909b583f59d28336ea6fc529d3480802692a34552948336fd6117ef242ad1",
+        "b6312e9874c55866f41712b6fcc59532382117f00ffc8a94271c8c7d4828a8f3"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0398",
+      "input_sha256": "b2de8afdbbafb557914ae1dcca2ba41379b32cc8bc789922c22a306d708b5f3b",
+      "point_xy": [
+        209.81837463378906,
+        124.16043853759766
+      ],
+      "score": 0.5341265201568604,
+      "judgement": {
+        "surface": "boundary_or_mixed",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "unknown",
+        "confidence": "low",
+        "note": "本帧点位于灰色喙端/脸缘与暗背景交界；周边鸟头可辨，但中心贴边，不把它直接算错或算可用。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "1c84bf16896899438342a4ad44ce462f49417e03a093c326b538bbb26e606328",
+        "8f6f9785219a52346ab8bfca0c168f08c1d19a3feae5db2450b1a9e2b5fc781f"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0399",
+      "input_sha256": "197b16f015aa4c59346fc26dddd1eac6f68368d727cd8ad14c4c2f34f42d7ba8",
+      "point_xy": [
+        213.40184020996094,
+        125.45805358886719
+      ],
+      "score": 0.5954925417900085,
+      "judgement": {
+        "surface": "boundary_or_mixed",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "unknown",
+        "confidence": "low",
+        "note": "点在右向鸟头前缘，紧邻下方前景叶与暗背景，中心的灰暗像素归属不够稳定，精细眼无依据。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "b1654809cc2278a34b7784c6c19c7d78e93473771e2be8c3cd5207a6b5e680d1",
+        "86f8b511e3e9a9343b14676ac1e16e581b8d0dbd115d243bbd59e1384150b7e4"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    },
+    {
+      "image_id": "fb_0400",
+      "input_sha256": "7d64037cb5bcb4bc649b563d4684747b85fe033e7d6a6a22394a85e820da1274",
+      "point_xy": [
+        213.86990356445312,
+        125.82534790039062
+      ],
+      "score": 0.367951363325119,
+      "judgement": {
+        "surface": "boundary_or_mixed",
+        "part": "head",
+        "eye_localizable_input": "unknown",
+        "capture_hint": "unknown",
+        "confidence": "low",
+        "note": "最后一帧仍逐图检查：点紧贴喙/脸前端而非头中心，背景和叶缘相邻，无法从输入确认纯鸟面落点。"
+      },
+      "viewed": true,
+      "views_sha256": [
+        "28c14749c2ed9900adf33d676e0fdac06eb34fc6029bf7e45120b6a55f677571",
+        "02308354e919eb4ba942610ddc426fadaf0311ab4b00c7db8932f389c22b1b7e"
+      ],
+      "actor_kind": "ai",
+      "status": "draft",
+      "human_confirmed": false,
+      "accepted_for_training": false
+    }
+  ],
+  "confidence_diagnostic": {
+    "curve": [
+      {
+        "threshold": 0.2,
+        "supported": 36,
+        "unsupported": 5,
+        "unknown": 10
+      },
+      {
+        "threshold": 0.3,
+        "supported": 34,
+        "unsupported": 5,
+        "unknown": 8
+      },
+      {
+        "threshold": 0.4,
+        "supported": 33,
+        "unsupported": 3,
+        "unknown": 7
+      },
+      {
+        "threshold": 0.5,
+        "supported": 31,
+        "unsupported": 2,
+        "unknown": 7
+      },
+      {
+        "threshold": 0.6,
+        "supported": 29,
+        "unsupported": 1,
+        "unknown": 5
+      },
+      {
+        "threshold": 0.7,
+        "supported": 25,
+        "unsupported": 0,
+        "unknown": 4
+      },
+      {
+        "threshold": 0.8,
+        "supported": 21,
+        "unsupported": 0,
+        "unknown": 2
+      },
+      {
+        "threshold": 0.9,
+        "supported": 5,
+        "unsupported": 0,
+        "unknown": 0
+      },
+      {
+        "threshold": 0.95,
+        "supported": 0,
+        "unsupported": 0,
+        "unknown": 0
+      }
+    ],
+    "scope": "AI draft subset only; rejecting a reviewed point means abstention, not evaluated fallback",
+    "not_human_truth": true
+  },
+  "router_diagnostic": {
+    "native_bh_parent_eye": {
+      "reference_counts": {
+        "images": 80,
+        "selected": 68,
+        "selected_eye": 35,
+        "abstain": 12,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 62,
+        "outside_labelled_geometry": 6,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 0,
+        "head_region": 21,
+        "bird_region": 20,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 18,
+        "near_eye_geometry": 3
+      },
+      "options": [
+        {
+          "capture_threshold": 0.2,
+          "counts": {
+            "images": 80,
+            "selected": 76,
+            "selected_eye": 35,
+            "abstain": 4,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 69,
+            "outside_labelled_geometry": 7,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 0,
+            "head_region": 22,
+            "bird_region": 26,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 18,
+            "near_eye_geometry": 3
+          },
+          "additions": [
+            {
+              "image_id": "fb_0177",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.2436424344778061,
+                "point_xy": [
+                  172.7366180419922,
+                  108.51134490966797
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unknown",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0187",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.5399537086486816,
+                "point_xy": [
+                  206.25863647460938,
+                  110.6436538696289
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "supported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0378",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.581303060054779,
+                "point_xy": [
+                  299.0506896972656,
+                  113.82662963867188
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unsupported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0380",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.6048657894134521,
+                "point_xy": [
+                  38.459686279296875,
+                  77.83384704589844
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "supported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0386",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.729519784450531,
+                "point_xy": [
+                  201.96502685546875,
+                  121.3574447631836
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unknown",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0391",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.6584175229072571,
+                "point_xy": [
+                  205.30935668945312,
+                  117.60305786132812
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "supported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0395",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.4799911677837372,
+                "point_xy": [
+                  213.57427978515625,
+                  126.4253921508789
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "supported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0398",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.5341265201568604,
+                "point_xy": [
+                  209.81837463378906,
+                  124.16043853759766
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unknown",
+              "human_confirmed": false
+            }
+          ],
+          "capture_calls": 12
+        },
+        {
+          "capture_threshold": 0.4,
+          "counts": {
+            "images": 80,
+            "selected": 75,
+            "selected_eye": 35,
+            "abstain": 5,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 68,
+            "outside_labelled_geometry": 7,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 0,
+            "head_region": 22,
+            "bird_region": 25,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 18,
+            "near_eye_geometry": 3
+          },
+          "additions": [
+            {
+              "image_id": "fb_0187",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.5399537086486816,
+                "point_xy": [
+                  206.25863647460938,
+                  110.6436538696289
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "supported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0378",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.581303060054779,
+                "point_xy": [
+                  299.0506896972656,
+                  113.82662963867188
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unsupported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0380",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.6048657894134521,
+                "point_xy": [
+                  38.459686279296875,
+                  77.83384704589844
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "supported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0386",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.729519784450531,
+                "point_xy": [
+                  201.96502685546875,
+                  121.3574447631836
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unknown",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0391",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.6584175229072571,
+                "point_xy": [
+                  205.30935668945312,
+                  117.60305786132812
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "supported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0395",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.4799911677837372,
+                "point_xy": [
+                  213.57427978515625,
+                  126.4253921508789
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "supported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0398",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.5341265201568604,
+                "point_xy": [
+                  209.81837463378906,
+                  124.16043853759766
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unknown",
+              "human_confirmed": false
+            }
+          ],
+          "capture_calls": 12
+        },
+        {
+          "capture_threshold": 0.7,
+          "counts": {
+            "images": 80,
+            "selected": 69,
+            "selected_eye": 35,
+            "abstain": 11,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 63,
+            "outside_labelled_geometry": 6,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 0,
+            "head_region": 21,
+            "bird_region": 21,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 18,
+            "near_eye_geometry": 3
+          },
+          "additions": [
+            {
+              "image_id": "fb_0386",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.729519784450531,
+                "point_xy": [
+                  201.96502685546875,
+                  121.3574447631836
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unknown",
+              "human_confirmed": false
+            }
+          ],
+          "capture_calls": 12
+        },
+        {
+          "capture_threshold": 0.8,
+          "counts": {
+            "images": 80,
+            "selected": 68,
+            "selected_eye": 35,
+            "abstain": 12,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 62,
+            "outside_labelled_geometry": 6,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 0,
+            "head_region": 21,
+            "bird_region": 20,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 18,
+            "near_eye_geometry": 3
+          },
+          "additions": [],
+          "capture_calls": 12
+        }
+      ]
+    },
+    "two_n_primary": {
+      "reference_counts": {
+        "images": 80,
+        "selected": 69,
+        "selected_eye": 35,
+        "abstain": 11,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 68,
+        "outside_labelled_geometry": 1,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 0,
+        "head_region": 15,
+        "bird_region": 33,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 16,
+        "near_eye_geometry": 4
+      },
+      "options": [
+        {
+          "capture_threshold": 0.2,
+          "counts": {
+            "images": 80,
+            "selected": 78,
+            "selected_eye": 35,
+            "abstain": 2,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 72,
+            "outside_labelled_geometry": 6,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 0,
+            "head_region": 16,
+            "bird_region": 36,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 16,
+            "near_eye_geometry": 4
+          },
+          "additions": [
+            {
+              "image_id": "fb_0177",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.2436424344778061,
+                "point_xy": [
+                  172.7366180419922,
+                  108.51134490966797
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unknown",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0180",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.8661325573921204,
+                "point_xy": [
+                  191.0172882080078,
+                  130.95179748535156
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unknown",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0377",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.637030839920044,
+                "point_xy": [
+                  298.3952941894531,
+                  114.6732406616211
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unsupported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0378",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.581303060054779,
+                "point_xy": [
+                  299.0506896972656,
+                  113.82662963867188
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unsupported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0379",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.4824290871620178,
+                "point_xy": [
+                  305.8696594238281,
+                  114.19403076171875
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unsupported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0380",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.6048657894134521,
+                "point_xy": [
+                  38.459686279296875,
+                  77.83384704589844
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "supported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0387",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.2991051971912384,
+                "point_xy": [
+                  189.04183959960938,
+                  130.8902130126953
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unknown",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0388",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.22168749570846558,
+                "point_xy": [
+                  181.3708953857422,
+                  124.12044525146484
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "supported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0389",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.32039588689804077,
+                "point_xy": [
+                  164.3792266845703,
+                  124.75970458984375
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unsupported",
+              "human_confirmed": false
+            }
+          ],
+          "capture_calls": 11
+        },
+        {
+          "capture_threshold": 0.4,
+          "counts": {
+            "images": 80,
+            "selected": 74,
+            "selected_eye": 35,
+            "abstain": 6,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 70,
+            "outside_labelled_geometry": 4,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 0,
+            "head_region": 16,
+            "bird_region": 34,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 16,
+            "near_eye_geometry": 4
+          },
+          "additions": [
+            {
+              "image_id": "fb_0180",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.8661325573921204,
+                "point_xy": [
+                  191.0172882080078,
+                  130.95179748535156
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unknown",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0377",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.637030839920044,
+                "point_xy": [
+                  298.3952941894531,
+                  114.6732406616211
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unsupported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0378",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.581303060054779,
+                "point_xy": [
+                  299.0506896972656,
+                  113.82662963867188
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unsupported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0379",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.4824290871620178,
+                "point_xy": [
+                  305.8696594238281,
+                  114.19403076171875
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unsupported",
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0380",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.6048657894134521,
+                "point_xy": [
+                  38.459686279296875,
+                  77.83384704589844
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "supported",
+              "human_confirmed": false
+            }
+          ],
+          "capture_calls": 11
+        },
+        {
+          "capture_threshold": 0.7,
+          "counts": {
+            "images": 80,
+            "selected": 70,
+            "selected_eye": 35,
+            "abstain": 10,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 69,
+            "outside_labelled_geometry": 1,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 0,
+            "head_region": 15,
+            "bird_region": 34,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 16,
+            "near_eye_geometry": 4
+          },
+          "additions": [
+            {
+              "image_id": "fb_0180",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.8661325573921204,
+                "point_xy": [
+                  191.0172882080078,
+                  130.95179748535156
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unknown",
+              "human_confirmed": false
+            }
+          ],
+          "capture_calls": 11
+        },
+        {
+          "capture_threshold": 0.8,
+          "counts": {
+            "images": 80,
+            "selected": 70,
+            "selected_eye": 35,
+            "abstain": 10,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 69,
+            "outside_labelled_geometry": 1,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 0,
+            "head_region": 15,
+            "bird_region": 34,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 16,
+            "near_eye_geometry": 4
+          },
+          "additions": [
+            {
+              "image_id": "fb_0180",
+              "selected": {
+                "kind": "capture_hint",
+                "score": 0.8661325573921204,
+                "point_xy": [
+                  191.0172882080078,
+                  130.95179748535156
+                ],
+                "box_xyxy": null,
+                "source_kind": "eye",
+                "output_role": "coarse capture hint; not a precise eye claim"
+              },
+              "ai_draft_capture_hint": "unknown",
+              "human_confirmed": false
+            }
+          ],
+          "capture_calls": 11
+        }
+      ]
+    }
+  },
+  "router_default_enabled": false,
+  "router_decision": "Reject low-threshold automatic promotion. At .7 each primary policy adds one human-supported point, retained as a development-only candidate.",
+  "review_page": {
+    "images": 51,
+    "initial_human_confirmed": 0,
+    "standalone": true,
+    "sha256": "8a99111fa742e743b72e89d93d34ec9e41f1bfc6d6ec81c3b995ab461506a15d"
+  },
+  "browser_qa": {
+    "synthetic_fixture": true,
+    "real_human_confirmations": 0,
+    "passed": true,
+    "evidence": "visually inspected headless Edge result screenshot",
+    "screenshot_sha256": "da516cfdc984320e20bc85aabee44889a1e1ae4067c2f23fe6b8e0aa80f3d8fc",
+    "checked": [
+      "navigation does not confirm",
+      "notes do not confirm",
+      "explicit confirmation button",
+      "export payload",
+      "edit invalidates confirmation",
+      "unknown is explicit review",
+      "undo"
+    ],
+    "desktop_render_initial_human_confirmed": 0,
+    "desktop_screenshot_sha256": "63423b80d6d642a00d903865bcce39b1894be2e91a02a7aa35c0072f52683be8"
+  },
+  "protected_parent_state_equal": true,
+  "new_training_started": false,
+  "test_used": false,
+  "new_independent_data": false,
+  "camera_AF_verified": false,
+  "limits": [
+    "AI proposals remain drafts; the separate human amendment confirms only coarse usability of these fixed points",
+    "nearest-neighbour zoom adds no image information",
+    "eye unlocalizability is not eye absence and never creates negative training labels",
+    "router thresholds were examined after viewing these same development images",
+    "unviewed replacement targets cannot inherit a reviewed point judgement"
+  ],
+  "ai_stage_human_confirmed": 0,
+  "human_review": {
+    "file": "human-review.json",
+    "export_sha256": "9283dcff23f7d5610b7e38de494174cd9018b20e7f1221818bbdc0f805f64fbf",
+    "counts": {
+      "supported": 44,
+      "unsupported": 7,
+      "unknown": 0
+    },
+    "accepted_for_training": 0
+  },
+  "training_mask_audit": {
+    "file": "mask-readiness.json",
+    "masks_checked": 5385,
+    "semantic_visual_validation": false,
+    "new_training_started": false
+  }
+}

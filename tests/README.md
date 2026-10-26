@@ -30,9 +30,11 @@ augmentation geometry and unordered sparse distillation),
 `test_bird_parts_preparation.py` (weak-head geometry) and
 `test_public_community_training.py` (historical-test quarantine). Model tests
 also need the pinned optional [YOLO dependencies](../requirements-yolo26.txt);
-they run on CPU. The complete local run passed 99 tests.
+they run on CPU. The complete local run passed 128 tests.
 
 `test_bird_regions.py` checks crop mapping, label-independent automatic regions and exact native B/H retention. `test_hard_context.py` checks protected background and the eye-budget/F1 selection tradeoff.
 
 
 `test_bird_guidance.py` checks partial labels, duplicate candidates, abstention, predicted-only gates and auxiliary-region precedence; `test_bird_guidance_loss.py` checks localization-quality gradients and blur-to-unknown labels; `test_guidance_replay.py` checks fixed prediction/reference IDs and CPU-only replay.
+
+`test_point_review.py` checks explicit human confirmation, draft-only edits, input/point-bound backups, safe HTML roundtrips, immutable views and human-export import guards. The latest local full run passed 128 tests, including coarse-hint routing checks.

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>林鸟落点复核</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101820;color:#e4edf3;font:16px system-ui,sans-serif}main{max-width:1240px;margin:auto;padding:18px}header{display:flex;gap:12px;align-items:center;flex-wrap:wrap}h1{font-size:22px;margin:0}button,select,textarea{font:inherit;border-radius:8px;border:1px solid #496072;background:#213140;color:#e4edf3;padding:10px}button{cursor:pointer}button:hover{filter:brightness(1.2)}.small{font-size:13px;color:#abc0cf}#picture{width:100%;height:auto;display:block;background:#0a1016;margin:12px 0}.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.good{background:#23614e}.bad{background:#783c43}.unknown{background:#4b5269}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:12px 0}textarea{width:100%;height:60px}details{background:#182632;padding:12px;margin:12px 0}#message{min-height:24px;color:#f0ca7d}#recordStatus{color:#81d2bf}input[type=file]{display:none}kbd{border:1px solid #9aafc0;border-radius:3px;padding:0 4px}@media(max-width:650px){main{padding:10px}.actions{grid-template-columns:1fr}button{min-height:48px}h1{font-size:19px}}
+</style>
+<main>
+<header><h1>林鸟落点复核</h1><span id="progress"></span><button id="download">导出确认结果</button><button id="importButton">导入备份</button><input type="file" id="importFile" accept="application/json"></header>
+<p class="small">只判断青色标记指向哪里。可用＝落在可见鸟部位；不可用＝明显在枝叶或背景；贴边或看不清可选不确定。右图为原像素放大，未补细节。此判断不代表镜头已合焦。</p>
+<div class="row"><button id="previous">← 上一张</button><strong id="identity"></strong><button id="next">下一张 →</button><span id="recordStatus"></span></div>
+<img id="picture" alt="当前冻结输入与原像素局部放大">
+<div class="actions"><button class="good" data-choice="supported">1 · 确认可用并下一张</button><button class="bad" data-choice="unsupported">2 · 确认不可用并下一张</button><button class="unknown" data-choice="unknown">3 · 确认看不清并下一张</button></div>
+<div class="row"><label>眼能精确定位？ <select id="eye"><option value="unknown">不确定 / 暂不判断</option><option value="yes">能</option><option value="no">当前输入不能</option></select></label><label>落点部位（可选） <select id="part"><option value="unknown">不确定</option><option value="head">头</option><option value="body">鸟身 / 翼</option><option value="eye">眼</option></select></label><button id="undo">撤销本张确认</button></div>
+<textarea id="note" maxlength="2000" placeholder="备注可留空；编辑不会确认，修改已确认字段后需重新点击确认。"></textarea>
+<details><summary>需要时查看 AI 草稿（不计入人工确认）</summary><p id="aiHint"></p></details>
+<p class="small">确认按钮或数字键 <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> 才会确认。翻页和保存备注不会确认。记录仅存在本浏览器，请导出 JSON 备份；本页不上传照片、不写生产标注。</p>
+<p id="message"></p>
+</main>
+<script type="application/json" id="seed">__SEED__</script>
+<script>__CORE__</script>
+<script>
+'use strict';
+const seed=JSON.parse(document.getElementById('seed').textContent);
+const review=new PointReview(seed.items,seed.dataset_id);
+const storageKey='forest-bird-point-review:'+seed.dataset_id;
+const $=id=>document.getElementById(id);
+let index=0;
+function message(text){$('message').textContent=text;}
+try{const saved=localStorage.getItem(storageKey);if(saved)review.restore(JSON.parse(saved));}catch(error){message('未读取浏览器备份：'+error.message+'。可使用导入/导出JSON。');}
+const firstPending=seed.items.findIndex(x=>!review.get(x.image_id).human_confirmed);if(firstPending>=0)index=firstPending;
+function persist(){try{localStorage.setItem(storageKey,JSON.stringify(review.export()));}catch(error){message('浏览器保存失败，请及时导出JSON：'+error.message);}}
+function render(){
+ const item=seed.items[index],record=review.get(item.image_id),stats=review.stats();
+ $('progress').textContent=`人工已确认 ${stats.confirmed}/${stats.total} · 可用 ${stats.supported} · 不可用 ${stats.unsupported} · 不确定 ${stats.unknown}`;
+ $('identity').textContent=`${index+1}/${seed.items.length} · ${item.image_id}`;
+ $('picture').src=item.image;
+ $('recordStatus').textContent=record.human_confirmed?'本张人工已确认':'本张未确认';
+ $('eye').value=record.eye_localizable_input;$('part').value=record.part;$('note').value=record.note;
+ const labels={supported:'可用候选',unsupported:'不可用候选',unknown:'不确定'};
+ $('aiHint').textContent=`AI草稿：${labels[item.ai.capture_hint]}。${item.ai.note}`;
+}
+function navigate(step){index=(index+step+seed.items.length)%seed.items.length;render();}
+function edit(){review.edit(seed.items[index].image_id,{eye_localizable_input:$('eye').value,part:$('part').value,note:$('note').value});persist();$('recordStatus').textContent='本张未确认';const stats=review.stats();$('progress').textContent=`人工已确认 ${stats.confirmed}/${stats.total}`;}
+function confirm(choice){
+ edit();review.confirm(seed.items[index].image_id,choice);persist();
+ let pending=-1;for(let n=1;n<=seed.items.length;n++){const j=(index+n)%seed.items.length;if(!review.get(seed.items[j].image_id).human_confirmed){pending=j;break;}}
+ if(pending>=0)index=pending;else message('全部已明确复核，请点击“导出确认结果”保存。');render();
+}
+$('previous').onclick=()=>navigate(-1);$('next').onclick=()=>navigate(1);
+$('eye').onchange=edit;$('part').onchange=edit;$('note').oninput=edit;
+$('undo').onclick=()=>{review.unconfirm(seed.items[index].image_id);persist();render();};
+document.querySelectorAll('[data-choice]').forEach(button=>button.onclick=()=>confirm(button.dataset.choice));
+document.addEventListener('keydown',event=>{if(['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)||event.ctrlKey||event.altKey||event.metaKey)return;if(event.repeat)return;const choice={'1':'supported','2':'unsupported','3':'unknown'}[event.key];if(choice){event.preventDefault();confirm(choice);}else if(event.key==='ArrowLeft')navigate(-1);else if(event.key==='ArrowRight')navigate(1);});
+$('download').onclick=()=>{const blob=new Blob([JSON.stringify(review.export(),null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='point-review-'+new Date().toISOString().replace(/[:.]/g,'-')+'.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+$('importButton').onclick=()=>$('importFile').click();
+$('importFile').onchange=async event=>{const file=event.target.files[0];if(!file)return;try{const count=review.restore(JSON.parse(await file.text()));persist();render();message('已合并 '+count+' 条较新记录。');}catch(error){message('导入失败，现有记录保留：'+error.message);}event.target.value='';};
+render();
+</script></html>

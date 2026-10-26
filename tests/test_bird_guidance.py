@@ -3,6 +3,7 @@ import unittest
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts/training'))
 from bird_guidance_metrics import assess_guidance, guidance_rank, select_candidate
+from bird_guidance_fallback import route_candidate
 
 
 def eye(x, y, score=.9):
@@ -70,3 +71,18 @@ class GuidanceTests(unittest.TestCase):
         self.assertEqual(r['counts']['near_eye_geometry'], 1)
         self.assertEqual(r['counts']['eye_4px'], 0)
         self.assertEqual(r['counts']['eye_8px'], 1)
+
+    def test_coarse_hint_never_replaces_existing_target(self):
+        original=head([0,0,20,20])
+        chosen,called=route_candidate([original],[eye(100,100,.99)],dict(bird=.4,head=.5,eye=.8))
+        self.assertEqual(chosen,original)
+        self.assertFalse(called)
+
+    def test_capture_hint_is_not_counted_as_precise_eye(self):
+        chosen,called=route_candidate([], [eye(10,10,.3)],dict(bird=.4,head=.5,eye=.8))
+        self.assertTrue(called)
+        self.assertEqual(chosen['kind'],'capture_hint')
+        r=assess_guidance([row(eyes=[[10,10]])],{'x':[]},selected_by_id={'x':chosen})
+        self.assertEqual(r['counts']['geometry_supported'],1)
+        self.assertEqual(r['counts']['eye_4px'],0)
+        self.assertEqual(r['counts']['selected_eye'],0)
