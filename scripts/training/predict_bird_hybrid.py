@@ -12,6 +12,7 @@ import torch
 from e7_backend import Backend
 from bird_parts_model import build_model,as_raw,decode
 from bird_parts_regions import tiles,render_region,map_predictions,combine_native_boxes_and_eyes
+from bird_guidance_metrics import select_candidate,GATES
 from z8_training_targets import records_to_predictions
 
 
@@ -27,6 +28,8 @@ def main():
     if out.exists() or out in [a.image.resolve(),a.eye_weights.resolve(),a.calibration.resolve()]:p.error('Preserve existing inputs and outputs')
     config=json.loads(a.calibration.read_text(encoding='utf-8'))
     thresholds=config['thresholds'];views=config.get('eye_views','full')
+    eye_gate=config.get('eye_gate','none')
+    if eye_gate not in GATES:p.error('Unknown selected-eye gate')
     if set(thresholds)!={'bird','head','eye'} or any(not 0<=v<=1 for v in thresholds.values()):p.error('Invalid per-part thresholds')
     if views not in ('full','full-tiles'):p.error('Unknown eye-view policy')
     weight_sha=hashlib.sha256(a.eye_weights.read_bytes()).hexdigest()
@@ -53,12 +56,11 @@ def main():
             eyes.extend(p for p in map_predictions(decode(raw,model.model[-1].stride)[0],region)
                         if p['kind']=='eye' and p['score']>=thresholds['eye'])
     proposals=combine_native_boxes_and_eyes(boxes,eyes)
-    chosen=None
-    for kind in ('eye','head','bird'):
-        candidates=[q for q in proposals if q['kind']==kind]
-        if candidates:chosen=max(candidates,key=lambda q:q['score']);break
+    chosen=select_candidate(proposals,thresholds['eye'],eye_gate,thresholds['bird'],thresholds['head'])
     report=dict(predictions=proposals,selected_candidate=chosen,thresholds=thresholds,
                 eye_weights_sha256=weight_sha,eye_views=views,eye_network_calls=len(regions),native_network_calls=1,
+                eye_gate=eye_gate,
+                output_role=config.get('output_role','part-candidate hypothesis'),
                 input_image_sha256=hashlib.sha256(a.image.read_bytes()).hexdigest(),
                 coordinate_system='384x256 EXIF RGB bilinear-stretched input pixels',
                 body_head_from_native=True,eye_from_custom_model=True,camera_AF_verified=False,

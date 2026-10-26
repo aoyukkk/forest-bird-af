@@ -68,6 +68,16 @@ your own verified vendor package. The independent YOLO route uses public data. S
 [tests](tests/README.md). Firmware, original/modified vendor weights, feature
 caches and the production database are not distributed.
 
+## Selected focus-cue follow-up — 2026-10-26
+
+Six matched continuations completed 48 epochs in 27.49 minutes. Fine-guidance
+selection retained the parent. A two-n B/H-and-eye combination improved
+geometric support from 62/80 to 68/80 while retaining 15/25 selected-eye hits.
+The old/new coarse acquisition references scored 71/80 and 70/80, with different
+fine-eye errors and many unassessed eye selections. These are development
+geometry proxies; visible surface, depth and camera focus remain unverified.
+[Results, runtime and diagnostics](docs/training/guidance-2026-10-26.md).
+
 ## Input/context follow-up — 2026-10-26
 
 Four additional matched trials (baseline/hard context, two sampling seeds)

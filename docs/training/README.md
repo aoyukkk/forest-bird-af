@@ -86,3 +86,6 @@ python scripts/training/evaluate_z8_training.py --help
 package and CUDA, and the output directory must stay outside the repository.
 
 Latest follow-up: [input, hard-context and hybrid results](input-context-2026-10-26.md). New training did not surpass the saved parent; five-view eye fusion is a more expensive development candidate.
+
+
+[Final selected guidance experiment](guidance-2026-10-26.md) adds cached CPU replay, localization-quality confidence and matched parent continuations.

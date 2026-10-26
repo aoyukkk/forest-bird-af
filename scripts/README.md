@@ -66,3 +66,6 @@ weights; the comparison evaluator additionally needs your local native package.
 | `compare_saved_decoders.py` | Compare two decoder outputs |
 
 The follow-up adds `evaluate_bird_regions.py`, `bird_parts_regions.py`, `prepare_hard_bird_context.py`, `hard_bird_context.py`, `evaluate_bird_hybrid.py` and `predict_bird_hybrid.py`. See [input/context results](../docs/training/input-context-2026-10-26.md).
+
+
+Guidance tools: `bird_guidance_metrics.py` (standard-library top-one proxies), `evaluate_guidance_predictions.py` (CPU cache replay), `train_bird_guidance.py` (matched continuations), and `predict_bird_guidance.py` (one/two independent models without vendor code). See [guidance evaluation](../docs/training/guidance-2026-10-26.md).

@@ -194,9 +194,10 @@ class MaskedClassification(nn.Module):
 
 
 class BirdLoss:
-    def __init__(self, model):
+    def __init__(self, model, quality_sigma=None):
         self.det = v8DetectionLoss(model)
         self.det.bce = MaskedClassification()
+        self.quality_sigma = quality_sigma
 
     def __call__(self, raw, samples):
         # TAL/box arithmetic and partial-label losses use float32 under AMP.
@@ -223,23 +224,26 @@ class BirdLoss:
             [[1., .35 if sample['head_labels_are_weak'] else 1.] for sample in samples],
             device=device).reshape(len(samples), 1, 2)
         det_loss, _ = self.det.loss(raw, batch)
-        eye, components = eye_loss(grid_points(raw), samples)
+        eye, components = eye_loss(grid_points(raw), samples, self.quality_sigma)
         total = det_loss.sum() / len(samples) + eye
         components['detection'] = float(det_loss.detach().sum() / len(samples))
         return total, components
 
 
-def eye_loss(values, samples):
+def eye_loss(values, samples, quality_sigma=None):
     """Partial-label focal point loss with unordered two-slot assignment.
 
     Only public complete eye coverage supplies derived negatives inside the
     annotated bird region. Missing community eyes remain entirely unknown.
     """
+    if quality_sigma is not None and quality_sigma <= 0:
+        raise ValueError('Quality sigma must be positive in input pixels')
     batch_size, h, w, _, _ = values.shape
     device = values.device
     ys, xs = torch.meshgrid(torch.arange(h, device=device), torch.arange(w, device=device), indexing='ij')
     centers = torch.stack(((xs + .5) * 8, (ys + .5) * 8), -1)
     target = torch.zeros(values.shape[:-1], device=device)
+    quality_target = torch.zeros_like(target)
     known = torch.zeros_like(target, dtype=torch.bool)
     regressions = []
     overflow = 0
@@ -270,14 +274,22 @@ def eye_loss(values, samples):
             best = min(routes, key=lambda route: float((predicted[list(route)].detach() - truth).square().sum()))
             for n, slot in enumerate(best):
                 target[b, r, c, slot] = 1
+                if quality_sigma is not None:
+                    distance2 = ((predicted[slot].detach() - truth[n]) * 8).square().sum()
+                    quality_target[b, r, c, slot] = torch.exp(-distance2 / (2 * quality_sigma ** 2)).clamp(min=.05)
                 known[b, r, c, slot] = True
                 regressions.append(F.smooth_l1_loss(predicted[slot], truth[n]))
     conf = values[..., 2]
     probabilities = conf.sigmoid()
-    bce = F.binary_cross_entropy_with_logits(conf, target, reduction='none')
-    pt = torch.where(target > 0, probabilities, 1 - probabilities)
     weights = torch.where(target > 0, 1., .25)
-    classification = (bce * (1 - pt).square() * weights * known).sum() / target.sum().clamp(min=1)
+    if quality_sigma is None:
+        bce = F.binary_cross_entropy_with_logits(conf, target, reduction='none')
+        pt = torch.where(target > 0, probabilities, 1 - probabilities)
+        confidence_terms = bce * (1 - pt).square()
+    else:
+        bce = F.binary_cross_entropy_with_logits(conf, quality_target, reduction='none')
+        confidence_terms = bce * (probabilities - quality_target).square()
+    classification = (confidence_terms * weights * known).sum() / target.sum().clamp(min=1)
     regression = torch.stack(regressions).mean() if regressions else values[..., :2].sum() * 0
     result = classification + regression * 4
     return result, {'eye_confidence': float(classification.detach()), 'eye_xy': float(regression.detach()), 'overflow': overflow}

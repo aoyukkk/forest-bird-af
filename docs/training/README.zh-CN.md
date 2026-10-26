@@ -72,3 +72,6 @@ python scripts/training/evaluate_z8_training.py --help
 并且输出目录必须留在仓库之外。
 
 最新后续轮：[输入、困难上下文和混合方案结果](input-context-2026-10-26.zh-CN.md)。新训练未超过保留的父模型；五视图眼点融合是更昂贵的开发候选。
+
+
+[最终引导位置实验](guidance-2026-10-26.zh-CN.md)新增缓存CPU重评、定位质量置信度和从同一父权重开始的匹配对照。

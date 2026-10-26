@@ -64,3 +64,6 @@
 | `compare_saved_decoders.py` | 两套解码器输出对比 |
 
 后续轮新增 `evaluate_bird_regions.py`、`bird_parts_regions.py`、`prepare_hard_bird_context.py`、`hard_bird_context.py`、`evaluate_bird_hybrid.py`、`predict_bird_hybrid.py`，见[输入/上下文结果](../docs/training/input-context-2026-10-26.zh-CN.md)。
+
+
+引导位置工具：`bird_guidance_metrics.py`（标准库最终位置代理）、`evaluate_guidance_predictions.py`（CPU缓存重评）、`train_bird_guidance.py`（匹配继续训练）、`predict_bird_guidance.py`（无需厂商包的一/两个独立模型推理）。见[引导位置评测](../docs/training/guidance-2026-10-26.zh-CN.md)。
