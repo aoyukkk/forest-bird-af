@@ -84,3 +84,5 @@ python scripts/training/evaluate_z8_training.py --help
 
 `--help` works without the vendor package. A real run needs the locally verified
 package and CUDA, and the output directory must stay outside the repository.
+
+Latest follow-up: [input, hard-context and hybrid results](input-context-2026-10-26.md). New training did not surpass the saved parent; five-view eye fusion is a more expensive development candidate.

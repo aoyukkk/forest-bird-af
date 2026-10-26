@@ -28,3 +28,5 @@ YOLO 路线另有 `test_competition_preservation.py`（空间掩膜、已知缺�
 `test_bird_parts_preparation.py`（弱头框几何）和
 `test_public_community_training.py`（旧测试隔离）。模型测试还需固定的可选
 [YOLO 依赖](../requirements-yolo26.txt)，使用 CPU。本地完整执行通过 99 项测试。
+
+`test_bird_regions.py`覆盖裁剪映射、不依赖真值的自动区域、原厂B/H候选完整保留；`test_hard_context.py`覆盖背景保护及眼预算/F1选型取舍。

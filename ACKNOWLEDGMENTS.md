@@ -199,3 +199,8 @@ We credit the Cornell Lab of Ornithology, contributing photographers at
 AllAboutBirds.org/Labs, and NSF award 1010818. Local non-commercial research
 uses the [original NABirds terms](https://dl.allaboutbirds.org/merlin-computer-vision-terms-of-use).
 Images and per-image NABirds annotations are not redistributed here.
+
+
+### 2026-10-26: CUB foreground masks
+
+Ryan Farrell provided the [official CUB segmentation masks](https://data.caltech.edu/records/w9d68-gec53). This follow-up used 5,385 training masks locally for controlled compositing. Neither masks nor derived photo composites are redistributed.

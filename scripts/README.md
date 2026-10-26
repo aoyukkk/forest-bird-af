@@ -64,3 +64,5 @@ weights; the comparison evaluator additionally needs your local native package.
 | `verify_links.py` | Check relative Markdown file targets after directory changes |
 | `verify_review_page.mjs` | Static check of the review page |
 | `compare_saved_decoders.py` | Compare two decoder outputs |
+
+The follow-up adds `evaluate_bird_regions.py`, `bird_parts_regions.py`, `prepare_hard_bird_context.py`, `hard_bird_context.py`, `evaluate_bird_hybrid.py` and `predict_bird_hybrid.py`. See [input/context results](../docs/training/input-context-2026-10-26.md).

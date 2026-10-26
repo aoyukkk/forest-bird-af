@@ -20,6 +20,23 @@ from z8_training_targets import match_metrics, center, iou
 THRESHOLDS = (.05, .1, .15, .2, .25, .3, .4, .5, .6, .7, .8, .9, .95, .975, .99, .995)
 
 
+def budget_eye_threshold(curve, budget):
+    eligible = [r for r in curve if r['metrics']['eye']['fp'] <= budget]
+    if not eligible:
+        return None
+    return max(eligible, key=lambda r: (r['metrics']['eye']['tp'], -r['metrics']['eye']['fp'], r['threshold']))['threshold']
+
+
+def selection_value(metrics, budget=None, bird_floor=0., head_floor=0.):
+    if budget is None:
+        return metrics['macro_f1']
+    valid = metrics['bird']['f1'] >= bird_floor and metrics['head']['f1'] >= head_floor and metrics['eye']['fp'] <= budget
+    if not valid:
+        return metrics['macro_f1'] * 1e-6  # explicit non-passing fallback, never a successful model
+    eye = metrics['eye']
+    return 1. + eye['tp'] / (eye['labels'] + 1) - eye['fp'] * .0001 + metrics['macro_f1'] * 1e-6
+
+
 def write(path, value):
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2), encoding='utf-8')
 
@@ -73,7 +90,7 @@ def selection_diagnostic(truth, predictions):
 
 
 @torch.no_grad()
-def evaluate(model, rows, batch_size=16):
+def evaluate(model, rows, batch_size=16, eye_fp_budget=None):
     model.eval()
     predictions = {}
     loader = DataLoader(BirdDataset(rows), batch_size=batch_size, shuffle=False, collate_fn=collate, num_workers=0)
@@ -93,6 +110,10 @@ def evaluate(model, rows, batch_size=16):
     for kind in ('bird', 'head', 'eye'):
         best = max(curve, key=lambda p: (p['metrics'][kind]['f1'], p['threshold']))
         selected[kind] = best['threshold']
+    if eye_fp_budget is not None:
+        budget_threshold = budget_eye_threshold(curve, eye_fp_budget)
+        if budget_threshold is not None:
+            selected['eye'] = budget_threshold
     filtered = {k: [p for p in v if p['score'] >= selected[p['kind']]] for k, v in predictions.items()}
     metric, detail = match_metrics(truth, filtered)
     loose, _ = match_metrics(truth, filtered, box_iou=.3, eye_pixels=8)
@@ -126,6 +147,10 @@ def main():
     parser.add_argument('--epoch-samples', type=int, default=4096)
     parser.add_argument('--augment', action='store_true')
     parser.add_argument('--scale-match', action='store_true', help='Match public bird size to community training objects')
+    parser.add_argument('--hard-context', action='store_true', help='Masked CUB birds in protected training-only context')
+    parser.add_argument('--eye-fp-budget', type=int)
+    parser.add_argument('--bird-f1-floor', type=float, default=0.)
+    parser.add_argument('--head-f1-floor', type=float, default=0.)
     parser.add_argument('--teacher', type=Path)
     parser.add_argument('--teacher-threshold', type=float, default=.5)
     parser.add_argument('--initial', type=Path)
@@ -136,6 +161,8 @@ def main():
     args = parser.parse_args()
     if args.scale_match and not args.augment:
         parser.error('--scale-match requires --augment')
+    if args.hard_context and args.augment:
+        parser.error('--hard-context is a separate declared augmentation recipe')
     out = args.output.resolve()
     repo = Path(__file__).resolve().parents[2]
     if out.is_relative_to(repo) or out.is_relative_to(args.dataset.resolve().parent):
@@ -144,7 +171,7 @@ def main():
         parser.error('CUDA required; no silent backend substitution')
     out.mkdir(parents=True, exist_ok=False)
     source_dir = out / 'executed-code'; source_dir.mkdir()
-    for name in ('train_bird_parts.py', 'bird_parts_model.py', 'z8_training_targets.py'):
+    for name in ('train_bird_parts.py', 'bird_parts_model.py', 'z8_training_targets.py', 'hard_bird_context.py'):
         shutil.copyfile(Path(__file__).with_name(name), source_dir / name)
     torch.set_num_threads(4)
     torch.manual_seed(args.seed); np.random.seed(args.seed); random.seed(args.seed)
@@ -160,7 +187,8 @@ def main():
     public_validation = [r for r in document['records'] if r['split'] == 'public_val'][:200]
     config = dict(vars(args), architecture='official YOLO26 pose backbone/neck, one2many B/H and custom independent 2-slot eye grid',
                   input='RGB 384x256 /256', loss='TAL boxes, masked class BCE, unordered eye focal+offset; reviewed-body frames add derived protected-background negatives; no RLE or end2end branch',
-                  selection='per-part thresholds on same validation only, maximize macro F1; report precision/coverage separately',
+                  selection=('validation eye-hit priority under FP budget and B/H F1 floors; nonpassing fallback explicit'
+                             if args.eye_fp_budget is not None else 'per-part thresholds on same validation only, maximize macro F1; report precision/coverage separately'),
                   datasets={'community_unique_train': len(community), 'public_train': len(public),
                             'epoch_samples': args.epoch_samples, 'community_sampling_weight': community_weight,
                             'community_val': len(validation), 'public_val_diagnostic': len(public_validation)},
@@ -195,6 +223,10 @@ def main():
                                      'public_scale_probability': .7, 'canvas': 'median-colour padding; synthetic, not generated context'}
         write(out / 'config.json', {k: str(v) if isinstance(v, Path) else v for k, v in config.items()})
     dataset = BirdDataset(rows, args.augment, scale_reference)
+    if args.hard_context:
+        from hard_bird_context import HardContextDataset
+        assets = document['context_assets']
+        dataset = HardContextDataset(rows, assets['backgrounds'], assets['sizes'])
     sampler = WeightedRandomSampler([1.] * len(public) + [community_weight] * len(community),
                                     args.epoch_samples, replacement=True,
                                     generator=torch.Generator().manual_seed(args.seed))
@@ -204,8 +236,8 @@ def main():
     history, step_times = [], []
     parent_score = None
     if args.initial:
-        parent = evaluate(model, validation, args.batch_size)
-        parent_score = best = parent['metrics']['macro_f1']
+        parent = evaluate(model, validation, args.batch_size, args.eye_fp_budget)
+        parent_score = best = selection_value(parent['metrics'],args.eye_fp_budget,args.bird_f1_floor,args.head_f1_floor)
         write(out / 'validation-parent.json', parent)
         write(out / 'validation-best.json', parent)
         torch.save({'state_dict': {k: v.detach().cpu().clone() for k, v in model.state_dict().items()},
@@ -241,8 +273,8 @@ def main():
                 step_times.append(time.perf_counter() - stamp)
                 if (step + 1) % 50 == 0:
                     emit({'stage': 'train', 'epoch': epoch, 'step': step + 1, 'steps': len(loader), 'loss': losses[-1]})
-            measured = evaluate(model, validation, args.batch_size)
-            score = measured['metrics']['macro_f1']
+            measured = evaluate(model, validation, args.batch_size, args.eye_fp_budget)
+            score = selection_value(measured['metrics'],args.eye_fp_budget,args.bird_f1_floor,args.head_f1_floor)
             selected = score > best + 1e-8
             checkpoint = {'state_dict': {k: v.detach().cpu().clone() for k, v in model.state_dict().items()},
                           'epoch': epoch, 'size': args.size, 'seed': args.seed}
@@ -255,7 +287,8 @@ def main():
                 no_gain += 1
             record = dict(epoch=epoch, loss=float(np.mean(losses)),
                           components={k: float(np.mean([s.get(k, 0) for s in stats])) for k in stats[0]},
-                          macro_f1=score, val={k: measured['metrics'][k] for k in ('bird', 'head', 'eye')},
+                          macro_f1=measured['metrics']['macro_f1'], selection_value=score,
+                          val={k: measured['metrics'][k] for k in ('bird', 'head', 'eye')},
                           thresholds=measured['thresholds'], selected=selected, best_epoch=best_epoch,
                           teacher_correlated_points=kd_matches, seconds=time.perf_counter() - epoch_start)
             history.append(record); write(out / 'history.json', history)
@@ -264,7 +297,7 @@ def main():
             if no_gain >= args.patience:
                 break
         load_checkpoint(model, out / 'best.pt')
-        repeated = evaluate(model, validation, args.batch_size)
+        repeated = evaluate(model, validation, args.batch_size, args.eye_fp_budget)
         write(out / 'validation-reloaded.json', repeated)
         stored = json.loads((out / 'validation-best.json').read_text(encoding='utf-8'))
         if repeated['metrics'] != stored['metrics']:
@@ -288,6 +321,8 @@ def main():
                 decode(raw, model.model[-1].stride)
                 torch.cuda.synchronize(); times.append((time.perf_counter() - stamp) * 1000)
         result = dict(status='completed', best_epoch=best_epoch, epochs=len(history),
+                      selection_value=best,
+                      quality_gate_passed=(args.eye_fp_budget is None or best>=1.),
                       improved_over_parent=bool(parent_score is not None and best > parent_score),
                       validation_metrics=repeated['metrics'], validation_thresholds=repeated['thresholds'],
                       elapsed_seconds=time.perf_counter() - start,

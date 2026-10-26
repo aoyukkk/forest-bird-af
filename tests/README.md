@@ -31,3 +31,5 @@ augmentation geometry and unordered sparse distillation),
 `test_public_community_training.py` (historical-test quarantine). Model tests
 also need the pinned optional [YOLO dependencies](../requirements-yolo26.txt);
 they run on CPU. The complete local run passed 99 tests.
+
+`test_bird_regions.py` checks crop mapping, label-independent automatic regions and exact native B/H retention. `test_hard_context.py` checks protected background and the eye-budget/F1 selection tradeoff.

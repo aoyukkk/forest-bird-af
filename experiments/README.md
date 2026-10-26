@@ -25,3 +25,5 @@ Historical runtime locks retain their original source paths and hashes. [source-
 [2026-10-26 aggregates](next-training-2026-10-26/README.md) record native repair,
 YOLO26-derived n/s training, sparse positive distillation and locked paired public tests.
 Original failed runs and vendor assets stay outside Git.
+
+[Input/context follow-up](input-context-2026-10-26/README.md) records the subsequent four-trial experiment and explicitly qualified eye-module combinations.

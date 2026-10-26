@@ -174,6 +174,7 @@ def classification_validity(samples, centers):
         region = regions_mask(sample['negative_regions'], centers)
         region &= ~regions_mask(sample['uncertain'], centers)
         background = derived_community_background(sample, centers)
+        background |= regions_mask(sample.get('derived_background_regions', []), centers)
         for kind, class_id in [('bird', 0), ('head', 1)]:
             known = any(obj['kind'] == kind for obj in sample['objects'])
             valid[b, :, class_id] = background | (region if known else False)
@@ -249,6 +250,7 @@ def eye_loss(values, samples):
             known[b] = regions_mask(sample['negative_regions'], centers)[..., None]
             known[b] &= ~regions_mask(sample['uncertain'], centers)[..., None]
         known[b] |= derived_community_background(sample, centers, margin=20.)[..., None]
+        known[b] |= regions_mask(sample.get('derived_background_regions', []), centers)[..., None]
         cells = {}
         for x, y in sample['eyes']:
             if not (0 <= x < 384 and 0 <= y < 256):

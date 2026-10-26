@@ -62,3 +62,5 @@
 | `verify_links.py` | 检查 Markdown 相对文件目标和移动后的文档链接 |
 | `verify_review_page.mjs` | 复核页静态检查 |
 | `compare_saved_decoders.py` | 两套解码器输出对比 |
+
+后续轮新增 `evaluate_bird_regions.py`、`bird_parts_regions.py`、`prepare_hard_bird_context.py`、`hard_bird_context.py`、`evaluate_bird_hybrid.py`、`predict_bird_hybrid.py`，见[输入/上下文结果](../docs/training/input-context-2026-10-26.zh-CN.md)。

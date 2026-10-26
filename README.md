@@ -68,6 +68,22 @@ your own verified vendor package. The independent YOLO route uses public data. S
 [tests](tests/README.md). Firmware, original/modified vendor weights, feature
 caches and the production database are not distributed.
 
+## Input/context follow-up — 2026-10-26
+
+Four additional matched trials (baseline/hard context, two sampling seeds)
+completed. The new training did not surpass the retained single-pass n eye
+parent. The hard recipe improved one seed and regressed on the other.
+
+| Community development validation, 25 eye labels | Eye hits / unmatched | Extra n calls |
+|---|---:|---:|
+| Native | 9 / 3 | 0 |
+| Native B/H + parent n eyes | 15 / 3 | 1 |
+| Native B/H + parent n full/four-tile eyes | 17 / 3 | 5 |
+
+This is reused, Z8-assisted validation; the region combination is a development
+candidate with extra cost. No new real-event test is available, and no camera
+replacement is recommended. [Results, input audit and limitations](docs/training/input-context-2026-10-26.md).
+
 ## Latest comparison — 2026-10-26
 
 The selected YOLO26n-derived model improves eye localization on the locked

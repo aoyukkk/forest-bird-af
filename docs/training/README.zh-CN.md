@@ -70,3 +70,5 @@ python scripts/training/evaluate_z8_training.py --help
 
 `--help` 不需要原厂包即可查看完整参数；真正执行需要本机已校验的模型包与 CUDA，
 并且输出目录必须留在仓库之外。
+
+最新后续轮：[输入、困难上下文和混合方案结果](input-context-2026-10-26.zh-CN.md)。新训练未超过保留的父模型；五视图眼点融合是更昂贵的开发候选。
