@@ -77,3 +77,5 @@ python scripts/training/evaluate_z8_training.py --help
 [最终引导位置实验](guidance-2026-10-26.zh-CN.md)新增缓存CPU重评、定位质量置信度和从同一父权重开始的匹配对照。
 
 [落点可用性与离线确认](point-review-2026-10-26.zh-CN.md)：51项人工确认（44可用、7不可用），AI草稿独立保存，保留低门槛补位失败规则。
+
+[冻结原模型的鸟面分支实验](surface-2026-10-27.zh-CN.md)：共享特征的轻量头、部分掩膜、明确遮挡监督及两个种子的匹配协议。

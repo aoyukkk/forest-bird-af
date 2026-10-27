@@ -69,3 +69,5 @@
 引导位置工具：`bird_guidance_metrics.py`（标准库最终位置代理）、`evaluate_guidance_predictions.py`（CPU缓存重评）、`train_bird_guidance.py`（匹配继续训练）、`predict_bird_guidance.py`（无需厂商包的一/两个独立模型推理）。见[引导位置评测](../docs/training/guidance-2026-10-26.zh-CN.md)。
 
 落点复核新增`annotator/build_point_review.py`、`point_review_core.js`、`point_review_template.html`和`annotator/import_point_review.py`。导入器核对输入/落点身份、完整修订与明确人工确认，原始导出保存在Git外；生成HTML及内嵌照片也不入Git。`training/bird_guidance_fallback.py`仅复现未通过的空候选补位规则，不改已有推理默认行为。[人工结果与工具](../docs/training/point-review-2026-10-26.zh-CN.md)。
+
+鸟面分支新增`training/bird_surface.py`、`prepare_bird_surface.py`、`train_bird_surface.py`、`predict_bird_surface.py`，接入CUB掩膜、冻结原模型、单独训练粗捕获头。[协议与命令](../docs/training/surface-2026-10-27.zh-CN.md)。

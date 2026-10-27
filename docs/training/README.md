@@ -91,3 +91,5 @@ Latest follow-up: [input, hard-context and hybrid results](input-context-2026-10
 [Final selected guidance experiment](guidance-2026-10-26.md) adds cached CPU replay, localization-quality confidence and matched parent continuations.
 
 [Point availability and offline confirmation](point-review-2026-10-26.md): 51 human confirmations (44 usable, 7 unusable), separate AI drafts and rejected low-threshold fallback rules.
+
+[Frozen-base bird-surface experiments](surface-2026-10-27.md): lightweight shared-feature head, partial masks, explicit occluder supervision and matched two-seed protocol.

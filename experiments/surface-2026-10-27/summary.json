@@ -1,0 +1,4939 @@
+{
+  "schema": "forest-bird-frozen-surface-round-v1",
+  "date": "2026-10-27",
+  "parent_commit": "b30fb622ce10a1a886092a1f16a6d41e39877b29",
+  "formal_plan": {
+    "date": "2026-10-27",
+    "parent_sha256": "e69ac515244122e849f21821d496976f5ea15d0dee71a49ffe9460e4cc239b6d",
+    "dataset_sha256": "4fc79d491f5ac2c57702922c64560847e8e1df92d12e22402ef9db27ef3593d3",
+    "seeds": [
+      20261027,
+      20261028
+    ],
+    "conditions": [
+      "R1",
+      "R2"
+    ],
+    "epochs": 8,
+    "epoch_samples": 4096,
+    "batch_size": 16,
+    "lr": 0.001,
+    "selection": "fixed CUB validation utility foreground - 5*known_wrong",
+    "community_used_for_selection": false,
+    "test_used": false,
+    "human_training_labels_added": 0,
+    "camera_AF_verified": false
+  },
+  "source_sha256": {
+    "bird_surface.py": "03645c4d8966d5b4d82ac88575483e8863b6434c931b986829942afc2214e055",
+    "prepare_bird_surface.py": "b1a8c862aa6062baad893087807928c80c65816876d9a01c523d18e20248a960",
+    "train_bird_surface.py": "4d12978c7a38e770d0ebd79b3e5a3b0ebc15503b2052e18eba26b0fc35365f93",
+    "bird_parts_model.py": "aba0025ef2afa6e08e5e80a2e6c8c04717567f58430450be7c9e61809166465b"
+  },
+  "dataset_counts": {
+    "public_train": 5385,
+    "public_val": 600,
+    "community_train": 375,
+    "community_val": 80
+  },
+  "sampling": {
+    "cub_probability": 0.7,
+    "community_probability": 0.3,
+    "community_eligible": 373,
+    "community_groups": 55,
+    "cub_training_images": 5385,
+    "group_balanced": true
+  },
+  "engineering_visual_gate": {
+    "viewed": 48,
+    "actor_kind": "ai_engineering_review",
+    "human_confirmed": 0,
+    "engineering_gate_passed": true,
+    "parent_failed_audit": "../visual-audit/inspection.json",
+    "resolution": "official grey masks are converted using existing >127 foreground convention before alpha interpolation",
+    "positive_grid_empty": 7,
+    "limitations": [
+      "48 engineering samples only, not independent label QA",
+      "cutout/texture artifacts remain and must be measured as domain gap",
+      "tiny interiors may remain unknown, never forced positive"
+    ]
+  },
+  "failed_engineering_gate": {
+    "viewed": 48,
+    "actor_kind": "ai",
+    "human_confirmed": 0,
+    "engineering_gate_passed": false,
+    "issue": "Official grey masks with maximum 204 were divided by 255 then compared with .98, producing false negatives over whole birds",
+    "observed_ids": [
+      "cub_06937",
+      "cub_04869"
+    ],
+    "resolution": "Apply existing >127 foreground convention before alpha resampling; preserve v1 views; rerun 48-view audit and regression test"
+  },
+  "pilot": {
+    "status": "completed",
+    "epochs": 1,
+    "seconds": 20.15904139999998,
+    "base_state_equal": true,
+    "base_outputs_equal": true,
+    "head_changed": true,
+    "peak_allocated_bytes": 119768064
+  },
+  "runs": [
+    {
+      "name": "R1_20261027",
+      "condition": "R1",
+      "seed": 20261027,
+      "epochs": 8,
+      "selected_epoch": 1,
+      "head_sha256": "a20e44e665b953df2f4e4149a5070964501553e8d1e65a65e760bb02a8de591d",
+      "initial_head_digest": "1a2ede0a93a8d2fb876f440836b0e518de4cff779dd3bf601b438982e8a2c93e",
+      "parent_sha256": "e69ac515244122e849f21821d496976f5ea15d0dee71a49ffe9460e4cc239b6d",
+      "selected": {
+        "threshold": 0.95,
+        "counts": {
+          "total": 1800,
+          "selected": 1785,
+          "foreground": 1696,
+          "background": 15,
+          "occluder": 13,
+          "unknown": 61,
+          "abstain": 15,
+          "known_wrong": 28
+        },
+        "utilities": {
+          "2": 1640,
+          "5": 1556,
+          "10": 1416
+        }
+      },
+      "epoch_public_selections": [
+        {
+          "threshold": 0.95,
+          "counts": {
+            "total": 1800,
+            "selected": 1785,
+            "foreground": 1696,
+            "background": 15,
+            "occluder": 13,
+            "unknown": 61,
+            "abstain": 15,
+            "known_wrong": 28
+          },
+          "utilities": {
+            "2": 1640,
+            "5": 1556,
+            "10": 1416
+          }
+        },
+        {
+          "threshold": 0.98,
+          "counts": {
+            "total": 1800,
+            "selected": 1788,
+            "foreground": 1689,
+            "background": 14,
+            "occluder": 16,
+            "unknown": 69,
+            "abstain": 12,
+            "known_wrong": 30
+          },
+          "utilities": {
+            "2": 1629,
+            "5": 1539,
+            "10": 1389
+          }
+        },
+        {
+          "threshold": 0.99,
+          "counts": {
+            "total": 1800,
+            "selected": 1785,
+            "foreground": 1671,
+            "background": 14,
+            "occluder": 20,
+            "unknown": 80,
+            "abstain": 15,
+            "known_wrong": 34
+          },
+          "utilities": {
+            "2": 1603,
+            "5": 1501,
+            "10": 1331
+          }
+        },
+        {
+          "threshold": 0.99,
+          "counts": {
+            "total": 1800,
+            "selected": 1788,
+            "foreground": 1683,
+            "background": 16,
+            "occluder": 18,
+            "unknown": 71,
+            "abstain": 12,
+            "known_wrong": 34
+          },
+          "utilities": {
+            "2": 1615,
+            "5": 1513,
+            "10": 1343
+          }
+        },
+        {
+          "threshold": 0.99,
+          "counts": {
+            "total": 1800,
+            "selected": 1787,
+            "foreground": 1688,
+            "background": 12,
+            "occluder": 16,
+            "unknown": 71,
+            "abstain": 13,
+            "known_wrong": 28
+          },
+          "utilities": {
+            "2": 1632,
+            "5": 1548,
+            "10": 1408
+          }
+        },
+        {
+          "threshold": 0.99,
+          "counts": {
+            "total": 1800,
+            "selected": 1786,
+            "foreground": 1686,
+            "background": 12,
+            "occluder": 14,
+            "unknown": 74,
+            "abstain": 14,
+            "known_wrong": 26
+          },
+          "utilities": {
+            "2": 1634,
+            "5": 1556,
+            "10": 1426
+          }
+        },
+        {
+          "threshold": 0.99,
+          "counts": {
+            "total": 1800,
+            "selected": 1788,
+            "foreground": 1680,
+            "background": 12,
+            "occluder": 15,
+            "unknown": 81,
+            "abstain": 12,
+            "known_wrong": 27
+          },
+          "utilities": {
+            "2": 1626,
+            "5": 1545,
+            "10": 1410
+          }
+        },
+        {
+          "threshold": 0.99,
+          "counts": {
+            "total": 1800,
+            "selected": 1786,
+            "foreground": 1679,
+            "background": 11,
+            "occluder": 17,
+            "unknown": 79,
+            "abstain": 14,
+            "known_wrong": 28
+          },
+          "utilities": {
+            "2": 1623,
+            "5": 1539,
+            "10": 1399
+          }
+        }
+      ],
+      "public_curve": [
+        {
+          "threshold": 0.3,
+          "counts": {
+            "total": 1800,
+            "selected": 1799,
+            "foreground": 1700,
+            "background": 21,
+            "occluder": 15,
+            "unknown": 63,
+            "abstain": 1,
+            "known_wrong": 36
+          },
+          "utilities": {
+            "2": 1628,
+            "5": 1520,
+            "10": 1340
+          }
+        },
+        {
+          "threshold": 0.5,
+          "counts": {
+            "total": 1800,
+            "selected": 1799,
+            "foreground": 1700,
+            "background": 21,
+            "occluder": 15,
+            "unknown": 63,
+            "abstain": 1,
+            "known_wrong": 36
+          },
+          "utilities": {
+            "2": 1628,
+            "5": 1520,
+            "10": 1340
+          }
+        },
+        {
+          "threshold": 0.7,
+          "counts": {
+            "total": 1800,
+            "selected": 1798,
+            "foreground": 1700,
+            "background": 20,
+            "occluder": 15,
+            "unknown": 63,
+            "abstain": 2,
+            "known_wrong": 35
+          },
+          "utilities": {
+            "2": 1630,
+            "5": 1525,
+            "10": 1350
+          }
+        },
+        {
+          "threshold": 0.8,
+          "counts": {
+            "total": 1800,
+            "selected": 1795,
+            "foreground": 1700,
+            "background": 19,
+            "occluder": 14,
+            "unknown": 62,
+            "abstain": 5,
+            "known_wrong": 33
+          },
+          "utilities": {
+            "2": 1634,
+            "5": 1535,
+            "10": 1370
+          }
+        },
+        {
+          "threshold": 0.9,
+          "counts": {
+            "total": 1800,
+            "selected": 1793,
+            "foreground": 1700,
+            "background": 17,
+            "occluder": 14,
+            "unknown": 62,
+            "abstain": 7,
+            "known_wrong": 31
+          },
+          "utilities": {
+            "2": 1638,
+            "5": 1545,
+            "10": 1390
+          }
+        },
+        {
+          "threshold": 0.95,
+          "counts": {
+            "total": 1800,
+            "selected": 1785,
+            "foreground": 1696,
+            "background": 15,
+            "occluder": 13,
+            "unknown": 61,
+            "abstain": 15,
+            "known_wrong": 28
+          },
+          "utilities": {
+            "2": 1640,
+            "5": 1556,
+            "10": 1416
+          }
+        },
+        {
+          "threshold": 0.98,
+          "counts": {
+            "total": 1800,
+            "selected": 1773,
+            "foreground": 1687,
+            "background": 14,
+            "occluder": 13,
+            "unknown": 59,
+            "abstain": 27,
+            "known_wrong": 27
+          },
+          "utilities": {
+            "2": 1633,
+            "5": 1552,
+            "10": 1417
+          }
+        },
+        {
+          "threshold": 0.99,
+          "counts": {
+            "total": 1800,
+            "selected": 1756,
+            "foreground": 1673,
+            "background": 14,
+            "occluder": 12,
+            "unknown": 57,
+            "abstain": 44,
+            "known_wrong": 26
+          },
+          "utilities": {
+            "2": 1621,
+            "5": 1543,
+            "10": 1413
+          }
+        },
+        {
+          "threshold": 1.000001,
+          "counts": {
+            "total": 1800,
+            "selected": 0,
+            "foreground": 0,
+            "background": 0,
+            "occluder": 0,
+            "unknown": 0,
+            "abstain": 1800,
+            "known_wrong": 0
+          },
+          "utilities": {
+            "2": 0,
+            "5": 0,
+            "10": 0
+          }
+        }
+      ],
+      "policies": {
+        "native_bh_parent_eye": {
+          "reference": {
+            "images": 80,
+            "selected": 68,
+            "selected_eye": 35,
+            "abstain": 12,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 62,
+            "outside_labelled_geometry": 6,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 0,
+            "head_region": 21,
+            "bird_region": 20,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 18,
+            "near_eye_geometry": 3
+          },
+          "counts": {
+            "images": 80,
+            "selected": 78,
+            "selected_eye": 35,
+            "abstain": 2,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 68,
+            "outside_labelled_geometry": 9,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 1,
+            "head_region": 22,
+            "bird_region": 25,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 18,
+            "near_eye_geometry": 3
+          },
+          "additions": [
+            {
+              "image_id": "fb_0176",
+              "kind": "capture_hint",
+              "score": 0.9974290728569031,
+              "point_xy": [
+                362.0,
+                226.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0177",
+              "kind": "capture_hint",
+              "score": 0.9930423498153687,
+              "point_xy": [
+                14.0,
+                246.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0182",
+              "kind": "capture_hint",
+              "score": 0.986151397228241,
+              "point_xy": [
+                318.0,
+                150.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0187",
+              "kind": "capture_hint",
+              "score": 0.9999215602874756,
+              "point_xy": [
+                210.0,
+                114.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0378",
+              "kind": "capture_hint",
+              "score": 0.998835027217865,
+              "point_xy": [
+                302.0,
+                114.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0380",
+              "kind": "capture_hint",
+              "score": 0.9986801743507385,
+              "point_xy": [
+                38.0,
+                78.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0386",
+              "kind": "capture_hint",
+              "score": 0.9977743029594421,
+              "point_xy": [
+                214.0,
+                114.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0391",
+              "kind": "capture_hint",
+              "score": 0.999099612236023,
+              "point_xy": [
+                202.0,
+                122.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0395",
+              "kind": "capture_hint",
+              "score": 0.9993513226509094,
+              "point_xy": [
+                206.0,
+                130.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0398",
+              "kind": "capture_hint",
+              "score": 0.9975656270980835,
+              "point_xy": [
+                206.0,
+                122.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            }
+          ],
+          "primary_targets_preserved": true,
+          "fine_eye_counts_preserved": true
+        },
+        "two_n_primary": {
+          "reference": {
+            "images": 80,
+            "selected": 69,
+            "selected_eye": 35,
+            "abstain": 11,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 68,
+            "outside_labelled_geometry": 1,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 0,
+            "head_region": 15,
+            "bird_region": 33,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 16,
+            "near_eye_geometry": 4
+          },
+          "counts": {
+            "images": 80,
+            "selected": 80,
+            "selected_eye": 35,
+            "abstain": 0,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 69,
+            "outside_labelled_geometry": 10,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 1,
+            "head_region": 16,
+            "bird_region": 33,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 16,
+            "near_eye_geometry": 4
+          },
+          "additions": [
+            {
+              "image_id": "fb_0176",
+              "kind": "capture_hint",
+              "score": 0.9974290728569031,
+              "point_xy": [
+                362.0,
+                226.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0177",
+              "kind": "capture_hint",
+              "score": 0.9930423498153687,
+              "point_xy": [
+                14.0,
+                246.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0180",
+              "kind": "capture_hint",
+              "score": 0.9971327781677246,
+              "point_xy": [
+                330.0,
+                38.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0182",
+              "kind": "capture_hint",
+              "score": 0.986151397228241,
+              "point_xy": [
+                318.0,
+                150.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0377",
+              "kind": "capture_hint",
+              "score": 0.9980199337005615,
+              "point_xy": [
+                298.0,
+                114.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0378",
+              "kind": "capture_hint",
+              "score": 0.998835027217865,
+              "point_xy": [
+                302.0,
+                114.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0379",
+              "kind": "capture_hint",
+              "score": 0.9989474415779114,
+              "point_xy": [
+                306.0,
+                114.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0380",
+              "kind": "capture_hint",
+              "score": 0.9986801743507385,
+              "point_xy": [
+                38.0,
+                78.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0387",
+              "kind": "capture_hint",
+              "score": 0.9891397356987,
+              "point_xy": [
+                86.0,
+                178.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0388",
+              "kind": "capture_hint",
+              "score": 0.9809491038322449,
+              "point_xy": [
+                114.0,
+                246.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0389",
+              "kind": "capture_hint",
+              "score": 0.9979572296142578,
+              "point_xy": [
+                114.0,
+                246.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            }
+          ],
+          "primary_targets_preserved": true,
+          "fine_eye_counts_preserved": true
+        }
+      },
+      "status": {
+        "status": "completed",
+        "epochs": 8,
+        "seconds": 163.4367668,
+        "base_state_equal": true,
+        "base_outputs_equal": true,
+        "head_changed": true,
+        "peak_allocated_bytes": 255180288
+      },
+      "sampling_sha256": [
+        "3f42dce044f1bd9bfab9866c6f2248d6e02bb4b72da341cc87e81665feb979f5",
+        "e960968551940be720eb21ec2c9b5e6932603168f76b8881b01f5f12a2236cd4",
+        "dab3de168f780b920ddb797333374e043730437fa8909049d58832a6d0a922fb",
+        "daac47d2bf265db5ca13309892d93f7f892415e566495e09f53ea180b9dabb18",
+        "2a8fb3f8420dafbceb124f8d554ac84a45dd0c362a86b4750656f91cb14de0f9",
+        "c46f7103668ed1af2933acb02300bde9ada82b58d795b7903e1b789ae93436f4",
+        "bba23068be2769c1247b997d5a6ad5283e2d3f30608b71455f491ce9febc8d0e",
+        "b0a4c31d49d46d0d7dc5aaff866e7a8e33878236a4eb30e3dc337424da23695c"
+      ]
+    },
+    {
+      "name": "R2_20261027",
+      "condition": "R2",
+      "seed": 20261027,
+      "epochs": 8,
+      "selected_epoch": 3,
+      "head_sha256": "20c5c8f7b4a2f34ae1a3abed38a1b8057461fa7a8c0c492148b90d7c8d0c81b6",
+      "initial_head_digest": "1a2ede0a93a8d2fb876f440836b0e518de4cff779dd3bf601b438982e8a2c93e",
+      "parent_sha256": "e69ac515244122e849f21821d496976f5ea15d0dee71a49ffe9460e4cc239b6d",
+      "selected": {
+        "threshold": 0.7,
+        "counts": {
+          "total": 1800,
+          "selected": 1788,
+          "foreground": 1716,
+          "background": 14,
+          "occluder": 1,
+          "unknown": 57,
+          "abstain": 12,
+          "known_wrong": 15
+        },
+        "utilities": {
+          "2": 1686,
+          "5": 1641,
+          "10": 1566
+        }
+      },
+      "epoch_public_selections": [
+        {
+          "threshold": 0.95,
+          "counts": {
+            "total": 1800,
+            "selected": 1723,
+            "foreground": 1656,
+            "background": 16,
+            "occluder": 4,
+            "unknown": 47,
+            "abstain": 77,
+            "known_wrong": 20
+          },
+          "utilities": {
+            "2": 1616,
+            "5": 1556,
+            "10": 1456
+          }
+        },
+        {
+          "threshold": 0.98,
+          "counts": {
+            "total": 1800,
+            "selected": 1741,
+            "foreground": 1684,
+            "background": 9,
+            "occluder": 2,
+            "unknown": 46,
+            "abstain": 59,
+            "known_wrong": 11
+          },
+          "utilities": {
+            "2": 1662,
+            "5": 1629,
+            "10": 1574
+          }
+        },
+        {
+          "threshold": 0.7,
+          "counts": {
+            "total": 1800,
+            "selected": 1788,
+            "foreground": 1716,
+            "background": 14,
+            "occluder": 1,
+            "unknown": 57,
+            "abstain": 12,
+            "known_wrong": 15
+          },
+          "utilities": {
+            "2": 1686,
+            "5": 1641,
+            "10": 1566
+          }
+        },
+        {
+          "threshold": 0.98,
+          "counts": {
+            "total": 1800,
+            "selected": 1771,
+            "foreground": 1701,
+            "background": 12,
+            "occluder": 0,
+            "unknown": 58,
+            "abstain": 29,
+            "known_wrong": 12
+          },
+          "utilities": {
+            "2": 1677,
+            "5": 1641,
+            "10": 1581
+          }
+        },
+        {
+          "threshold": 0.95,
+          "counts": {
+            "total": 1800,
+            "selected": 1785,
+            "foreground": 1711,
+            "background": 13,
+            "occluder": 1,
+            "unknown": 60,
+            "abstain": 15,
+            "known_wrong": 14
+          },
+          "utilities": {
+            "2": 1683,
+            "5": 1641,
+            "10": 1571
+          }
+        },
+        {
+          "threshold": 0.95,
+          "counts": {
+            "total": 1800,
+            "selected": 1775,
+            "foreground": 1701,
+            "background": 17,
+            "occluder": 0,
+            "unknown": 57,
+            "abstain": 25,
+            "known_wrong": 17
+          },
+          "utilities": {
+            "2": 1667,
+            "5": 1616,
+            "10": 1531
+          }
+        },
+        {
+          "threshold": 0.98,
+          "counts": {
+            "total": 1800,
+            "selected": 1775,
+            "foreground": 1705,
+            "background": 14,
+            "occluder": 0,
+            "unknown": 56,
+            "abstain": 25,
+            "known_wrong": 14
+          },
+          "utilities": {
+            "2": 1677,
+            "5": 1635,
+            "10": 1565
+          }
+        },
+        {
+          "threshold": 0.9,
+          "counts": {
+            "total": 1800,
+            "selected": 1792,
+            "foreground": 1714,
+            "background": 16,
+            "occluder": 0,
+            "unknown": 62,
+            "abstain": 8,
+            "known_wrong": 16
+          },
+          "utilities": {
+            "2": 1682,
+            "5": 1634,
+            "10": 1554
+          }
+        }
+      ],
+      "public_curve": [
+        {
+          "threshold": 0.3,
+          "counts": {
+            "total": 1800,
+            "selected": 1797,
+            "foreground": 1717,
+            "background": 19,
+            "occluder": 1,
+            "unknown": 60,
+            "abstain": 3,
+            "known_wrong": 20
+          },
+          "utilities": {
+            "2": 1677,
+            "5": 1617,
+            "10": 1517
+          }
+        },
+        {
+          "threshold": 0.5,
+          "counts": {
+            "total": 1800,
+            "selected": 1794,
+            "foreground": 1717,
+            "background": 17,
+            "occluder": 1,
+            "unknown": 59,
+            "abstain": 6,
+            "known_wrong": 18
+          },
+          "utilities": {
+            "2": 1681,
+            "5": 1627,
+            "10": 1537
+          }
+        },
+        {
+          "threshold": 0.7,
+          "counts": {
+            "total": 1800,
+            "selected": 1788,
+            "foreground": 1716,
+            "background": 14,
+            "occluder": 1,
+            "unknown": 57,
+            "abstain": 12,
+            "known_wrong": 15
+          },
+          "utilities": {
+            "2": 1686,
+            "5": 1641,
+            "10": 1566
+          }
+        },
+        {
+          "threshold": 0.8,
+          "counts": {
+            "total": 1800,
+            "selected": 1786,
+            "foreground": 1714,
+            "background": 14,
+            "occluder": 1,
+            "unknown": 57,
+            "abstain": 14,
+            "known_wrong": 15
+          },
+          "utilities": {
+            "2": 1684,
+            "5": 1639,
+            "10": 1564
+          }
+        },
+        {
+          "threshold": 0.9,
+          "counts": {
+            "total": 1800,
+            "selected": 1774,
+            "foreground": 1705,
+            "background": 14,
+            "occluder": 1,
+            "unknown": 54,
+            "abstain": 26,
+            "known_wrong": 15
+          },
+          "utilities": {
+            "2": 1675,
+            "5": 1630,
+            "10": 1555
+          }
+        },
+        {
+          "threshold": 0.95,
+          "counts": {
+            "total": 1800,
+            "selected": 1748,
+            "foreground": 1690,
+            "background": 9,
+            "occluder": 1,
+            "unknown": 48,
+            "abstain": 52,
+            "known_wrong": 10
+          },
+          "utilities": {
+            "2": 1670,
+            "5": 1640,
+            "10": 1590
+          }
+        },
+        {
+          "threshold": 0.98,
+          "counts": {
+            "total": 1800,
+            "selected": 1661,
+            "foreground": 1615,
+            "background": 2,
+            "occluder": 1,
+            "unknown": 43,
+            "abstain": 139,
+            "known_wrong": 3
+          },
+          "utilities": {
+            "2": 1609,
+            "5": 1600,
+            "10": 1585
+          }
+        },
+        {
+          "threshold": 0.99,
+          "counts": {
+            "total": 1800,
+            "selected": 1565,
+            "foreground": 1526,
+            "background": 2,
+            "occluder": 1,
+            "unknown": 36,
+            "abstain": 235,
+            "known_wrong": 3
+          },
+          "utilities": {
+            "2": 1520,
+            "5": 1511,
+            "10": 1496
+          }
+        },
+        {
+          "threshold": 1.000001,
+          "counts": {
+            "total": 1800,
+            "selected": 0,
+            "foreground": 0,
+            "background": 0,
+            "occluder": 0,
+            "unknown": 0,
+            "abstain": 1800,
+            "known_wrong": 0
+          },
+          "utilities": {
+            "2": 0,
+            "5": 0,
+            "10": 0
+          }
+        }
+      ],
+      "policies": {
+        "native_bh_parent_eye": {
+          "reference": {
+            "images": 80,
+            "selected": 68,
+            "selected_eye": 35,
+            "abstain": 12,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 62,
+            "outside_labelled_geometry": 6,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 0,
+            "head_region": 21,
+            "bird_region": 20,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 18,
+            "near_eye_geometry": 3
+          },
+          "counts": {
+            "images": 80,
+            "selected": 80,
+            "selected_eye": 35,
+            "abstain": 0,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 70,
+            "outside_labelled_geometry": 9,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 1,
+            "head_region": 22,
+            "bird_region": 27,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 18,
+            "near_eye_geometry": 3
+          },
+          "additions": [
+            {
+              "image_id": "fb_0175",
+              "kind": "capture_hint",
+              "score": 0.8231862783432007,
+              "point_xy": [
+                186.0,
+                126.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0176",
+              "kind": "capture_hint",
+              "score": 0.9702399373054504,
+              "point_xy": [
+                146.0,
+                118.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0177",
+              "kind": "capture_hint",
+              "score": 0.9453993439674377,
+              "point_xy": [
+                118.0,
+                2.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0181",
+              "kind": "capture_hint",
+              "score": 0.9246877431869507,
+              "point_xy": [
+                170.0,
+                118.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0182",
+              "kind": "capture_hint",
+              "score": 0.9888418912887573,
+              "point_xy": [
+                334.0,
+                150.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0187",
+              "kind": "capture_hint",
+              "score": 0.9979007244110107,
+              "point_xy": [
+                210.0,
+                118.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0378",
+              "kind": "capture_hint",
+              "score": 0.9453993439674377,
+              "point_xy": [
+                302.0,
+                114.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0380",
+              "kind": "capture_hint",
+              "score": 0.9893474578857422,
+              "point_xy": [
+                42.0,
+                74.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0386",
+              "kind": "capture_hint",
+              "score": 0.9930961728096008,
+              "point_xy": [
+                218.0,
+                110.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0391",
+              "kind": "capture_hint",
+              "score": 0.9812389612197876,
+              "point_xy": [
+                202.0,
+                130.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0395",
+              "kind": "capture_hint",
+              "score": 0.995226263999939,
+              "point_xy": [
+                210.0,
+                142.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0398",
+              "kind": "capture_hint",
+              "score": 0.9772841930389404,
+              "point_xy": [
+                202.0,
+                122.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            }
+          ],
+          "primary_targets_preserved": true,
+          "fine_eye_counts_preserved": true
+        },
+        "two_n_primary": {
+          "reference": {
+            "images": 80,
+            "selected": 69,
+            "selected_eye": 35,
+            "abstain": 11,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 68,
+            "outside_labelled_geometry": 1,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 0,
+            "head_region": 15,
+            "bird_region": 33,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 16,
+            "near_eye_geometry": 4
+          },
+          "counts": {
+            "images": 80,
+            "selected": 80,
+            "selected_eye": 35,
+            "abstain": 0,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 69,
+            "outside_labelled_geometry": 10,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 1,
+            "head_region": 16,
+            "bird_region": 33,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 16,
+            "near_eye_geometry": 4
+          },
+          "additions": [
+            {
+              "image_id": "fb_0176",
+              "kind": "capture_hint",
+              "score": 0.9702399373054504,
+              "point_xy": [
+                146.0,
+                118.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0177",
+              "kind": "capture_hint",
+              "score": 0.9453993439674377,
+              "point_xy": [
+                118.0,
+                2.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0180",
+              "kind": "capture_hint",
+              "score": 0.9880849719047546,
+              "point_xy": [
+                22.0,
+                230.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0182",
+              "kind": "capture_hint",
+              "score": 0.9888418912887573,
+              "point_xy": [
+                334.0,
+                150.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0377",
+              "kind": "capture_hint",
+              "score": 0.9702399373054504,
+              "point_xy": [
+                150.0,
+                222.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0378",
+              "kind": "capture_hint",
+              "score": 0.9453993439674377,
+              "point_xy": [
+                302.0,
+                114.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0379",
+              "kind": "capture_hint",
+              "score": 0.946793794631958,
+              "point_xy": [
+                306.0,
+                110.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0380",
+              "kind": "capture_hint",
+              "score": 0.9893474578857422,
+              "point_xy": [
+                42.0,
+                74.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0387",
+              "kind": "capture_hint",
+              "score": 0.9669140577316284,
+              "point_xy": [
+                86.0,
+                182.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0388",
+              "kind": "capture_hint",
+              "score": 0.9507778882980347,
+              "point_xy": [
+                94.0,
+                10.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0389",
+              "kind": "capture_hint",
+              "score": 0.9832144975662231,
+              "point_xy": [
+                114.0,
+                246.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            }
+          ],
+          "primary_targets_preserved": true,
+          "fine_eye_counts_preserved": true
+        }
+      },
+      "status": {
+        "status": "completed",
+        "epochs": 8,
+        "seconds": 163.8929022000002,
+        "base_state_equal": true,
+        "base_outputs_equal": true,
+        "head_changed": true,
+        "peak_allocated_bytes": 255180288
+      },
+      "sampling_sha256": [
+        "3f42dce044f1bd9bfab9866c6f2248d6e02bb4b72da341cc87e81665feb979f5",
+        "e960968551940be720eb21ec2c9b5e6932603168f76b8881b01f5f12a2236cd4",
+        "dab3de168f780b920ddb797333374e043730437fa8909049d58832a6d0a922fb",
+        "daac47d2bf265db5ca13309892d93f7f892415e566495e09f53ea180b9dabb18",
+        "2a8fb3f8420dafbceb124f8d554ac84a45dd0c362a86b4750656f91cb14de0f9",
+        "c46f7103668ed1af2933acb02300bde9ada82b58d795b7903e1b789ae93436f4",
+        "bba23068be2769c1247b997d5a6ad5283e2d3f30608b71455f491ce9febc8d0e",
+        "b0a4c31d49d46d0d7dc5aaff866e7a8e33878236a4eb30e3dc337424da23695c"
+      ]
+    },
+    {
+      "name": "R1_20261028",
+      "condition": "R1",
+      "seed": 20261028,
+      "epochs": 8,
+      "selected_epoch": 8,
+      "head_sha256": "f543437af6fd62322862da8f0d9c6a244eceab3d7742ae04a1357e0294a6ab0f",
+      "initial_head_digest": "1a2ede0a93a8d2fb876f440836b0e518de4cff779dd3bf601b438982e8a2c93e",
+      "parent_sha256": "e69ac515244122e849f21821d496976f5ea15d0dee71a49ffe9460e4cc239b6d",
+      "selected": {
+        "threshold": 0.99,
+        "counts": {
+          "total": 1800,
+          "selected": 1787,
+          "foreground": 1687,
+          "background": 10,
+          "occluder": 15,
+          "unknown": 75,
+          "abstain": 13,
+          "known_wrong": 25
+        },
+        "utilities": {
+          "2": 1637,
+          "5": 1562,
+          "10": 1437
+        }
+      },
+      "epoch_public_selections": [
+        {
+          "threshold": 0.98,
+          "counts": {
+            "total": 1800,
+            "selected": 1774,
+            "foreground": 1685,
+            "background": 15,
+            "occluder": 12,
+            "unknown": 62,
+            "abstain": 26,
+            "known_wrong": 27
+          },
+          "utilities": {
+            "2": 1631,
+            "5": 1550,
+            "10": 1415
+          }
+        },
+        {
+          "threshold": 0.98,
+          "counts": {
+            "total": 1800,
+            "selected": 1788,
+            "foreground": 1682,
+            "background": 14,
+            "occluder": 15,
+            "unknown": 77,
+            "abstain": 12,
+            "known_wrong": 29
+          },
+          "utilities": {
+            "2": 1624,
+            "5": 1537,
+            "10": 1392
+          }
+        },
+        {
+          "threshold": 0.99,
+          "counts": {
+            "total": 1800,
+            "selected": 1785,
+            "foreground": 1686,
+            "background": 14,
+            "occluder": 16,
+            "unknown": 69,
+            "abstain": 15,
+            "known_wrong": 30
+          },
+          "utilities": {
+            "2": 1626,
+            "5": 1536,
+            "10": 1386
+          }
+        },
+        {
+          "threshold": 0.99,
+          "counts": {
+            "total": 1800,
+            "selected": 1792,
+            "foreground": 1687,
+            "background": 16,
+            "occluder": 18,
+            "unknown": 71,
+            "abstain": 8,
+            "known_wrong": 34
+          },
+          "utilities": {
+            "2": 1619,
+            "5": 1517,
+            "10": 1347
+          }
+        },
+        {
+          "threshold": 0.99,
+          "counts": {
+            "total": 1800,
+            "selected": 1788,
+            "foreground": 1679,
+            "background": 12,
+            "occluder": 16,
+            "unknown": 81,
+            "abstain": 12,
+            "known_wrong": 28
+          },
+          "utilities": {
+            "2": 1623,
+            "5": 1539,
+            "10": 1399
+          }
+        },
+        {
+          "threshold": 0.99,
+          "counts": {
+            "total": 1800,
+            "selected": 1782,
+            "foreground": 1681,
+            "background": 9,
+            "occluder": 19,
+            "unknown": 73,
+            "abstain": 18,
+            "known_wrong": 28
+          },
+          "utilities": {
+            "2": 1625,
+            "5": 1541,
+            "10": 1401
+          }
+        },
+        {
+          "threshold": 0.98,
+          "counts": {
+            "total": 1800,
+            "selected": 1790,
+            "foreground": 1687,
+            "background": 12,
+            "occluder": 16,
+            "unknown": 75,
+            "abstain": 10,
+            "known_wrong": 28
+          },
+          "utilities": {
+            "2": 1631,
+            "5": 1547,
+            "10": 1407
+          }
+        },
+        {
+          "threshold": 0.99,
+          "counts": {
+            "total": 1800,
+            "selected": 1787,
+            "foreground": 1687,
+            "background": 10,
+            "occluder": 15,
+            "unknown": 75,
+            "abstain": 13,
+            "known_wrong": 25
+          },
+          "utilities": {
+            "2": 1637,
+            "5": 1562,
+            "10": 1437
+          }
+        }
+      ],
+      "public_curve": [
+        {
+          "threshold": 0.3,
+          "counts": {
+            "total": 1800,
+            "selected": 1800,
+            "foreground": 1689,
+            "background": 16,
+            "occluder": 16,
+            "unknown": 79,
+            "abstain": 0,
+            "known_wrong": 32
+          },
+          "utilities": {
+            "2": 1625,
+            "5": 1529,
+            "10": 1369
+          }
+        },
+        {
+          "threshold": 0.5,
+          "counts": {
+            "total": 1800,
+            "selected": 1800,
+            "foreground": 1689,
+            "background": 16,
+            "occluder": 16,
+            "unknown": 79,
+            "abstain": 0,
+            "known_wrong": 32
+          },
+          "utilities": {
+            "2": 1625,
+            "5": 1529,
+            "10": 1369
+          }
+        },
+        {
+          "threshold": 0.7,
+          "counts": {
+            "total": 1800,
+            "selected": 1799,
+            "foreground": 1689,
+            "background": 15,
+            "occluder": 16,
+            "unknown": 79,
+            "abstain": 1,
+            "known_wrong": 31
+          },
+          "utilities": {
+            "2": 1627,
+            "5": 1534,
+            "10": 1379
+          }
+        },
+        {
+          "threshold": 0.8,
+          "counts": {
+            "total": 1800,
+            "selected": 1796,
+            "foreground": 1689,
+            "background": 13,
+            "occluder": 16,
+            "unknown": 78,
+            "abstain": 4,
+            "known_wrong": 29
+          },
+          "utilities": {
+            "2": 1631,
+            "5": 1544,
+            "10": 1399
+          }
+        },
+        {
+          "threshold": 0.9,
+          "counts": {
+            "total": 1800,
+            "selected": 1794,
+            "foreground": 1689,
+            "background": 12,
+            "occluder": 16,
+            "unknown": 77,
+            "abstain": 6,
+            "known_wrong": 28
+          },
+          "utilities": {
+            "2": 1633,
+            "5": 1549,
+            "10": 1409
+          }
+        },
+        {
+          "threshold": 0.95,
+          "counts": {
+            "total": 1800,
+            "selected": 1794,
+            "foreground": 1689,
+            "background": 12,
+            "occluder": 16,
+            "unknown": 77,
+            "abstain": 6,
+            "known_wrong": 28
+          },
+          "utilities": {
+            "2": 1633,
+            "5": 1549,
+            "10": 1409
+          }
+        },
+        {
+          "threshold": 0.98,
+          "counts": {
+            "total": 1800,
+            "selected": 1790,
+            "foreground": 1688,
+            "background": 11,
+            "occluder": 15,
+            "unknown": 76,
+            "abstain": 10,
+            "known_wrong": 26
+          },
+          "utilities": {
+            "2": 1636,
+            "5": 1558,
+            "10": 1428
+          }
+        },
+        {
+          "threshold": 0.99,
+          "counts": {
+            "total": 1800,
+            "selected": 1787,
+            "foreground": 1687,
+            "background": 10,
+            "occluder": 15,
+            "unknown": 75,
+            "abstain": 13,
+            "known_wrong": 25
+          },
+          "utilities": {
+            "2": 1637,
+            "5": 1562,
+            "10": 1437
+          }
+        },
+        {
+          "threshold": 1.000001,
+          "counts": {
+            "total": 1800,
+            "selected": 0,
+            "foreground": 0,
+            "background": 0,
+            "occluder": 0,
+            "unknown": 0,
+            "abstain": 1800,
+            "known_wrong": 0
+          },
+          "utilities": {
+            "2": 0,
+            "5": 0,
+            "10": 0
+          }
+        }
+      ],
+      "policies": {
+        "native_bh_parent_eye": {
+          "reference": {
+            "images": 80,
+            "selected": 68,
+            "selected_eye": 35,
+            "abstain": 12,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 62,
+            "outside_labelled_geometry": 6,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 0,
+            "head_region": 21,
+            "bird_region": 20,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 18,
+            "near_eye_geometry": 3
+          },
+          "counts": {
+            "images": 80,
+            "selected": 78,
+            "selected_eye": 35,
+            "abstain": 2,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 69,
+            "outside_labelled_geometry": 8,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 1,
+            "head_region": 22,
+            "bird_region": 26,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 18,
+            "near_eye_geometry": 3
+          },
+          "additions": [
+            {
+              "image_id": "fb_0176",
+              "kind": "capture_hint",
+              "score": 0.9948403239250183,
+              "point_xy": [
+                182.0,
+                110.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0181",
+              "kind": "capture_hint",
+              "score": 0.9905874133110046,
+              "point_xy": [
+                170.0,
+                118.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0182",
+              "kind": "capture_hint",
+              "score": 0.9958980679512024,
+              "point_xy": [
+                334.0,
+                154.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0187",
+              "kind": "capture_hint",
+              "score": 0.9999935626983643,
+              "point_xy": [
+                210.0,
+                118.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0378",
+              "kind": "capture_hint",
+              "score": 0.9993904829025269,
+              "point_xy": [
+                302.0,
+                114.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0380",
+              "kind": "capture_hint",
+              "score": 0.9997965693473816,
+              "point_xy": [
+                42.0,
+                78.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0386",
+              "kind": "capture_hint",
+              "score": 0.9998390674591064,
+              "point_xy": [
+                206.0,
+                126.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0391",
+              "kind": "capture_hint",
+              "score": 0.9999737739562988,
+              "point_xy": [
+                202.0,
+                126.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0395",
+              "kind": "capture_hint",
+              "score": 0.9998058676719666,
+              "point_xy": [
+                206.0,
+                134.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0398",
+              "kind": "capture_hint",
+              "score": 0.9978258013725281,
+              "point_xy": [
+                202.0,
+                122.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            }
+          ],
+          "primary_targets_preserved": true,
+          "fine_eye_counts_preserved": true
+        },
+        "two_n_primary": {
+          "reference": {
+            "images": 80,
+            "selected": 69,
+            "selected_eye": 35,
+            "abstain": 11,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 68,
+            "outside_labelled_geometry": 1,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 0,
+            "head_region": 15,
+            "bird_region": 33,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 16,
+            "near_eye_geometry": 4
+          },
+          "counts": {
+            "images": 80,
+            "selected": 78,
+            "selected_eye": 35,
+            "abstain": 2,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 69,
+            "outside_labelled_geometry": 8,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 1,
+            "head_region": 16,
+            "bird_region": 33,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 16,
+            "near_eye_geometry": 4
+          },
+          "additions": [
+            {
+              "image_id": "fb_0176",
+              "kind": "capture_hint",
+              "score": 0.9948403239250183,
+              "point_xy": [
+                182.0,
+                110.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0180",
+              "kind": "capture_hint",
+              "score": 0.9970073103904724,
+              "point_xy": [
+                42.0,
+                246.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0182",
+              "kind": "capture_hint",
+              "score": 0.9958980679512024,
+              "point_xy": [
+                334.0,
+                154.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0377",
+              "kind": "capture_hint",
+              "score": 0.9983320832252502,
+              "point_xy": [
+                294.0,
+                114.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0378",
+              "kind": "capture_hint",
+              "score": 0.9993904829025269,
+              "point_xy": [
+                302.0,
+                114.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0379",
+              "kind": "capture_hint",
+              "score": 0.998504638671875,
+              "point_xy": [
+                306.0,
+                110.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0380",
+              "kind": "capture_hint",
+              "score": 0.9997965693473816,
+              "point_xy": [
+                42.0,
+                78.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0387",
+              "kind": "capture_hint",
+              "score": 0.9976310729980469,
+              "point_xy": [
+                86.0,
+                178.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0389",
+              "kind": "capture_hint",
+              "score": 0.9981968998908997,
+              "point_xy": [
+                122.0,
+                246.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            }
+          ],
+          "primary_targets_preserved": true,
+          "fine_eye_counts_preserved": true
+        }
+      },
+      "status": {
+        "status": "completed",
+        "epochs": 8,
+        "seconds": 162.00732270000026,
+        "base_state_equal": true,
+        "base_outputs_equal": true,
+        "head_changed": true,
+        "peak_allocated_bytes": 255180288
+      },
+      "sampling_sha256": [
+        "d209ab9be3f306351f69e5e74e7d75e4b4dc078dfb7caf39942924d6e721fab5",
+        "e15a65f4246c4bf5388bfabbd94aa8203d769ad8a58016316628530e87389102",
+        "dee9d5bdf93acec5e6acaa9d5994eafc9027d4ef49b0c6081a741b7f458847d7",
+        "1aa9eceee50ce39b879ab16a0b77cb12e1170dc056a78b0c9ff75471c0132568",
+        "78a6d456c380be050021f5d6ba4d56dfa2a9297a1c890bf62652e127c9c6337f",
+        "2c752665e1d70be1ac889eb7e657f0b9ba3eded0775097127b93af7398d8f162",
+        "5810239306a3cb3c8d698772b4269e5e2fbc67e4724618dd719f2455867d2481",
+        "e42ee0dc223154f2ab68f00cc1e3622e35e7072455c20994507b225ed2f0257d"
+      ]
+    },
+    {
+      "name": "R2_20261028",
+      "condition": "R2",
+      "seed": 20261028,
+      "epochs": 8,
+      "selected_epoch": 4,
+      "head_sha256": "961ec2913b3415da2801ec3ccbdd08fa24ee5130c8b96551435222f5c924b2a9",
+      "initial_head_digest": "1a2ede0a93a8d2fb876f440836b0e518de4cff779dd3bf601b438982e8a2c93e",
+      "parent_sha256": "e69ac515244122e849f21821d496976f5ea15d0dee71a49ffe9460e4cc239b6d",
+      "selected": {
+        "threshold": 0.8,
+        "counts": {
+          "total": 1800,
+          "selected": 1787,
+          "foreground": 1724,
+          "background": 14,
+          "occluder": 1,
+          "unknown": 48,
+          "abstain": 13,
+          "known_wrong": 15
+        },
+        "utilities": {
+          "2": 1694,
+          "5": 1649,
+          "10": 1574
+        }
+      },
+      "epoch_public_selections": [
+        {
+          "threshold": 0.9,
+          "counts": {
+            "total": 1800,
+            "selected": 1756,
+            "foreground": 1681,
+            "background": 12,
+            "occluder": 4,
+            "unknown": 59,
+            "abstain": 44,
+            "known_wrong": 16
+          },
+          "utilities": {
+            "2": 1649,
+            "5": 1601,
+            "10": 1521
+          }
+        },
+        {
+          "threshold": 0.98,
+          "counts": {
+            "total": 1800,
+            "selected": 1693,
+            "foreground": 1641,
+            "background": 10,
+            "occluder": 1,
+            "unknown": 41,
+            "abstain": 107,
+            "known_wrong": 11
+          },
+          "utilities": {
+            "2": 1619,
+            "5": 1586,
+            "10": 1531
+          }
+        },
+        {
+          "threshold": 0.98,
+          "counts": {
+            "total": 1800,
+            "selected": 1737,
+            "foreground": 1675,
+            "background": 13,
+            "occluder": 2,
+            "unknown": 47,
+            "abstain": 63,
+            "known_wrong": 15
+          },
+          "utilities": {
+            "2": 1645,
+            "5": 1600,
+            "10": 1525
+          }
+        },
+        {
+          "threshold": 0.8,
+          "counts": {
+            "total": 1800,
+            "selected": 1787,
+            "foreground": 1724,
+            "background": 14,
+            "occluder": 1,
+            "unknown": 48,
+            "abstain": 13,
+            "known_wrong": 15
+          },
+          "utilities": {
+            "2": 1694,
+            "5": 1649,
+            "10": 1574
+          }
+        },
+        {
+          "threshold": 0.95,
+          "counts": {
+            "total": 1800,
+            "selected": 1786,
+            "foreground": 1709,
+            "background": 15,
+            "occluder": 1,
+            "unknown": 61,
+            "abstain": 14,
+            "known_wrong": 16
+          },
+          "utilities": {
+            "2": 1677,
+            "5": 1629,
+            "10": 1549
+          }
+        },
+        {
+          "threshold": 0.9,
+          "counts": {
+            "total": 1800,
+            "selected": 1784,
+            "foreground": 1712,
+            "background": 16,
+            "occluder": 1,
+            "unknown": 55,
+            "abstain": 16,
+            "known_wrong": 17
+          },
+          "utilities": {
+            "2": 1678,
+            "5": 1627,
+            "10": 1542
+          }
+        },
+        {
+          "threshold": 0.95,
+          "counts": {
+            "total": 1800,
+            "selected": 1782,
+            "foreground": 1710,
+            "background": 14,
+            "occluder": 1,
+            "unknown": 57,
+            "abstain": 18,
+            "known_wrong": 15
+          },
+          "utilities": {
+            "2": 1680,
+            "5": 1635,
+            "10": 1560
+          }
+        },
+        {
+          "threshold": 0.95,
+          "counts": {
+            "total": 1800,
+            "selected": 1783,
+            "foreground": 1713,
+            "background": 13,
+            "occluder": 1,
+            "unknown": 56,
+            "abstain": 17,
+            "known_wrong": 14
+          },
+          "utilities": {
+            "2": 1685,
+            "5": 1643,
+            "10": 1573
+          }
+        }
+      ],
+      "public_curve": [
+        {
+          "threshold": 0.3,
+          "counts": {
+            "total": 1800,
+            "selected": 1797,
+            "foreground": 1724,
+            "background": 17,
+            "occluder": 1,
+            "unknown": 55,
+            "abstain": 3,
+            "known_wrong": 18
+          },
+          "utilities": {
+            "2": 1688,
+            "5": 1634,
+            "10": 1544
+          }
+        },
+        {
+          "threshold": 0.5,
+          "counts": {
+            "total": 1800,
+            "selected": 1795,
+            "foreground": 1724,
+            "background": 16,
+            "occluder": 1,
+            "unknown": 54,
+            "abstain": 5,
+            "known_wrong": 17
+          },
+          "utilities": {
+            "2": 1690,
+            "5": 1639,
+            "10": 1554
+          }
+        },
+        {
+          "threshold": 0.7,
+          "counts": {
+            "total": 1800,
+            "selected": 1791,
+            "foreground": 1724,
+            "background": 15,
+            "occluder": 1,
+            "unknown": 51,
+            "abstain": 9,
+            "known_wrong": 16
+          },
+          "utilities": {
+            "2": 1692,
+            "5": 1644,
+            "10": 1564
+          }
+        },
+        {
+          "threshold": 0.8,
+          "counts": {
+            "total": 1800,
+            "selected": 1787,
+            "foreground": 1724,
+            "background": 14,
+            "occluder": 1,
+            "unknown": 48,
+            "abstain": 13,
+            "known_wrong": 15
+          },
+          "utilities": {
+            "2": 1694,
+            "5": 1649,
+            "10": 1574
+          }
+        },
+        {
+          "threshold": 0.9,
+          "counts": {
+            "total": 1800,
+            "selected": 1775,
+            "foreground": 1715,
+            "background": 13,
+            "occluder": 1,
+            "unknown": 46,
+            "abstain": 25,
+            "known_wrong": 14
+          },
+          "utilities": {
+            "2": 1687,
+            "5": 1645,
+            "10": 1575
+          }
+        },
+        {
+          "threshold": 0.95,
+          "counts": {
+            "total": 1800,
+            "selected": 1748,
+            "foreground": 1696,
+            "background": 10,
+            "occluder": 1,
+            "unknown": 41,
+            "abstain": 52,
+            "known_wrong": 11
+          },
+          "utilities": {
+            "2": 1674,
+            "5": 1641,
+            "10": 1586
+          }
+        },
+        {
+          "threshold": 0.98,
+          "counts": {
+            "total": 1800,
+            "selected": 1673,
+            "foreground": 1633,
+            "background": 6,
+            "occluder": 1,
+            "unknown": 33,
+            "abstain": 127,
+            "known_wrong": 7
+          },
+          "utilities": {
+            "2": 1619,
+            "5": 1598,
+            "10": 1563
+          }
+        },
+        {
+          "threshold": 0.99,
+          "counts": {
+            "total": 1800,
+            "selected": 1555,
+            "foreground": 1526,
+            "background": 1,
+            "occluder": 1,
+            "unknown": 27,
+            "abstain": 245,
+            "known_wrong": 2
+          },
+          "utilities": {
+            "2": 1522,
+            "5": 1516,
+            "10": 1506
+          }
+        },
+        {
+          "threshold": 1.000001,
+          "counts": {
+            "total": 1800,
+            "selected": 0,
+            "foreground": 0,
+            "background": 0,
+            "occluder": 0,
+            "unknown": 0,
+            "abstain": 1800,
+            "known_wrong": 0
+          },
+          "utilities": {
+            "2": 0,
+            "5": 0,
+            "10": 0
+          }
+        }
+      ],
+      "policies": {
+        "native_bh_parent_eye": {
+          "reference": {
+            "images": 80,
+            "selected": 68,
+            "selected_eye": 35,
+            "abstain": 12,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 62,
+            "outside_labelled_geometry": 6,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 0,
+            "head_region": 21,
+            "bird_region": 20,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 18,
+            "near_eye_geometry": 3
+          },
+          "counts": {
+            "images": 80,
+            "selected": 80,
+            "selected_eye": 35,
+            "abstain": 0,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 70,
+            "outside_labelled_geometry": 9,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 1,
+            "head_region": 22,
+            "bird_region": 27,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 18,
+            "near_eye_geometry": 3
+          },
+          "additions": [
+            {
+              "image_id": "fb_0175",
+              "kind": "capture_hint",
+              "score": 0.8748277425765991,
+              "point_xy": [
+                190.0,
+                130.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0176",
+              "kind": "capture_hint",
+              "score": 0.9875203371047974,
+              "point_xy": [
+                186.0,
+                110.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0177",
+              "kind": "capture_hint",
+              "score": 0.9583821892738342,
+              "point_xy": [
+                310.0,
+                22.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0181",
+              "kind": "capture_hint",
+              "score": 0.9394705891609192,
+              "point_xy": [
+                170.0,
+                118.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0182",
+              "kind": "capture_hint",
+              "score": 0.9961755275726318,
+              "point_xy": [
+                334.0,
+                150.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0187",
+              "kind": "capture_hint",
+              "score": 0.9878528118133545,
+              "point_xy": [
+                210.0,
+                110.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0378",
+              "kind": "capture_hint",
+              "score": 0.9608049392700195,
+              "point_xy": [
+                302.0,
+                114.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0380",
+              "kind": "capture_hint",
+              "score": 0.9923341274261475,
+              "point_xy": [
+                42.0,
+                74.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0386",
+              "kind": "capture_hint",
+              "score": 0.9901401400566101,
+              "point_xy": [
+                218.0,
+                110.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0391",
+              "kind": "capture_hint",
+              "score": 0.9841545820236206,
+              "point_xy": [
+                202.0,
+                130.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0395",
+              "kind": "capture_hint",
+              "score": 0.9921537041664124,
+              "point_xy": [
+                210.0,
+                142.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0398",
+              "kind": "capture_hint",
+              "score": 0.9846936464309692,
+              "point_xy": [
+                202.0,
+                122.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            }
+          ],
+          "primary_targets_preserved": true,
+          "fine_eye_counts_preserved": true
+        },
+        "two_n_primary": {
+          "reference": {
+            "images": 80,
+            "selected": 69,
+            "selected_eye": 35,
+            "abstain": 11,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 68,
+            "outside_labelled_geometry": 1,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 0,
+            "head_region": 15,
+            "bird_region": 33,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 16,
+            "near_eye_geometry": 4
+          },
+          "counts": {
+            "images": 80,
+            "selected": 80,
+            "selected_eye": 35,
+            "abstain": 0,
+            "eye_known_images": 26,
+            "eye_labelled_images": 25,
+            "eye_known_selected": 17,
+            "eye_unassessed_selected": 18,
+            "eye_2px": 12,
+            "eye_4px": 15,
+            "eye_8px": 16,
+            "eye_unmatched_4px": 2,
+            "geometry_supported": 69,
+            "outside_labelled_geometry": 10,
+            "unknown_geometry": 0,
+            "explicit_absent_selection": 1,
+            "head_region": 16,
+            "bird_region": 33,
+            "wrong_eye_over_geometric_fallback": 2,
+            "strict_eye_geometry": 16,
+            "near_eye_geometry": 4
+          },
+          "additions": [
+            {
+              "image_id": "fb_0176",
+              "kind": "capture_hint",
+              "score": 0.9875203371047974,
+              "point_xy": [
+                186.0,
+                110.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0177",
+              "kind": "capture_hint",
+              "score": 0.9583821892738342,
+              "point_xy": [
+                310.0,
+                22.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0180",
+              "kind": "capture_hint",
+              "score": 0.9856629967689514,
+              "point_xy": [
+                346.0,
+                222.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0182",
+              "kind": "capture_hint",
+              "score": 0.9961755275726318,
+              "point_xy": [
+                334.0,
+                150.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0377",
+              "kind": "capture_hint",
+              "score": 0.9695556163787842,
+              "point_xy": [
+                150.0,
+                222.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0378",
+              "kind": "capture_hint",
+              "score": 0.9608049392700195,
+              "point_xy": [
+                302.0,
+                114.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0379",
+              "kind": "capture_hint",
+              "score": 0.9621075391769409,
+              "point_xy": [
+                302.0,
+                114.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0380",
+              "kind": "capture_hint",
+              "score": 0.9923341274261475,
+              "point_xy": [
+                42.0,
+                74.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0387",
+              "kind": "capture_hint",
+              "score": 0.9751071333885193,
+              "point_xy": [
+                86.0,
+                182.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0388",
+              "kind": "capture_hint",
+              "score": 0.9591543078422546,
+              "point_xy": [
+                114.0,
+                242.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            },
+            {
+              "image_id": "fb_0389",
+              "kind": "capture_hint",
+              "score": 0.9882676005363464,
+              "point_xy": [
+                114.0,
+                246.0
+              ],
+              "source_kind": "surface",
+              "output_role": "coarse bird-surface cue; not a precise eye",
+              "human_choice": null,
+              "human_confirmed": false
+            }
+          ],
+          "primary_targets_preserved": true,
+          "fine_eye_counts_preserved": true
+        }
+      },
+      "status": {
+        "status": "completed",
+        "epochs": 8,
+        "seconds": 163.3927109000001,
+        "base_state_equal": true,
+        "base_outputs_equal": true,
+        "head_changed": true,
+        "peak_allocated_bytes": 255180288
+      },
+      "sampling_sha256": [
+        "d209ab9be3f306351f69e5e74e7d75e4b4dc078dfb7caf39942924d6e721fab5",
+        "e15a65f4246c4bf5388bfabbd94aa8203d769ad8a58016316628530e87389102",
+        "dee9d5bdf93acec5e6acaa9d5994eafc9027d4ef49b0c6081a741b7f458847d7",
+        "1aa9eceee50ce39b879ab16a0b77cb12e1170dc056a78b0c9ff75471c0132568",
+        "78a6d456c380be050021f5d6ba4d56dfa2a9297a1c890bf62652e127c9c6337f",
+        "2c752665e1d70be1ac889eb7e657f0b9ba3eded0775097127b93af7398d8f162",
+        "5810239306a3cb3c8d698772b4269e5e2fbc67e4724618dd719f2455867d2481",
+        "e42ee0dc223154f2ab68f00cc1e3622e35e7072455c20994507b225ed2f0257d"
+      ]
+    }
+  ],
+  "training_seconds": 652.7297026000006,
+  "matrix_checks": {
+    "completed": 4,
+    "epochs": 32,
+    "paired_sampling_equal": true,
+    "all_sources_equal": true,
+    "community_used_for_selection": false
+  },
+  "latency": {
+    "timings": {
+      "forward_base": {
+        "samples": 500,
+        "p50_ms": 9.094031810760498,
+        "p95_ms": 15.835135698318478,
+        "mean_ms": 10.07330157661438
+      },
+      "forward_surface": {
+        "samples": 500,
+        "p50_ms": 9.6178879737854,
+        "p95_ms": 16.218539047241208,
+        "mean_ms": 10.512078453063966
+      },
+      "single_base": {
+        "samples": 500,
+        "p50_ms": 22.96604999992269,
+        "p95_ms": 35.466539999674744,
+        "mean_ms": 24.768919799990726
+      },
+      "single_surface": {
+        "samples": 500,
+        "p50_ms": 23.708750000196233,
+        "p95_ms": 36.814889999777705,
+        "mean_ms": 25.51167059999807
+      },
+      "two_n_base": {
+        "samples": 500,
+        "p50_ms": 42.498749999822394,
+        "p95_ms": 63.63779499986321,
+        "mean_ms": 45.27781060000143
+      },
+      "two_n_surface": {
+        "samples": 500,
+        "p50_ms": 43.250499999885506,
+        "p95_ms": 67.65770499971495,
+        "mean_ms": 45.68632939998861
+      }
+    },
+    "p95_overhead": {
+      "single": 0.03801752299816474,
+      "two_n": 0.06316859344137216
+    },
+    "p95_budget": 0.2,
+    "budget_passed": {
+      "single": true,
+      "two_n": true
+    },
+    "parameters_base": 2455728,
+    "parameters_surface": 6945,
+    "gpu": "NVIDIA GeForce RTX 4080 Laptop GPU",
+    "precision": "CUDA autocast float16",
+    "batch_size": 1,
+    "scope": "warm resident models; forward CUDA events and hot PNG-read/preprocess/decode/select wall time",
+    "limits": [
+      "native B/H outputs cached in single-n timing; native compute excluded",
+      "two-n includes both independent full networks",
+      "not camera NPU or lens latency",
+      "head applied on all frames; abstention-only scheduling could reduce average overhead"
+    ]
+  },
+  "community_cases": [
+    {
+      "image_id": "fb_0176",
+      "point_xy": [
+        362.0,
+        226.0
+      ],
+      "input_sha256": "2e68291e0f2933de4bc696b4912b2c8c0a4b3304be4d8e0f759f79afffb6eaf8",
+      "sources": [
+        {
+          "run": "R1_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9974290728569031
+        },
+        {
+          "run": "R1_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9974290728569031
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0177",
+      "point_xy": [
+        14.0,
+        246.0
+      ],
+      "input_sha256": "452f15f7c2c8014b7a059169ddd720315b8bbaacdc3275208868807245f2b9b8",
+      "sources": [
+        {
+          "run": "R1_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9930423498153687
+        },
+        {
+          "run": "R1_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9930423498153687
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0182",
+      "point_xy": [
+        318.0,
+        150.0
+      ],
+      "input_sha256": "1cbf0d414b6242355d43331ff300f8635275800c65d0a8a469a010bb64049ffb",
+      "sources": [
+        {
+          "run": "R1_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.986151397228241
+        },
+        {
+          "run": "R1_20261027",
+          "policy": "two_n_primary",
+          "score": 0.986151397228241
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0187",
+      "point_xy": [
+        210.0,
+        114.0
+      ],
+      "input_sha256": "12609e5e3ffe5cc1a08f6a694c6b7321f0dd58351a6d73b97db0749e0bf8bfbc",
+      "sources": [
+        {
+          "run": "R1_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9999215602874756
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0378",
+      "point_xy": [
+        302.0,
+        114.0
+      ],
+      "input_sha256": "e3a3a20b2f1157910931a3d5592a6b9a2a1b9eb16e410d838e1e06bde1182f0a",
+      "sources": [
+        {
+          "run": "R1_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.998835027217865
+        },
+        {
+          "run": "R1_20261027",
+          "policy": "two_n_primary",
+          "score": 0.998835027217865
+        },
+        {
+          "run": "R2_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9453993439674377
+        },
+        {
+          "run": "R2_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9453993439674377
+        },
+        {
+          "run": "R1_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9993904829025269
+        },
+        {
+          "run": "R1_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9993904829025269
+        },
+        {
+          "run": "R2_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9608049392700195
+        },
+        {
+          "run": "R2_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9608049392700195
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0380",
+      "point_xy": [
+        38.0,
+        78.0
+      ],
+      "input_sha256": "7dfad6ff17f32d152d97f3176dfdfc09b7c6fa62e8fc0d4aa2b91c1706844106",
+      "sources": [
+        {
+          "run": "R1_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9986801743507385
+        },
+        {
+          "run": "R1_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9986801743507385
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0386",
+      "point_xy": [
+        214.0,
+        114.0
+      ],
+      "input_sha256": "4240ed1c7602971901971429d148e2a3ad51be577fe747e128e19c9b514e2c9b",
+      "sources": [
+        {
+          "run": "R1_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9977743029594421
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0391",
+      "point_xy": [
+        202.0,
+        122.0
+      ],
+      "input_sha256": "7a448aa2e71a4e07a3966869a2b6688a0ab1a39d01578779ca1e30be48340ec2",
+      "sources": [
+        {
+          "run": "R1_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.999099612236023
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0395",
+      "point_xy": [
+        206.0,
+        130.0
+      ],
+      "input_sha256": "aabd803d80a82dc2136ddbce0d57d71772f909ce35f0cd760d18d7d4e217ec28",
+      "sources": [
+        {
+          "run": "R1_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9993513226509094
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0398",
+      "point_xy": [
+        206.0,
+        122.0
+      ],
+      "input_sha256": "b2de8afdbbafb557914ae1dcca2ba41379b32cc8bc789922c22a306d708b5f3b",
+      "sources": [
+        {
+          "run": "R1_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9975656270980835
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0180",
+      "point_xy": [
+        330.0,
+        38.0
+      ],
+      "input_sha256": "d29fdb1cd4636f45fd6ec28904c2a7ddaafe483440345676ea3f3b4bcce9d408",
+      "sources": [
+        {
+          "run": "R1_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9971327781677246
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0377",
+      "point_xy": [
+        298.0,
+        114.0
+      ],
+      "input_sha256": "445dca3e88ab9cf4cecf2587d97feb1c2e91cdf28e81f5e5d131e915b6c2b685",
+      "sources": [
+        {
+          "run": "R1_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9980199337005615
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0379",
+      "point_xy": [
+        306.0,
+        114.0
+      ],
+      "input_sha256": "84933eaa907c39b458f184d1f33462028031b5d303a4a96381151d9546898b02",
+      "sources": [
+        {
+          "run": "R1_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9989474415779114
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0387",
+      "point_xy": [
+        86.0,
+        178.0
+      ],
+      "input_sha256": "1b213ebb8a88e607614c1fe0529900850e14634710230839d3bb61523e37c3f6",
+      "sources": [
+        {
+          "run": "R1_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9891397356987
+        },
+        {
+          "run": "R1_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9976310729980469
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0388",
+      "point_xy": [
+        114.0,
+        246.0
+      ],
+      "input_sha256": "40509d56347b00ca8e0604df5606ff3eb888b9536f9f913c32d2b771a4b022bf",
+      "sources": [
+        {
+          "run": "R1_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9809491038322449
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0389",
+      "point_xy": [
+        114.0,
+        246.0
+      ],
+      "input_sha256": "878d0f3efd17327e4326f67c92e0ecbeb7cdad246385031be0a76e5887d6f12d",
+      "sources": [
+        {
+          "run": "R1_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9979572296142578
+        },
+        {
+          "run": "R2_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9832144975662231
+        },
+        {
+          "run": "R2_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9882676005363464
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0175",
+      "point_xy": [
+        186.0,
+        126.0
+      ],
+      "input_sha256": "8a86a0c5d49adb8c65467f0d6bf122eb7318a3f046bb05d4b43f6bbe6cd2190f",
+      "sources": [
+        {
+          "run": "R2_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.8231862783432007
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0176",
+      "point_xy": [
+        146.0,
+        118.0
+      ],
+      "input_sha256": "2e68291e0f2933de4bc696b4912b2c8c0a4b3304be4d8e0f759f79afffb6eaf8",
+      "sources": [
+        {
+          "run": "R2_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9702399373054504
+        },
+        {
+          "run": "R2_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9702399373054504
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0177",
+      "point_xy": [
+        118.0,
+        2.0
+      ],
+      "input_sha256": "452f15f7c2c8014b7a059169ddd720315b8bbaacdc3275208868807245f2b9b8",
+      "sources": [
+        {
+          "run": "R2_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9453993439674377
+        },
+        {
+          "run": "R2_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9453993439674377
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0181",
+      "point_xy": [
+        170.0,
+        118.0
+      ],
+      "input_sha256": "ff6abe33f641704bb4c01067996bfc740cdb716cd3a777509a44a0d930311bfd",
+      "sources": [
+        {
+          "run": "R2_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9246877431869507
+        },
+        {
+          "run": "R1_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9905874133110046
+        },
+        {
+          "run": "R2_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9394705891609192
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0182",
+      "point_xy": [
+        334.0,
+        150.0
+      ],
+      "input_sha256": "1cbf0d414b6242355d43331ff300f8635275800c65d0a8a469a010bb64049ffb",
+      "sources": [
+        {
+          "run": "R2_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9888418912887573
+        },
+        {
+          "run": "R2_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9888418912887573
+        },
+        {
+          "run": "R2_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9961755275726318
+        },
+        {
+          "run": "R2_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9961755275726318
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0187",
+      "point_xy": [
+        210.0,
+        118.0
+      ],
+      "input_sha256": "12609e5e3ffe5cc1a08f6a694c6b7321f0dd58351a6d73b97db0749e0bf8bfbc",
+      "sources": [
+        {
+          "run": "R2_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9979007244110107
+        },
+        {
+          "run": "R1_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9999935626983643
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0380",
+      "point_xy": [
+        42.0,
+        74.0
+      ],
+      "input_sha256": "7dfad6ff17f32d152d97f3176dfdfc09b7c6fa62e8fc0d4aa2b91c1706844106",
+      "sources": [
+        {
+          "run": "R2_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9893474578857422
+        },
+        {
+          "run": "R2_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9893474578857422
+        },
+        {
+          "run": "R2_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9923341274261475
+        },
+        {
+          "run": "R2_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9923341274261475
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0386",
+      "point_xy": [
+        218.0,
+        110.0
+      ],
+      "input_sha256": "4240ed1c7602971901971429d148e2a3ad51be577fe747e128e19c9b514e2c9b",
+      "sources": [
+        {
+          "run": "R2_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9930961728096008
+        },
+        {
+          "run": "R2_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9901401400566101
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0391",
+      "point_xy": [
+        202.0,
+        130.0
+      ],
+      "input_sha256": "7a448aa2e71a4e07a3966869a2b6688a0ab1a39d01578779ca1e30be48340ec2",
+      "sources": [
+        {
+          "run": "R2_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9812389612197876
+        },
+        {
+          "run": "R2_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9841545820236206
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0395",
+      "point_xy": [
+        210.0,
+        142.0
+      ],
+      "input_sha256": "aabd803d80a82dc2136ddbce0d57d71772f909ce35f0cd760d18d7d4e217ec28",
+      "sources": [
+        {
+          "run": "R2_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.995226263999939
+        },
+        {
+          "run": "R2_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9921537041664124
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0398",
+      "point_xy": [
+        202.0,
+        122.0
+      ],
+      "input_sha256": "b2de8afdbbafb557914ae1dcca2ba41379b32cc8bc789922c22a306d708b5f3b",
+      "sources": [
+        {
+          "run": "R2_20261027",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9772841930389404
+        },
+        {
+          "run": "R1_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9978258013725281
+        },
+        {
+          "run": "R2_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9846936464309692
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0180",
+      "point_xy": [
+        22.0,
+        230.0
+      ],
+      "input_sha256": "d29fdb1cd4636f45fd6ec28904c2a7ddaafe483440345676ea3f3b4bcce9d408",
+      "sources": [
+        {
+          "run": "R2_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9880849719047546
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0377",
+      "point_xy": [
+        150.0,
+        222.0
+      ],
+      "input_sha256": "445dca3e88ab9cf4cecf2587d97feb1c2e91cdf28e81f5e5d131e915b6c2b685",
+      "sources": [
+        {
+          "run": "R2_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9702399373054504
+        },
+        {
+          "run": "R2_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9695556163787842
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0379",
+      "point_xy": [
+        306.0,
+        110.0
+      ],
+      "input_sha256": "84933eaa907c39b458f184d1f33462028031b5d303a4a96381151d9546898b02",
+      "sources": [
+        {
+          "run": "R2_20261027",
+          "policy": "two_n_primary",
+          "score": 0.946793794631958
+        },
+        {
+          "run": "R1_20261028",
+          "policy": "two_n_primary",
+          "score": 0.998504638671875
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0387",
+      "point_xy": [
+        86.0,
+        182.0
+      ],
+      "input_sha256": "1b213ebb8a88e607614c1fe0529900850e14634710230839d3bb61523e37c3f6",
+      "sources": [
+        {
+          "run": "R2_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9669140577316284
+        },
+        {
+          "run": "R2_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9751071333885193
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0388",
+      "point_xy": [
+        94.0,
+        10.0
+      ],
+      "input_sha256": "40509d56347b00ca8e0604df5606ff3eb888b9536f9f913c32d2b771a4b022bf",
+      "sources": [
+        {
+          "run": "R2_20261027",
+          "policy": "two_n_primary",
+          "score": 0.9507778882980347
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0176",
+      "point_xy": [
+        182.0,
+        110.0
+      ],
+      "input_sha256": "2e68291e0f2933de4bc696b4912b2c8c0a4b3304be4d8e0f759f79afffb6eaf8",
+      "sources": [
+        {
+          "run": "R1_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9948403239250183
+        },
+        {
+          "run": "R1_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9948403239250183
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0182",
+      "point_xy": [
+        334.0,
+        154.0
+      ],
+      "input_sha256": "1cbf0d414b6242355d43331ff300f8635275800c65d0a8a469a010bb64049ffb",
+      "sources": [
+        {
+          "run": "R1_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9958980679512024
+        },
+        {
+          "run": "R1_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9958980679512024
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0380",
+      "point_xy": [
+        42.0,
+        78.0
+      ],
+      "input_sha256": "7dfad6ff17f32d152d97f3176dfdfc09b7c6fa62e8fc0d4aa2b91c1706844106",
+      "sources": [
+        {
+          "run": "R1_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9997965693473816
+        },
+        {
+          "run": "R1_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9997965693473816
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0386",
+      "point_xy": [
+        206.0,
+        126.0
+      ],
+      "input_sha256": "4240ed1c7602971901971429d148e2a3ad51be577fe747e128e19c9b514e2c9b",
+      "sources": [
+        {
+          "run": "R1_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9998390674591064
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0391",
+      "point_xy": [
+        202.0,
+        126.0
+      ],
+      "input_sha256": "7a448aa2e71a4e07a3966869a2b6688a0ab1a39d01578779ca1e30be48340ec2",
+      "sources": [
+        {
+          "run": "R1_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9999737739562988
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0395",
+      "point_xy": [
+        206.0,
+        134.0
+      ],
+      "input_sha256": "aabd803d80a82dc2136ddbce0d57d71772f909ce35f0cd760d18d7d4e217ec28",
+      "sources": [
+        {
+          "run": "R1_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9998058676719666
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0180",
+      "point_xy": [
+        42.0,
+        246.0
+      ],
+      "input_sha256": "d29fdb1cd4636f45fd6ec28904c2a7ddaafe483440345676ea3f3b4bcce9d408",
+      "sources": [
+        {
+          "run": "R1_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9970073103904724
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0377",
+      "point_xy": [
+        294.0,
+        114.0
+      ],
+      "input_sha256": "445dca3e88ab9cf4cecf2587d97feb1c2e91cdf28e81f5e5d131e915b6c2b685",
+      "sources": [
+        {
+          "run": "R1_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9983320832252502
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0389",
+      "point_xy": [
+        122.0,
+        246.0
+      ],
+      "input_sha256": "878d0f3efd17327e4326f67c92e0ecbeb7cdad246385031be0a76e5887d6f12d",
+      "sources": [
+        {
+          "run": "R1_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9981968998908997
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0175",
+      "point_xy": [
+        190.0,
+        130.0
+      ],
+      "input_sha256": "8a86a0c5d49adb8c65467f0d6bf122eb7318a3f046bb05d4b43f6bbe6cd2190f",
+      "sources": [
+        {
+          "run": "R2_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.8748277425765991
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0176",
+      "point_xy": [
+        186.0,
+        110.0
+      ],
+      "input_sha256": "2e68291e0f2933de4bc696b4912b2c8c0a4b3304be4d8e0f759f79afffb6eaf8",
+      "sources": [
+        {
+          "run": "R2_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9875203371047974
+        },
+        {
+          "run": "R2_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9875203371047974
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0177",
+      "point_xy": [
+        310.0,
+        22.0
+      ],
+      "input_sha256": "452f15f7c2c8014b7a059169ddd720315b8bbaacdc3275208868807245f2b9b8",
+      "sources": [
+        {
+          "run": "R2_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9583821892738342
+        },
+        {
+          "run": "R2_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9583821892738342
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0187",
+      "point_xy": [
+        210.0,
+        110.0
+      ],
+      "input_sha256": "12609e5e3ffe5cc1a08f6a694c6b7321f0dd58351a6d73b97db0749e0bf8bfbc",
+      "sources": [
+        {
+          "run": "R2_20261028",
+          "policy": "native_bh_parent_eye",
+          "score": 0.9878528118133545
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0180",
+      "point_xy": [
+        346.0,
+        222.0
+      ],
+      "input_sha256": "d29fdb1cd4636f45fd6ec28904c2a7ddaafe483440345676ea3f3b4bcce9d408",
+      "sources": [
+        {
+          "run": "R2_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9856629967689514
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0379",
+      "point_xy": [
+        302.0,
+        114.0
+      ],
+      "input_sha256": "84933eaa907c39b458f184d1f33462028031b5d303a4a96381151d9546898b02",
+      "sources": [
+        {
+          "run": "R2_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9621075391769409
+        }
+      ],
+      "human_choice": null
+    },
+    {
+      "image_id": "fb_0388",
+      "point_xy": [
+        114.0,
+        242.0
+      ],
+      "input_sha256": "40509d56347b00ca8e0604df5606ff3eb888b9536f9f913c32d2b771a4b022bf",
+      "sources": [
+        {
+          "run": "R2_20261028",
+          "policy": "two_n_primary",
+          "score": 0.9591543078422546
+        }
+      ],
+      "human_choice": null
+    }
+  ],
+  "human_confirmed_new_points": 0,
+  "ai_point_review": {
+    "schema": "surface-point-ai-drafts-v1",
+    "viewed": 48,
+    "counts": {
+      "unsupported": 29,
+      "supported": 13,
+      "unknown": 6
+    },
+    "records": [
+      {
+        "case_id": "fb_0176__surface_001",
+        "image_id": "fb_0176",
+        "point_xy": [
+          362.0,
+          226.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在树冠右下亮背景/枝叶，原人工已确认全图无鸟。",
+        "input_sha256": "2e68291e0f2933de4bc696b4912b2c8c0a4b3304be4d8e0f759f79afffb6eaf8",
+        "view_sha256": "1ed391c3ef7af8b8079bbccefff6b35ef42bd6f932d033cd508f6d89f1a9440c",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0177__surface_002",
+        "image_id": "fb_0177",
+        "point_xy": [
+          14.0,
+          246.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在画面左下芦苇枝条，未指向可见鸟体。",
+        "input_sha256": "452f15f7c2c8014b7a059169ddd720315b8bbaacdc3275208868807245f2b9b8",
+        "view_sha256": "2b9e62e71a9dd1b918b4dce81e038147fcb9cc410f236d81f8d9d6478141386b",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0182__surface_003",
+        "image_id": "fb_0182",
+        "point_xy": [
+          318.0,
+          150.0
+        ],
+        "judgement": "unsupported",
+        "note": "鸟在左侧，点落到右侧枝叶。",
+        "input_sha256": "1cbf0d414b6242355d43331ff300f8635275800c65d0a8a469a010bb64049ffb",
+        "view_sha256": "eed01f4bcd37f4d9620358ff89e21db18f824ead4ab431daa6553db0d5fcdacd",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0187__surface_004",
+        "image_id": "fb_0187",
+        "point_xy": [
+          210.0,
+          114.0
+        ],
+        "judgement": "supported",
+        "note": "落点似乎在可见鸟体/头面，可作粗引导；不声称精确眼。",
+        "input_sha256": "12609e5e3ffe5cc1a08f6a694c6b7321f0dd58351a6d73b97db0749e0bf8bfbc",
+        "view_sha256": "a95ff80b571c3a0359b1681ee0e8bb1283784e8fc95470f1ca11305b21616a5b",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0378__surface_005",
+        "image_id": "fb_0378",
+        "point_xy": [
+          302.0,
+          114.0
+        ],
+        "judgement": "unsupported",
+        "note": "鸟在左侧，点落右侧亮叶芽。",
+        "input_sha256": "e3a3a20b2f1157910931a3d5592a6b9a2a1b9eb16e410d838e1e06bde1182f0a",
+        "view_sha256": "8d32f1f9503e93cd60bb465b6347779fe66cfec9d6b4e5c11a16bc5b04ea0813",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0380__surface_006",
+        "image_id": "fb_0380",
+        "point_xy": [
+          38.0,
+          78.0
+        ],
+        "judgement": "supported",
+        "note": "落点似乎在可见鸟体/头面，可作粗引导；不声称精确眼。",
+        "input_sha256": "7dfad6ff17f32d152d97f3176dfdfc09b7c6fa62e8fc0d4aa2b91c1706844106",
+        "view_sha256": "0658819d1b2e2b5a50c6f3b6497d58e10099ed28c0af97a88663af406bb7725d",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0386__surface_007",
+        "image_id": "fb_0386",
+        "point_xy": [
+          214.0,
+          114.0
+        ],
+        "judgement": "supported",
+        "note": "落点似乎在可见鸟体/头面，可作粗引导；不声称精确眼。",
+        "input_sha256": "4240ed1c7602971901971429d148e2a3ad51be577fe747e128e19c9b514e2c9b",
+        "view_sha256": "ceb9365ceec9886c4cd6699110f088ebebb78b5e74a60d1314d983ba5ffc37b4",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0391__surface_008",
+        "image_id": "fb_0391",
+        "point_xy": [
+          202.0,
+          122.0
+        ],
+        "judgement": "supported",
+        "note": "落点似乎在可见鸟体/头面，可作粗引导；不声称精确眼。",
+        "input_sha256": "7a448aa2e71a4e07a3966869a2b6688a0ab1a39d01578779ca1e30be48340ec2",
+        "view_sha256": "03e0a9b828ac6f32bd20b0db143851157c477dd4b9697606430d78fca3bfed41",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0395__surface_009",
+        "image_id": "fb_0395",
+        "point_xy": [
+          206.0,
+          130.0
+        ],
+        "judgement": "supported",
+        "note": "落点似乎在可见鸟体/头面，可作粗引导；不声称精确眼。",
+        "input_sha256": "aabd803d80a82dc2136ddbce0d57d71772f909ce35f0cd760d18d7d4e217ec28",
+        "view_sha256": "4e1fdb46bd22f822859725fee99223e003082198c466aa901c41dc984df8ba89",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0398__surface_010",
+        "image_id": "fb_0398",
+        "point_xy": [
+          206.0,
+          122.0
+        ],
+        "judgement": "supported",
+        "note": "落点似乎在可见鸟体/头面，可作粗引导；不声称精确眼。",
+        "input_sha256": "b2de8afdbbafb557914ae1dcca2ba41379b32cc8bc789922c22a306d708b5f3b",
+        "view_sha256": "286794f49265d35345a3c9cb3c7c54833d2909e5db36ff536162302b5ec7a23e",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0180__surface_011",
+        "image_id": "fb_0180",
+        "point_xy": [
+          330.0,
+          38.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在叶片和细枝交界，不是主体鸟。",
+        "input_sha256": "d29fdb1cd4636f45fd6ec28904c2a7ddaafe483440345676ea3f3b4bcce9d408",
+        "view_sha256": "5b4bf9e397eeee94e209f1bc8117e9f318d64c129c61d5fea90699e3dd30e57d",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0377__surface_012",
+        "image_id": "fb_0377",
+        "point_xy": [
+          298.0,
+          114.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在右侧亮叶芽或其他明显植物区域，偏离鸟。",
+        "input_sha256": "445dca3e88ab9cf4cecf2587d97feb1c2e91cdf28e81f5e5d131e915b6c2b685",
+        "view_sha256": "e04d279417d3f2a83696aa05bdbd0d94e66a4ca7635163f167085e516d60ccb7",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0379__surface_013",
+        "image_id": "fb_0379",
+        "point_xy": [
+          306.0,
+          114.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在右侧亮叶芽或其他明显植物区域，偏离鸟。",
+        "input_sha256": "84933eaa907c39b458f184d1f33462028031b5d303a4a96381151d9546898b02",
+        "view_sha256": "d98512c9fcf79056ef0c1c14d206256e52a4c01e29963f39eaaa56375f1253b2",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0387__surface_014",
+        "image_id": "fb_0387",
+        "point_xy": [
+          86.0,
+          178.0
+        ],
+        "judgement": "unsupported",
+        "note": "主体鸟在中部，点在左下横枝/叶边。",
+        "input_sha256": "1b213ebb8a88e607614c1fe0529900850e14634710230839d3bb61523e37c3f6",
+        "view_sha256": "b85dab6e7882fa2ee7d1ecedc8ed0b94632aa5ad53db23260f758a31fd700e5b",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0388__surface_015",
+        "image_id": "fb_0388",
+        "point_xy": [
+          114.0,
+          246.0
+        ],
+        "judgement": "unsupported",
+        "note": "点落左下角横枝，偏离中部鸟。",
+        "input_sha256": "40509d56347b00ca8e0604df5606ff3eb888b9536f9f913c32d2b771a4b022bf",
+        "view_sha256": "1f136f0a255b05c2b35e62a24846d952472e512b80e1f34b9f28176ef767fc1e",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0389__surface_016",
+        "image_id": "fb_0389",
+        "point_xy": [
+          114.0,
+          246.0
+        ],
+        "judgement": "unsupported",
+        "note": "点落左下角横枝，偏离中部鸟。",
+        "input_sha256": "878d0f3efd17327e4326f67c92e0ecbeb7cdad246385031be0a76e5887d6f12d",
+        "view_sha256": "e895c76d356e33c39621a8dc1756ceb95f5fe2765c38b4d62bb303c9cae5262e",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0175__surface_017",
+        "image_id": "fb_0175",
+        "point_xy": [
+          186.0,
+          126.0
+        ],
+        "judgement": "unknown",
+        "note": "草丛中的细小形状无法确认是否可用鸟面；保留未知。",
+        "input_sha256": "8a86a0c5d49adb8c65467f0d6bf122eb7318a3f046bb05d4b43f6bbe6cd2190f",
+        "view_sha256": "d7ef5ab6272f21a7492c740951d351216791ebdb75b36aacebc8eccb9e2dab58",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0176__surface_018",
+        "image_id": "fb_0176",
+        "point_xy": [
+          146.0,
+          118.0
+        ],
+        "judgement": "unsupported",
+        "note": "原人工已确认全图无鸟；新点落在树冠结构。",
+        "input_sha256": "2e68291e0f2933de4bc696b4912b2c8c0a4b3304be4d8e0f759f79afffb6eaf8",
+        "view_sha256": "18141b06e84b59011f610f86ae8f53fc5614cf83a7f48d17d6d9694a7306d404",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0177__surface_019",
+        "image_id": "fb_0177",
+        "point_xy": [
+          118.0,
+          2.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在画面顶端枝条/暗背景，不是可见鸟面。",
+        "input_sha256": "452f15f7c2c8014b7a059169ddd720315b8bbaacdc3275208868807245f2b9b8",
+        "view_sha256": "a78ddfdc0c18ae274e5020ae09270fa2bafa4e3d28d21a9211fa72d4b45887e5",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0181__surface_020",
+        "image_id": "fb_0181",
+        "point_xy": [
+          170.0,
+          118.0
+        ],
+        "judgement": "unknown",
+        "note": "草丛内混合边缘难以判定可用鸟面。",
+        "input_sha256": "ff6abe33f641704bb4c01067996bfc740cdb716cd3a777509a44a0d930311bfd",
+        "view_sha256": "da449159257af5bcb4d4ba282089faa3d545fe2ee178beb1d694f16b53a6ea40",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0182__surface_021",
+        "image_id": "fb_0182",
+        "point_xy": [
+          334.0,
+          150.0
+        ],
+        "judgement": "unsupported",
+        "note": "鸟在左侧，落点在右侧横枝。",
+        "input_sha256": "1cbf0d414b6242355d43331ff300f8635275800c65d0a8a469a010bb64049ffb",
+        "view_sha256": "1dded6037eea95d4d6ed2880f216d749bbf70c68c4445991c76c1b44db58ed9b",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0187__surface_022",
+        "image_id": "fb_0187",
+        "point_xy": [
+          210.0,
+          118.0
+        ],
+        "judgement": "supported",
+        "note": "落点似乎在可见鸟体/头面，可作粗引导；不声称精确眼。",
+        "input_sha256": "12609e5e3ffe5cc1a08f6a694c6b7321f0dd58351a6d73b97db0749e0bf8bfbc",
+        "view_sha256": "89fe292929850fca0ef3fdcdaad27adff2078844848dfab5878d2ed626df6a2f",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0380__surface_023",
+        "image_id": "fb_0380",
+        "point_xy": [
+          42.0,
+          74.0
+        ],
+        "judgement": "unknown",
+        "note": "黑头上边缘与亮背景混合，不能确认当前点处的表面。",
+        "input_sha256": "7dfad6ff17f32d152d97f3176dfdfc09b7c6fa62e8fc0d4aa2b91c1706844106",
+        "view_sha256": "20a04989dc8e2b9102922d69f8d208d120980cc356e04895956323a537e2c9ae",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0386__surface_024",
+        "image_id": "fb_0386",
+        "point_xy": [
+          218.0,
+          110.0
+        ],
+        "judgement": "supported",
+        "note": "落点似乎在可见鸟体/头面，可作粗引导；不声称精确眼。",
+        "input_sha256": "4240ed1c7602971901971429d148e2a3ad51be577fe747e128e19c9b514e2c9b",
+        "view_sha256": "6b7e795b52338569a0414623d91810aec1e7bddf3e345489295da98003b31e81",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0391__surface_025",
+        "image_id": "fb_0391",
+        "point_xy": [
+          202.0,
+          130.0
+        ],
+        "judgement": "supported",
+        "note": "落点似乎在可见鸟体/头面，可作粗引导；不声称精确眼。",
+        "input_sha256": "7a448aa2e71a4e07a3966869a2b6688a0ab1a39d01578779ca1e30be48340ec2",
+        "view_sha256": "f5be0a191a983e8b453ec55cfae5d709c7f9d25c2eeeb8f1a8eba9dc9adacd85",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0395__surface_026",
+        "image_id": "fb_0395",
+        "point_xy": [
+          210.0,
+          142.0
+        ],
+        "judgement": "supported",
+        "note": "落点似乎在可见鸟体/头面，可作粗引导；不声称精确眼。",
+        "input_sha256": "aabd803d80a82dc2136ddbce0d57d71772f909ce35f0cd760d18d7d4e217ec28",
+        "view_sha256": "3274428bfa84114a737604b9ab5fb3a3d0858aa5c725e955b43869e92f15202a",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0398__surface_027",
+        "image_id": "fb_0398",
+        "point_xy": [
+          202.0,
+          122.0
+        ],
+        "judgement": "unknown",
+        "note": "点在小鸟头部左侧轮廓附近，与前景枝叶边界接近。",
+        "input_sha256": "b2de8afdbbafb557914ae1dcca2ba41379b32cc8bc789922c22a306d708b5f3b",
+        "view_sha256": "f5092d7153e5e271eff1bdefee123ffc7d511c1e246fc4f9648f3f966fc91317",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0180__surface_028",
+        "image_id": "fb_0180",
+        "point_xy": [
+          22.0,
+          230.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在画面左下红色植物茎端，主体鸟在别处。",
+        "input_sha256": "d29fdb1cd4636f45fd6ec28904c2a7ddaafe483440345676ea3f3b4bcce9d408",
+        "view_sha256": "1da5d28a6d0d87d07881c90b1088d81f84b9f7f4d30c2f24918803522baa9331",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0377__surface_029",
+        "image_id": "fb_0377",
+        "point_xy": [
+          150.0,
+          222.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在下部绿色叶片，偏离鸟。",
+        "input_sha256": "445dca3e88ab9cf4cecf2587d97feb1c2e91cdf28e81f5e5d131e915b6c2b685",
+        "view_sha256": "2ddf26ee2d258fbd2881c0cdac98fb3ada52de305cff8368360d0b2758969fae",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0379__surface_030",
+        "image_id": "fb_0379",
+        "point_xy": [
+          306.0,
+          110.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在右侧亮叶芽或其他明显植物区域，偏离鸟。",
+        "input_sha256": "84933eaa907c39b458f184d1f33462028031b5d303a4a96381151d9546898b02",
+        "view_sha256": "a5e6737802b3347ac9b2bae241ab93b237b27860370dada0ba14e911c2f52abd",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0387__surface_031",
+        "image_id": "fb_0387",
+        "point_xy": [
+          86.0,
+          182.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在左侧横枝/叶边，偏离主体鸟。",
+        "input_sha256": "1b213ebb8a88e607614c1fe0529900850e14634710230839d3bb61523e37c3f6",
+        "view_sha256": "69694429299faad41ad6d3147a24c6c8e77be4a63b5e78b9cec4c2dcc5197b56",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0388__surface_032",
+        "image_id": "fb_0388",
+        "point_xy": [
+          94.0,
+          10.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在左上树干，偏离主体鸟。",
+        "input_sha256": "40509d56347b00ca8e0604df5606ff3eb888b9536f9f913c32d2b771a4b022bf",
+        "view_sha256": "727eafd00e7451a2de3a7e9864c6b28211321ab7da497377b0e93cd5a74666e7",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0176__surface_033",
+        "image_id": "fb_0176",
+        "point_xy": [
+          182.0,
+          110.0
+        ],
+        "judgement": "unsupported",
+        "note": "原人工确认全图无鸟；新点落树冠结构。",
+        "input_sha256": "2e68291e0f2933de4bc696b4912b2c8c0a4b3304be4d8e0f759f79afffb6eaf8",
+        "view_sha256": "de0b3c9adf0c75ce80abc381e29594b52be9abdcc7d516534710fe6632a5fc78",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0182__surface_034",
+        "image_id": "fb_0182",
+        "point_xy": [
+          334.0,
+          154.0
+        ],
+        "judgement": "unsupported",
+        "note": "鸟在左侧，落点仍在右侧横枝。",
+        "input_sha256": "1cbf0d414b6242355d43331ff300f8635275800c65d0a8a469a010bb64049ffb",
+        "view_sha256": "23e15bc2013c9f9d11362d7ae7c076dc241bc6084cae67e766a8c0a06ba6139d",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0380__surface_035",
+        "image_id": "fb_0380",
+        "point_xy": [
+          42.0,
+          78.0
+        ],
+        "judgement": "supported",
+        "note": "落点似乎在可见鸟体/头面，可作粗引导；不声称精确眼。",
+        "input_sha256": "7dfad6ff17f32d152d97f3176dfdfc09b7c6fa62e8fc0d4aa2b91c1706844106",
+        "view_sha256": "fd9f2772e61a285dfe8f6c1917e63bd49a5318d830d4465bd404a4207027333d",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0386__surface_036",
+        "image_id": "fb_0386",
+        "point_xy": [
+          206.0,
+          126.0
+        ],
+        "judgement": "unsupported",
+        "note": "局部图可见点落在横穿鸟胸的前景细枝上。",
+        "input_sha256": "4240ed1c7602971901971429d148e2a3ad51be577fe747e128e19c9b514e2c9b",
+        "view_sha256": "577e2d52514d701d7c1fec4a6f0ec17b65a2ff9b6af9469ac76755758cc42d4d",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0391__surface_037",
+        "image_id": "fb_0391",
+        "point_xy": [
+          202.0,
+          126.0
+        ],
+        "judgement": "supported",
+        "note": "落点似乎在可见鸟体/头面，可作粗引导；不声称精确眼。",
+        "input_sha256": "7a448aa2e71a4e07a3966869a2b6688a0ab1a39d01578779ca1e30be48340ec2",
+        "view_sha256": "c78ebc689a1601802287a3cb1f45718834c9e94e3cac35595228c087afc4662f",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0395__surface_038",
+        "image_id": "fb_0395",
+        "point_xy": [
+          206.0,
+          134.0
+        ],
+        "judgement": "supported",
+        "note": "落点似乎在可见鸟体/头面，可作粗引导；不声称精确眼。",
+        "input_sha256": "aabd803d80a82dc2136ddbce0d57d71772f909ce35f0cd760d18d7d4e217ec28",
+        "view_sha256": "6d7a1a768024cc39125c8eac6717d8f53d622147c5f07b563c53eeed6625255d",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0180__surface_039",
+        "image_id": "fb_0180",
+        "point_xy": [
+          42.0,
+          246.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在画面左下红色植物部分，偏离鸟。",
+        "input_sha256": "d29fdb1cd4636f45fd6ec28904c2a7ddaafe483440345676ea3f3b4bcce9d408",
+        "view_sha256": "df50cf306117dec89733d2d295891f4bd73cbe3a6b9c1a50d7f531df83c0422c",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0377__surface_040",
+        "image_id": "fb_0377",
+        "point_xy": [
+          294.0,
+          114.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在右侧亮叶芽或其他明显植物区域，偏离鸟。",
+        "input_sha256": "445dca3e88ab9cf4cecf2587d97feb1c2e91cdf28e81f5e5d131e915b6c2b685",
+        "view_sha256": "907f0d99e167cad7f73a2828b9b4e15da50504efcdfc0f8faacce144c6450777",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0389__surface_041",
+        "image_id": "fb_0389",
+        "point_xy": [
+          122.0,
+          246.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在左下横枝，偏离主体鸟。",
+        "input_sha256": "878d0f3efd17327e4326f67c92e0ecbeb7cdad246385031be0a76e5887d6f12d",
+        "view_sha256": "8d8091495293c694da0b164623723cebe871e6e82e7a1f9eb6e842bbc8b5ede8",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0175__surface_042",
+        "image_id": "fb_0175",
+        "point_xy": [
+          190.0,
+          130.0
+        ],
+        "judgement": "unknown",
+        "note": "草丛小目标与背景混合，当前输入不足以确认落点表面。",
+        "input_sha256": "8a86a0c5d49adb8c65467f0d6bf122eb7318a3f046bb05d4b43f6bbe6cd2190f",
+        "view_sha256": "e25c13d13112942e37f9f5eb02d042c1cd5a671f152ddabfc4b1cd5d73d3dd11",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0176__surface_043",
+        "image_id": "fb_0176",
+        "point_xy": [
+          186.0,
+          110.0
+        ],
+        "judgement": "unsupported",
+        "note": "原人工确认全图无鸟；新点落树冠结构。",
+        "input_sha256": "2e68291e0f2933de4bc696b4912b2c8c0a4b3304be4d8e0f759f79afffb6eaf8",
+        "view_sha256": "bbaaae16768f0f1f6bfb723b6b7371a68262f26223d59861c6e7897f532c0b01",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0177__surface_044",
+        "image_id": "fb_0177",
+        "point_xy": [
+          310.0,
+          22.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在右上芦苇/暗背景，未指向可见鸟。",
+        "input_sha256": "452f15f7c2c8014b7a059169ddd720315b8bbaacdc3275208868807245f2b9b8",
+        "view_sha256": "779f181a683a5adc3781cd3d4bec03a523303102b157268e127679d127134dec",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0187__surface_045",
+        "image_id": "fb_0187",
+        "point_xy": [
+          210.0,
+          110.0
+        ],
+        "judgement": "unknown",
+        "note": "鸟头顶轮廓、电线与背景接近，点在混合边缘。",
+        "input_sha256": "12609e5e3ffe5cc1a08f6a694c6b7321f0dd58351a6d73b97db0749e0bf8bfbc",
+        "view_sha256": "789398e139a50b968003225ea72890e680c068f8a955a317d44279c48ac93930",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0180__surface_046",
+        "image_id": "fb_0180",
+        "point_xy": [
+          346.0,
+          222.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在右下大叶片边缘，主体鸟在别处。",
+        "input_sha256": "d29fdb1cd4636f45fd6ec28904c2a7ddaafe483440345676ea3f3b4bcce9d408",
+        "view_sha256": "ec94bfb19777fc1fa6e9057dbca9a8b545cad098094701627e99ef360e0e41e8",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0379__surface_047",
+        "image_id": "fb_0379",
+        "point_xy": [
+          302.0,
+          114.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在右侧亮叶芽或其他明显植物区域，偏离鸟。",
+        "input_sha256": "84933eaa907c39b458f184d1f33462028031b5d303a4a96381151d9546898b02",
+        "view_sha256": "bcfecce73b54ab5978a24cb0289881e18d210f1f2fed59e55d1889bb248286f8",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      },
+      {
+        "case_id": "fb_0388__surface_048",
+        "image_id": "fb_0388",
+        "point_xy": [
+          114.0,
+          242.0
+        ],
+        "judgement": "unsupported",
+        "note": "落点在左下横枝，偏离中部鸟。",
+        "input_sha256": "40509d56347b00ca8e0604df5606ff3eb888b9536f9f913c32d2b771a4b022bf",
+        "view_sha256": "3ef9c1f8d30a4807afe26977b614c89282793dd99ad44cb629552e9ce6bb69a2",
+        "actor_kind": "ai",
+        "status": "draft",
+        "human_confirmed": false,
+        "accepted_for_training": false
+      }
+    ],
+    "per_run_policy": {
+      "R1_20261027": {
+        "native_bh_parent_eye": {
+          "supported": 6,
+          "unsupported": 4,
+          "unknown": 0
+        },
+        "two_n_primary": {
+          "supported": 1,
+          "unsupported": 10,
+          "unknown": 0
+        }
+      },
+      "R2_20261027": {
+        "native_bh_parent_eye": {
+          "supported": 4,
+          "unsupported": 4,
+          "unknown": 4
+        },
+        "two_n_primary": {
+          "supported": 0,
+          "unsupported": 10,
+          "unknown": 1
+        }
+      },
+      "R1_20261028": {
+        "native_bh_parent_eye": {
+          "supported": 4,
+          "unsupported": 4,
+          "unknown": 2
+        },
+        "two_n_primary": {
+          "supported": 1,
+          "unsupported": 8,
+          "unknown": 0
+        }
+      },
+      "R2_20261028": {
+        "native_bh_parent_eye": {
+          "supported": 3,
+          "unsupported": 4,
+          "unknown": 5
+        },
+        "two_n_primary": {
+          "supported": 0,
+          "unsupported": 10,
+          "unknown": 1
+        }
+      }
+    },
+    "human_confirmed": 0,
+    "accepted_for_training": 0,
+    "readback_verified": true,
+    "viewing": "eight contact sheets preserving 384x256 full inputs and 2x nearest-neighbour crops; seven ambiguous full panels additionally inspected",
+    "decision": "Do not promote: conspicuous vegetation additions and selection on the sole confirmed no-bird development image remain.",
+    "limits": [
+      "AI draft assessment is not human truth",
+      "old frame-level absence is existing human evidence, not new point confirmation",
+      "correlated cases are not independent samples"
+    ]
+  },
+  "protected_state_equal": true,
+  "referenced_assets_checked": 18610,
+  "changed_assets": 0,
+  "production_annotation_writes": 0,
+  "human_validation_records_added_to_training": 0,
+  "defaults_changed": false,
+  "decision": "Do not promote: clear vegetation additions, sole confirmed no-bird frame selected, and new point usability not human-confirmed",
+  "new_independent_test": false,
+  "camera_AF_verified": false,
+  "limitations": [
+    "CUB variants share source images and training-derived backgrounds",
+    "mask hits and geometry are spatial proxies, not camera AF accuracy",
+    "community validation has been reused; new points require explicit human confirmation",
+    "existing bad primary points are retained by the abstention-only rule",
+    "real no-bird validation has only one confirmed image"
+  ]
+}
