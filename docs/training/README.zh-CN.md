@@ -81,3 +81,5 @@ python scripts/training/evaluate_z8_training.py --help
 [冻结原模型的鸟面分支实验](surface-2026-10-27.zh-CN.md)：共享特征的轻量头、部分掩膜、明确遮挡监督及两个种子的匹配协议。
 
 [RGB与上下文剩余候选排序](residual-2026-10-27.zh-CN.md)：容量、真实困难负例、内部校准及实际推理计时，仍不推荐替换。
+
+[公开数据扩充与空景训练](data-expansion-2026-10-27.zh-CN.md)：来源准入、明确空景监督、匹配落点抽样及A12教师未准入。

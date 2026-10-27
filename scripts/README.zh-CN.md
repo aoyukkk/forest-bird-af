@@ -73,3 +73,5 @@
 鸟面分支新增`training/bird_surface.py`、`prepare_bird_surface.py`、`train_bird_surface.py`、`predict_bird_surface.py`，接入CUB掩膜、冻结原模型、单独训练粗捕获头。[协议与命令](../docs/training/surface-2026-10-27.zh-CN.md)。
 
 RGB/上下文排序新增 `training/bird_residual.py`、`prepare_bird_residual.py`、`train_bird_residual.py`、`predict_bird_residual.py`、`benchmark_bird_residual.py`。[部分监督、匹配对照与命令](../docs/training/residual-2026-10-27.zh-CN.md)。
+
+公开扩充新增 `training/prepare_coco_cct.py`、`admit_public_expansion.py`、`prepare_expansion_ranker.py`、`train_expansion_ranker.py`、`evaluate_expansion_ranker.py`。[来源许可、部分监督与命令](../docs/training/data-expansion-2026-10-27.zh-CN.md)。

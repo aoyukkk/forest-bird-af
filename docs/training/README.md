@@ -95,3 +95,5 @@ Latest follow-up: [input, hard-context and hybrid results](input-context-2026-10
 [Frozen-base bird-surface experiments](surface-2026-10-27.md): lightweight shared-feature head, partial masks, explicit occluder supervision and matched two-seed protocol.
 
 [RGB/context residual ranking](residual-2026-10-27.md): capacity, real hard negatives, internal calibration and actual inference timing; no replacement recommended.
+
+[Public expansion and empty-scene training](data-expansion-2026-10-27.md): source admission, explicit upstream absence, matched point sampling and A12 teacher rejection.

@@ -30,7 +30,7 @@ Updated: **2026-10-27**.
 | Deduplicated queue | 535 confirmed usable images and **1 adjudication item** (`fb_0588`) |
 | Archived duplicates | 12 confirmed and 146 draft records retained; these drafts are not a new annotation backlog |
 | Evaluation split | 375 train / 80 validation / 80 test, grouped before training |
-| Training | Native, n/s, surface and RGB-verifier trials completed; no replacement recommended |
+| Training | Native, n/s, surface, RGB-verifier and empty-scene trials completed; no replacement recommended |
 
 The [694-record snapshot](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl)
 also includes drafts and the adjudication item. **Unconfirmed records are not
@@ -67,6 +67,15 @@ Training needs NumPy and compatible CUDA PyTorch; the native route also needs
 your own verified vendor package. The independent YOLO route uses public data. See [training](docs/training/README.md) and
 [tests](tests/README.md). Firmware, original/modified vendor weights, feature
 caches and the production database are not distributed.
+
+## Public expansion and empty scenes — 2026-10-27
+
+17,252 additional public research images passed conservative admission; 158
+were isolated with originals retained. Four verifier runs completed 32 epochs
+each. Empty-scene supervision improves internal calibration, but complete
+inference exposes existing primary false selections and a harmful rejection
+tradeoff. Defaults stay unchanged. The A12 entry audit admits no teacher or
+pseudolabels. [Data, results and scope](experiments/expansion-2026-10-27/README.md).
 
 ## Capacity and real hard negatives — 2026-10-27
 

@@ -30,7 +30,7 @@ augmentation geometry and unordered sparse distillation),
 `test_bird_parts_preparation.py` (weak-head geometry) and
 `test_public_community_training.py` (historical-test quarantine). Model tests
 also need the pinned optional [YOLO dependencies](../requirements-yolo26.txt);
-they run on CPU. The complete local run passed 140 tests.
+they run on CPU. The complete local run passed 150 tests.
 
 `test_bird_regions.py` checks crop mapping, label-independent automatic regions and exact native B/H retention. `test_hard_context.py` checks protected background and the eye-budget/F1 selection tradeoff.
 
@@ -39,7 +39,10 @@ they run on CPU. The complete local run passed 140 tests.
 
 `test_point_review.py` checks explicit human confirmation, draft-only edits, input/point-bound backups, safe HTML roundtrips, immutable views and human-export import guards.
 
-`test_bird_surface.py` checks frozen parameters/BN/raw outputs, sparse positives, unknown supervision, explicit occluder gradients and multilevel-mask normalization. The latest local full run passed 140 tests.
+`test_bird_surface.py` checks frozen parameters/BN/raw outputs, sparse positives, unknown supervision, explicit occluder gradients and multilevel-mask normalization. The latest local full run passed 150 tests.
 
 
-`test_bird_residual.py` checks partial real labels, prediction-only pools, immutable RGB crops, capacity bounds and pairwise gradient direction. The latest complete local suite passed 140 tests.
+`test_bird_residual.py` checks partial real labels, prediction-only pools, immutable RGB crops, capacity bounds and pairwise gradient direction. The latest complete local suite passed 150 tests.
+
+
+`test_public_expansion.py` adds ten checks for contamination signatures, exclusive upstream emptiness, source-license filtering, partial targets, contour uncertainty, camera splits, matched positive sampling and JSON-safe calibration counts. Full local suite: 150 passed.

@@ -75,3 +75,5 @@ Point review adds `annotator/build_point_review.py`, `point_review_core.js`, `po
 Surface experiments add `training/bird_surface.py`, `prepare_bird_surface.py`, `train_bird_surface.py` and `predict_bird_surface.py`. They bind CUB masks, freeze the original model and train a separate coarse head. [Protocol and commands](../docs/training/surface-2026-10-27.md).
 
 RGB/context ranking adds `training/bird_residual.py`, `prepare_bird_residual.py`, `train_bird_residual.py`, `predict_bird_residual.py` and `benchmark_bird_residual.py`. [Partial labels, matched comparisons and commands](../docs/training/residual-2026-10-27.md).
+
+Public expansion adds `training/prepare_coco_cct.py`, `admit_public_expansion.py`, `prepare_expansion_ranker.py`, `train_expansion_ranker.py` and `evaluate_expansion_ranker.py`. [Source rights, partial targets and commands](../docs/training/data-expansion-2026-10-27.md).
