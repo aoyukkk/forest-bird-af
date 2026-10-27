@@ -13,7 +13,7 @@ the entry point.
 | train on the human-confirmed labels | [Confirmed labels](../data/annotations-2026-10-25/confirmed/README.md) |
 | install and use the annotation tool | [Toolchain](../data/annotations-2026-10-25/docs/TOOLCHAIN.md) · [Tools](tools/README.md) |
 | know the rules for data, IDs and fields | [Protocol](protocol/README.md) |
-| reproduce native / YOLO26 training | [Training](training/README.md) · [Next-round results](training/next-round-2026-10-26.md) |
+| reproduce native / YOLO26 training | [Training](training/README.md) · [Capacity and hard negatives](training/residual-2026-10-27.md) |
 | check model identity, GPU parity, past runs | [Reports](reports/README.md) |
 | see what is deliberately withheld | [Publication boundary](releases/not-published.md) |
 | read the research plan and firmware analysis | [Research](research/README.md) |

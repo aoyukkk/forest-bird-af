@@ -1,0 +1,4078 @@
+{
+  "date": "2026-10-27",
+  "protocol": "capacity-real-hard-negative-residual-ranking-v1",
+  "parent_commit": "60e145ac7424a701efaa042e3eda90655317a7e1",
+  "executed_training_source_sha256": {
+    "bird_residual.py": "55d2c38f8f252cb2e94ef06f1f717309273a70330568ed0fa7735b0130d5b94f",
+    "prepare_bird_residual.py": "abba38afc9ece02798e61ea65f58d369220c2742b5b5d5f209e895d9fb6fc3fb",
+    "train_bird_residual.py": "9a794c69aaced972fc21f90372d4389898cc1b6334399b85f0d7324e6cb2cb5d",
+    "bird_surface.py": "03645c4d8966d5b4d82ac88575483e8863b6434c931b986829942afc2214e055",
+    "bird_parts_model.py": "aba0025ef2afa6e08e5e80a2e6c8c04717567f58430450be7c9e61809166465b"
+  },
+  "initial_plan_sha256": "5e7f373d2ee77767a8588321e911381010329e104145c6661ffb386ca6faae24",
+  "extension_plan_sha256": "ec3f1e28c983fef24bb9aa39ff672b168824a8c00c4fd5799527d7ff2111ff5e",
+  "extension_after_first_development_diagnosis": true,
+  "stages": {
+    "eight_epoch": {
+      "runs": {
+        "small-hard_20261027": {
+          "condition": "small-hard",
+          "seed": 20261027,
+          "epoch": 8,
+          "parameters": 224049,
+          "total_with_parent": 2686722,
+          "calibration": {
+            "threshold": 0.95,
+            "real_calibration": {
+              "frames": 41,
+              "positive_anchors": 23,
+              "positive_accepted": 23,
+              "known_negative_false_frames": 0
+            },
+            "public_calibration": {
+              "total": 1800,
+              "foreground": 1611,
+              "known_wrong": 18,
+              "unknown": 67,
+              "abstain": 104
+            },
+            "public_utility": 1521
+          },
+          "policies": {
+            "native_bh_parent_eye": {
+              "reference": {
+                "images": 80,
+                "selected": 68,
+                "selected_eye": 35,
+                "abstain": 12,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 62,
+                "outside_labelled_geometry": 6,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 21,
+                "bird_region": 20,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "counts": {
+                "images": 80,
+                "selected": 75,
+                "selected_eye": 35,
+                "abstain": 5,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 67,
+                "outside_labelled_geometry": 7,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 22,
+                "bird_region": 24,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.9738940596580505,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0187",
+                  "point_xy": [
+                    210.0,
+                    118.0
+                  ],
+                  "proposal_score": 0.9979007244110107,
+                  "source_kind": "surface",
+                  "score": 0.9946980476379395,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    219.52423095703125,
+                    26.856952667236328
+                  ],
+                  "proposal_score": 0.3951341509819031,
+                  "source_kind": "eye",
+                  "score": 0.9627432227134705,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.9851576089859009,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0386",
+                  "point_xy": [
+                    209.6182861328125,
+                    114.62478637695312
+                  ],
+                  "proposal_score": 0.348201721906662,
+                  "source_kind": "eye",
+                  "score": 0.9747251272201538,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0395",
+                  "point_xy": [
+                    204.35890197753906,
+                    130.92637634277344
+                  ],
+                  "proposal_score": 0.19223590195178986,
+                  "source_kind": "eye",
+                  "score": 0.989591658115387,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0398",
+                  "point_xy": [
+                    203.357177734375,
+                    124.08561706542969
+                  ],
+                  "proposal_score": 0.36206647753715515,
+                  "source_kind": "eye",
+                  "score": 0.9917484521865845,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 2,
+                "supported": 3,
+                "unknown": 2
+              }
+            },
+            "two_n_primary": {
+              "reference": {
+                "images": 80,
+                "selected": 69,
+                "selected_eye": 35,
+                "abstain": 11,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 68,
+                "outside_labelled_geometry": 1,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 15,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "counts": {
+                "images": 80,
+                "selected": 74,
+                "selected_eye": 35,
+                "abstain": 6,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 69,
+                "outside_labelled_geometry": 4,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 16,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.9738940596580505,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0377",
+                  "point_xy": [
+                    298.79180908203125,
+                    114.9472427368164
+                  ],
+                  "proposal_score": 0.6575384140014648,
+                  "source_kind": "eye",
+                  "score": 0.9881765246391296,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    219.52423095703125,
+                    26.856952667236328
+                  ],
+                  "proposal_score": 0.3951341509819031,
+                  "source_kind": "eye",
+                  "score": 0.9627432227134705,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0379",
+                  "point_xy": [
+                    305.8293762207031,
+                    114.20259857177734
+                  ],
+                  "proposal_score": 0.6901415586471558,
+                  "source_kind": "eye",
+                  "score": 0.9901401400566101,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.9851576089859009,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 4,
+                "unknown": 1
+              }
+            }
+          },
+          "ranker_sha256": "50bd2a7187712a1232a6c3c90f3dbaba4ecd949a6062c6ed41bdfd73ffa91e16",
+          "status": {
+            "status": "completed",
+            "epochs": 8,
+            "seconds": 4.256806499999584,
+            "peak_allocated_bytes": 5451506688,
+            "checkpoints_readback_equal": true,
+            "original_models_updated": false,
+            "camera_AF_verified": false
+          },
+          "initial_state_sha256": "d8ec46916116c37fa0b40a5f5a15836a58e0cb27e143cab4bf461b0200c0b697",
+          "absence_point_presentations": 12
+        },
+        "large-easy_20261027": {
+          "condition": "large-easy",
+          "seed": 20261027,
+          "epoch": 8,
+          "parameters": 808417,
+          "total_with_parent": 3271090,
+          "calibration": {
+            "threshold": 0.99,
+            "real_calibration": {
+              "frames": 41,
+              "positive_anchors": 23,
+              "positive_accepted": 21,
+              "known_negative_false_frames": 1
+            },
+            "public_calibration": {
+              "total": 1800,
+              "foreground": 1475,
+              "known_wrong": 12,
+              "unknown": 46,
+              "abstain": 267
+            },
+            "public_utility": 1415
+          },
+          "policies": {
+            "native_bh_parent_eye": {
+              "reference": {
+                "images": 80,
+                "selected": 68,
+                "selected_eye": 35,
+                "abstain": 12,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 62,
+                "outside_labelled_geometry": 6,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 21,
+                "bird_region": 20,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "counts": {
+                "images": 80,
+                "selected": 72,
+                "selected_eye": 35,
+                "abstain": 8,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 65,
+                "outside_labelled_geometry": 6,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 21,
+                "bird_region": 23,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.9919379353523254,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0187",
+                  "point_xy": [
+                    210.0,
+                    118.0
+                  ],
+                  "proposal_score": 0.9979007244110107,
+                  "source_kind": "surface",
+                  "score": 0.9984269142150879,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0395",
+                  "point_xy": [
+                    204.35890197753906,
+                    130.92637634277344
+                  ],
+                  "proposal_score": 0.19223590195178986,
+                  "source_kind": "eye",
+                  "score": 0.9954967498779297,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0398",
+                  "point_xy": [
+                    203.357177734375,
+                    124.08561706542969
+                  ],
+                  "proposal_score": 0.36206647753715515,
+                  "source_kind": "eye",
+                  "score": 0.9927391409873962,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 1,
+                "supported": 2,
+                "unknown": 1
+              }
+            },
+            "two_n_primary": {
+              "reference": {
+                "images": 80,
+                "selected": 69,
+                "selected_eye": 35,
+                "abstain": 11,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 68,
+                "outside_labelled_geometry": 1,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 15,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "counts": {
+                "images": 80,
+                "selected": 72,
+                "selected_eye": 35,
+                "abstain": 8,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 68,
+                "outside_labelled_geometry": 3,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 15,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.9919379353523254,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0377",
+                  "point_xy": [
+                    298.79180908203125,
+                    114.9472427368164
+                  ],
+                  "proposal_score": 0.6575384140014648,
+                  "source_kind": "eye",
+                  "score": 0.9962638020515442,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0379",
+                  "point_xy": [
+                    305.8293762207031,
+                    114.20259857177734
+                  ],
+                  "proposal_score": 0.6901415586471558,
+                  "source_kind": "eye",
+                  "score": 0.9956346154212952,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 3
+              }
+            }
+          },
+          "ranker_sha256": "27382d78b18e0633342a1ad68de7826a86920152aa5b14262b3bc552b16ce980",
+          "status": {
+            "status": "completed",
+            "epochs": 8,
+            "seconds": 4.869951700000456,
+            "peak_allocated_bytes": 5488029696,
+            "checkpoints_readback_equal": true,
+            "original_models_updated": false,
+            "camera_AF_verified": false
+          },
+          "initial_state_sha256": "3bb4c35afc981875159503f9a14df0d9500c0113169cb5394a3513dade941973",
+          "absence_point_presentations": 12
+        },
+        "large-hard_20261027": {
+          "condition": "large-hard",
+          "seed": 20261027,
+          "epoch": 8,
+          "parameters": 808417,
+          "total_with_parent": 3271090,
+          "calibration": {
+            "threshold": 0.95,
+            "real_calibration": {
+              "frames": 41,
+              "positive_anchors": 23,
+              "positive_accepted": 23,
+              "known_negative_false_frames": 0
+            },
+            "public_calibration": {
+              "total": 1800,
+              "foreground": 1604,
+              "known_wrong": 16,
+              "unknown": 62,
+              "abstain": 118
+            },
+            "public_utility": 1524
+          },
+          "policies": {
+            "native_bh_parent_eye": {
+              "reference": {
+                "images": 80,
+                "selected": 68,
+                "selected_eye": 35,
+                "abstain": 12,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 62,
+                "outside_labelled_geometry": 6,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 21,
+                "bird_region": 20,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "counts": {
+                "images": 80,
+                "selected": 75,
+                "selected_eye": 35,
+                "abstain": 5,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 67,
+                "outside_labelled_geometry": 7,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 22,
+                "bird_region": 24,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.9724147915840149,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0187",
+                  "point_xy": [
+                    210.0,
+                    118.0
+                  ],
+                  "proposal_score": 0.9979007244110107,
+                  "source_kind": "surface",
+                  "score": 0.9941118359565735,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    219.52423095703125,
+                    26.856952667236328
+                  ],
+                  "proposal_score": 0.3951341509819031,
+                  "source_kind": "eye",
+                  "score": 0.9610249400138855,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.9790357351303101,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0386",
+                  "point_xy": [
+                    209.6182861328125,
+                    114.62478637695312
+                  ],
+                  "proposal_score": 0.348201721906662,
+                  "source_kind": "eye",
+                  "score": 0.9757624268531799,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0395",
+                  "point_xy": [
+                    204.35890197753906,
+                    130.92637634277344
+                  ],
+                  "proposal_score": 0.19223590195178986,
+                  "source_kind": "eye",
+                  "score": 0.9863631129264832,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0398",
+                  "point_xy": [
+                    203.357177734375,
+                    124.08561706542969
+                  ],
+                  "proposal_score": 0.36206647753715515,
+                  "source_kind": "eye",
+                  "score": 0.9891815781593323,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 2,
+                "supported": 3,
+                "unknown": 2
+              }
+            },
+            "two_n_primary": {
+              "reference": {
+                "images": 80,
+                "selected": 69,
+                "selected_eye": 35,
+                "abstain": 11,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 68,
+                "outside_labelled_geometry": 1,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 15,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "counts": {
+                "images": 80,
+                "selected": 74,
+                "selected_eye": 35,
+                "abstain": 6,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 69,
+                "outside_labelled_geometry": 4,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 16,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.9724147915840149,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0377",
+                  "point_xy": [
+                    298.79180908203125,
+                    114.9472427368164
+                  ],
+                  "proposal_score": 0.6575384140014648,
+                  "source_kind": "eye",
+                  "score": 0.9880388379096985,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    219.52423095703125,
+                    26.856952667236328
+                  ],
+                  "proposal_score": 0.3951341509819031,
+                  "source_kind": "eye",
+                  "score": 0.9610249400138855,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0379",
+                  "point_xy": [
+                    305.8293762207031,
+                    114.20259857177734
+                  ],
+                  "proposal_score": 0.6901415586471558,
+                  "source_kind": "eye",
+                  "score": 0.987129271030426,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.9790357351303101,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 4,
+                "unknown": 1
+              }
+            }
+          },
+          "ranker_sha256": "2b97581d66ba21443f6568e554574fed9b5fd661f651f88ec01c9b85f9425767",
+          "status": {
+            "status": "completed",
+            "epochs": 8,
+            "seconds": 4.855290100000275,
+            "peak_allocated_bytes": 5488029696,
+            "checkpoints_readback_equal": true,
+            "original_models_updated": false,
+            "camera_AF_verified": false
+          },
+          "initial_state_sha256": "3bb4c35afc981875159503f9a14df0d9500c0113169cb5394a3513dade941973",
+          "absence_point_presentations": 12
+        },
+        "small-hard_20261028": {
+          "condition": "small-hard",
+          "seed": 20261028,
+          "epoch": 8,
+          "parameters": 224049,
+          "total_with_parent": 2686722,
+          "calibration": {
+            "threshold": 0.95,
+            "real_calibration": {
+              "frames": 41,
+              "positive_anchors": 23,
+              "positive_accepted": 23,
+              "known_negative_false_frames": 1
+            },
+            "public_calibration": {
+              "total": 1800,
+              "foreground": 1581,
+              "known_wrong": 18,
+              "unknown": 62,
+              "abstain": 139
+            },
+            "public_utility": 1491
+          },
+          "policies": {
+            "native_bh_parent_eye": {
+              "reference": {
+                "images": 80,
+                "selected": 68,
+                "selected_eye": 35,
+                "abstain": 12,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 62,
+                "outside_labelled_geometry": 6,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 21,
+                "bird_region": 20,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "counts": {
+                "images": 80,
+                "selected": 75,
+                "selected_eye": 35,
+                "abstain": 5,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 67,
+                "outside_labelled_geometry": 7,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 22,
+                "bird_region": 24,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.9694979190826416,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0187",
+                  "point_xy": [
+                    210.0,
+                    118.0
+                  ],
+                  "proposal_score": 0.9979007244110107,
+                  "source_kind": "surface",
+                  "score": 0.9970190525054932,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    219.52423095703125,
+                    26.856952667236328
+                  ],
+                  "proposal_score": 0.3951341509819031,
+                  "source_kind": "eye",
+                  "score": 0.95123291015625,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.9856076240539551,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0386",
+                  "point_xy": [
+                    209.6182861328125,
+                    114.62478637695312
+                  ],
+                  "proposal_score": 0.348201721906662,
+                  "source_kind": "eye",
+                  "score": 0.9837225079536438,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0395",
+                  "point_xy": [
+                    204.35890197753906,
+                    130.92637634277344
+                  ],
+                  "proposal_score": 0.19223590195178986,
+                  "source_kind": "eye",
+                  "score": 0.991355836391449,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0398",
+                  "point_xy": [
+                    203.357177734375,
+                    124.08561706542969
+                  ],
+                  "proposal_score": 0.36206647753715515,
+                  "source_kind": "eye",
+                  "score": 0.9898695349693298,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 2,
+                "supported": 3,
+                "unknown": 2
+              }
+            },
+            "two_n_primary": {
+              "reference": {
+                "images": 80,
+                "selected": 69,
+                "selected_eye": 35,
+                "abstain": 11,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 68,
+                "outside_labelled_geometry": 1,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 15,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "counts": {
+                "images": 80,
+                "selected": 74,
+                "selected_eye": 35,
+                "abstain": 6,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 69,
+                "outside_labelled_geometry": 4,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 16,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.9694979190826416,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0377",
+                  "point_xy": [
+                    298.79180908203125,
+                    114.9472427368164
+                  ],
+                  "proposal_score": 0.6575384140014648,
+                  "source_kind": "eye",
+                  "score": 0.9883578419685364,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    219.52423095703125,
+                    26.856952667236328
+                  ],
+                  "proposal_score": 0.3951341509819031,
+                  "source_kind": "eye",
+                  "score": 0.95123291015625,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0379",
+                  "point_xy": [
+                    305.8293762207031,
+                    114.20259857177734
+                  ],
+                  "proposal_score": 0.6901415586471558,
+                  "source_kind": "eye",
+                  "score": 0.9882676005363464,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.9856076240539551,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 4,
+                "unknown": 1
+              }
+            }
+          },
+          "ranker_sha256": "422dea078ae67776ff34c5d40cf4664eff37d22e03c1ec66c1b5b8caca75e373",
+          "status": {
+            "status": "completed",
+            "epochs": 8,
+            "seconds": 4.243723200001114,
+            "peak_allocated_bytes": 5451506688,
+            "checkpoints_readback_equal": true,
+            "original_models_updated": false,
+            "camera_AF_verified": false
+          },
+          "initial_state_sha256": "d8ec46916116c37fa0b40a5f5a15836a58e0cb27e143cab4bf461b0200c0b697",
+          "absence_point_presentations": 18
+        },
+        "large-easy_20261028": {
+          "condition": "large-easy",
+          "seed": 20261028,
+          "epoch": 8,
+          "parameters": 808417,
+          "total_with_parent": 3271090,
+          "calibration": {
+            "threshold": 0.995,
+            "real_calibration": {
+              "frames": 41,
+              "positive_anchors": 23,
+              "positive_accepted": 17,
+              "known_negative_false_frames": 1
+            },
+            "public_calibration": {
+              "total": 1800,
+              "foreground": 1334,
+              "known_wrong": 7,
+              "unknown": 35,
+              "abstain": 424
+            },
+            "public_utility": 1299
+          },
+          "policies": {
+            "native_bh_parent_eye": {
+              "reference": {
+                "images": 80,
+                "selected": 68,
+                "selected_eye": 35,
+                "abstain": 12,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 62,
+                "outside_labelled_geometry": 6,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 21,
+                "bird_region": 20,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "counts": {
+                "images": 80,
+                "selected": 70,
+                "selected_eye": 35,
+                "abstain": 10,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 64,
+                "outside_labelled_geometry": 6,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 21,
+                "bird_region": 22,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0187",
+                  "point_xy": [
+                    210.0,
+                    118.0
+                  ],
+                  "proposal_score": 0.9979007244110107,
+                  "source_kind": "surface",
+                  "score": 0.9991100430488586,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0395",
+                  "point_xy": [
+                    204.35890197753906,
+                    130.92637634277344
+                  ],
+                  "proposal_score": 0.19223590195178986,
+                  "source_kind": "eye",
+                  "score": 0.9977743029594421,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "supported": 1,
+                "unknown": 1
+              }
+            },
+            "two_n_primary": {
+              "reference": {
+                "images": 80,
+                "selected": 69,
+                "selected_eye": 35,
+                "abstain": 11,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 68,
+                "outside_labelled_geometry": 1,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 15,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "counts": {
+                "images": 80,
+                "selected": 71,
+                "selected_eye": 35,
+                "abstain": 9,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 68,
+                "outside_labelled_geometry": 3,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 15,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0377",
+                  "point_xy": [
+                    298.79180908203125,
+                    114.9472427368164
+                  ],
+                  "proposal_score": 0.6575384140014648,
+                  "source_kind": "eye",
+                  "score": 0.9967523813247681,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0379",
+                  "point_xy": [
+                    305.8293762207031,
+                    114.20259857177734
+                  ],
+                  "proposal_score": 0.6901415586471558,
+                  "source_kind": "eye",
+                  "score": 0.9959140419960022,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 2
+              }
+            }
+          },
+          "ranker_sha256": "2ef2cc31556b2f157414328f59537a1f98f8bc2de6a7fe416df0ce8297eadf01",
+          "status": {
+            "status": "completed",
+            "epochs": 8,
+            "seconds": 4.840964700000768,
+            "peak_allocated_bytes": 5488029696,
+            "checkpoints_readback_equal": true,
+            "original_models_updated": false,
+            "camera_AF_verified": false
+          },
+          "initial_state_sha256": "3bb4c35afc981875159503f9a14df0d9500c0113169cb5394a3513dade941973",
+          "absence_point_presentations": 18
+        },
+        "large-hard_20261028": {
+          "condition": "large-hard",
+          "seed": 20261028,
+          "epoch": 8,
+          "parameters": 808417,
+          "total_with_parent": 3271090,
+          "calibration": {
+            "threshold": 0.95,
+            "real_calibration": {
+              "frames": 41,
+              "positive_anchors": 23,
+              "positive_accepted": 23,
+              "known_negative_false_frames": 1
+            },
+            "public_calibration": {
+              "total": 1800,
+              "foreground": 1591,
+              "known_wrong": 19,
+              "unknown": 58,
+              "abstain": 132
+            },
+            "public_utility": 1496
+          },
+          "policies": {
+            "native_bh_parent_eye": {
+              "reference": {
+                "images": 80,
+                "selected": 68,
+                "selected_eye": 35,
+                "abstain": 12,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 62,
+                "outside_labelled_geometry": 6,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 21,
+                "bird_region": 20,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "counts": {
+                "images": 80,
+                "selected": 75,
+                "selected_eye": 35,
+                "abstain": 5,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 67,
+                "outside_labelled_geometry": 7,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 22,
+                "bird_region": 24,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.979393482208252,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0187",
+                  "point_xy": [
+                    210.0,
+                    118.0
+                  ],
+                  "proposal_score": 0.9979007244110107,
+                  "source_kind": "surface",
+                  "score": 0.995718777179718,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    219.52423095703125,
+                    26.856952667236328
+                  ],
+                  "proposal_score": 0.3951341509819031,
+                  "source_kind": "eye",
+                  "score": 0.9659639000892639,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.9897116422653198,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0386",
+                  "point_xy": [
+                    209.6182861328125,
+                    114.62478637695312
+                  ],
+                  "proposal_score": 0.348201721906662,
+                  "source_kind": "eye",
+                  "score": 0.9900636076927185,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0395",
+                  "point_xy": [
+                    204.35890197753906,
+                    130.92637634277344
+                  ],
+                  "proposal_score": 0.19223590195178986,
+                  "source_kind": "eye",
+                  "score": 0.9897513389587402,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0398",
+                  "point_xy": [
+                    203.357177734375,
+                    124.08561706542969
+                  ],
+                  "proposal_score": 0.36206647753715515,
+                  "source_kind": "eye",
+                  "score": 0.9908744096755981,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 2,
+                "supported": 3,
+                "unknown": 2
+              }
+            },
+            "two_n_primary": {
+              "reference": {
+                "images": 80,
+                "selected": 69,
+                "selected_eye": 35,
+                "abstain": 11,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 68,
+                "outside_labelled_geometry": 1,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 15,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "counts": {
+                "images": 80,
+                "selected": 75,
+                "selected_eye": 35,
+                "abstain": 5,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 69,
+                "outside_labelled_geometry": 5,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 16,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.979393482208252,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0377",
+                  "point_xy": [
+                    298.79180908203125,
+                    114.9472427368164
+                  ],
+                  "proposal_score": 0.6575384140014648,
+                  "source_kind": "eye",
+                  "score": 0.9903663396835327,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    219.52423095703125,
+                    26.856952667236328
+                  ],
+                  "proposal_score": 0.3951341509819031,
+                  "source_kind": "eye",
+                  "score": 0.9659639000892639,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0379",
+                  "point_xy": [
+                    305.8293762207031,
+                    114.20259857177734
+                  ],
+                  "proposal_score": 0.6901415586471558,
+                  "source_kind": "eye",
+                  "score": 0.9876639246940613,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.9897116422653198,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0389",
+                  "point_xy": [
+                    114.0,
+                    246.0
+                  ],
+                  "proposal_score": 0.9832144975662231,
+                  "source_kind": "surface",
+                  "score": 0.957833468914032,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 5,
+                "unknown": 1
+              }
+            }
+          },
+          "ranker_sha256": "e417199d6032c6c3fcab96c17cbd8faf5e2bae351d30b223a33ada5f9ca3d769",
+          "status": {
+            "status": "completed",
+            "epochs": 8,
+            "seconds": 4.729645600000367,
+            "peak_allocated_bytes": 5488029696,
+            "checkpoints_readback_equal": true,
+            "original_models_updated": false,
+            "camera_AF_verified": false
+          },
+          "initial_state_sha256": "3bb4c35afc981875159503f9a14df0d9500c0113169cb5394a3513dade941973",
+          "absence_point_presentations": 18
+        }
+      },
+      "matrix": {
+        "completed": 6,
+        "epochs": 48,
+        "paired_frame_order_equal": true,
+        "small_large_hard_point_selection_equal": true,
+        "sources_equal": true
+      },
+      "baseline_counts": {
+        "native_bh_parent_eye": {
+          "images": 80,
+          "selected": 68,
+          "selected_eye": 35,
+          "abstain": 12,
+          "eye_known_images": 26,
+          "eye_labelled_images": 25,
+          "eye_known_selected": 17,
+          "eye_unassessed_selected": 18,
+          "eye_2px": 12,
+          "eye_4px": 15,
+          "eye_8px": 16,
+          "eye_unmatched_4px": 2,
+          "geometry_supported": 62,
+          "outside_labelled_geometry": 6,
+          "unknown_geometry": 0,
+          "explicit_absent_selection": 0,
+          "head_region": 21,
+          "bird_region": 20,
+          "wrong_eye_over_geometric_fallback": 2,
+          "strict_eye_geometry": 18,
+          "near_eye_geometry": 3
+        },
+        "two_n_primary": {
+          "images": 80,
+          "selected": 69,
+          "selected_eye": 35,
+          "abstain": 11,
+          "eye_known_images": 26,
+          "eye_labelled_images": 25,
+          "eye_known_selected": 17,
+          "eye_unassessed_selected": 18,
+          "eye_2px": 12,
+          "eye_4px": 15,
+          "eye_8px": 16,
+          "eye_unmatched_4px": 2,
+          "geometry_supported": 68,
+          "outside_labelled_geometry": 1,
+          "unknown_geometry": 0,
+          "explicit_absent_selection": 0,
+          "head_region": 15,
+          "bird_region": 33,
+          "wrong_eye_over_geometric_fallback": 2,
+          "strict_eye_geometry": 16,
+          "near_eye_geometry": 4
+        }
+      },
+      "pool_geometry_on_primary_abstentions": {
+        "native_bh_parent_eye": 11,
+        "two_n_primary": 10
+      },
+      "unique_point_ai_draft_counts": {
+        "unsupported": 5,
+        "supported": 3,
+        "unknown": 2
+      },
+      "old_human_exact_matches": 0
+    },
+    "extended_32": {
+      "runs": {
+        "small-hard_20261027": {
+          "condition": "small-hard",
+          "seed": 20261027,
+          "epoch": 20,
+          "parameters": 224049,
+          "total_with_parent": 2686722,
+          "calibration": {
+            "threshold": 0.95,
+            "real_calibration": {
+              "frames": 41,
+              "positive_anchors": 23,
+              "positive_accepted": 23,
+              "known_negative_false_frames": 0
+            },
+            "public_calibration": {
+              "total": 1800,
+              "foreground": 1606,
+              "known_wrong": 15,
+              "unknown": 58,
+              "abstain": 121
+            },
+            "public_utility": 1531
+          },
+          "policies": {
+            "native_bh_parent_eye": {
+              "reference": {
+                "images": 80,
+                "selected": 68,
+                "selected_eye": 35,
+                "abstain": 12,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 62,
+                "outside_labelled_geometry": 6,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 21,
+                "bird_region": 20,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "counts": {
+                "images": 80,
+                "selected": 75,
+                "selected_eye": 35,
+                "abstain": 5,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 67,
+                "outside_labelled_geometry": 7,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 22,
+                "bird_region": 24,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.95123291015625,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0187",
+                  "point_xy": [
+                    210.0,
+                    118.0
+                  ],
+                  "proposal_score": 0.9979007244110107,
+                  "source_kind": "surface",
+                  "score": 0.9991374015808105,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    299.2794189453125,
+                    114.1072769165039
+                  ],
+                  "proposal_score": 0.590779185295105,
+                  "source_kind": "eye",
+                  "score": 0.961243748664856,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.9937345385551453,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0386",
+                  "point_xy": [
+                    209.6182861328125,
+                    114.62478637695312
+                  ],
+                  "proposal_score": 0.348201721906662,
+                  "source_kind": "eye",
+                  "score": 0.9904406070709229,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0395",
+                  "point_xy": [
+                    204.35890197753906,
+                    130.92637634277344
+                  ],
+                  "proposal_score": 0.19223590195178986,
+                  "source_kind": "eye",
+                  "score": 0.9927391409873962,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0398",
+                  "point_xy": [
+                    203.357177734375,
+                    124.08561706542969
+                  ],
+                  "proposal_score": 0.36206647753715515,
+                  "source_kind": "eye",
+                  "score": 0.976445734500885,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 2,
+                "supported": 3,
+                "unknown": 2
+              }
+            },
+            "two_n_primary": {
+              "reference": {
+                "images": 80,
+                "selected": 69,
+                "selected_eye": 35,
+                "abstain": 11,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 68,
+                "outside_labelled_geometry": 1,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 15,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "counts": {
+                "images": 80,
+                "selected": 74,
+                "selected_eye": 35,
+                "abstain": 6,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 69,
+                "outside_labelled_geometry": 4,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 16,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.95123291015625,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0377",
+                  "point_xy": [
+                    298.79180908203125,
+                    114.9472427368164
+                  ],
+                  "proposal_score": 0.6575384140014648,
+                  "source_kind": "eye",
+                  "score": 0.9882221817970276,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    299.2794189453125,
+                    114.1072769165039
+                  ],
+                  "proposal_score": 0.590779185295105,
+                  "source_kind": "eye",
+                  "score": 0.961243748664856,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0379",
+                  "point_xy": [
+                    305.8293762207031,
+                    114.20259857177734
+                  ],
+                  "proposal_score": 0.6901415586471558,
+                  "source_kind": "eye",
+                  "score": 0.9879926443099976,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.9937345385551453,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 4,
+                "unknown": 1
+              }
+            }
+          },
+          "ranker_sha256": "2b526522f44c05741d7217392d0310f069b7a366ab29ed2e62b8febc37abd6f3",
+          "status": {
+            "status": "completed",
+            "epochs": 32,
+            "seconds": 15.075366699998995,
+            "peak_allocated_bytes": 5451506688,
+            "checkpoints_readback_equal": true,
+            "original_models_updated": false,
+            "camera_AF_verified": false
+          },
+          "initial_state_sha256": "d8ec46916116c37fa0b40a5f5a15836a58e0cb27e143cab4bf461b0200c0b697",
+          "absence_point_presentations": 40
+        },
+        "large-easy_20261027": {
+          "condition": "large-easy",
+          "seed": 20261027,
+          "epoch": 27,
+          "parameters": 808417,
+          "total_with_parent": 3271090,
+          "calibration": {
+            "threshold": 0.99,
+            "real_calibration": {
+              "frames": 41,
+              "positive_anchors": 23,
+              "positive_accepted": 22,
+              "known_negative_false_frames": 1
+            },
+            "public_calibration": {
+              "total": 1800,
+              "foreground": 1508,
+              "known_wrong": 10,
+              "unknown": 44,
+              "abstain": 238
+            },
+            "public_utility": 1458
+          },
+          "policies": {
+            "native_bh_parent_eye": {
+              "reference": {
+                "images": 80,
+                "selected": 68,
+                "selected_eye": 35,
+                "abstain": 12,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 62,
+                "outside_labelled_geometry": 6,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 21,
+                "bird_region": 20,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "counts": {
+                "images": 80,
+                "selected": 74,
+                "selected_eye": 35,
+                "abstain": 6,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 66,
+                "outside_labelled_geometry": 7,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 22,
+                "bird_region": 23,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.9909797310829163,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0187",
+                  "point_xy": [
+                    210.0,
+                    118.0
+                  ],
+                  "proposal_score": 0.9979007244110107,
+                  "source_kind": "surface",
+                  "score": 0.9994907379150391,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    299.2794189453125,
+                    114.1072769165039
+                  ],
+                  "proposal_score": 0.590779185295105,
+                  "source_kind": "eye",
+                  "score": 0.9910492897033691,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.9963783621788025,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0386",
+                  "point_xy": [
+                    209.6182861328125,
+                    114.62478637695312
+                  ],
+                  "proposal_score": 0.348201721906662,
+                  "source_kind": "eye",
+                  "score": 0.991355836391449,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0395",
+                  "point_xy": [
+                    204.35890197753906,
+                    130.92637634277344
+                  ],
+                  "proposal_score": 0.19223590195178986,
+                  "source_kind": "eye",
+                  "score": 0.9968884587287903,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 2,
+                "supported": 2,
+                "unknown": 2
+              }
+            },
+            "two_n_primary": {
+              "reference": {
+                "images": 80,
+                "selected": 69,
+                "selected_eye": 35,
+                "abstain": 11,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 68,
+                "outside_labelled_geometry": 1,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 15,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "counts": {
+                "images": 80,
+                "selected": 75,
+                "selected_eye": 35,
+                "abstain": 5,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 69,
+                "outside_labelled_geometry": 5,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 16,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.9909797310829163,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0377",
+                  "point_xy": [
+                    298.79180908203125,
+                    114.9472427368164
+                  ],
+                  "proposal_score": 0.6575384140014648,
+                  "source_kind": "eye",
+                  "score": 0.9967523813247681,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    299.2794189453125,
+                    114.1072769165039
+                  ],
+                  "proposal_score": 0.590779185295105,
+                  "source_kind": "eye",
+                  "score": 0.9910492897033691,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0379",
+                  "point_xy": [
+                    305.8293762207031,
+                    114.20259857177734
+                  ],
+                  "proposal_score": 0.6901415586471558,
+                  "source_kind": "eye",
+                  "score": 0.9965435862541199,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.9963783621788025,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0389",
+                  "point_xy": [
+                    114.0,
+                    246.0
+                  ],
+                  "proposal_score": 0.9832144975662231,
+                  "source_kind": "surface",
+                  "score": 0.9905874133110046,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 5,
+                "unknown": 1
+              }
+            }
+          },
+          "ranker_sha256": "54b4a048c2447220662c2c44e356a025d4c9b741eda03ccfa93ac50a10780bef",
+          "status": {
+            "status": "completed",
+            "epochs": 32,
+            "seconds": 16.933750399999553,
+            "peak_allocated_bytes": 5488029696,
+            "checkpoints_readback_equal": true,
+            "original_models_updated": false,
+            "camera_AF_verified": false
+          },
+          "initial_state_sha256": "3bb4c35afc981875159503f9a14df0d9500c0113169cb5394a3513dade941973",
+          "absence_point_presentations": 40
+        },
+        "large-hard_20261027": {
+          "condition": "large-hard",
+          "seed": 20261027,
+          "epoch": 27,
+          "parameters": 808417,
+          "total_with_parent": 3271090,
+          "calibration": {
+            "threshold": 0.95,
+            "real_calibration": {
+              "frames": 41,
+              "positive_anchors": 23,
+              "positive_accepted": 23,
+              "known_negative_false_frames": 1
+            },
+            "public_calibration": {
+              "total": 1800,
+              "foreground": 1645,
+              "known_wrong": 17,
+              "unknown": 78,
+              "abstain": 60
+            },
+            "public_utility": 1560
+          },
+          "policies": {
+            "native_bh_parent_eye": {
+              "reference": {
+                "images": 80,
+                "selected": 68,
+                "selected_eye": 35,
+                "abstain": 12,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 62,
+                "outside_labelled_geometry": 6,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 21,
+                "bird_region": 20,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "counts": {
+                "images": 80,
+                "selected": 74,
+                "selected_eye": 35,
+                "abstain": 6,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 67,
+                "outside_labelled_geometry": 7,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 22,
+                "bird_region": 24,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0187",
+                  "point_xy": [
+                    210.0,
+                    118.0
+                  ],
+                  "proposal_score": 0.9979007244110107,
+                  "source_kind": "surface",
+                  "score": 0.9993067979812622,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    299.2794189453125,
+                    114.1072769165039
+                  ],
+                  "proposal_score": 0.590779185295105,
+                  "source_kind": "eye",
+                  "score": 0.9869794845581055,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.997231662273407,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0386",
+                  "point_xy": [
+                    209.6182861328125,
+                    114.62478637695312
+                  ],
+                  "proposal_score": 0.348201721906662,
+                  "source_kind": "eye",
+                  "score": 0.9871788024902344,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0395",
+                  "point_xy": [
+                    204.35890197753906,
+                    130.92637634277344
+                  ],
+                  "proposal_score": 0.19223590195178986,
+                  "source_kind": "eye",
+                  "score": 0.9946150183677673,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0398",
+                  "point_xy": [
+                    203.357177734375,
+                    124.08561706542969
+                  ],
+                  "proposal_score": 0.36206647753715515,
+                  "source_kind": "eye",
+                  "score": 0.9669140577316284,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "supported": 3,
+                "unsupported": 1,
+                "unknown": 2
+              }
+            },
+            "two_n_primary": {
+              "reference": {
+                "images": 80,
+                "selected": 69,
+                "selected_eye": 35,
+                "abstain": 11,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 68,
+                "outside_labelled_geometry": 1,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 15,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "counts": {
+                "images": 80,
+                "selected": 75,
+                "selected_eye": 35,
+                "abstain": 5,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 70,
+                "outside_labelled_geometry": 5,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 17,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0180",
+                  "point_xy": [
+                    174.51478576660156,
+                    124.81368255615234
+                  ],
+                  "proposal_score": 0.1548227220773697,
+                  "source_kind": "eye",
+                  "score": 0.9702399373054504,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0377",
+                  "point_xy": [
+                    298.79180908203125,
+                    114.9472427368164
+                  ],
+                  "proposal_score": 0.6575384140014648,
+                  "source_kind": "eye",
+                  "score": 0.9957848191261292,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    299.2794189453125,
+                    114.1072769165039
+                  ],
+                  "proposal_score": 0.590779185295105,
+                  "source_kind": "eye",
+                  "score": 0.9869794845581055,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0379",
+                  "point_xy": [
+                    305.8293762207031,
+                    114.20259857177734
+                  ],
+                  "proposal_score": 0.6901415586471558,
+                  "source_kind": "eye",
+                  "score": 0.9959140419960022,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.997231662273407,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0389",
+                  "point_xy": [
+                    114.0,
+                    246.0
+                  ],
+                  "proposal_score": 0.9832144975662231,
+                  "source_kind": "surface",
+                  "score": 0.9693241715431213,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unknown": 2,
+                "unsupported": 4
+              }
+            }
+          },
+          "ranker_sha256": "a8b7ab359be81aa8970929df65f3685074830297d4418a3da26eb60d7ebee82f",
+          "status": {
+            "status": "completed",
+            "epochs": 32,
+            "seconds": 17.127340600000025,
+            "peak_allocated_bytes": 5488029696,
+            "checkpoints_readback_equal": true,
+            "original_models_updated": false,
+            "camera_AF_verified": false
+          },
+          "initial_state_sha256": "3bb4c35afc981875159503f9a14df0d9500c0113169cb5394a3513dade941973",
+          "absence_point_presentations": 40
+        },
+        "small-hard_20261028": {
+          "condition": "small-hard",
+          "seed": 20261028,
+          "epoch": 30,
+          "parameters": 224049,
+          "total_with_parent": 2686722,
+          "calibration": {
+            "threshold": 0.9,
+            "real_calibration": {
+              "frames": 41,
+              "positive_anchors": 23,
+              "positive_accepted": 23,
+              "known_negative_false_frames": 1
+            },
+            "public_calibration": {
+              "total": 1800,
+              "foreground": 1645,
+              "known_wrong": 20,
+              "unknown": 76,
+              "abstain": 59
+            },
+            "public_utility": 1545
+          },
+          "policies": {
+            "native_bh_parent_eye": {
+              "reference": {
+                "images": 80,
+                "selected": 68,
+                "selected_eye": 35,
+                "abstain": 12,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 62,
+                "outside_labelled_geometry": 6,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 21,
+                "bird_region": 20,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "counts": {
+                "images": 80,
+                "selected": 76,
+                "selected_eye": 35,
+                "abstain": 4,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 68,
+                "outside_labelled_geometry": 7,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 22,
+                "bird_region": 25,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    251.75555419921875,
+                    91.54904174804688
+                  ],
+                  "proposal_score": 0.19682618975639343,
+                  "source_kind": "eye",
+                  "score": 0.9162596464157104,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0187",
+                  "point_xy": [
+                    210.0,
+                    118.0
+                  ],
+                  "proposal_score": 0.9979007244110107,
+                  "source_kind": "surface",
+                  "score": 0.9985841512680054,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    299.2794189453125,
+                    114.1072769165039
+                  ],
+                  "proposal_score": 0.590779185295105,
+                  "source_kind": "eye",
+                  "score": 0.9440738558769226,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.9937345385551453,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0386",
+                  "point_xy": [
+                    209.6182861328125,
+                    114.62478637695312
+                  ],
+                  "proposal_score": 0.348201721906662,
+                  "source_kind": "eye",
+                  "score": 0.9837850332260132,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0391",
+                  "point_xy": [
+                    202.0,
+                    130.0
+                  ],
+                  "proposal_score": 0.9812389612197876,
+                  "source_kind": "surface",
+                  "score": 0.9122800230979919,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0395",
+                  "point_xy": [
+                    204.35890197753906,
+                    130.92637634277344
+                  ],
+                  "proposal_score": 0.19223590195178986,
+                  "source_kind": "eye",
+                  "score": 0.9941347241401672,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0398",
+                  "point_xy": [
+                    203.357177734375,
+                    124.08561706542969
+                  ],
+                  "proposal_score": 0.36206647753715515,
+                  "source_kind": "eye",
+                  "score": 0.9676556587219238,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 2,
+                "supported": 4,
+                "unknown": 2
+              }
+            },
+            "two_n_primary": {
+              "reference": {
+                "images": 80,
+                "selected": 69,
+                "selected_eye": 35,
+                "abstain": 11,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 68,
+                "outside_labelled_geometry": 1,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 15,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "counts": {
+                "images": 80,
+                "selected": 76,
+                "selected_eye": 35,
+                "abstain": 4,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 70,
+                "outside_labelled_geometry": 5,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 17,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    251.75555419921875,
+                    91.54904174804688
+                  ],
+                  "proposal_score": 0.19682618975639343,
+                  "source_kind": "eye",
+                  "score": 0.9162596464157104,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0180",
+                  "point_xy": [
+                    178.78030395507812,
+                    125.36054992675781
+                  ],
+                  "proposal_score": 0.34334173798561096,
+                  "source_kind": "eye",
+                  "score": 0.9428234100341797,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0377",
+                  "point_xy": [
+                    298.79180908203125,
+                    114.9472427368164
+                  ],
+                  "proposal_score": 0.6575384140014648,
+                  "source_kind": "eye",
+                  "score": 0.9842759370803833,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    299.2794189453125,
+                    114.1072769165039
+                  ],
+                  "proposal_score": 0.590779185295105,
+                  "source_kind": "eye",
+                  "score": 0.9440738558769226,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0379",
+                  "point_xy": [
+                    305.8293762207031,
+                    114.20259857177734
+                  ],
+                  "proposal_score": 0.6901415586471558,
+                  "source_kind": "eye",
+                  "score": 0.9843363761901855,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.9937345385551453,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0389",
+                  "point_xy": [
+                    114.0,
+                    246.0
+                  ],
+                  "proposal_score": 0.9832144975662231,
+                  "source_kind": "surface",
+                  "score": 0.9197867512702942,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 5,
+                "unknown": 2
+              }
+            }
+          },
+          "ranker_sha256": "6bdfde7513a5661448b51a5141f5e0708b39b4dc137c094062aa2aeb26df3b9a",
+          "status": {
+            "status": "completed",
+            "epochs": 32,
+            "seconds": 15.193030799999178,
+            "peak_allocated_bytes": 5451506688,
+            "checkpoints_readback_equal": true,
+            "original_models_updated": false,
+            "camera_AF_verified": false
+          },
+          "initial_state_sha256": "d8ec46916116c37fa0b40a5f5a15836a58e0cb27e143cab4bf461b0200c0b697",
+          "absence_point_presentations": 52
+        },
+        "large-easy_20261028": {
+          "condition": "large-easy",
+          "seed": 20261028,
+          "epoch": 27,
+          "parameters": 808417,
+          "total_with_parent": 3271090,
+          "calibration": {
+            "threshold": 0.99,
+            "real_calibration": {
+              "frames": 41,
+              "positive_anchors": 23,
+              "positive_accepted": 23,
+              "known_negative_false_frames": 1
+            },
+            "public_calibration": {
+              "total": 1800,
+              "foreground": 1495,
+              "known_wrong": 13,
+              "unknown": 51,
+              "abstain": 241
+            },
+            "public_utility": 1430
+          },
+          "policies": {
+            "native_bh_parent_eye": {
+              "reference": {
+                "images": 80,
+                "selected": 68,
+                "selected_eye": 35,
+                "abstain": 12,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 62,
+                "outside_labelled_geometry": 6,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 21,
+                "bird_region": 20,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "counts": {
+                "images": 80,
+                "selected": 73,
+                "selected_eye": 35,
+                "abstain": 7,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 65,
+                "outside_labelled_geometry": 7,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 22,
+                "bird_region": 22,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.9925393462181091,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0187",
+                  "point_xy": [
+                    210.0,
+                    118.0
+                  ],
+                  "proposal_score": 0.9979007244110107,
+                  "source_kind": "surface",
+                  "score": 0.9995487332344055,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    299.2794189453125,
+                    114.1072769165039
+                  ],
+                  "proposal_score": 0.590779185295105,
+                  "source_kind": "eye",
+                  "score": 0.9932811260223389,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.9954967498779297,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0395",
+                  "point_xy": [
+                    204.35890197753906,
+                    130.92637634277344
+                  ],
+                  "proposal_score": 0.19223590195178986,
+                  "source_kind": "eye",
+                  "score": 0.9968641400337219,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 2,
+                "supported": 1,
+                "unknown": 2
+              }
+            },
+            "two_n_primary": {
+              "reference": {
+                "images": 80,
+                "selected": 69,
+                "selected_eye": 35,
+                "abstain": 11,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 68,
+                "outside_labelled_geometry": 1,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 15,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "counts": {
+                "images": 80,
+                "selected": 74,
+                "selected_eye": 35,
+                "abstain": 6,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 69,
+                "outside_labelled_geometry": 4,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 16,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.9925393462181091,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0377",
+                  "point_xy": [
+                    298.79180908203125,
+                    114.9472427368164
+                  ],
+                  "proposal_score": 0.6575384140014648,
+                  "source_kind": "eye",
+                  "score": 0.9973165392875671,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    299.2794189453125,
+                    114.1072769165039
+                  ],
+                  "proposal_score": 0.590779185295105,
+                  "source_kind": "eye",
+                  "score": 0.9932811260223389,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0379",
+                  "point_xy": [
+                    305.8293762207031,
+                    114.20259857177734
+                  ],
+                  "proposal_score": 0.6901415586471558,
+                  "source_kind": "eye",
+                  "score": 0.9980732202529907,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.9954967498779297,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 4,
+                "unknown": 1
+              }
+            }
+          },
+          "ranker_sha256": "e20911232826dbebe66b03cdfeb042b5207af8e52b6a2483c9ceb65486ed98e7",
+          "status": {
+            "status": "completed",
+            "epochs": 32,
+            "seconds": 17.086527200001,
+            "peak_allocated_bytes": 5488029696,
+            "checkpoints_readback_equal": true,
+            "original_models_updated": false,
+            "camera_AF_verified": false
+          },
+          "initial_state_sha256": "3bb4c35afc981875159503f9a14df0d9500c0113169cb5394a3513dade941973",
+          "absence_point_presentations": 52
+        },
+        "large-hard_20261028": {
+          "condition": "large-hard",
+          "seed": 20261028,
+          "epoch": 21,
+          "parameters": 808417,
+          "total_with_parent": 3271090,
+          "calibration": {
+            "threshold": 0.9,
+            "real_calibration": {
+              "frames": 41,
+              "positive_anchors": 23,
+              "positive_accepted": 23,
+              "known_negative_false_frames": 1
+            },
+            "public_calibration": {
+              "total": 1800,
+              "foreground": 1645,
+              "known_wrong": 22,
+              "unknown": 68,
+              "abstain": 65
+            },
+            "public_utility": 1535
+          },
+          "policies": {
+            "native_bh_parent_eye": {
+              "reference": {
+                "images": 80,
+                "selected": 68,
+                "selected_eye": 35,
+                "abstain": 12,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 62,
+                "outside_labelled_geometry": 6,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 21,
+                "bird_region": 20,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "counts": {
+                "images": 80,
+                "selected": 75,
+                "selected_eye": 35,
+                "abstain": 5,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 67,
+                "outside_labelled_geometry": 7,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 22,
+                "bird_region": 24,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 18,
+                "near_eye_geometry": 3
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.9329437017440796,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0187",
+                  "point_xy": [
+                    210.0,
+                    118.0
+                  ],
+                  "proposal_score": 0.9979007244110107,
+                  "source_kind": "surface",
+                  "score": 0.998807430267334,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    299.2794189453125,
+                    114.1072769165039
+                  ],
+                  "proposal_score": 0.590779185295105,
+                  "source_kind": "eye",
+                  "score": 0.967777669429779,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.993854820728302,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0386",
+                  "point_xy": [
+                    209.6182861328125,
+                    114.62478637695312
+                  ],
+                  "proposal_score": 0.348201721906662,
+                  "source_kind": "eye",
+                  "score": 0.9865716695785522,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0395",
+                  "point_xy": [
+                    204.35890197753906,
+                    130.92637634277344
+                  ],
+                  "proposal_score": 0.19223590195178986,
+                  "source_kind": "eye",
+                  "score": 0.9897116422653198,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0398",
+                  "point_xy": [
+                    203.357177734375,
+                    124.08561706542969
+                  ],
+                  "proposal_score": 0.36206647753715515,
+                  "source_kind": "eye",
+                  "score": 0.9697853922843933,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 2,
+                "supported": 3,
+                "unknown": 2
+              }
+            },
+            "two_n_primary": {
+              "reference": {
+                "images": 80,
+                "selected": 69,
+                "selected_eye": 35,
+                "abstain": 11,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 68,
+                "outside_labelled_geometry": 1,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 0,
+                "head_region": 15,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "counts": {
+                "images": 80,
+                "selected": 76,
+                "selected_eye": 35,
+                "abstain": 4,
+                "eye_known_images": 26,
+                "eye_labelled_images": 25,
+                "eye_known_selected": 17,
+                "eye_unassessed_selected": 18,
+                "eye_2px": 12,
+                "eye_4px": 15,
+                "eye_8px": 16,
+                "eye_unmatched_4px": 2,
+                "geometry_supported": 70,
+                "outside_labelled_geometry": 5,
+                "unknown_geometry": 0,
+                "explicit_absent_selection": 1,
+                "head_region": 17,
+                "bird_region": 33,
+                "wrong_eye_over_geometric_fallback": 2,
+                "strict_eye_geometry": 16,
+                "near_eye_geometry": 4
+              },
+              "additions": [
+                {
+                  "image_id": "fb_0176",
+                  "point_xy": [
+                    358.0,
+                    226.0
+                  ],
+                  "proposal_score": 0.8564525246620178,
+                  "source_kind": "surface",
+                  "score": 0.9329437017440796,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0180",
+                  "point_xy": [
+                    178.78030395507812,
+                    125.36054992675781
+                  ],
+                  "proposal_score": 0.34334173798561096,
+                  "source_kind": "eye",
+                  "score": 0.9382373094558716,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0377",
+                  "point_xy": [
+                    298.79180908203125,
+                    114.9472427368164
+                  ],
+                  "proposal_score": 0.6575384140014648,
+                  "source_kind": "eye",
+                  "score": 0.9909797310829163,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0378",
+                  "point_xy": [
+                    299.2794189453125,
+                    114.1072769165039
+                  ],
+                  "proposal_score": 0.590779185295105,
+                  "source_kind": "eye",
+                  "score": 0.967777669429779,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0379",
+                  "point_xy": [
+                    305.8293762207031,
+                    114.20259857177734
+                  ],
+                  "proposal_score": 0.6901415586471558,
+                  "source_kind": "eye",
+                  "score": 0.9902538657188416,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0380",
+                  "point_xy": [
+                    42.0,
+                    74.0
+                  ],
+                  "proposal_score": 0.9893474578857422,
+                  "source_kind": "surface",
+                  "score": 0.993854820728302,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                },
+                {
+                  "image_id": "fb_0389",
+                  "point_xy": [
+                    114.0,
+                    246.0
+                  ],
+                  "proposal_score": 0.9832144975662231,
+                  "source_kind": "surface",
+                  "score": 0.941439151763916,
+                  "kind": "capture_hint",
+                  "output_role": "coarse RGB/context ranking; not a precise eye",
+                  "human_choice": null,
+                  "human_confirmed": false
+                }
+              ],
+              "primary_preserved": true,
+              "eye_counts_preserved": true,
+              "ai_draft_additions": {
+                "unsupported": 5,
+                "unknown": 2
+              }
+            }
+          },
+          "ranker_sha256": "1a99dfaf3838f8ec657e496098cc61d56152ca771fe707cda3f513043da2e9eb",
+          "status": {
+            "status": "completed",
+            "epochs": 32,
+            "seconds": 17.18373900000006,
+            "peak_allocated_bytes": 5488029696,
+            "checkpoints_readback_equal": true,
+            "original_models_updated": false,
+            "camera_AF_verified": false
+          },
+          "initial_state_sha256": "3bb4c35afc981875159503f9a14df0d9500c0113169cb5394a3513dade941973",
+          "absence_point_presentations": 52
+        }
+      },
+      "matrix": {
+        "completed": 6,
+        "epochs": 192,
+        "paired_frame_order_equal": true,
+        "small_large_hard_point_selection_equal": true,
+        "sources_equal": true,
+        "wall_seconds": 147.43257640000047
+      },
+      "baseline_counts": {
+        "native_bh_parent_eye": {
+          "images": 80,
+          "selected": 68,
+          "selected_eye": 35,
+          "abstain": 12,
+          "eye_known_images": 26,
+          "eye_labelled_images": 25,
+          "eye_known_selected": 17,
+          "eye_unassessed_selected": 18,
+          "eye_2px": 12,
+          "eye_4px": 15,
+          "eye_8px": 16,
+          "eye_unmatched_4px": 2,
+          "geometry_supported": 62,
+          "outside_labelled_geometry": 6,
+          "unknown_geometry": 0,
+          "explicit_absent_selection": 0,
+          "head_region": 21,
+          "bird_region": 20,
+          "wrong_eye_over_geometric_fallback": 2,
+          "strict_eye_geometry": 18,
+          "near_eye_geometry": 3
+        },
+        "two_n_primary": {
+          "images": 80,
+          "selected": 69,
+          "selected_eye": 35,
+          "abstain": 11,
+          "eye_known_images": 26,
+          "eye_labelled_images": 25,
+          "eye_known_selected": 17,
+          "eye_unassessed_selected": 18,
+          "eye_2px": 12,
+          "eye_4px": 15,
+          "eye_8px": 16,
+          "eye_unmatched_4px": 2,
+          "geometry_supported": 68,
+          "outside_labelled_geometry": 1,
+          "unknown_geometry": 0,
+          "explicit_absent_selection": 0,
+          "head_region": 15,
+          "bird_region": 33,
+          "wrong_eye_over_geometric_fallback": 2,
+          "strict_eye_geometry": 16,
+          "near_eye_geometry": 4
+        }
+      },
+      "pool_geometry_on_primary_abstentions": {
+        "native_bh_parent_eye": 11,
+        "two_n_primary": 10
+      },
+      "unique_point_ai_draft_counts": {
+        "unsupported": 6,
+        "supported": 4,
+        "unknown": 4
+      },
+      "old_human_exact_matches": 0
+    }
+  },
+  "calibrated_candidate": "large-hard_20261027",
+  "calibrated_candidate_is_not_a_replacement": true,
+  "parameters": {
+    "parent_n": 2455728,
+    "surface": 6945,
+    "verifier_small": 224049,
+    "verifier_large": 808417,
+    "single_n_small": 2686722,
+    "single_n_large": 3271090,
+    "two_n_small": 5142450,
+    "two_n_large": 5726818,
+    "single_n_excludes_native_BH_compute": true
+  },
+  "data": {
+    "community_fit_images": 334,
+    "community_internal_calibration_images": 41,
+    "community_internal_calibration_groups": 5,
+    "parent_previously_saw_internal_calibration": true,
+    "CUB_fit_images": 5385,
+    "CUB_calibration_sources": 600,
+    "CUB_calibration_correlated_views": 1800,
+    "fit_points": 157697,
+    "real_calibration_points": 1250,
+    "public_calibration_points": 57089,
+    "confirmed_absent_fit_frames": 1,
+    "confirmed_absent_internal_calibration_frames": 0
+  },
+  "supervision_provenance": {
+    "fit": {
+      "mask_interior": 77845,
+      "qualified_mask_background": 73201,
+      "known_synthetic_occluder": 1064,
+      "derived_review_exterior": 5411,
+      "human_eye": 151,
+      "human_frame_absence": 25
+    },
+    "real-calibration": {
+      "unknown": 575,
+      "derived_review_exterior": 652,
+      "human_eye": 23
+    },
+    "public-calibration": {
+      "mask_interior": 22842,
+      "qualified_mask_background": 28682,
+      "unknown": 5091,
+      "known_synthetic_occluder": 474
+    }
+  },
+  "training_review_queue": {
+    "images": 40,
+    "points": 80,
+    "groups": 24,
+    "initial_human_confirmed": 0,
+    "initial_ai_visual_labels": 0,
+    "fit_only": true,
+    "primary_abstentions": 0
+  },
+  "latency": {
+    "timings": {
+      "single_base": {
+        "samples": 500,
+        "p50_ms": 21.37875000062195,
+        "p95_ms": 25.651044999995065,
+        "mean_ms": 21.626544400001876
+      },
+      "single_small": {
+        "samples": 500,
+        "p50_ms": 21.779649999189132,
+        "p95_ms": 26.74261500051216,
+        "mean_ms": 22.207689199985907
+      },
+      "single_large": {
+        "samples": 500,
+        "p50_ms": 21.828000000823522,
+        "p95_ms": 26.261254999371886,
+        "mean_ms": 22.171618400003354
+      },
+      "two_n_base": {
+        "samples": 500,
+        "p50_ms": 38.46395000073244,
+        "p95_ms": 44.93257999920388,
+        "mean_ms": 39.03432100002101
+      },
+      "two_n_small": {
+        "samples": 500,
+        "p50_ms": 38.8869500002329,
+        "p95_ms": 45.92277500005365,
+        "mean_ms": 39.56364859998939
+      },
+      "two_n_large": {
+        "samples": 500,
+        "p50_ms": 39.28550000000541,
+        "p95_ms": 45.399684999301826,
+        "mean_ms": 39.572006600006716
+      }
+    },
+    "on_primary_abstention": {
+      "single_base": {
+        "samples": 72,
+        "p50_ms": 20.45559999987745,
+        "p95_ms": 25.37659000081476,
+        "mean_ms": 20.960240277620162
+      },
+      "single_small": {
+        "samples": 72,
+        "p50_ms": 24.129949999405653,
+        "p95_ms": 29.282554999372223,
+        "mean_ms": 24.92458611098098
+      },
+      "single_large": {
+        "samples": 72,
+        "p50_ms": 24.702349999643047,
+        "p95_ms": 28.479284999230003,
+        "mean_ms": 24.9257902778734
+      },
+      "two_n_base": {
+        "samples": 66,
+        "p50_ms": 36.2813499996264,
+        "p95_ms": 42.170425000676914,
+        "mean_ms": 36.781334848538705
+      },
+      "two_n_small": {
+        "samples": 66,
+        "p50_ms": 39.71610000007786,
+        "p95_ms": 46.23642500064307,
+        "mean_ms": 40.49926060617343
+      },
+      "two_n_large": {
+        "samples": 66,
+        "p50_ms": 40.78100000060658,
+        "p95_ms": 47.2841999985576,
+        "mean_ms": 41.36676818190167
+      }
+    },
+    "trigger_counts": {
+      "single_base": 72,
+      "single_small": 72,
+      "single_large": 72,
+      "two_n_base": 66,
+      "two_n_small": 66,
+      "two_n_large": 66
+    },
+    "gpu": "NVIDIA GeForce RTX 4080 Laptop GPU",
+    "precision": "CUDA autocast float16",
+    "batch_size": 1,
+    "samples": 500,
+    "thresholds": {
+      "small": 0.95,
+      "large": 0.95
+    },
+    "limits": [
+      "hot PNG read, preprocess, resident models, decode and conditional ranking",
+      "single policy excludes native B/H compute; native predictions cached",
+      "all models resident for matched comparisons; not a deployment memory measurement",
+      "not camera NPU latency or achieved camera focus"
+    ],
+    "p95_overhead": {
+      "single_small": 0.04255460159682789,
+      "single_large": 0.02378889434629028,
+      "two_n_small": 0.0220373502003961,
+      "two_n_large": 0.010395686161494
+    }
+  },
+  "engineering_checks": {
+    "full_unit_tests": 140,
+    "full_unit_tests_seconds": 16.878,
+    "full_unit_tests_exit_code": 0,
+    "cli_preserves_existing_primary": true,
+    "cli_actual_ranked_point_matches": true,
+    "cli_rejects_input_identity_mismatch": true,
+    "benchmark_selections_match_exported_inference": true,
+    "new_human_confirmations": 0,
+    "camera_AF_verified": false
+  },
+  "protection": {
+    "asset_files": 12545,
+    "asset_hashes_equal": true,
+    "protected_snapshot_equal": true,
+    "executed_training_sources_equal": true,
+    "cache_config_equal": true,
+    "production_annotation_state_equal": true
+  },
+  "cache_binary_hashes_first_recorded_after_initial_matrix": true,
+  "old_validation_used_for_checkpoint_or_threshold_selection": false,
+  "old_point_reviews_used_for_training": false,
+  "historical_tests_opened": false,
+  "new_independent_real_event_test": false,
+  "new_human_point_confirmations": 0,
+  "primary_choices_preserved": true,
+  "default_policy_changed": false,
+  "camera_AF_verified": false,
+  "decision": "Retain primary; no established useful real-residual improvement",
+  "final_protection": {
+    "protected_snapshot_equal": true,
+    "frozen_training_sources_equal": true,
+    "all_six_best_states_changed": {
+      "small-hard_20261027": {
+        "trained_state_sha256": "6e2253141d6ba6c32385b5a52a5c5d13f97de54c26d2ffdebb298efe43d4da04",
+        "changed_from_initial": true
+      },
+      "large-easy_20261027": {
+        "trained_state_sha256": "70fa8cba31d7af7a694c2d3993c4767475d664513bcae6c7c3d71ad3d9b3d123",
+        "changed_from_initial": true
+      },
+      "large-hard_20261027": {
+        "trained_state_sha256": "1708ebdab653230d43188a365d574d9e5441694d78fc5ead2fb6dc9d56f97dbb",
+        "changed_from_initial": true
+      },
+      "small-hard_20261028": {
+        "trained_state_sha256": "682ad1f956ea7b2c3231511c8dc531c6d711d1c9d972d42baafd3fa1552263b6",
+        "changed_from_initial": true
+      },
+      "large-easy_20261028": {
+        "trained_state_sha256": "93e049a5c8f5a62455e6a1c3f6f3cc4c04950e5d33ded89d9790866e86340fa7",
+        "changed_from_initial": true
+      },
+      "large-hard_20261028": {
+        "trained_state_sha256": "64dee07bb6fb7370969cd7d2f12192375686a567906e807d462ee777f73be637",
+        "changed_from_initial": true
+      }
+    },
+    "cache_bytes_equal_between_post_initial_and_post_extended": true
+  }
+}

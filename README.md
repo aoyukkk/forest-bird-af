@@ -30,7 +30,7 @@ Updated: **2026-10-27**.
 | Deduplicated queue | 535 confirmed usable images and **1 adjudication item** (`fb_0588`) |
 | Archived duplicates | 12 confirmed and 146 draft records retained; these drafts are not a new annotation backlog |
 | Evaluation split | 375 train / 80 validation / 80 test, grouped before training |
-| Training | Native controls, n/s comparisons and frozen-surface trials completed; no replacement recommended |
+| Training | Native, n/s, surface and RGB-verifier trials completed; no replacement recommended |
 
 The [694-record snapshot](data/annotations-2026-10-25/labels/community-corrections-v1.jsonl)
 also includes drafts and the adjudication item. **Unconfirmed records are not
@@ -67,6 +67,15 @@ Training needs NumPy and compatible CUDA PyTorch; the native route also needs
 your own verified vendor package. The independent YOLO route uses public data. See [training](docs/training/README.md) and
 [tests](tests/README.md). Firmware, original/modified vendor weights, feature
 caches and the production database are not distributed.
+
+## Capacity and real hard negatives — 2026-10-27
+
+Two RGB/context verifier sizes were compared over six 8-epoch and six 32-epoch
+runs, retaining the frozen n parent. Larger capacity did not establish useful
+improvement on the stronger primary policy's remaining cases. A fit-side
+40-image / 80-point review queue is prepared, with no new confirmed labels.
+Default inference and original annotations are retained.
+[Results, timing and diagnosis](experiments/residual-2026-10-27/README.md).
 
 ## Frozen surface branch — 2026-10-27
 

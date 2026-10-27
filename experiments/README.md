@@ -27,3 +27,5 @@ YOLO26-derived n/s training, sparse positive distillation and locked paired publ
 Original failed runs and vendor assets stay outside Git.
 
 [Input/context follow-up](input-context-2026-10-26/README.md) records the subsequent four-trial experiment and explicitly qualified eye-module combinations.
+
+[Capacity and real hard negatives](residual-2026-10-27/README.md) records the two-capacity, two-seed experiment, longer matched reruns and unchanged primary policy.

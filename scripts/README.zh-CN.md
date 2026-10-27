@@ -71,3 +71,5 @@
 落点复核新增`annotator/build_point_review.py`、`point_review_core.js`、`point_review_template.html`和`annotator/import_point_review.py`。导入器核对输入/落点身份、完整修订与明确人工确认，原始导出保存在Git外；生成HTML及内嵌照片也不入Git。`training/bird_guidance_fallback.py`仅复现未通过的空候选补位规则，不改已有推理默认行为。[人工结果与工具](../docs/training/point-review-2026-10-26.zh-CN.md)。
 
 鸟面分支新增`training/bird_surface.py`、`prepare_bird_surface.py`、`train_bird_surface.py`、`predict_bird_surface.py`，接入CUB掩膜、冻结原模型、单独训练粗捕获头。[协议与命令](../docs/training/surface-2026-10-27.zh-CN.md)。
+
+RGB/上下文排序新增 `training/bird_residual.py`、`prepare_bird_residual.py`、`train_bird_residual.py`、`predict_bird_residual.py`、`benchmark_bird_residual.py`。[部分监督、匹配对照与命令](../docs/training/residual-2026-10-27.zh-CN.md)。
