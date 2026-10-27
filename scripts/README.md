@@ -79,3 +79,5 @@ RGB/context ranking adds `training/bird_residual.py`, `prepare_bird_residual.py`
 Public expansion adds `training/prepare_coco_cct.py`, `admit_public_expansion.py`, `prepare_expansion_ranker.py`, `train_expansion_ranker.py` and `evaluate_expansion_ranker.py`. [Source rights, partial targets and commands](../docs/training/data-expansion-2026-10-27.md).
 
 Main-detector continuation adds `training/prepare_main_background.py`, `train_main_background.py` and `evaluate_main_background.py`. The evaluator reloads both actual networks and optionally measures complete batch-one inference. [Method and commands](../docs/training/main-background-2026-10-27.md).
+
+Classification-only continuation adds `training/prepare_classification_guard.py` and `train_classification_guard.py`. [Fit-side hardness, explicit scene quarantine and reproduction](../docs/training/classification-guard-2026-10-28.md).

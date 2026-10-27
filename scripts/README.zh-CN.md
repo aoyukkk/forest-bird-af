@@ -77,3 +77,5 @@ RGB/上下文排序新增 `training/bird_residual.py`、`prepare_bird_residual.p
 公开扩充新增 `training/prepare_coco_cct.py`、`admit_public_expansion.py`、`prepare_expansion_ranker.py`、`train_expansion_ranker.py`、`evaluate_expansion_ranker.py`。[来源许可、部分监督与命令](../docs/training/data-expansion-2026-10-27.zh-CN.md)。
 
 主检测器微调新增 `training/prepare_main_background.py`、`train_main_background.py`、`evaluate_main_background.py`，评估会重载两个真实网络，并可计时完整单图推理。[方法与命令](../docs/training/main-background-2026-10-27.zh-CN.md)。
+
+分类头微调新增 `training/prepare_classification_guard.py`、`train_classification_guard.py`。[训练侧困难定义、明确场景隔离与复现](../docs/training/classification-guard-2026-10-28.zh-CN.md)。

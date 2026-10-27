@@ -99,3 +99,5 @@ Latest follow-up: [input, hard-context and hybrid results](input-context-2026-10
 [Public expansion and empty-scene training](data-expansion-2026-10-27.md): source admission, explicit upstream absence, matched point sampling and A12 teacher rejection.
 
 [Main-detector background continuation](main-background-2026-10-27.md): matched empty-scene supervision in the B/H backbone and detector, with the independent eye model fixed.
+
+[Classification-only retention](classification-guard-2026-10-28.md): frozen features and boxes, fit-side hard replay, related-scene quarantine and matched empty supervision.

@@ -1,0 +1,67 @@
+{
+  "schema": "classification-guard-20261028",
+  "status": "frozen-before-formal",
+  "conditions": [
+    "control",
+    "empty"
+  ],
+  "seeds": [
+    20261028,
+    20261029
+  ],
+  "epochs": 8,
+  "batches_per_epoch": 96,
+  "batch": 16,
+  "ordinary_replay": 8,
+  "hard_replay": 4,
+  "empty_replay": 4,
+  "lr": 5e-06,
+  "empty_weight": 0.1,
+  "preservation_weight": 2.0,
+  "hard_preservation_multiplier": 2.0,
+  "teacher_topk": 3,
+  "teacher_floor": 0.1,
+  "guard": "one-sided squared logit decrease at decoded-box centers inside corresponding fit labels",
+  "trainable_scope": "cv3 classification towers only",
+  "all_other_state_fixed": true,
+  "selection_epochs": [
+    0,
+    2,
+    4,
+    6,
+    8
+  ],
+  "geometry_floor": 68,
+  "outside_ceiling": 1,
+  "absent_ceiling": 0,
+  "no_lost_parent_supported_frames": true,
+  "thresholds": {
+    "eye": 0.8,
+    "head": 0.4,
+    "bird": 0.4
+  },
+  "eligible_community_fit": 354,
+  "hard_fit": 60,
+  "hard_groups": 21,
+  "quarantined_fit_groups": [
+    "fb_0496"
+  ],
+  "quarantined_fit_frames": 21,
+  "new_intake_in_fit": false,
+  "new_intake_in_val": false,
+  "old_test_used": false,
+  "new_real_test_available": false,
+  "parent_related_scene_exposure_possible": true,
+  "A12_labels": 0,
+  "source_sha256": {
+    "train_classification_guard.py": "8829199a134ed5688305e1871d78831397ee0d67b18713a2dbe7e8d5c1615dba",
+    "prepare_classification_guard.py": "564f3b159a8f12f69294e93930cb392df411e64e7179b6db6600eb1690fc9695",
+    "train_main_background.py": "ddc557822902089a88278c933d827e2f82b9aa0f199b4f123b5d5f52db11fa87",
+    "bird_parts_model.py": "aba0025ef2afa6e08e5e80a2e6c8c04717567f58430450be7c9e61809166465b",
+    "bird_guidance_metrics.py": "7a1ead584e06bf3a3ee2709fb27df57bf13e1a493472eb9a85ea0f9694b64af5",
+    "bird_surface.py": "03645c4d8966d5b4d82ac88575483e8863b6434c931b986829942afc2214e055"
+  },
+  "dataset_sha256": "20ad043cf793c8de86c24a87a0449223185e2d37cbcba1f569c5788509f96c14",
+  "eyes_sha256": "aebf4f54240e27d2d047d7495fb53b23d77a269d75f44f3804dd98aabf46aeab",
+  "hard_sha256": "52827257bc6d07e432dbd26fdcc76a27e2b1b19af1a98dde605121d5cd9f0974"
+}

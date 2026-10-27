@@ -85,3 +85,5 @@ python scripts/training/evaluate_z8_training.py --help
 [公开数据扩充与空景训练](data-expansion-2026-10-27.zh-CN.md)：来源准入、明确空景监督、匹配落点抽样及A12教师未准入。
 
 [主检测器背景微调](main-background-2026-10-27.zh-CN.md)：直接训练 B/H 骨干和检测头，对照空景负监督，固定独立眼模型。
+
+[分类头保真微调](classification-guard-2026-10-28.zh-CN.md)：固定特征和框回归，训练侧困难回放、关联场景隔离与匹配空景监督。

@@ -8,7 +8,7 @@ independent YOLO26-derived bird-parts experiments. Whole-camera autofocus has no
 
 **694 image assets · 547 confirmed records · 535 deduplicated usable records**
 
-Updated: **2026-10-27**.
+Updated: **2026-10-28**.
 
 ## Start here
 
@@ -67,6 +67,15 @@ Training needs NumPy and compatible CUDA PyTorch; the native route also needs
 your own verified vendor package. The independent YOLO route uses public data. See [training](docs/training/README.md) and
 [tests](tests/README.md). Firmware, original/modified vendor weights, feature
 caches and the production database are not distributed.
+
+## Classification-only retention — 2026-10-28
+
+Four matched 8-epoch runs retain all 68 previously supported community frames.
+The best development candidate reduces CCT selections from 60/172 to 58/172,
+with a new human-head error. A suspected related fit group is quarantined from
+this round; old validation remains development-only. Candidate weights are
+exported separately and defaults stay unchanged.
+[Results and scene audit](experiments/classification-guard-2026-10-28/README.md).
 
 ## Main-detector background continuation — 2026-10-27
 
