@@ -68,6 +68,13 @@ your own verified vendor package. The independent YOLO route uses public data. S
 [tests](tests/README.md). Firmware, original/modified vendor weights, feature
 caches and the production database are not distributed.
 
+## Main-detector background continuation — 2026-10-27
+
+Four matched 8-epoch B/H continuations completed with the independent eye model
+fixed. Empty-scene supervision reduces background selections but loses small or
+dark real-bird cues; no evaluated continuation passes preservation. The parent stays
+selected. [Results, regressions and timing](experiments/main-background-2026-10-27/README.md).
+
 ## Public expansion and empty scenes — 2026-10-27
 
 17,252 additional public research images passed conservative admission; 158

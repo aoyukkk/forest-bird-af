@@ -83,3 +83,5 @@ python scripts/training/evaluate_z8_training.py --help
 [RGB与上下文剩余候选排序](residual-2026-10-27.zh-CN.md)：容量、真实困难负例、内部校准及实际推理计时，仍不推荐替换。
 
 [公开数据扩充与空景训练](data-expansion-2026-10-27.zh-CN.md)：来源准入、明确空景监督、匹配落点抽样及A12教师未准入。
+
+[主检测器背景微调](main-background-2026-10-27.zh-CN.md)：直接训练 B/H 骨干和检测头，对照空景负监督，固定独立眼模型。

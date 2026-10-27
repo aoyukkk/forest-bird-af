@@ -97,3 +97,5 @@ Latest follow-up: [input, hard-context and hybrid results](input-context-2026-10
 [RGB/context residual ranking](residual-2026-10-27.md): capacity, real hard negatives, internal calibration and actual inference timing; no replacement recommended.
 
 [Public expansion and empty-scene training](data-expansion-2026-10-27.md): source admission, explicit upstream absence, matched point sampling and A12 teacher rejection.
+
+[Main-detector background continuation](main-background-2026-10-27.md): matched empty-scene supervision in the B/H backbone and detector, with the independent eye model fixed.

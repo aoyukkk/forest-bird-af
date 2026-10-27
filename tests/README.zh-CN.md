@@ -27,7 +27,7 @@ YOLO 路线另有 `test_competition_preservation.py`（空间掩膜、已知缺�
 `test_bird_parts.py`（部分监督、推导背景、增强几何、无序稀疏蒸馏）、
 `test_bird_parts_preparation.py`（弱头框几何）和
 `test_public_community_training.py`（旧测试隔离）。模型测试还需固定的可选
-[YOLO 依赖](../requirements-yolo26.txt)，使用 CPU。本地完整执行通过 150 项测试。
+[YOLO 依赖](../requirements-yolo26.txt)，使用 CPU。本地完整执行通过 157 项测试。
 
 `test_bird_regions.py`覆盖裁剪映射、不依赖真值的自动区域、原厂B/H候选完整保留；`test_hard_context.py`覆盖背景保护及眼预算/F1选型取舍。
 
@@ -36,10 +36,12 @@ YOLO 路线另有 `test_competition_preservation.py`（空间掩膜、已知缺�
 
 `test_point_review.py`检查明确人工确认、草稿编辑、绑定输入/落点的备份、安全HTML数据往返、不可变视图与人工导出导入保护。
 
-`test_bird_surface.py`检查冻结参数/BN/原始输出、稀疏正点、未知监督、明确遮挡梯度和多灰度掩膜处理。最新本地全量150项测试通过。
+`test_bird_surface.py`检查冻结参数/BN/原始输出、稀疏正点、未知监督、明确遮挡梯度和多灰度掩膜处理。最新本地全量157项测试通过。
 
 
-`test_bird_residual.py`检查真实部分标签、仅预测候选池、不改源图的RGB裁片、容量预算与成对梯度方向。最新本地全量150项测试通过。
+`test_bird_residual.py`检查真实部分标签、仅预测候选池、不改源图的RGB裁片、容量预算与成对梯度方向。最新本地全量157项测试通过。
 
 
-`test_public_expansion.py`新增10项检查：污染签名、排他上游空景、来源许可筛选、部分标签、轮廓未知区、相机划分、匹配正点抽样及可序列化校准计数。全量150项通过。
+`test_public_expansion.py`新增10项检查：污染签名、排他上游空景、来源许可筛选、部分标签、轮廓未知区、相机划分、匹配正点抽样及可序列化校准计数。全量157项通过。
+
+`test_main_background.py` 新增 7 项检查：真实空景损失梯度、未标头的屏蔽、正区域输出保持、冻结 BN、匹配批次与退化拒绝。全量 157 项通过。

@@ -1,0 +1,1050 @@
+{
+  "control-20261027": [
+    {
+      "epoch": 1,
+      "loss": 1.295535745099187,
+      "detection_loss": 1.2812998487303655,
+      "preservation_loss": 0.05694358763018196,
+      "sample_order_sha256": "7400569b1f63d3a28e1077358a3435d18649b14656c58451c9623e9597abafec",
+      "presentations": {
+        "COCO-2017": 126,
+        "community": 790,
+        "CUB-200-2011": 127,
+        "CCT": 384,
+        "NABirds": 109
+      }
+    },
+    {
+      "epoch": 2,
+      "loss": 1.0648184449722369,
+      "detection_loss": 1.0464048931996028,
+      "preservation_loss": 0.07365420053247362,
+      "sample_order_sha256": "588838238e364d6b0babed401a5503a132bfae1f44027fb33acfa69cad699223",
+      "presentations": {
+        "CUB-200-2011": 108,
+        "community": 804,
+        "CCT": 384,
+        "NABirds": 121,
+        "COCO-2017": 119
+      },
+      "community": {
+        "images": 80,
+        "selected": 68,
+        "selected_eye": 35,
+        "abstain": 12,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 66,
+        "outside_labelled_geometry": 2,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 0,
+        "head_region": 16,
+        "bird_region": 31,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 17,
+        "near_eye_geometry": 2
+      },
+      "empty_selected": 116,
+      "empty_by_kind": {
+        "eye": 7,
+        "bird": 98,
+        "head": 11
+      },
+      "rank": [
+        0,
+        -116,
+        66,
+        -2
+      ],
+      "COCO_bird_box_TP": 82,
+      "COCO_bird_box_labels": 381
+    },
+    {
+      "epoch": 3,
+      "loss": 0.9934223598490158,
+      "detection_loss": 0.9720454470564922,
+      "preservation_loss": 0.08550765846545498,
+      "sample_order_sha256": "03ed98706755bafbae589eacb8f2eaa23e7b624df34f39dbf204e8e718a434c6",
+      "presentations": {
+        "community": 820,
+        "COCO-2017": 117,
+        "CCT": 384,
+        "NABirds": 110,
+        "CUB-200-2011": 105
+      }
+    },
+    {
+      "epoch": 4,
+      "loss": 1.0056758392602205,
+      "detection_loss": 0.9836378749459982,
+      "preservation_loss": 0.08815184503328055,
+      "sample_order_sha256": "f6b7ec7346d86a4a22a9d18306b08c7dff997d540a941c23f16c4e98250995e3",
+      "presentations": {
+        "COCO-2017": 119,
+        "NABirds": 141,
+        "community": 787,
+        "CUB-200-2011": 105,
+        "CCT": 384
+      },
+      "community": {
+        "images": 80,
+        "selected": 70,
+        "selected_eye": 35,
+        "abstain": 10,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 68,
+        "outside_labelled_geometry": 1,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 1,
+        "head_region": 16,
+        "bird_region": 33,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 17,
+        "near_eye_geometry": 2
+      },
+      "empty_selected": 129,
+      "empty_by_kind": {
+        "eye": 7,
+        "bird": 111,
+        "head": 11
+      },
+      "rank": [
+        0,
+        -129,
+        68,
+        -1
+      ],
+      "COCO_bird_box_TP": 91,
+      "COCO_bird_box_labels": 381
+    },
+    {
+      "epoch": 5,
+      "loss": 0.9066345213601986,
+      "detection_loss": 0.8837800491601229,
+      "preservation_loss": 0.09141787863336504,
+      "sample_order_sha256": "6064d36dcb1a4297c6dac193e17d1145ce6fcd49f3803cbc55157c3ed809d85f",
+      "presentations": {
+        "community": 798,
+        "COCO-2017": 111,
+        "CUB-200-2011": 123,
+        "CCT": 384,
+        "NABirds": 120
+      }
+    },
+    {
+      "epoch": 6,
+      "loss": 0.9239756229023138,
+      "detection_loss": 0.9002506099641323,
+      "preservation_loss": 0.09490004255591582,
+      "sample_order_sha256": "0baccc2d04f255c8926bafda316bb38912194ef716fe454e9ff4768c62fc4176",
+      "presentations": {
+        "community": 826,
+        "CUB-200-2011": 106,
+        "CCT": 384,
+        "NABirds": 107,
+        "COCO-2017": 113
+      },
+      "community": {
+        "images": 80,
+        "selected": 68,
+        "selected_eye": 35,
+        "abstain": 12,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 66,
+        "outside_labelled_geometry": 1,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 1,
+        "head_region": 16,
+        "bird_region": 31,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 17,
+        "near_eye_geometry": 2
+      },
+      "empty_selected": 113,
+      "empty_by_kind": {
+        "eye": 7,
+        "bird": 91,
+        "head": 15
+      },
+      "rank": [
+        0,
+        -113,
+        66,
+        -1
+      ],
+      "COCO_bird_box_TP": 93,
+      "COCO_bird_box_labels": 381
+    },
+    {
+      "epoch": 7,
+      "loss": 0.9147053435444832,
+      "detection_loss": 0.8887120888878902,
+      "preservation_loss": 0.10397300050438692,
+      "sample_order_sha256": "88f45dd461481fea9c604a760fd55e1478832106c31981b72de34d290719e165",
+      "presentations": {
+        "NABirds": 135,
+        "community": 779,
+        "CUB-200-2011": 119,
+        "CCT": 384,
+        "COCO-2017": 119
+      }
+    },
+    {
+      "epoch": 8,
+      "loss": 0.8246450566997131,
+      "detection_loss": 0.7998343134919802,
+      "preservation_loss": 0.09924295789096504,
+      "sample_order_sha256": "04ff22f9f68a074ef4e571c838d82041f6e83fd2eaea626bd3a20346629df6c9",
+      "presentations": {
+        "COCO-2017": 108,
+        "community": 820,
+        "CUB-200-2011": 105,
+        "NABirds": 119,
+        "CCT": 384
+      },
+      "community": {
+        "images": 80,
+        "selected": 69,
+        "selected_eye": 35,
+        "abstain": 11,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 67,
+        "outside_labelled_geometry": 1,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 1,
+        "head_region": 16,
+        "bird_region": 32,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 17,
+        "near_eye_geometry": 2
+      },
+      "empty_selected": 123,
+      "empty_by_kind": {
+        "eye": 7,
+        "bird": 104,
+        "head": 12
+      },
+      "rank": [
+        0,
+        -123,
+        67,
+        -1
+      ],
+      "COCO_bird_box_TP": 103,
+      "COCO_bird_box_labels": 381
+    }
+  ],
+  "control-20261028": [
+    {
+      "epoch": 1,
+      "loss": 1.2476383484899998,
+      "detection_loss": 1.234710095450282,
+      "preservation_loss": 0.05171300977963256,
+      "sample_order_sha256": "4c175a6188da501de9fee13640be5c8c96153627aeee30d15c91f9a6d136269a",
+      "presentations": {
+        "community": 818,
+        "NABirds": 113,
+        "COCO-2017": 116,
+        "CCT": 384,
+        "CUB-200-2011": 105
+      }
+    },
+    {
+      "epoch": 2,
+      "loss": 1.0474070801089208,
+      "detection_loss": 1.0272488730649154,
+      "preservation_loss": 0.08063282831183945,
+      "sample_order_sha256": "f9551fdf59be6334143c74ebdc811675757a43f2ea8de602c4e46db34da8b9a1",
+      "presentations": {
+        "community": 812,
+        "NABirds": 110,
+        "COCO-2017": 121,
+        "CCT": 384,
+        "CUB-200-2011": 109
+      },
+      "community": {
+        "images": 80,
+        "selected": 69,
+        "selected_eye": 35,
+        "abstain": 11,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 67,
+        "outside_labelled_geometry": 2,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 0,
+        "head_region": 16,
+        "bird_region": 32,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 17,
+        "near_eye_geometry": 2
+      },
+      "empty_selected": 96,
+      "empty_by_kind": {
+        "eye": 7,
+        "bird": 78,
+        "head": 11
+      },
+      "rank": [
+        0,
+        -96,
+        67,
+        -2
+      ],
+      "COCO_bird_box_TP": 80,
+      "COCO_bird_box_labels": 381
+    },
+    {
+      "epoch": 3,
+      "loss": 1.0473848556478818,
+      "detection_loss": 1.0242683235555887,
+      "preservation_loss": 0.09246611203222226,
+      "sample_order_sha256": "15799686e1dde1459a8857420f02d6f8e867254691ce916e9ac2374471d7a157",
+      "presentations": {
+        "community": 793,
+        "NABirds": 125,
+        "COCO-2017": 123,
+        "CCT": 384,
+        "CUB-200-2011": 111
+      }
+    },
+    {
+      "epoch": 4,
+      "loss": 0.911063980932037,
+      "detection_loss": 0.8879415802657604,
+      "preservation_loss": 0.09248961923488726,
+      "sample_order_sha256": "84ca412a3b2818353cc4b224f5b633e944d80dd2dc025900f945003b1937b28e",
+      "presentations": {
+        "CUB-200-2011": 111,
+        "community": 827,
+        "CCT": 384,
+        "NABirds": 103,
+        "COCO-2017": 111
+      },
+      "community": {
+        "images": 80,
+        "selected": 71,
+        "selected_eye": 35,
+        "abstain": 9,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 68,
+        "outside_labelled_geometry": 2,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 1,
+        "head_region": 16,
+        "bird_region": 33,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 17,
+        "near_eye_geometry": 2
+      },
+      "empty_selected": 121,
+      "empty_by_kind": {
+        "eye": 7,
+        "bird": 102,
+        "head": 12
+      },
+      "rank": [
+        0,
+        -121,
+        68,
+        -2
+      ],
+      "COCO_bird_box_TP": 92,
+      "COCO_bird_box_labels": 381
+    },
+    {
+      "epoch": 5,
+      "loss": 0.8877543322741985,
+      "detection_loss": 0.8637643239150444,
+      "preservation_loss": 0.09596003832605977,
+      "sample_order_sha256": "07037d0337e6b16b2d814d67c944f19f9d6285f99fe12c605ade1ff3bac874b2",
+      "presentations": {
+        "community": 826,
+        "NABirds": 113,
+        "COCO-2017": 104,
+        "CCT": 384,
+        "CUB-200-2011": 109
+      }
+    },
+    {
+      "epoch": 6,
+      "loss": 0.9056256602828702,
+      "detection_loss": 0.8827692807341615,
+      "preservation_loss": 0.09142552207534511,
+      "sample_order_sha256": "460fcf2a050128afe0c3754d308753687e6259eba49adc7a55c468c68c0e0343",
+      "presentations": {
+        "community": 808,
+        "COCO-2017": 124,
+        "NABirds": 104,
+        "CCT": 384,
+        "CUB-200-2011": 116
+      },
+      "community": {
+        "images": 80,
+        "selected": 71,
+        "selected_eye": 35,
+        "abstain": 9,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 68,
+        "outside_labelled_geometry": 3,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 0,
+        "head_region": 16,
+        "bird_region": 33,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 17,
+        "near_eye_geometry": 2
+      },
+      "empty_selected": 105,
+      "empty_by_kind": {
+        "eye": 7,
+        "bird": 83,
+        "head": 15
+      },
+      "rank": [
+        0,
+        -105,
+        68,
+        -3
+      ],
+      "COCO_bird_box_TP": 92,
+      "COCO_bird_box_labels": 381
+    },
+    {
+      "epoch": 7,
+      "loss": 0.8913860805332661,
+      "detection_loss": 0.8676896650965015,
+      "preservation_loss": 0.09478565771132708,
+      "sample_order_sha256": "92d811a2e61726f9c38b55d51cbfde864588a3860d0ea70ede2e120e4502f2e8",
+      "presentations": {
+        "community": 815,
+        "CUB-200-2011": 119,
+        "NABirds": 111,
+        "CCT": 384,
+        "COCO-2017": 107
+      }
+    },
+    {
+      "epoch": 8,
+      "loss": 0.8979255935798088,
+      "detection_loss": 0.8714239268253247,
+      "preservation_loss": 0.10600667842663825,
+      "sample_order_sha256": "3cffe1e3b30922e57a7524bc76bcb940c849c1bd23ff48960ba4c818dcec2741",
+      "presentations": {
+        "CUB-200-2011": 125,
+        "NABirds": 124,
+        "community": 793,
+        "COCO-2017": 110,
+        "CCT": 384
+      },
+      "community": {
+        "images": 80,
+        "selected": 73,
+        "selected_eye": 35,
+        "abstain": 7,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 68,
+        "outside_labelled_geometry": 4,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 1,
+        "head_region": 16,
+        "bird_region": 33,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 17,
+        "near_eye_geometry": 2
+      },
+      "empty_selected": 133,
+      "empty_by_kind": {
+        "eye": 7,
+        "bird": 112,
+        "head": 14
+      },
+      "rank": [
+        0,
+        -133,
+        68,
+        -4
+      ],
+      "COCO_bird_box_TP": 100,
+      "COCO_bird_box_labels": 381
+    }
+  ],
+  "empty-20261027": [
+    {
+      "epoch": 1,
+      "loss": 1.3040873054414988,
+      "detection_loss": 1.2895643798013527,
+      "preservation_loss": 0.05809169001319484,
+      "sample_order_sha256": "7400569b1f63d3a28e1077358a3435d18649b14656c58451c9623e9597abafec",
+      "presentations": {
+        "COCO-2017": 126,
+        "community": 790,
+        "CUB-200-2011": 127,
+        "CCT": 384,
+        "NABirds": 109
+      }
+    },
+    {
+      "epoch": 2,
+      "loss": 1.0760993268340826,
+      "detection_loss": 1.0577693165590365,
+      "preservation_loss": 0.07332005728191386,
+      "sample_order_sha256": "588838238e364d6b0babed401a5503a132bfae1f44027fb33acfa69cad699223",
+      "presentations": {
+        "CUB-200-2011": 108,
+        "community": 804,
+        "CCT": 384,
+        "NABirds": 121,
+        "COCO-2017": 119
+      },
+      "community": {
+        "images": 80,
+        "selected": 66,
+        "selected_eye": 35,
+        "abstain": 14,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 64,
+        "outside_labelled_geometry": 2,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 0,
+        "head_region": 15,
+        "bird_region": 30,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 17,
+        "near_eye_geometry": 2
+      },
+      "empty_selected": 38,
+      "empty_by_kind": {
+        "eye": 7,
+        "bird": 24,
+        "head": 7
+      },
+      "rank": [
+        0,
+        -38,
+        64,
+        -2
+      ],
+      "COCO_bird_box_TP": 79,
+      "COCO_bird_box_labels": 381
+    },
+    {
+      "epoch": 3,
+      "loss": 1.0046506021171808,
+      "detection_loss": 0.9829211638619503,
+      "preservation_loss": 0.08691776993994911,
+      "sample_order_sha256": "03ed98706755bafbae589eacb8f2eaa23e7b624df34f39dbf204e8e718a434c6",
+      "presentations": {
+        "community": 820,
+        "COCO-2017": 117,
+        "CCT": 384,
+        "NABirds": 110,
+        "CUB-200-2011": 105
+      }
+    },
+    {
+      "epoch": 4,
+      "loss": 1.0141176755229633,
+      "detection_loss": 0.9914544479300579,
+      "preservation_loss": 0.09065290559859325,
+      "sample_order_sha256": "f6b7ec7346d86a4a22a9d18306b08c7dff997d540a941c23f16c4e98250995e3",
+      "presentations": {
+        "COCO-2017": 119,
+        "NABirds": 141,
+        "community": 787,
+        "CUB-200-2011": 105,
+        "CCT": 384
+      },
+      "community": {
+        "images": 80,
+        "selected": 65,
+        "selected_eye": 35,
+        "abstain": 15,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 64,
+        "outside_labelled_geometry": 1,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 0,
+        "head_region": 15,
+        "bird_region": 30,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 17,
+        "near_eye_geometry": 2
+      },
+      "empty_selected": 37,
+      "empty_by_kind": {
+        "eye": 7,
+        "bird": 24,
+        "head": 6
+      },
+      "rank": [
+        0,
+        -37,
+        64,
+        -1
+      ],
+      "COCO_bird_box_TP": 83,
+      "COCO_bird_box_labels": 381
+    },
+    {
+      "epoch": 5,
+      "loss": 0.9112095236778259,
+      "detection_loss": 0.8876860321809849,
+      "preservation_loss": 0.09409397572744638,
+      "sample_order_sha256": "6064d36dcb1a4297c6dac193e17d1145ce6fcd49f3803cbc55157c3ed809d85f",
+      "presentations": {
+        "community": 798,
+        "COCO-2017": 111,
+        "CUB-200-2011": 123,
+        "CCT": 384,
+        "NABirds": 120
+      }
+    },
+    {
+      "epoch": 6,
+      "loss": 0.9335583336651325,
+      "detection_loss": 0.9098301399499178,
+      "preservation_loss": 0.09491278106967609,
+      "sample_order_sha256": "0baccc2d04f255c8926bafda316bb38912194ef716fe454e9ff4768c62fc4176",
+      "presentations": {
+        "community": 826,
+        "CUB-200-2011": 106,
+        "CCT": 384,
+        "NABirds": 107,
+        "COCO-2017": 113
+      },
+      "community": {
+        "images": 80,
+        "selected": 65,
+        "selected_eye": 35,
+        "abstain": 15,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 64,
+        "outside_labelled_geometry": 1,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 0,
+        "head_region": 15,
+        "bird_region": 30,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 17,
+        "near_eye_geometry": 2
+      },
+      "empty_selected": 35,
+      "empty_by_kind": {
+        "eye": 7,
+        "bird": 22,
+        "head": 6
+      },
+      "rank": [
+        0,
+        -35,
+        64,
+        -1
+      ],
+      "COCO_bird_box_TP": 85,
+      "COCO_bird_box_labels": 381
+    },
+    {
+      "epoch": 7,
+      "loss": 0.9213233456636468,
+      "detection_loss": 0.8942473412801822,
+      "preservation_loss": 0.10830399359110743,
+      "sample_order_sha256": "88f45dd461481fea9c604a760fd55e1478832106c31981b72de34d290719e165",
+      "presentations": {
+        "NABirds": 135,
+        "community": 779,
+        "CUB-200-2011": 119,
+        "CCT": 384,
+        "COCO-2017": 119
+      }
+    },
+    {
+      "epoch": 8,
+      "loss": 0.8343569760521253,
+      "detection_loss": 0.809161838144064,
+      "preservation_loss": 0.10078053696391483,
+      "sample_order_sha256": "04ff22f9f68a074ef4e571c838d82041f6e83fd2eaea626bd3a20346629df6c9",
+      "presentations": {
+        "COCO-2017": 108,
+        "community": 820,
+        "CUB-200-2011": 105,
+        "NABirds": 119,
+        "CCT": 384
+      },
+      "community": {
+        "images": 80,
+        "selected": 66,
+        "selected_eye": 35,
+        "abstain": 14,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 65,
+        "outside_labelled_geometry": 1,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 0,
+        "head_region": 16,
+        "bird_region": 30,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 17,
+        "near_eye_geometry": 2
+      },
+      "empty_selected": 44,
+      "empty_by_kind": {
+        "eye": 7,
+        "bird": 32,
+        "head": 5
+      },
+      "rank": [
+        0,
+        -44,
+        65,
+        -1
+      ],
+      "COCO_bird_box_TP": 97,
+      "COCO_bird_box_labels": 381
+    }
+  ],
+  "empty-20261028": [
+    {
+      "epoch": 1,
+      "loss": 1.258022707576553,
+      "detection_loss": 1.2448978150884311,
+      "preservation_loss": 0.052499546589388046,
+      "sample_order_sha256": "4c175a6188da501de9fee13640be5c8c96153627aeee30d15c91f9a6d136269a",
+      "presentations": {
+        "community": 818,
+        "NABirds": 113,
+        "COCO-2017": 116,
+        "CCT": 384,
+        "CUB-200-2011": 105
+      }
+    },
+    {
+      "epoch": 2,
+      "loss": 1.0566351333012183,
+      "detection_loss": 1.0363466714819272,
+      "preservation_loss": 0.08115385577548295,
+      "sample_order_sha256": "f9551fdf59be6334143c74ebdc811675757a43f2ea8de602c4e46db34da8b9a1",
+      "presentations": {
+        "community": 812,
+        "NABirds": 110,
+        "COCO-2017": 121,
+        "CCT": 384,
+        "CUB-200-2011": 109
+      },
+      "community": {
+        "images": 80,
+        "selected": 64,
+        "selected_eye": 35,
+        "abstain": 16,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 63,
+        "outside_labelled_geometry": 1,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 0,
+        "head_region": 15,
+        "bird_region": 29,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 17,
+        "near_eye_geometry": 2
+      },
+      "empty_selected": 42,
+      "empty_by_kind": {
+        "eye": 7,
+        "bird": 28,
+        "head": 7
+      },
+      "rank": [
+        0,
+        -42,
+        63,
+        -1
+      ],
+      "COCO_bird_box_TP": 76,
+      "COCO_bird_box_labels": 381
+    },
+    {
+      "epoch": 3,
+      "loss": 1.0568792627503474,
+      "detection_loss": 1.0333467721939087,
+      "preservation_loss": 0.09412997134495527,
+      "sample_order_sha256": "15799686e1dde1459a8857420f02d6f8e867254691ce916e9ac2374471d7a157",
+      "presentations": {
+        "community": 793,
+        "NABirds": 125,
+        "COCO-2017": 123,
+        "CCT": 384,
+        "CUB-200-2011": 111
+      }
+    },
+    {
+      "epoch": 4,
+      "loss": 0.9220190724978844,
+      "detection_loss": 0.8988292251403133,
+      "preservation_loss": 0.09275940712541342,
+      "sample_order_sha256": "84ca412a3b2818353cc4b224f5b633e944d80dd2dc025900f945003b1937b28e",
+      "presentations": {
+        "CUB-200-2011": 111,
+        "community": 827,
+        "CCT": 384,
+        "NABirds": 103,
+        "COCO-2017": 111
+      },
+      "community": {
+        "images": 80,
+        "selected": 68,
+        "selected_eye": 35,
+        "abstain": 12,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 66,
+        "outside_labelled_geometry": 2,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 0,
+        "head_region": 16,
+        "bird_region": 31,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 17,
+        "near_eye_geometry": 2
+      },
+      "empty_selected": 41,
+      "empty_by_kind": {
+        "eye": 7,
+        "bird": 26,
+        "head": 8
+      },
+      "rank": [
+        0,
+        -41,
+        66,
+        -2
+      ],
+      "COCO_bird_box_TP": 84,
+      "COCO_bird_box_labels": 381
+    },
+    {
+      "epoch": 5,
+      "loss": 0.8971417720119158,
+      "detection_loss": 0.8727861940860748,
+      "preservation_loss": 0.0974223284671704,
+      "sample_order_sha256": "07037d0337e6b16b2d814d67c944f19f9d6285f99fe12c605ade1ff3bac874b2",
+      "presentations": {
+        "community": 826,
+        "NABirds": 113,
+        "COCO-2017": 104,
+        "CCT": 384,
+        "CUB-200-2011": 109
+      }
+    },
+    {
+      "epoch": 6,
+      "loss": 0.9152190902580818,
+      "detection_loss": 0.892417386174202,
+      "preservation_loss": 0.09120683674700558,
+      "sample_order_sha256": "460fcf2a050128afe0c3754d308753687e6259eba49adc7a55c468c68c0e0343",
+      "presentations": {
+        "community": 808,
+        "COCO-2017": 124,
+        "NABirds": 104,
+        "CCT": 384,
+        "CUB-200-2011": 116
+      },
+      "community": {
+        "images": 80,
+        "selected": 69,
+        "selected_eye": 35,
+        "abstain": 11,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 66,
+        "outside_labelled_geometry": 3,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 0,
+        "head_region": 16,
+        "bird_region": 31,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 17,
+        "near_eye_geometry": 2
+      },
+      "empty_selected": 36,
+      "empty_by_kind": {
+        "eye": 7,
+        "bird": 23,
+        "head": 6
+      },
+      "rank": [
+        0,
+        -36,
+        66,
+        -3
+      ],
+      "COCO_bird_box_TP": 84,
+      "COCO_bird_box_labels": 381
+    },
+    {
+      "epoch": 7,
+      "loss": 0.9003652998556694,
+      "detection_loss": 0.8760055129726728,
+      "preservation_loss": 0.09743915440049022,
+      "sample_order_sha256": "92d811a2e61726f9c38b55d51cbfde864588a3860d0ea70ede2e120e4502f2e8",
+      "presentations": {
+        "community": 815,
+        "CUB-200-2011": 119,
+        "NABirds": 111,
+        "CCT": 384,
+        "COCO-2017": 107
+      }
+    },
+    {
+      "epoch": 8,
+      "loss": 0.9065867941826582,
+      "detection_loss": 0.879933062940836,
+      "preservation_loss": 0.10661492733440052,
+      "sample_order_sha256": "3cffe1e3b30922e57a7524bc76bcb940c849c1bd23ff48960ba4c818dcec2741",
+      "presentations": {
+        "CUB-200-2011": 125,
+        "NABirds": 124,
+        "community": 793,
+        "COCO-2017": 110,
+        "CCT": 384
+      },
+      "community": {
+        "images": 80,
+        "selected": 68,
+        "selected_eye": 35,
+        "abstain": 12,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 18,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 66,
+        "outside_labelled_geometry": 2,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 0,
+        "head_region": 16,
+        "bird_region": 31,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 17,
+        "near_eye_geometry": 2
+      },
+      "empty_selected": 37,
+      "empty_by_kind": {
+        "eye": 7,
+        "bird": 24,
+        "head": 6
+      },
+      "rank": [
+        0,
+        -37,
+        66,
+        -2
+      ],
+      "COCO_bird_box_TP": 96,
+      "COCO_bird_box_labels": 381
+    }
+  ]
+}

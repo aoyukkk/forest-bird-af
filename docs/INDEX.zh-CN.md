@@ -12,7 +12,7 @@
 | 拿人工校准好的标注去训练 | [人工校准标注](../data/annotations-2026-10-25/confirmed/README.zh-CN.md) |
 | 看标注工具怎么装、怎么用 | [标注工具工具链](../data/annotations-2026-10-25/docs/TOOLCHAIN.zh-CN.md) · [工具说明](tools/README.zh-CN.md) |
 | 知道数据、编号、标注字段的规矩 | [协议与规范](protocol/README.zh-CN.md) |
-| 复现原生 / YOLO26 训练 | [训练](training/README.zh-CN.md) · [公开数据扩充与空景](training/data-expansion-2026-10-27.zh-CN.md) |
+| 复现原生 / YOLO26 训练 | [训练](training/README.zh-CN.md) · [主检测器背景微调](training/main-background-2026-10-27.zh-CN.md) · [公开数据扩充与空景](training/data-expansion-2026-10-27.zh-CN.md) |
 | 看模型身份、GPU 校验、历史运行 | [报告](reports/README.zh-CN.md) |
 | 知道哪些东西刻意没公开 | [发布边界](releases/not-published.zh-CN.md) |
 | 看研究方案与固件分析 | [研究](research/README.zh-CN.md) |

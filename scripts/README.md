@@ -77,3 +77,5 @@ Surface experiments add `training/bird_surface.py`, `prepare_bird_surface.py`, `
 RGB/context ranking adds `training/bird_residual.py`, `prepare_bird_residual.py`, `train_bird_residual.py`, `predict_bird_residual.py` and `benchmark_bird_residual.py`. [Partial labels, matched comparisons and commands](../docs/training/residual-2026-10-27.md).
 
 Public expansion adds `training/prepare_coco_cct.py`, `admit_public_expansion.py`, `prepare_expansion_ranker.py`, `train_expansion_ranker.py` and `evaluate_expansion_ranker.py`. [Source rights, partial targets and commands](../docs/training/data-expansion-2026-10-27.md).
+
+Main-detector continuation adds `training/prepare_main_background.py`, `train_main_background.py` and `evaluate_main_background.py`. The evaluator reloads both actual networks and optionally measures complete batch-one inference. [Method and commands](../docs/training/main-background-2026-10-27.md).
