@@ -87,3 +87,5 @@ python scripts/training/evaluate_z8_training.py --help
 [主检测器背景微调](main-background-2026-10-27.zh-CN.md)：直接训练 B/H 骨干和检测头，对照空景负监督，固定独立眼模型。
 
 [分类头保真微调](classification-guard-2026-10-28.zh-CN.md)：固定特征和框回归，训练侧困难回放、关联场景隔离与匹配空景监督。
+
+[信息与尺度诊断](information-diagnostic-2026-10-28.zh-CN.md)：区分真实高清、低清放大、已知位置与自动局部，包含完整策略时间和停止追加训练的依据。

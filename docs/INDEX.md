@@ -58,3 +58,5 @@ The former `docs/findings/` and `docs/plan/` content now lives under
 - Run `python scripts/tools/verify_repo.py` and the link check before committing.
 - The eight links inside `docs/findings/` point at files that were never
   committed; they stay as historical record and are not to be extended.
+
+Latest decision: [information/scale experiment and project assessment](../experiments/information-diagnostic-2026-10-28/README.md).

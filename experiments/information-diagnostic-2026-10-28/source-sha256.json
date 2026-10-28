@@ -1,0 +1,10 @@
+{
+  "bird_guidance_metrics.py": "7a1ead584e06bf3a3ee2709fb27df57bf13e1a493472eb9a85ea0f9694b64af5",
+  "bird_parts_model.py": "1b3fe2aa2aae2555b438853ab7ead5f3aa2be4d23ede50f4fe7f4d0e263c227b",
+  "bird_parts_regions.py": "12e82c35ac06a650cbe8e5bb86b7dd9ac0cb16130353706c5843b5d02958f4dc",
+  "diagnose_bird_information.py": "ee95915ea4644e93079863ceebaab69163aa956aae38f7f96cf8e55c6b8a1b9b",
+  "e7_backend.py": "a3df00e8b38991e6ca964adb82b39a61aeaee5fbe83951cbe0123f3e7ab3e203",
+  "evaluate_information_routes.py": "2cb838ffa608cbc2e492da66e9235ea0acf3a8119832bc3b7c4493b39cf5c450",
+  "evaluate_native_empty.py": "0bd53f5db849994a7ae39dc641391d6ced769ee7db4b9706654fefa0629ff027",
+  "render_information_review.py": "7cad14e1398f869233b53e83ddf39a30746fd3a5347bc410849c67564a3c3a32"
+}

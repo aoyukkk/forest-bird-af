@@ -355,7 +355,11 @@ def numpy_iou(a, b):
     return intersection / max(1e-6, aa + bb - intersection)
 
 
-def decode(raw, strides, floor=.05):
+def decode(raw, strides, floor=.05, input_size=(384, 256), eye_nms_radius=4.):
+    """Decode in the supplied input plane; historical defaults are unchanged."""
+    width, height = input_size
+    if width <= 0 or height <= 0 or eye_nms_radius <= 0:
+        raise ValueError('Positive input extent and eye suppression radius required')
     anchors, stride = make_anchors(raw['feats'], strides, .5)
     from ultralytics.utils.tal import dist2bbox
     boxes = dist2bbox(raw['boxes'].permute(0, 2, 1).float(), anchors, xywh=False) * stride
@@ -373,7 +377,7 @@ def decode(raw, strides, floor=.05):
             candidates = [(float(v), boxes[b, i].detach().cpu().tolist()) for v, i in zip(values, indices) if v >= floor]
             kept = []
             for score, box in candidates:
-                box = [max(0., min(float(v), 384. if j % 2 == 0 else 256.)) for j, v in enumerate(box)]
+                box = [max(0., min(float(v), width if j % 2 == 0 else height)) for j, v in enumerate(box)]
                 if any(numpy_iou(box, k['box_xyxy']) > .5 for k in kept):
                     continue
                 kept.append(dict(kind=kind, score=score, box_xyxy=box, point_xy=None))
@@ -388,7 +392,7 @@ def decode(raw, strides, floor=.05):
             if value < floor:
                 continue
             point = coords[idx].detach().cpu().tolist()
-            if any(math.dist(point, old['point_xy']) <= 4 for old in kept):
+            if any(math.dist(point, old['point_xy']) <= eye_nms_radius for old in kept):
                 continue
             kept.append(dict(kind='eye', score=float(value), point_xy=point, box_xyxy=None))
             if len(kept) >= 20:

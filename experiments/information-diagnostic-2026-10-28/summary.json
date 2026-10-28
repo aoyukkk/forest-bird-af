@@ -1,0 +1,677 @@
+{
+  "schema": "information-diagnostic-v1",
+  "status": "completed_existing_data_experiments",
+  "cases_frozen": 48,
+  "community_images": 80,
+  "community_groups": 6,
+  "empty_images": 172,
+  "empty_locations": 15,
+  "views": {
+    "dual_full": {
+      "images": 80,
+      "selected": 69,
+      "selected_eye": 35,
+      "abstain": 11,
+      "eye_known_images": 26,
+      "eye_labelled_images": 25,
+      "eye_known_selected": 17,
+      "eye_unassessed_selected": 18,
+      "eye_2px": 12,
+      "eye_4px": 15,
+      "eye_8px": 16,
+      "eye_unmatched_4px": 2,
+      "geometry_supported": 68,
+      "outside_labelled_geometry": 1,
+      "unknown_geometry": 0,
+      "explicit_absent_selection": 0,
+      "head_region": 15,
+      "bird_region": 33,
+      "wrong_eye_over_geometric_fallback": 2,
+      "strict_eye_geometry": 16,
+      "near_eye_geometry": 4
+    },
+    "dual_upscaled_low": {
+      "images": 80,
+      "selected": 73,
+      "selected_eye": 23,
+      "abstain": 7,
+      "eye_known_images": 26,
+      "eye_labelled_images": 25,
+      "eye_known_selected": 15,
+      "eye_unassessed_selected": 8,
+      "eye_2px": 14,
+      "eye_4px": 15,
+      "eye_8px": 15,
+      "eye_unmatched_4px": 0,
+      "geometry_supported": 62,
+      "outside_labelled_geometry": 10,
+      "unknown_geometry": 0,
+      "explicit_absent_selection": 1,
+      "head_region": 18,
+      "bird_region": 26,
+      "wrong_eye_over_geometric_fallback": 0,
+      "strict_eye_geometry": 17,
+      "near_eye_geometry": 1
+    },
+    "dual_high": {
+      "images": 80,
+      "selected": 77,
+      "selected_eye": 45,
+      "abstain": 3,
+      "eye_known_images": 26,
+      "eye_labelled_images": 25,
+      "eye_known_selected": 20,
+      "eye_unassessed_selected": 25,
+      "eye_2px": 14,
+      "eye_4px": 18,
+      "eye_8px": 20,
+      "eye_unmatched_4px": 2,
+      "geometry_supported": 67,
+      "outside_labelled_geometry": 10,
+      "unknown_geometry": 0,
+      "explicit_absent_selection": 0,
+      "head_region": 20,
+      "bird_region": 26,
+      "wrong_eye_over_geometric_fallback": 2,
+      "strict_eye_geometry": 19,
+      "near_eye_geometry": 2
+    },
+    "dual_oracle_low": {
+      "images": 80,
+      "selected": 69,
+      "selected_eye": 8,
+      "abstain": 11,
+      "eye_known_images": 26,
+      "eye_labelled_images": 25,
+      "eye_known_selected": 6,
+      "eye_unassessed_selected": 2,
+      "eye_2px": 5,
+      "eye_4px": 6,
+      "eye_8px": 6,
+      "eye_unmatched_4px": 0,
+      "geometry_supported": 69,
+      "outside_labelled_geometry": 0,
+      "unknown_geometry": 0,
+      "explicit_absent_selection": 0,
+      "head_region": 12,
+      "bird_region": 44,
+      "wrong_eye_over_geometric_fallback": 0,
+      "strict_eye_geometry": 12,
+      "near_eye_geometry": 1
+    },
+    "dual_oracle_high": {
+      "images": 80,
+      "selected": 77,
+      "selected_eye": 32,
+      "abstain": 3,
+      "eye_known_images": 26,
+      "eye_labelled_images": 25,
+      "eye_known_selected": 18,
+      "eye_unassessed_selected": 14,
+      "eye_2px": 14,
+      "eye_4px": 16,
+      "eye_8px": 18,
+      "eye_unmatched_4px": 2,
+      "geometry_supported": 73,
+      "outside_labelled_geometry": 4,
+      "unknown_geometry": 0,
+      "explicit_absent_selection": 0,
+      "head_region": 15,
+      "bird_region": 38,
+      "wrong_eye_over_geometric_fallback": 2,
+      "strict_eye_geometry": 17,
+      "near_eye_geometry": 3
+    },
+    "dual_auto_low": {
+      "images": 80,
+      "selected": 68,
+      "selected_eye": 18,
+      "abstain": 12,
+      "eye_known_images": 26,
+      "eye_labelled_images": 25,
+      "eye_known_selected": 11,
+      "eye_unassessed_selected": 7,
+      "eye_2px": 7,
+      "eye_4px": 9,
+      "eye_8px": 11,
+      "eye_unmatched_4px": 2,
+      "geometry_supported": 63,
+      "outside_labelled_geometry": 5,
+      "unknown_geometry": 0,
+      "explicit_absent_selection": 0,
+      "head_region": 14,
+      "bird_region": 31,
+      "wrong_eye_over_geometric_fallback": 2,
+      "strict_eye_geometry": 14,
+      "near_eye_geometry": 4
+    },
+    "dual_auto_high": {
+      "images": 80,
+      "selected": 70,
+      "selected_eye": 41,
+      "abstain": 10,
+      "eye_known_images": 26,
+      "eye_labelled_images": 25,
+      "eye_known_selected": 18,
+      "eye_unassessed_selected": 23,
+      "eye_2px": 12,
+      "eye_4px": 16,
+      "eye_8px": 18,
+      "eye_unmatched_4px": 2,
+      "geometry_supported": 65,
+      "outside_labelled_geometry": 5,
+      "unknown_geometry": 0,
+      "explicit_absent_selection": 0,
+      "head_region": 16,
+      "bird_region": 30,
+      "wrong_eye_over_geometric_fallback": 2,
+      "strict_eye_geometry": 17,
+      "near_eye_geometry": 2
+    },
+    "native_full": {
+      "images": 80,
+      "selected": 64,
+      "selected_eye": 13,
+      "abstain": 16,
+      "eye_known_images": 26,
+      "eye_labelled_images": 25,
+      "eye_known_selected": 12,
+      "eye_unassessed_selected": 1,
+      "eye_2px": 9,
+      "eye_4px": 9,
+      "eye_8px": 9,
+      "eye_unmatched_4px": 3,
+      "geometry_supported": 54,
+      "outside_labelled_geometry": 10,
+      "unknown_geometry": 0,
+      "explicit_absent_selection": 0,
+      "head_region": 19,
+      "bird_region": 21,
+      "wrong_eye_over_geometric_fallback": 3,
+      "strict_eye_geometry": 11,
+      "near_eye_geometry": 3
+    },
+    "native_oracle_low": {
+      "images": 80,
+      "selected": 78,
+      "selected_eye": 28,
+      "abstain": 2,
+      "eye_known_images": 26,
+      "eye_labelled_images": 25,
+      "eye_known_selected": 20,
+      "eye_unassessed_selected": 8,
+      "eye_2px": 12,
+      "eye_4px": 16,
+      "eye_8px": 19,
+      "eye_unmatched_4px": 4,
+      "geometry_supported": 75,
+      "outside_labelled_geometry": 3,
+      "unknown_geometry": 0,
+      "explicit_absent_selection": 0,
+      "head_region": 18,
+      "bird_region": 35,
+      "wrong_eye_over_geometric_fallback": 4,
+      "strict_eye_geometry": 19,
+      "near_eye_geometry": 3
+    },
+    "native_oracle_high": {
+      "images": 80,
+      "selected": 74,
+      "selected_eye": 44,
+      "abstain": 6,
+      "eye_known_images": 26,
+      "eye_labelled_images": 25,
+      "eye_known_selected": 21,
+      "eye_unassessed_selected": 23,
+      "eye_2px": 13,
+      "eye_4px": 19,
+      "eye_8px": 21,
+      "eye_unmatched_4px": 2,
+      "geometry_supported": 69,
+      "outside_labelled_geometry": 5,
+      "unknown_geometry": 0,
+      "explicit_absent_selection": 0,
+      "head_region": 14,
+      "bird_region": 31,
+      "wrong_eye_over_geometric_fallback": 2,
+      "strict_eye_geometry": 21,
+      "near_eye_geometry": 3
+    }
+  },
+  "policies": {
+    "fallback_high": {
+      "counts": {
+        "images": 80,
+        "selected": 77,
+        "selected_eye": 38,
+        "abstain": 3,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 21,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 70,
+        "outside_labelled_geometry": 7,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 0,
+        "head_region": 16,
+        "bird_region": 34,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 16,
+        "near_eye_geometry": 4
+      },
+      "paired": {
+        "gained": [
+          "fb_0177",
+          "fb_0380"
+        ],
+        "lost": [],
+        "group_mean_delta": {
+          "fb_0171": 0.0,
+          "fb_0173": 0.041666666666666664,
+          "fb_0241": 0.0,
+          "fb_0259": 0.0,
+          "fb_0364": 0.0,
+          "fb_0377": 0.05
+        },
+        "macro_group_delta": 0.015277777777777779
+      }
+    },
+    "fallback_auto_high": {
+      "counts": {
+        "images": 80,
+        "selected": 70,
+        "selected_eye": 36,
+        "abstain": 10,
+        "eye_known_images": 26,
+        "eye_labelled_images": 25,
+        "eye_known_selected": 17,
+        "eye_unassessed_selected": 19,
+        "eye_2px": 12,
+        "eye_4px": 15,
+        "eye_8px": 16,
+        "eye_unmatched_4px": 2,
+        "geometry_supported": 68,
+        "outside_labelled_geometry": 2,
+        "unknown_geometry": 0,
+        "explicit_absent_selection": 0,
+        "head_region": 15,
+        "bird_region": 33,
+        "wrong_eye_over_geometric_fallback": 2,
+        "strict_eye_geometry": 16,
+        "near_eye_geometry": 4
+      },
+      "paired": {
+        "gained": [],
+        "lost": [],
+        "group_mean_delta": {
+          "fb_0171": 0.0,
+          "fb_0173": 0.0,
+          "fb_0241": 0.0,
+          "fb_0259": 0.0,
+          "fb_0364": 0.0,
+          "fb_0377": 0.0
+        },
+        "macro_group_delta": 0.0
+      }
+    }
+  },
+  "community_group_support": {
+    "native_full": {
+      "per_group": {
+        "fb_0171": 1.0,
+        "fb_0173": 0.6666666666666666,
+        "fb_0241": 0.9166666666666666,
+        "fb_0259": 0.5555555555555556,
+        "fb_0364": 1.0,
+        "fb_0377": 0.35
+      },
+      "mean": 0.7481481481481481
+    },
+    "dual_full": {
+      "per_group": {
+        "fb_0171": 1.0,
+        "fb_0173": 0.8333333333333334,
+        "fb_0241": 0.9166666666666666,
+        "fb_0259": 1.0,
+        "fb_0364": 1.0,
+        "fb_0377": 0.65
+      },
+      "mean": 0.9
+    }
+  },
+  "paired_views": {
+    "dual_full": {
+      "gained": [],
+      "lost": [],
+      "group_mean_delta": {
+        "fb_0171": 0.0,
+        "fb_0173": 0.0,
+        "fb_0241": 0.0,
+        "fb_0259": 0.0,
+        "fb_0364": 0.0,
+        "fb_0377": 0.0
+      },
+      "macro_group_delta": 0.0
+    },
+    "dual_upscaled_low": {
+      "gained": [
+        "fb_0241",
+        "fb_0380"
+      ],
+      "lost": [
+        "fb_0245",
+        "fb_0249",
+        "fb_0381",
+        "fb_0391",
+        "fb_0397",
+        "fb_0398",
+        "fb_0399",
+        "fb_0400"
+      ],
+      "group_mean_delta": {
+        "fb_0171": 0.0,
+        "fb_0173": 0.0,
+        "fb_0241": -0.08333333333333333,
+        "fb_0259": 0.0,
+        "fb_0364": 0.0,
+        "fb_0377": -0.25
+      },
+      "macro_group_delta": -0.05555555555555555
+    },
+    "dual_high": {
+      "gained": [
+        "fb_0177",
+        "fb_0241",
+        "fb_0380"
+      ],
+      "lost": [
+        "fb_0251",
+        "fb_0391",
+        "fb_0395",
+        "fb_0397"
+      ],
+      "group_mean_delta": {
+        "fb_0171": 0.0,
+        "fb_0173": 0.041666666666666664,
+        "fb_0241": 0.0,
+        "fb_0259": 0.0,
+        "fb_0364": 0.0,
+        "fb_0377": -0.1
+      },
+      "macro_group_delta": -0.009722222222222224
+    },
+    "dual_oracle_low": {
+      "gained": [
+        "fb_0241",
+        "fb_0377",
+        "fb_0378",
+        "fb_0379",
+        "fb_0380"
+      ],
+      "lost": [
+        "fb_0244",
+        "fb_0245",
+        "fb_0396",
+        "fb_0400"
+      ],
+      "group_mean_delta": {
+        "fb_0171": 0.0,
+        "fb_0173": 0.0,
+        "fb_0241": -0.08333333333333333,
+        "fb_0259": 0.0,
+        "fb_0364": 0.0,
+        "fb_0377": 0.1
+      },
+      "macro_group_delta": 0.0027777777777777796
+    },
+    "dual_oracle_high": {
+      "gained": [
+        "fb_0177",
+        "fb_0180",
+        "fb_0182",
+        "fb_0241",
+        "fb_0379",
+        "fb_0380",
+        "fb_0387"
+      ],
+      "lost": [
+        "fb_0391",
+        "fb_0395"
+      ],
+      "group_mean_delta": {
+        "fb_0171": 0.0,
+        "fb_0173": 0.125,
+        "fb_0241": 0.08333333333333333,
+        "fb_0259": 0.0,
+        "fb_0364": 0.0,
+        "fb_0377": 0.05
+      },
+      "macro_group_delta": 0.04305555555555555
+    },
+    "dual_auto_low": {
+      "gained": [],
+      "lost": [
+        "fb_0391",
+        "fb_0396",
+        "fb_0397",
+        "fb_0399",
+        "fb_0400"
+      ],
+      "group_mean_delta": {
+        "fb_0171": 0.0,
+        "fb_0173": 0.0,
+        "fb_0241": 0.0,
+        "fb_0259": 0.0,
+        "fb_0364": 0.0,
+        "fb_0377": -0.25
+      },
+      "macro_group_delta": -0.041666666666666664
+    },
+    "dual_auto_high": {
+      "gained": [],
+      "lost": [
+        "fb_0205",
+        "fb_0391",
+        "fb_0395"
+      ],
+      "group_mean_delta": {
+        "fb_0171": 0.0,
+        "fb_0173": -0.041666666666666664,
+        "fb_0241": 0.0,
+        "fb_0259": 0.0,
+        "fb_0364": 0.0,
+        "fb_0377": -0.1
+      },
+      "macro_group_delta": -0.02361111111111111
+    },
+    "native_full": {
+      "gained": [
+        "fb_0377",
+        "fb_0379"
+      ],
+      "lost": [
+        "fb_0175",
+        "fb_0179",
+        "fb_0181",
+        "fb_0187",
+        "fb_0259",
+        "fb_0260",
+        "fb_0263",
+        "fb_0264",
+        "fb_0381",
+        "fb_0382",
+        "fb_0386",
+        "fb_0391",
+        "fb_0394",
+        "fb_0395",
+        "fb_0397",
+        "fb_0398"
+      ],
+      "group_mean_delta": {
+        "fb_0171": 0.0,
+        "fb_0173": -0.16666666666666666,
+        "fb_0241": 0.0,
+        "fb_0259": -0.4444444444444444,
+        "fb_0364": 0.0,
+        "fb_0377": -0.3
+      },
+      "macro_group_delta": -0.15185185185185182
+    },
+    "native_oracle_low": {
+      "gained": [
+        "fb_0177",
+        "fb_0180",
+        "fb_0182",
+        "fb_0241",
+        "fb_0378",
+        "fb_0379",
+        "fb_0380",
+        "fb_0387",
+        "fb_0388",
+        "fb_0389"
+      ],
+      "lost": [
+        "fb_0382",
+        "fb_0395",
+        "fb_0399"
+      ],
+      "group_mean_delta": {
+        "fb_0171": 0.0,
+        "fb_0173": 0.125,
+        "fb_0241": 0.08333333333333333,
+        "fb_0259": 0.0,
+        "fb_0364": 0.0,
+        "fb_0377": 0.15
+      },
+      "macro_group_delta": 0.05972222222222221
+    },
+    "native_oracle_high": {
+      "gained": [
+        "fb_0177",
+        "fb_0180",
+        "fb_0241",
+        "fb_0378",
+        "fb_0380"
+      ],
+      "lost": [
+        "fb_0206",
+        "fb_0382",
+        "fb_0391",
+        "fb_0395"
+      ],
+      "group_mean_delta": {
+        "fb_0171": 0.0,
+        "fb_0173": 0.041666666666666664,
+        "fb_0241": 0.08333333333333333,
+        "fb_0259": 0.0,
+        "fb_0364": 0.0,
+        "fb_0377": -0.05
+      },
+      "macro_group_delta": 0.012499999999999999
+    }
+  },
+  "empty_low_controls": {
+    "parent": 60,
+    "fallback_high": 120,
+    "fallback_auto_high": 83
+  },
+  "empty_original_counts": {
+    "native": 74,
+    "parent": 60,
+    "fallback_high": 138,
+    "fallback_auto_high": 103
+  },
+  "empty_location_macro": {
+    "native": 0.2617999544315334,
+    "parent": 0.5152803726487937,
+    "fallback_high": 0.8079271410850358,
+    "fallback_auto_high": 0.7867104630262525
+  },
+  "timing": {
+    "parent": {
+      "P50_ms": 94.86065000237431,
+      "P95_ms": 120.8206799979962,
+      "mean_network_calls": 2.0
+    },
+    "fallback_high": {
+      "P50_ms": 106.87229999894043,
+      "P95_ms": 177.2300600008748,
+      "mean_network_calls": 2.5
+    },
+    "fallback_auto_high": {
+      "P50_ms": 103.32534999906784,
+      "P95_ms": 126.83530999056529,
+      "mean_network_calls": 2.25
+    }
+  },
+  "timing_scope": "host original RGB in RAM, resize, transfer, actual full dual model and conditional branch, decode; 8 fixed frames, 80 repeats/policy; two frames trigger fallback",
+  "compute": {
+    "384x256": {
+      "conv_linear_GFLOPs": 2.60868096,
+      "peak_allocated": 41683968,
+      "resident_before": 28649472,
+      "incremental_peak": 13034496
+    },
+    "768x512": {
+      "conv_linear_GFLOPs": 10.43472384,
+      "peak_allocated": 54091776,
+      "resident_before": 28649472,
+      "incremental_peak": 25442304
+    }
+  },
+  "parameters": 4911456,
+  "diagnostic_seconds": 645.0289442999929,
+  "native_empty_seconds": 392.86855909999576,
+  "original_references_reconstruct_frozen": 80,
+  "original_empty_sources_verified": 172,
+  "native_full_replay_equal": 80,
+  "dual_full_replay_equal": 252,
+  "protected_equal": true,
+  "review_panels_match_final_predictions": true,
+  "visual_review": {
+    "kind": "AI engineering",
+    "community_unique": 51,
+    "empty_samples": 8,
+    "new_human_labels": 0,
+    "pending_annotation_boundary_ids": [
+      "fb_0391",
+      "fb_0395"
+    ]
+  },
+  "tests_passed": 166,
+  "new_training_runs": 0,
+  "weight_updates": 0,
+  "new_candidate_policies": 2,
+  "accepted_policies": 0,
+  "decisions": {
+    "default_changed": false,
+    "continue_same_recipe": false,
+    "project_abandoned": false,
+    "reason": "Both automatic scale routes introduce disproportionate empty-scene selections; preserve existing model and improve supervision/evaluation before more optimization."
+  },
+  "limits": {
+    "reused_development": true,
+    "new_independent_event_test": false,
+    "old_test_used": false,
+    "assisted_labels": true,
+    "related_scenes_possible": true,
+    "higher_resolution_retrained": false,
+    "thresholds_recalibrated": false,
+    "oracle_uses_labels": true,
+    "geometry_is_focus_success": false,
+    "native_selection_is_declared_hypothesis": true,
+    "A12_teacher_used": false,
+    "remote_used": false,
+    "camera_deployment": false
+  },
+  "deployment": {
+    "operator_compiler_verified": false,
+    "camera_working_memory_verified": false,
+    "camera_frame_budget_verified": false,
+    "ISP_contract_verified": false
+  }
+}

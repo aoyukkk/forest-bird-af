@@ -68,6 +68,15 @@ your own verified vendor package. The independent YOLO route uses public data. S
 [tests](tests/README.md). Firmware, original/modified vendor weights, feature
 caches and the production database are not distributed.
 
+## Information and scale diagnostic — 2026-10-28
+
+Completed 80 development frames, 172 empty scenes and actual native replay.
+High-resolution fallback adds only two supported frames while empty selections
+increase from 60 to 138; automatic crop fallback adds none. Both are rejected;
+pause further fitting with this recipe. Two annotation-boundary cases await
+human review. Native/candidate rankings differ under frame/location weighting.
+[Results and project decision](experiments/information-diagnostic-2026-10-28/README.md).
+
 ## Classification-only retention — 2026-10-28
 
 Four matched 8-epoch runs retain all 68 previously supported community frames.

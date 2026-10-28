@@ -101,3 +101,5 @@ Latest follow-up: [input, hard-context and hybrid results](input-context-2026-10
 [Main-detector background continuation](main-background-2026-10-27.md): matched empty-scene supervision in the B/H backbone and detector, with the independent eye model fixed.
 
 [Classification-only retention](classification-guard-2026-10-28.md): frozen features and boxes, fit-side hard replay, related-scene quarantine and matched empty supervision.
+
+[Information and scale diagnostic](information-diagnostic-2026-10-28.md): true high detail, low-image upsampling, supplied-location versus automatic crops, complete policy latency and the decision to pause this recipe.
