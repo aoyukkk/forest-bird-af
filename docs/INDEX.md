@@ -60,3 +60,5 @@ The former `docs/findings/` and `docs/plan/` content now lives under
   committed; they stay as historical record and are not to be extended.
 
 Latest decision: [information/scale experiment and project assessment](../experiments/information-diagnostic-2026-10-28/README.md).
+
+[Latest native E7 results](../experiments/native-return-2026-10-29/README.md).

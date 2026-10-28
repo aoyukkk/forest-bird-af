@@ -81,3 +81,5 @@ RGB/上下文排序新增 `training/bird_residual.py`、`prepare_bird_residual.p
 分类头微调新增 `training/prepare_classification_guard.py`、`train_classification_guard.py`。[训练侧困难定义、明确场景隔离与复现](../docs/training/classification-guard-2026-10-28.zh-CN.md)。
 
 信息与尺度诊断：`diagnose_bird_information.py`、`evaluate_information_routes.py`、`evaluate_native_empty.py`和`render_information_review.py`，均在`training/`下。参见[方法与边界](../docs/training/information-diagnostic-2026-10-28.zh-CN.md)。
+
+`training/train_native_guidance.py`：结构/格式固定的原生检测头匹配微调；`evaluate_native_empty.py --body-copy`评估独立候选。

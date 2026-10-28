@@ -30,7 +30,7 @@ augmentation geometry and unordered sparse distillation),
 `test_bird_parts_preparation.py` (weak-head geometry) and
 `test_public_community_training.py` (historical-test quarantine). Model tests
 also need the pinned optional [YOLO dependencies](../requirements-yolo26.txt);
-they run on CPU. The complete local run passed 166 tests.
+they run on CPU. The complete local run passed 170 tests.
 
 `test_bird_regions.py` checks crop mapping, label-independent automatic regions and exact native B/H retention. `test_hard_context.py` checks protected background and the eye-budget/F1 selection tradeoff.
 
@@ -39,16 +39,18 @@ they run on CPU. The complete local run passed 166 tests.
 
 `test_point_review.py` checks explicit human confirmation, draft-only edits, input/point-bound backups, safe HTML roundtrips, immutable views and human-export import guards.
 
-`test_bird_surface.py` checks frozen parameters/BN/raw outputs, sparse positives, unknown supervision, explicit occluder gradients and multilevel-mask normalization. The latest local full run passed 166 tests.
+`test_bird_surface.py` checks frozen parameters/BN/raw outputs, sparse positives, unknown supervision, explicit occluder gradients and multilevel-mask normalization. The latest local full run passed 170 tests.
 
 
-`test_bird_residual.py` checks partial real labels, prediction-only pools, immutable RGB crops, capacity bounds and pairwise gradient direction. The latest complete local suite passed 166 tests.
+`test_bird_residual.py` checks partial real labels, prediction-only pools, immutable RGB crops, capacity bounds and pairwise gradient direction. The latest complete local suite passed 170 tests.
 
 
-`test_public_expansion.py` adds ten checks for contamination signatures, exclusive upstream emptiness, source-license filtering, partial targets, contour uncertainty, camera splits, matched positive sampling and JSON-safe calibration counts. Full local suite: 166 passed.
+`test_public_expansion.py` adds ten checks for contamination signatures, exclusive upstream emptiness, source-license filtering, partial targets, contour uncertainty, camera splits, matched positive sampling and JSON-safe calibration counts. Full local suite: 170 passed.
 
-`test_main_background.py` adds seven checks for actual empty-loss gradients, missing-head masks, positive-region preservation, frozen BN, paired batch identity and rejecting harmful continuations. Full local suite: 166 passed.
+`test_main_background.py` adds seven checks for actual empty-loss gradients, missing-head masks, positive-region preservation, frozen BN, paired batch identity and rejecting harmful continuations. Full local suite: 170 passed.
 
-`test_classification_guard.py` adds five checks for classification-only updates and raw-box identity, one-sided positive gradients, paired hard replay, per-frame preservation and non-mutating fit quarantine. Full local suite: 166 passed.
+`test_classification_guard.py` adds five checks for classification-only updates and raw-box identity, one-sided positive gradients, paired hard replay, per-frame preservation and non-mutating fit quarantine. Full local suite: 170 passed.
 
 `test_information_diagnostic.py` covers dynamic input coordinates, consistent native center/box mapping, label-independent crops and group-paired gains.
+
+`test_native_guidance.py` checks quality-class gradient direction, detached coordinate targets, unknown-eye masking and conservative promotion limits.

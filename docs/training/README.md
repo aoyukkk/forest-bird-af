@@ -103,3 +103,5 @@ Latest follow-up: [input, hard-context and hybrid results](input-context-2026-10
 [Classification-only retention](classification-guard-2026-10-28.md): frozen features and boxes, fit-side hard replay, related-scene quarantine and matched empty supervision.
 
 [Information and scale diagnostic](information-diagnostic-2026-10-28.md): true high detail, low-image upsampling, supplied-location versus automatic crops, complete policy latency and the decision to pause this recipe.
+
+[Native E7 fixed-layout continuation](native-return-2026-10-29.md): native arithmetic, quality supervision and acceptance rules.

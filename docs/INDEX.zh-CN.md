@@ -56,3 +56,5 @@
 - `docs/findings/` 里 8 处指向从未提交文件的链接保留为历史记录，不再新增同类断链。
 
 最新判断：[信息与尺度实验及项目决策](../experiments/information-diagnostic-2026-10-28/README.zh-CN.md)。
+
+[原生E7新一轮结果](../experiments/native-return-2026-10-29/README.zh-CN.md)。

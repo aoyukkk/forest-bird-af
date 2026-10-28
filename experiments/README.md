@@ -33,3 +33,5 @@ Original failed runs and vendor assets stay outside Git.
 [Public expansion / empty-scene results](expansion-2026-10-27/README.md): 17,252 admitted images, four new verifier runs, full-routing empty-scene replay and a rejected B/H filter.
 
 [Information and scale diagnostic](information-diagnostic-2026-10-28/README.md): 80 development frames, 172 empty scenes, actual native replay and two rejected automatic fallback policies.
+
+[Native E7 return](native-return-2026-10-29/README.md): fixed-layout training and firmware verification.

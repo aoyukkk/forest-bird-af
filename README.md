@@ -8,7 +8,7 @@ independent YOLO26-derived bird-parts experiments. Whole-camera autofocus has no
 
 **694 image assets · 547 confirmed records · 535 deduplicated usable records**
 
-Updated: **2026-10-28**.
+Updated: **2026-10-29**.
 
 ## Start here
 
@@ -67,6 +67,15 @@ Training needs NumPy and compatible CUDA PyTorch; the native route also needs
 your own verified vendor package. The independent YOLO route uses public data. See [training](docs/training/README.md) and
 [tests](tests/README.md). Firmware, original/modified vendor weights, feature
 caches and the production database are not distributed.
+
+## Native E7 firmware and continuation — 2026-10-29
+
+Four native-head runs preserve original topology and format, with full replay checks.
+A diagnostic raises known-eye hits 9→11 and unassessed eyes 1→3; it does not beat
+the historical candidate. Defaults stay fixed, with 11 new points for review.
+Firmware body bytes match the E7 backend; 112 new frame-gate cases pass, while
+actual detection frequency remains unknown.
+[Results and historical comparison](experiments/native-return-2026-10-29/README.md).
 
 ## Information and scale diagnostic — 2026-10-28
 
