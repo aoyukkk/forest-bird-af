@@ -91,3 +91,5 @@ python scripts/training/evaluate_z8_training.py --help
 [信息与尺度诊断](information-diagnostic-2026-10-28.zh-CN.md)：区分真实高清、低清放大、已知位置与自动局部，包含完整策略时间和停止追加训练的依据。
 
 [原生E7固定格式微调](native-return-2026-10-29.zh-CN.md)：原生算术、质量监督和采用条件。
+
+[原生B/H/E后续轮与11点人工复核](../../experiments/native-bhe-2026-10-29/README.zh-CN.md)：既有检测头参数、相同附加损失权重及开发落点/严格框/空景取舍。

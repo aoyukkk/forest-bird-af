@@ -85,3 +85,5 @@ Classification-only continuation adds `training/prepare_classification_guard.py`
 Information/scale diagnostics in `training/`: `diagnose_bird_information.py`, `evaluate_information_routes.py`, `evaluate_native_empty.py`, and `render_information_review.py`. See [method and limits](../docs/training/information-diagnostic-2026-10-28.md).
 
 `training/train_native_guidance.py`: matched native-head tuning with fixed layout; `evaluate_native_empty.py --body-copy` replays separate candidates.
+
+[Native B/H/E continuation and 11 human point reviews](../experiments/native-bhe-2026-10-29/README.md): existing head parameters, equal auxiliary-loss weights and separate point/box/empty-scene tradeoffs.

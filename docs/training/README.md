@@ -105,3 +105,5 @@ Latest follow-up: [input, hard-context and hybrid results](input-context-2026-10
 [Information and scale diagnostic](information-diagnostic-2026-10-28.md): true high detail, low-image upsampling, supplied-location versus automatic crops, complete policy latency and the decision to pause this recipe.
 
 [Native E7 fixed-layout continuation](native-return-2026-10-29.md): native arithmetic, quality supervision and acceptance rules.
+
+[Native B/H/E continuation and 11 human point reviews](../../experiments/native-bhe-2026-10-29/README.md): existing head parameters, equal auxiliary-loss weights and separate point/box/empty-scene tradeoffs.

@@ -58,3 +58,5 @@
 最新判断：[信息与尺度实验及项目决策](../experiments/information-diagnostic-2026-10-28/README.zh-CN.md)。
 
 [原生E7新一轮结果](../experiments/native-return-2026-10-29/README.zh-CN.md)。
+
+[Native B/H/E / 人工复核](../experiments/native-bhe-2026-10-29/README.zh-CN.md).

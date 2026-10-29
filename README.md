@@ -68,11 +68,16 @@ your own verified vendor package. The independent YOLO route uses public data. S
 [tests](tests/README.md). Firmware, original/modified vendor weights, feature
 caches and the production database are not distributed.
 
+## Native B/H/E continuation and human review — 2026-10-29
+
+All 11 prior points have human surface support. Four matched same-layout runs raise geometric support54→57/80 and known-eye hits9→11/25; strict head-box metrics regress. Empty selections74→82/172; defaults stay fixed.
+[Results, tradeoffs and reproduction](experiments/native-bhe-2026-10-29/README.md).
+
 ## Native E7 firmware and continuation — 2026-10-29
 
 Four native-head runs preserve original topology and format, with full replay checks.
 A diagnostic raises known-eye hits 9→11 and unassessed eyes 1→3; it does not beat
-the historical candidate. Defaults stay fixed, with 11 new points for review.
+the historical candidate. Defaults stay fixed; the 11 points are now reviewed in the follow-up above.
 Firmware body bytes match the E7 backend; 112 new frame-gate cases pass, while
 actual detection frequency remains unknown.
 [Results and historical comparison](experiments/native-return-2026-10-29/README.md).

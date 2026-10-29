@@ -1,0 +1,7 @@
+{
+  "scripts/training/train_native_guidance.py": "ad718d624bc51c7f004911e1800b7d983a2d010627a26c5be0a3acd9a8c9c31c",
+  "scripts/training/native_point_review.py": "c2598055a32d14fd6362dfa88c27810289daa71de46f9051eeb40498a5cf948c",
+  "scripts/training/evaluate_native_empty.py": "1b925d4bd7070f9ca102ee31ebf1c39baf0dde0a55d75f520d71681f15d7862c",
+  "scripts/annotator/import_point_review.py": "3a1457faa5426577430685644e988aba6643e5bfad33c26ef658b15a117a45cd",
+  "tests/test_native_point_review.py": "d43cbe089bc23dfeef0ce7fd83c50dd782bb5aeb9e61679b725b70f1e422b17c"
+}

@@ -35,3 +35,5 @@ Original failed runs and vendor assets stay outside Git.
 [Information and scale diagnostic](information-diagnostic-2026-10-28/README.md): 80 development frames, 172 empty scenes, actual native replay and two rejected automatic fallback policies.
 
 [Native E7 return](native-return-2026-10-29/README.md): fixed-layout training and firmware verification.
+
+[Native B/H/E continuation and 11 human point reviews](native-bhe-2026-10-29/README.md): existing head parameters, equal auxiliary-loss weights and separate point/box/empty-scene tradeoffs.

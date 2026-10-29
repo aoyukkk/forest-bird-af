@@ -83,3 +83,5 @@ RGB/上下文排序新增 `training/bird_residual.py`、`prepare_bird_residual.p
 信息与尺度诊断：`diagnose_bird_information.py`、`evaluate_information_routes.py`、`evaluate_native_empty.py`和`render_information_review.py`，均在`training/`下。参见[方法与边界](../docs/training/information-diagnostic-2026-10-28.zh-CN.md)。
 
 `training/train_native_guidance.py`：结构/格式固定的原生检测头匹配微调；`evaluate_native_empty.py --body-copy`评估独立候选。
+
+[原生B/H/E后续轮与11点人工复核](../experiments/native-bhe-2026-10-29/README.zh-CN.md)：既有检测头参数、相同附加损失权重及开发落点/严格框/空景取舍。

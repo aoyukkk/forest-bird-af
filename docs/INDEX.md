@@ -62,3 +62,5 @@ The former `docs/findings/` and `docs/plan/` content now lives under
 Latest decision: [information/scale experiment and project assessment](../experiments/information-diagnostic-2026-10-28/README.md).
 
 [Latest native E7 results](../experiments/native-return-2026-10-29/README.md).
+
+[Native B/H/E / 人工复核](../experiments/native-bhe-2026-10-29/README.md).

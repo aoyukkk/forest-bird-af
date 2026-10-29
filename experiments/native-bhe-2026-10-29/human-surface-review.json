@@ -1,0 +1,140 @@
+{
+  "role": "old development surface decisions only; never eye-coordinate or training labels",
+  "dataset_id": "7b40c625c90ca993c79b02e7357a6c0c017b6bd1eb8f33290ca051901cdacdcc",
+  "full_export_sha256": "4d9737b163df24e407667fd665ff875be809cba180ee9bb03f6619bc9a765055",
+  "records": [
+    {
+      "image_id": "fb_0171",
+      "input_sha256": "3f34218e20a58c93429eb670579ede6492cf6b0022159a36283f5b35998195ec",
+      "point_xy": [
+        189,
+        154
+      ],
+      "choice": "supported",
+      "eye_localizable_input": "unknown",
+      "part": "unknown",
+      "revision": 1
+    },
+    {
+      "image_id": "fb_0172",
+      "input_sha256": "11d29b258c7646a4c7ab9ed6e78d870763fce292c76b6266363bea975ec5dfff",
+      "point_xy": [
+        158,
+        139
+      ],
+      "choice": "supported",
+      "eye_localizable_input": "unknown",
+      "part": "unknown",
+      "revision": 1
+    },
+    {
+      "image_id": "fb_0185",
+      "input_sha256": "e66065cec4a457d7acec17b79b94cd0210982a09d46add583392987d0181d51f",
+      "point_xy": [
+        188,
+        110
+      ],
+      "choice": "supported",
+      "eye_localizable_input": "unknown",
+      "part": "unknown",
+      "revision": 1
+    },
+    {
+      "image_id": "fb_0242",
+      "input_sha256": "42001bd07dcf4ddeb8388e81949bb309cfa1a412ec8278f16e7baf19162afdaa",
+      "point_xy": [
+        207,
+        126
+      ],
+      "choice": "supported",
+      "eye_localizable_input": "unknown",
+      "part": "unknown",
+      "revision": 1
+    },
+    {
+      "image_id": "fb_0243",
+      "input_sha256": "d1b4dbfd67172daf9455cac111c62d2eef0abc5064b4394b15a6cc5ee609b2c9",
+      "point_xy": [
+        216,
+        109
+      ],
+      "choice": "supported",
+      "eye_localizable_input": "unknown",
+      "part": "unknown",
+      "revision": 1
+    },
+    {
+      "image_id": "fb_0245",
+      "input_sha256": "3b251bb7eb02153567170d6c4b3d021c272ac5a95d82dac9d3353937f3090b8b",
+      "point_xy": [
+        186,
+        119
+      ],
+      "choice": "supported",
+      "eye_localizable_input": "unknown",
+      "part": "unknown",
+      "revision": 1
+    },
+    {
+      "image_id": "fb_0247",
+      "input_sha256": "760b979a01822592e438ebbeb10afeed78e73a0d086318ec9efffead4cfd892d",
+      "point_xy": [
+        184,
+        108
+      ],
+      "choice": "supported",
+      "eye_localizable_input": "unknown",
+      "part": "unknown",
+      "revision": 1
+    },
+    {
+      "image_id": "fb_0248",
+      "input_sha256": "af8542522ef8d534c4c4e214a49730410b862cccdfdd39d95c99e3f8cbfcc0e0",
+      "point_xy": [
+        183,
+        91
+      ],
+      "choice": "supported",
+      "eye_localizable_input": "unknown",
+      "part": "unknown",
+      "revision": 1
+    },
+    {
+      "image_id": "fb_0262",
+      "input_sha256": "f563fc5537de65833d06f73fea1ed89069267f5026568899ccac086dabbc58bc",
+      "point_xy": [
+        187,
+        103
+      ],
+      "choice": "supported",
+      "eye_localizable_input": "unknown",
+      "part": "unknown",
+      "revision": 1
+    },
+    {
+      "image_id": "fb_0368",
+      "input_sha256": "d40a84f50872a8c5286023f9ffa99e27a13f873ac90737dc6ff22b1eb53e76b2",
+      "point_xy": [
+        184,
+        125
+      ],
+      "choice": "supported",
+      "eye_localizable_input": "unknown",
+      "part": "unknown",
+      "revision": 1
+    },
+    {
+      "image_id": "fb_0376",
+      "input_sha256": "0e2ccd72c822ecd416e0faeb60a4569dc3211816259ec99b13e5126e5d2c3f55",
+      "point_xy": [
+        156,
+        103
+      ],
+      "choice": "supported",
+      "eye_localizable_input": "unknown",
+      "part": "unknown",
+      "revision": 2
+    }
+  ],
+  "accepted_for_training": false
+}

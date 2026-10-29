@@ -1,0 +1,38 @@
+{
+  "status": "frozen_before_formal",
+  "conditions": [
+    "equal-control",
+    "quality"
+  ],
+  "seeds": [
+    20261029,
+    20261030
+  ],
+  "epochs": 16,
+  "update_mode": "bhe-head",
+  "batch": 32,
+  "lr": 0.0003,
+  "preservation": 10.0,
+  "quality_weight": 1.0,
+  "quality_sigma": 6.0,
+  "fit": 354,
+  "val": 80,
+  "original_initialization": true,
+  "architecture_changed": false,
+  "weight_format_changed": false,
+  "consumer_changed": false,
+  "old_test_used": false,
+  "new_event_test": false,
+  "review_scope": "11 exact input/point matches; surface evaluation only, never training targets or eye truth",
+  "comparison": "same known-eye anchors and extra BCE weight; target one vs detached localization quality; expanded original B/H/E head parameters",
+  "selection": "geometry >=54, outside<=10, absent<=0, known eye errors<=3; unmatched unassessed eye choices no greater than original; exact human-supported surface points exempt only from unreviewed counter",
+  "source_hashes": {
+    "train_native_guidance.py": "ad718d624bc51c7f004911e1800b7d983a2d010627a26c5be0a3acd9a8c9c31c",
+    "native_point_review.py": "c2598055a32d14fd6362dfa88c27810289daa71de46f9051eeb40498a5cf948c",
+    "z8_trainable_heads.py": "affe57810753a4736e8423dc312f32787947bed64ba29f2528453414777b0952",
+    "z8_training_targets.py": "f8742ea5df55001ca7115769dbf75becb30e004cceede4af66cfafa33936a36e",
+    "train_z8_heads.py": "4a71114613a2aa8b7ce7de72231bd41d069f6244d25fb0cf6eca97f4137a1cc4",
+    "e7_backend.py": "a3df00e8b38991e6ca964adb82b39a61aeaee5fbe83951cbe0123f3e7ab3e203",
+    "bird_guidance_metrics.py": "7a1ead584e06bf3a3ee2709fb27df57bf13e1a493472eb9a85ea0f9694b64af5"
+  }
+}
